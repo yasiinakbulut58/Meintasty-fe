@@ -1,0 +1,15 @@
+{
+  "extends": ["next/core-web-vitals", "plugin:prettier/recommended"],
+  "rules": {
+    "react/prop-types": "off",
+    "react/react-in-jsx-scope": "off",
+    "react/display-name": "off",
+    "react/require-default-props": "off",
+    "prettier/prettier": [
+      "error",
+      {
+        "endOfLine": "auto"
+      }
+    ]
+  }
+}
