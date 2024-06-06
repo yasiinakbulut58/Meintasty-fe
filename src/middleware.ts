@@ -5,7 +5,13 @@ import { fallbackLng, languages } from './app/i18n/settings';
 // acceptLanguage.languages(languages);
 
 export const config = {
-  matcher: ['/', '/home/:path*', '/restaurant/:path*', '/pages/:path*'],
+  matcher: [
+    '/',
+    '/auth/:path*',
+    '/home/:path*',
+    '/restaurant/:path*',
+    '/pages/:path*',
+  ],
 };
 
 const cookieName = 'i18next';

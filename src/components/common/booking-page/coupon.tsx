@@ -1,5 +1,5 @@
-import { Apply } from "@/constant/constant";
-import { FC } from "react";
+import { Apply } from '@/constant/constant';
+import { FC } from 'react';
 
 const Coupon: FC = () => {
   return (
@@ -22,18 +22,31 @@ const Coupon: FC = () => {
           <div className="promos">
             <form>
               <div className="form-check">
-                <input className="form-check-input radio_animated" type="radio" name="radiocls2" id="radio1" defaultValue="option1" defaultChecked/>
+                <input
+                  className="form-check-input radio_animated"
+                  type="radio"
+                  name="radiocls2"
+                  id="radio1"
+                  defaultValue="option1"
+                  defaultChecked
+                />
                 <div>
                   <label className="form-check-label title" htmlFor="radio1">
-                    RICA500
+                    Meintasty500
                   </label>
                   <label className="form-check-label" htmlFor="radio1">
-                    Use RICA50, and get $50 off on first booking
+                    Use Meintasty50, and get $50 off on first booking
                   </label>
                 </div>
               </div>
               <div className="form-check">
-                <input className="form-check-input radio_animated" type="radio" name="radiocls2" id="radio2" defaultValue="option2"/>
+                <input
+                  className="form-check-input radio_animated"
+                  type="radio"
+                  name="radiocls2"
+                  id="radio2"
+                  defaultValue="option2"
+                />
                 <div>
                   <label className="form-check-label title" htmlFor="radio2">
                     CAB10
@@ -44,7 +57,13 @@ const Coupon: FC = () => {
                 </div>
               </div>
               <div className="form-check">
-                <input className="form-check-input radio_animated" type="radio" name="radiocls2" id="radio3" defaultValue="option2"/>
+                <input
+                  className="form-check-input radio_animated"
+                  type="radio"
+                  name="radiocls2"
+                  id="radio3"
+                  defaultValue="option2"
+                />
                 <div>
                   <label className="form-check-label title" htmlFor="radio3">
                     CAB80

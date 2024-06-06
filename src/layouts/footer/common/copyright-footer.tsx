@@ -1,5 +1,5 @@
-import { FC } from "react";
-import SocialMedia from "./SocialMedia";
+import { FC } from 'react';
+import SocialMedia from './SocialMedia';
 
 const CopyRightFooter: FC = () => {
   return (
@@ -14,7 +14,8 @@ const CopyRightFooter: FC = () => {
           <div className="col-xl-6 col-md-6 col-sm-12">
             <div className="copy-right">
               <p>
-                copyright 2023 rica by <i className="fas fa-heart"></i> pixelstrap
+                copyright 2023 meintasty by <i className="fas fa-heart"></i>{' '}
+                pixelstrap
               </p>
             </div>
           </div>

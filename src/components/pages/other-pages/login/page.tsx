@@ -1,15 +1,19 @@
-"use client";
-import Animation1 from "@/components/common/animation/animation-1";
-import Img from "@/utils/BackgroundImageRatio";
-import SocialContent from "./social";
-import { FC } from "react";
-import RegisterForm from "@/components/common/booking-form/form7";
-import LoginForm from "@/components/common/booking-form/form6";
+'use client';
+import Animation1 from '@/components/common/animation/animation-1';
+import Img from '@/utils/BackgroundImageRatio';
+import SocialContent from './social';
+import { FC } from 'react';
+import RegisterForm from '@/components/common/booking-form/form7';
+import LoginForm from '@/components/common/booking-form/form6';
 
 const LoginPage: FC<ILoginPageProps> = ({ title }) => {
   return (
     <section className="section-b-space dark-cls animated-section">
-      <Img src="/assets/images/cab/grey-bg.jpg" alt="" className="img-fluid bg-img" />
+      <Img
+        src="/assets/images/cab/grey-bg.jpg"
+        alt=""
+        className="img-fluid bg-img"
+      />
       <Animation1 />
       <div className="container">
         <div className="row">
@@ -19,7 +23,7 @@ const LoginPage: FC<ILoginPageProps> = ({ title }) => {
                 <h3>{title}</h3>
               </div>
               <SocialContent title={title} />
-              {title === "sign up" ? <RegisterForm /> : <LoginForm />}
+              {title === 'sign up' ? <RegisterForm /> : <LoginForm />}
             </div>
           </div>
         </div>

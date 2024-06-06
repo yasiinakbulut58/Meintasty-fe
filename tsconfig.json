@@ -23,6 +23,17 @@
       "@/*": ["./src/*", "./*"]
     }
   },
-  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts", "next-i18next.config.js", "src/components/common/elements/product-box2", "src/components/common/elements/product-box3"],
+  "include": [
+    "next-env.d.ts",
+    "**/*.ts",
+    "**/*.tsx",
+    ".next/types/**/*.ts",
+    "next-i18next.config.js",
+    "src/components/common/elements/product-box2",
+    "src/components/common/elements/product-box3",
+    "src/app/not-found.js",
+    "src/app/[lng]/not-found.js",
+    "src/app/[lng]/pages/404.js"
+  ],
   "exclude": ["node_modules"]
 }

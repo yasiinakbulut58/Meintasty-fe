@@ -1,7 +1,7 @@
-import Img from "@/utils/BackgroundImageRatio";
-import { FC } from "react";
-import BirdAnimation from "../animation/bird-animation";
-import Link from "next/link";
+import Img from '@/utils/BackgroundImageRatio';
+import { FC } from 'react';
+import BirdAnimation from '../animation/bird-animation';
+import Link from 'next/link';
 
 interface IBreadcrumbProps {
   title: string;
@@ -13,11 +13,27 @@ interface IBreadcrumbProps {
   class1?: string;
   class2?: string;
 }
-const Breadcrumb: FC<IBreadcrumbProps> = ({ title, subTitle, bannerImg, mainTitle, animation, class1, class2, videoPath }) => {
+const Breadcrumb: FC<IBreadcrumbProps> = ({
+  title,
+  subTitle,
+  bannerImg,
+  mainTitle,
+  animation,
+  class1,
+  class2,
+  videoPath,
+}) => {
   return (
     <section className={`breadcrumb-section pt-0 ${class1 && class1}`}>
       {videoPath ? (
-        <video autoPlay muted loop id="block" className="bg-video" style={{ width: "100%" }}>
+        <video
+          autoPlay
+          muted
+          loop
+          id="block"
+          className="bg-video"
+          style={{ width: '100%' }}
+        >
           <source src={videoPath} type="video/mp4" />
         </video>
       ) : (
@@ -45,7 +61,7 @@ const Breadcrumb: FC<IBreadcrumbProps> = ({ title, subTitle, bannerImg, mainTitl
         </div>
       </div>
       {animation && <BirdAnimation />}
-      <div className="title-breadcrumb">Rica</div>
+      <div className="title-breadcrumb">Meintasty</div>
     </section>
   );
 };

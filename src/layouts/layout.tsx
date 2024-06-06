@@ -1,5 +1,4 @@
 'use client';
-import Loader from './loader/page';
 import { ReactNode } from 'react';
 import HeaderRight from './header/header-right/page';
 import Logo from './header/logo/page';
@@ -10,7 +9,6 @@ import LoaderFood from './loader/loader-food';
 import TapToTop from './tab-to-top/page';
 import PreLoader from './loader/skelton/pre-loader';
 import GoodLoader from './loader/loader-good-luck';
-import CustomizePage from './customizer/page';
 import MapLoader from './loader/skelton/map-loader';
 
 interface CustomLayoutProps {
@@ -56,7 +54,7 @@ const CustomLayout: React.FC<CustomLayoutProps> = ({
       ) : loader === 'no' ? (
         ''
       ) : (
-        <Loader loaderTimeout={5000} />
+        <LoaderFood loaderTimeout={5000} />
       )}
       <header className={title}>
         <div className="container">
@@ -80,7 +78,6 @@ const CustomLayout: React.FC<CustomLayoutProps> = ({
         <FooterMain footerType={footer} footerPlaceCom={footerPlace} />
       )}
       <TapToTop />
-      <CustomizePage />
     </>
   );
 };

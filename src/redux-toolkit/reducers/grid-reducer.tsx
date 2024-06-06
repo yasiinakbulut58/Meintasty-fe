@@ -1,4 +1,4 @@
-import { createReducer } from "@reduxjs/toolkit";
+import { createReducer } from '@reduxjs/toolkit';
 
 interface IGridReducerProps {
   gridSize: number;
@@ -8,7 +8,13 @@ interface IGridReducerProps {
   productCount: string;
 }
 
-var initialState: IGridReducerProps = { gridSize: 2, gridStyle: "", toPage: 1, totalPages: 1, productCount: "" };
+var initialState: IGridReducerProps = {
+  gridSize: 2,
+  gridStyle: '',
+  toPage: 1,
+  totalPages: 1,
+  productCount: '',
+};
 
 export const gridReducer = createReducer(initialState, {
   gridSize: (state, action) => {

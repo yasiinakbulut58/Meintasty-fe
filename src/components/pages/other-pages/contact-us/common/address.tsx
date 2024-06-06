@@ -1,5 +1,4 @@
-import { FC } from "react";
-
+import { FC } from 'react';
 
 const AddressContent: FC<IAddressProps> = ({ colClass }) => {
   return (
@@ -26,8 +25,8 @@ const AddressContent: FC<IAddressProps> = ({ colClass }) => {
           </div>
           <div className="contact_content">
             <ul>
-              <li>Support@rica.com</li>
-              <li>info@rica.com</li>
+              <li>Support@meintasty.com</li>
+              <li>info@meintasty.com</li>
             </ul>
           </div>
         </div>

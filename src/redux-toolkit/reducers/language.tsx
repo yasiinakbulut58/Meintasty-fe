@@ -1,17 +1,17 @@
-import { createSlice, PayloadAction } from "@reduxjs/toolkit";
-import { RootState } from "../store";
-import { I18n } from "next-i18next";
+import { createSlice, PayloadAction } from '@reduxjs/toolkit';
+import { RootState } from '../store';
+import { I18n } from 'next-i18next';
 
 interface LangState {
   i18LangStatus: string;
 }
 
 const initialState: LangState = {
-  i18LangStatus: "",
+  i18LangStatus: '',
 };
 
 const langSlice = createSlice({
-  name: "lang",
+  name: 'lang',
   initialState,
   reducers: {
     setLanguage: (state, action: PayloadAction<string>) => {

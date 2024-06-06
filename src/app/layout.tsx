@@ -1,6 +1,6 @@
 import { Providers } from '@/redux-toolkit/provider';
 import '@/public/assets/scss/globals.scss';
-import { languages } from '../i18n/settings';
+import { languages } from './i18n/settings';
 
 export const metadata = {
   title: 'Meintasty',

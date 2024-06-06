@@ -1,22 +1,30 @@
-import Animation from "@/components/common/animation/animation";
-import TitleThree from "@/components/common/title/title-three";
-import { AboutUs } from "@/constant/constant";
-import { imageData } from "@/data/pages/all-page";
-import { FC } from "react";
-import Link from "next/link";
+import Animation from '@/components/common/animation/animation';
+import TitleThree from '@/components/common/title/title-three';
+import { AboutUs } from '@/constant/constant';
+import { imageData } from '@/data/pages/all-page';
+import { FC } from 'react';
+import Link from 'next/link';
 
 const AboutUsContent: FC<IAboutUsContentProps> = ({ side }) => {
   return (
     <section className="about-section three-image about_page animated-section section-b-space">
       <Animation />
       <div className="container">
-        <TitleThree classTitle="title-1" title="rica" subTitle={AboutUs} />
+        <TitleThree classTitle="title-1" title="meintasty" subTitle={AboutUs} />
         <div className="row">
-          <div className={`col-xl-7 ${side === "right" ? "order-xl-1" : ""}`}>
+          <div className={`col-xl-7 ${side === 'right' ? 'order-xl-1' : ''}`}>
             <div className="image-section">
               {imageData.map((image: IImageProps, index: number) => (
                 <div key={index} className="img-box">
-                  <img src={image.src} data-tilt data-tilt-perspective="110" data-tilt-speed="400" data-tilt-max="1.2" className="img-fluid" alt="" />
+                  <img
+                    src={image.src}
+                    data-tilt
+                    data-tilt-perspective="110"
+                    data-tilt-speed="400"
+                    data-tilt-max="1.2"
+                    className="img-fluid"
+                    alt=""
+                  />
                   <div className="title-box">
                     <h3>{image.title}</h3>
                     <h6>{image.subTitle}</h6>
@@ -34,14 +42,28 @@ const AboutUsContent: FC<IAboutUsContentProps> = ({ side }) => {
                 <h5>
                   <span>multipurpose theme</span>
                 </h5>
-                <h2>welcome to rica</h2>
-                <p>Lorem Ipsum is the simply dummy text of the printing is of and type the setting the industry. Lorem Ipsum of is has since the 1500s, Lorem Ipsum has been the.....</p>
-                <img src="/assets/images/mix/signature.png" className="img-fluid" alt="" />
+                <h2>welcome to meintasty</h2>
+                <p>
+                  Lorem Ipsum is the simply dummy text of the printing is of and
+                  type the setting the industry. Lorem Ipsum of is has since the
+                  1500s, Lorem Ipsum has been the.....
+                </p>
+                <img
+                  src="/assets/images/mix/signature.png"
+                  className="img-fluid"
+                  alt=""
+                />
                 <div className="buttons-about">
-                  <Link href="/pages/blog-detail/left-sidebar" className="btn btn-lower btn-curve">
+                  <Link
+                    href="/pages/blog-detail/left-sidebar"
+                    className="btn btn-lower btn-curve"
+                  >
                     view more
                   </Link>
-                  <Link href="/pages/other-pages/contact-us-1" className="btn btn-lower black-btn btn-curve">
+                  <Link
+                    href="/pages/other-pages/contact-us-1"
+                    className="btn btn-lower black-btn btn-curve"
+                  >
                     contact us
                   </Link>
                 </div>
