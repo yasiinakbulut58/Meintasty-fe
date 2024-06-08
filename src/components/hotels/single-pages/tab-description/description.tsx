@@ -1,21 +1,21 @@
-"use client";
-import Tabs from "@/utils/HOC/tabs/page";
+'use client';
+import Tabs from '@/utils/HOC/tabs/page';
 
-import { FC, useCallback, useState } from "react";
-import { TabContent, TabPane } from "reactstrap";
-import About from "../common/sections/about";
-import Rooms from "../common/sections/rooms";
-import Facilities from "../common/sections/facility";
-import Location from "../common/sections/location";
-import Reviews from "../common/sections/reviews";
-import Policies from "../common/sections/policies";
+import { FC, useCallback, useState } from 'react';
+import { TabContent, TabPane } from 'reactstrap';
+import About from '../common/sections/about';
+import Rooms from '../common/sections/rooms';
+import Facilities from '../common/sections/facility';
+import Location from '../common/sections/location';
+import Reviews from '../common/sections/reviews';
+import Policies from '../common/sections/policies';
 
 interface ITabDescriptionProps {
   tabsData: ITabsDataProps[];
   class1: string;
 }
 const TabDescription: FC<ITabDescriptionProps> = ({ tabsData, class1 }) => {
-  const [activeTab, setActiveTab] = useState("1");
+  const [activeTab, setActiveTab] = useState('1');
   const callback = useCallback(
     (tab: string) => {
       setActiveTab(tab);
@@ -31,7 +31,11 @@ const TabDescription: FC<ITabDescriptionProps> = ({ tabsData, class1 }) => {
         </div>
       </div>
       <div className="description-details">
-        <TabContent activeTab={activeTab} className="tab-content" id="pills-tabContent">
+        <TabContent
+          activeTab={activeTab}
+          className="tab-content"
+          id="pills-tabContent"
+        >
           <TabPane tabId="1">
             <About />
           </TabPane>

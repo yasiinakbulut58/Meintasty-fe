@@ -9,6 +9,7 @@ import FormOne from '@/components/common/booking-form/form1';
 import CategoryPage from '@/components/common/filters/category';
 import { RootState } from '@/redux-toolkit/store';
 import { IGridReducerProps } from '../grid-page.d';
+import Image from 'next/image';
 
 const GridView: FC<IGridViewProps> = ({
   gridSelect,

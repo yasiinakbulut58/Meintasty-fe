@@ -23,7 +23,7 @@ interface CustomLayoutProps {
   footerClass?: string;
   loader?: string;
 }
-
+const LOADER_TIMEOUT = 3000;
 const CustomLayout: React.FC<CustomLayoutProps> = ({
   children,
   title,
@@ -38,23 +38,23 @@ const CustomLayout: React.FC<CustomLayoutProps> = ({
   return (
     <>
       {loader === 'food' ? (
-        <LoaderFood loaderTimeout={5000} />
+        <LoaderFood loaderTimeout={LOADER_TIMEOUT} />
       ) : loader === 'pre' ? (
-        <PreLoader loaderTimeout={5000} side={'left'} />
+        <PreLoader loaderTimeout={LOADER_TIMEOUT} side={'left'} />
       ) : loader === 'right' ? (
-        <PreLoader loaderTimeout={5000} side={'right'} />
+        <PreLoader loaderTimeout={LOADER_TIMEOUT} side={'right'} />
       ) : loader === 'no-sidebar' ? (
-        <PreLoader loaderTimeout={5000} side={'no'} />
+        <PreLoader loaderTimeout={LOADER_TIMEOUT} side={'no'} />
       ) : loader === 'map-loader' ? (
-        <MapLoader loaderTimeout={5000} side={'right'} />
+        <MapLoader loaderTimeout={LOADER_TIMEOUT} side={'right'} />
       ) : loader === 'map-left' ? (
-        <MapLoader loaderTimeout={5000} side={'left'} />
+        <MapLoader loaderTimeout={LOADER_TIMEOUT} side={'left'} />
       ) : loader === 'good' ? (
-        <GoodLoader loaderTimeout={5000} />
+        <GoodLoader loaderTimeout={LOADER_TIMEOUT} />
       ) : loader === 'no' ? (
         ''
       ) : (
-        <LoaderFood loaderTimeout={5000} />
+        <LoaderFood loaderTimeout={LOADER_TIMEOUT} />
       )}
       <header className={title}>
         <div className="container">

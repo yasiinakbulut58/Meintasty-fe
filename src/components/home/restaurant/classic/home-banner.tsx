@@ -28,31 +28,41 @@ const HomeBanner: FC = () => {
             <div className="col-md-6">
               <div className="home-content food_content">
                 <div className="shadow-none">
-                  <h4>2020 Special</h4>
+                  <h4>2024 Special</h4>
                   <h1>bite me !</h1>
                   <div className="book-table section-b-space single-table p-0">
                     <div className="table-form">
                       <form>
                         <div className="row w-100">
-                          <div className="form-group col p-0">
-                            <input
-                              type="text"
-                              className="form-control"
-                              placeholder="Person"
-                            />
-                            <Img
-                              src="/assets/images/icon/user.png"
-                              className="img-fluid"
-                              alt=""
-                            />
+                          <div className="form-group col-md-6">
+                            <select className="form-control">
+                              <option value="" disabled>
+                                Room Type
+                              </option>
+                              <option value="saab">Deluxe Room</option>
+                              <option value="audi">Suite</option>
+                              <option value="opel">Royal room</option>
+                            </select>
+                          </div>
+                          <div className="form-group col-md-6">
+                            <select className="form-control">
+                              <option value="" disabled>
+                                Room Type
+                              </option>
+                              <option value="saab">Deluxe Room</option>
+                              <option value="audi">Suite</option>
+                              <option value="opel">Royal room</option>
+                            </select>
+                          </div>
+                          <div className="col-md-12 mt-2">
+                            <Link
+                              href="/restaurants"
+                              className="btn btn-rounded color1 w-100 m-0"
+                            >
+                              search
+                            </Link>
                           </div>
                         </div>
-                        <Link href="/restaurant/booking/checkout">
-                          <Button
-                            btnClass="btn btn-rounded color1"
-                            name={BookTable}
-                          />
-                        </Link>
                       </form>
                     </div>
                   </div>

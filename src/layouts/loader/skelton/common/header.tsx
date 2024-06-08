@@ -1,9 +1,9 @@
-import { FC, useEffect, useState } from "react";
-import { languageOptions, menuItems, settingsOptions } from "./data";
-import Link from "next/link";
-import { useSelector } from "react-redux";
-import { RootState } from "@/redux-toolkit/store";
-import { useTranslation } from "@/app/i18n/client";
+import { FC, useEffect, useState } from 'react';
+import { languageOptions, menuItems, settingsOptions } from './data';
+import Link from 'next/link';
+import { useSelector } from 'react-redux';
+import { RootState } from '@/redux-toolkit/store';
+import { useTranslation } from '@/app/i18n/client';
 
 interface SelectOption {
   value: string;
@@ -25,18 +25,13 @@ const SkeletonHeader: FC = () => {
   };
 
   const renderSelectOptions = (options: SelectOption[], type: string) => {
-    
-    if (type === "lang") {
+    if (type === 'lang') {
       return options.map((option, index) => (
-        <option key={index}  >
-          {option.label}
-        </option>
+        <option key={index}>{option.label}</option>
       ));
     } else {
       return options.map((option, index) => (
-        <option key={index}  >
-          {option.label}
-        </option>
+        <option key={index}>{option.label}</option>
       ));
     }
   };
@@ -49,7 +44,11 @@ const SkeletonHeader: FC = () => {
             <div className="menu">
               <div className="brand-logo">
                 <Link href="/">
-                  <img src="/assets/images/icon/footer-logo.png" alt="" className="img-fluid" />
+                  <img
+                    src="/assets/images/icon/footer-logo.png"
+                    alt=""
+                    className="img-fluid"
+                  />
                 </Link>
               </div>
               <nav>
@@ -59,16 +58,19 @@ const SkeletonHeader: FC = () => {
                       <i className="fa fa-bars sidebar-bar"></i>
                     </div>
                     <div className="menu-overlay"></div>
-                    <ul className="nav-menu">{renderMenuItems()}</ul>
                   </div>
                 </div>
               </nav>
               <ul className="header-right">
                 <li className="front-setting">
-                  <select>{renderSelectOptions(settingsOptions, "currency")}</select>
+                  <select>
+                    {renderSelectOptions(settingsOptions, 'currency')}
+                  </select>
                 </li>
                 <li className="front-setting">
-                  <select>{renderSelectOptions(languageOptions, "lang")}</select>
+                  <select>
+                    {renderSelectOptions(languageOptions, 'lang')}
+                  </select>
                 </li>
                 <li className="user user-light">
                   <a href="#">
@@ -81,10 +83,14 @@ const SkeletonHeader: FC = () => {
                   </a>
                   <ul className="setting-open">
                     <li className="front-setting">
-                      <select>{renderSelectOptions(settingsOptions, "currency")}</select>
+                      <select>
+                        {renderSelectOptions(settingsOptions, 'currency')}
+                      </select>
                     </li>
                     <li className="front-setting">
-                      <select>{renderSelectOptions(languageOptions, "lang")}</select>
+                      <select>
+                        {renderSelectOptions(languageOptions, 'lang')}
+                      </select>
                     </li>
                   </ul>
                 </li>

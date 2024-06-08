@@ -27,7 +27,7 @@ const RestaurantProducts: FC<RestaurantProductsProps> = ({ data, view }) => {
         )}
       </div>
       <div className="special-content restaurant-detail">
-        <Link href="/restaurant/listing/grid-view/grid-2">
+        <Link href="/restaurants/dominos-pizza">
           <h5>
             {data?.item}
             <span

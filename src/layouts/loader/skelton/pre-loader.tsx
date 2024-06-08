@@ -1,11 +1,11 @@
-"use client";
+'use client';
 
-import { useEffect, useState } from "react";
-import SkeletonHeader from "./common/header";
-import SkeletonSearch from "./common/search-panel";
-import SkeletonFilter from "./common/filter-panel";
-import SkeletonSidebar from "./common/sidebar";
-import SkeletonProducts from "./common/grid-view";
+import { useEffect, useState } from 'react';
+import SkeletonHeader from './common/header';
+import SkeletonSearch from './common/search-panel';
+import SkeletonFilter from './common/filter-panel';
+import SkeletonSidebar from './common/sidebar';
+import SkeletonProducts from './common/grid-view';
 
 const PreLoader: React.FC<ILoaderProps> = ({ loaderTimeout, side }) => {
   const loadingTime = loaderTimeout;
@@ -21,7 +21,7 @@ const PreLoader: React.FC<ILoaderProps> = ({ loaderTimeout, side }) => {
     };
   }, [show]);
   return (
-    <div className={`skeleton_loader ${show ? "" : "loaderhide"}`}>
+    <div className={`skeleton_loader ${show ? '' : 'loaderhide'}`}>
       <SkeletonHeader />
       <div className="breadcrumb-section dark-bg"></div>
       <SkeletonSearch />
@@ -32,15 +32,21 @@ const PreLoader: React.FC<ILoaderProps> = ({ loaderTimeout, side }) => {
               <SkeletonFilter />
             </div>
 
-            {side !== "no" && (
-              <div className={`col-lg-3 ${side === "right" ? "order-1" : ""}`}>
+            {side !== 'no' && (
+              <div className={`col-lg-3 ${side === 'right' ? 'order-1' : ''}`}>
                 <SkeletonSidebar />
               </div>
             )}
-            <div className={`${side === "no" ? "col-lg-12" : "col-lg-9"} ratio3_2`}>
+            <div
+              className={`${side === 'no' ? 'col-lg-12' : 'col-lg-9'} ratio3_2`}
+            >
               <a href="#" className="mobile-filter border-top-0">
                 <h5></h5>
-                <img src="/assets/images/icon/adjust.png" className="img-fluid" alt="" />
+                <img
+                  src="/assets/images/icon/adjust.png"
+                  className="img-fluid"
+                  alt=""
+                />
               </a>
               <SkeletonProducts />
             </div>

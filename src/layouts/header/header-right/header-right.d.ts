@@ -1,4 +1,4 @@
-  interface IHeaderRightProps {
+interface IHeaderRightProps {
   userBgClass?: string;
 }
 

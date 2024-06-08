@@ -1,4 +1,4 @@
-import { createReducer } from "@reduxjs/toolkit";
+import { createReducer } from '@reduxjs/toolkit';
 
 interface IRestaurantReducerProps {
   [key: string]: any;
@@ -6,7 +6,11 @@ interface IRestaurantReducerProps {
   cuisinesStatus: string[];
   deliverTimeStatus: string[];
 }
-var initialState: IRestaurantReducerProps = { popularStatus: [], cuisinesStatus: [], deliverTimeStatus: [] };
+var initialState: IRestaurantReducerProps = {
+  popularStatus: [],
+  cuisinesStatus: [],
+  deliverTimeStatus: [],
+};
 
 export const restaurantFilerReducer = createReducer(initialState, {
   popularStatus: (state, action) => {

@@ -8,11 +8,12 @@ export const config = {
   matcher: [
     '/',
     '/auth/:path*',
-    '/restaurant/:path*',
+    '/restaurants/:path*',
     '/user-dashboard/:path*',
     '/about-us/:path*',
     '/contact-us/:path*',
     '/faq/:path*',
+    '/booking/:path*',
   ],
 };
 
