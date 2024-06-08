@@ -3,7 +3,6 @@ import HomeBanner from '@/components/home/restaurant/classic/home-banner';
 import TopCategory from '@/components/home/restaurant/classic/top-category';
 import CustomLayout from '@/layouts/layout';
 import MenuSection from '@/components/home/restaurant/classic/menu-section';
-import Instagram from '@/components/home/restaurant/classic/instagram';
 
 async function getData() {
   // Verileri bir API veya başka bir kaynaktan çekin
@@ -28,7 +27,6 @@ const Home = async () => {
       <HomeBanner />
       <TopCategory />
       <MenuSection lunchMenus={data.lunchMenus} />
-      <Instagram />
     </CustomLayout>
   );
 };

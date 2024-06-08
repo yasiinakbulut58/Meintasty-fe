@@ -44,7 +44,7 @@ const PUBLIC_FILE = /\.(.*)$/;
 
 export function middleware(req: NextRequest) {
   let lng: any;
-  debugger;
+  // debugger;
 
   if (req.cookies.has(cookieName)) {
     const cookieValue = req.cookies.get(cookieName)?.value;

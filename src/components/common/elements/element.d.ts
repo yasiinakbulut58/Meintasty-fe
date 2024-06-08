@@ -5,7 +5,7 @@ interface IListProductBoxProps {
 }
 
 interface IProductBoxProps {
-  data:IBaseProps | ITravelProps;
+  data: IBaseProps | ITravelProps;
   view?: string;
   type?: string;
 }
@@ -17,12 +17,12 @@ export interface IExtendedProps {
 }
 
 interface RestaurantProductsProps {
-  data: IRestaurantProps; 
+  data: IRestaurantProps;
   view?: string;
 }
 
 interface IThumbnailSliderProps {
-  images: iImgDataProps[]|undefined;
+  images: iImgDataProps[] | undefined;
   videoData?: string;
   view?: string;
 }

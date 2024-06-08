@@ -3,8 +3,24 @@
 import { FC } from 'react';
 import Button from '../btn';
 import Link from 'next/link';
+import { signIn } from 'next-auth/react';
+import { useRouter } from 'next/navigation';
 
 const LoginForm: FC = () => {
+  const router = useRouter();
+  const handleSignIn = async () => {
+    let options = {
+      redirect: false,
+      email: 'demo@example.com',
+      password: '123456',
+      callbackUrl: '/',
+    };
+    const res = await signIn('credentials', options);
+    console.log(res);
+    if (res?.ok && res.status === 200) {
+      router.push('/');
+    }
+  };
   return (
     <form
       onSubmit={(event: React.FormEvent<HTMLFormElement>) =>
@@ -44,9 +60,13 @@ const LoginForm: FC = () => {
         </label>
       </div>
       <div className="button-bottom">
-        <Link href="/pages/other-pages/login">
-          <Button btnClass="w-100 btn btn-solid btn-outline" name="login" />
-        </Link>
+        <button
+          type="button"
+          className="w-100 btn btn-solid btn-outline color1"
+          onClick={handleSignIn}
+        >
+          login
+        </button>
         <div className="divider">
           <h6>or</h6>
         </div>

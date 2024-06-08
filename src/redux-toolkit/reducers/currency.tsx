@@ -1,6 +1,6 @@
-import { createSlice, PayloadAction } from '@reduxjs/toolkit';
-import { RootState } from '../store';
-import { currencyData } from '@/data/common-data';
+import { createSlice, PayloadAction } from "@reduxjs/toolkit";
+import { RootState } from "../store";
+import { currencyData } from "@/data/common-data";
 
 interface ICurrencyProps {
   currency: string;
@@ -10,14 +10,14 @@ interface ICurrencyProps {
 }
 
 const initialState: ICurrencyProps = {
-  currency: 'USD',
-  name: 'dollar',
-  symbol: '$',
+  currency: "USD",
+  name: "dollar",
+  symbol: "$",
   currencyValue: 1,
 };
 
 const currencySlice = createSlice({
-  name: 'currency',
+  name: "currency",
   initialState,
   reducers: {
     setCurrencyChange: (state, action: PayloadAction<string>) => {

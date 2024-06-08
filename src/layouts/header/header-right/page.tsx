@@ -4,10 +4,19 @@ import { Fragment, useState } from 'react';
 import Link from 'next/link';
 import Language from './language';
 import { IHeaderRightProps } from './header-right';
+import { signOut, useSession } from 'next-auth/react';
 
 const HeaderRight: React.FC<IHeaderRightProps> = ({ userBgClass }) => {
   const [settingIcon, setSettingIcon] = useState(false);
-  const isUser = false;
+  const { data: session } = useSession();
+
+  const [isOpenAccount, setIsOpen] = useState(false);
+
+  const toggle = () => {
+    setIsOpen((prev) => !prev);
+  };
+
+  const isUser = !!session?.user;
   return (
     <ul className="header-right">
       {!isUser && (
@@ -28,11 +37,22 @@ const HeaderRight: React.FC<IHeaderRightProps> = ({ userBgClass }) => {
         <Fragment key={i}>
           {value.title === 'language' && <Language value={value} />}
           {value.title === 'user' && isUser && (
-            <li className={`${userBgClass && userBgClass}`}>
-              <Link href="/pages/other-pages/login">
-                <i className="fas fa-user"></i>
-              </Link>
-            </li>
+            <>
+              <li className={`${userBgClass && userBgClass}`}>
+                <Link href="/user-dashboard">
+                  <i className="fas fa-user"></i>
+                </Link>
+              </li>
+              <li className={`${userBgClass && userBgClass} h-33 p-0`}>
+                <button
+                  type="button"
+                  onClick={() => signOut({ callbackUrl: '/', redirect: true })}
+                  className="btn fw-bolder text-white"
+                >
+                  <i className="fas fa-sign-out-alt"></i>
+                </button>
+              </li>
+            </>
           )}
           {value.title === 'setting' && (
             <li className="setting">

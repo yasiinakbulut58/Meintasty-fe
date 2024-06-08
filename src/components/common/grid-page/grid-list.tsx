@@ -1,21 +1,28 @@
-import { FC, useState } from "react";
-import { useDispatch } from "react-redux";
-import LatestFilters from "@/components/hotels/filters/latest-filter";
-import { IGridListProps } from "./grid-page.d";
+import { FC, useState } from 'react';
+import { useDispatch } from 'react-redux';
+import { IGridListProps } from './grid-page.d';
+import LatestFilters from '@/components/hotels/filters/latest-filter';
 
-const GridList: FC<IGridListProps> = ({ callTourModal, tourModalOpen, topFilter, value, mapModal, grid4Img, setMapModal, type, side, gridSelect }) => {
+const GridList: FC<IGridListProps> = ({
+  callTourModal,
+  tourModalOpen,
+  topFilter,
+  value,
+  mapModal,
+  grid4Img,
+  setMapModal,
+  type,
+  side,
+  gridSelect,
+}) => {
   const dispatch = useDispatch();
   const [mapModalOpen, setMapModalOpen] = useState(false);
 
   return (
     <div className="right-panel">
-      {type === "tour" &&
-        callTourModal && ( 
-          <a className="view-map" onClick={() => callTourModal(!tourModalOpen)}>
-            <i className="fas fa-search"></i> find tours
-          </a>
-        )}
-      {topFilter && side === "no" && <LatestFilters value={value} filterStyle="horizontal" type={type} />}
+      {topFilter && side === 'no' && (
+        <LatestFilters value={value} filterStyle="horizontal" type={type} />
+      )}
       {mapModal && (
         <>
           <a
@@ -23,10 +30,11 @@ const GridList: FC<IGridListProps> = ({ callTourModal, tourModalOpen, topFilter,
             data-bs-toggle="modal"
             data-bs-target="#exampleModalCenter"
             onClick={() => {
-              setMapModal && setMapModal(!mapModalOpen); 
+              setMapModal && setMapModal(!mapModalOpen);
               setMapModalOpen(!mapModalOpen);
             }}
-            className="view-map">
+            className="view-map"
+          >
             view on map <span className="arrow">click to view</span>
           </a>
         </>
@@ -34,7 +42,7 @@ const GridList: FC<IGridListProps> = ({ callTourModal, tourModalOpen, topFilter,
       {!gridSelect && (
         <div className="collection-grid-view">
           <ul className="filter-select">
-            <li onClick={() => dispatch({ type: "gridSize", payload: 2 })}>
+            <li onClick={() => dispatch({ type: 'gridSize', payload: 2 })}>
               <a href="#" className="product-4-layout-view">
                 <ul className="filter-select">
                   <li></li>
@@ -42,7 +50,7 @@ const GridList: FC<IGridListProps> = ({ callTourModal, tourModalOpen, topFilter,
                 </ul>
               </a>
             </li>
-            <li onClick={() => dispatch({ type: "gridSize", payload: 3 })}>
+            <li onClick={() => dispatch({ type: 'gridSize', payload: 3 })}>
               <a href="#" className="product-4-layout-view">
                 <ul className="filter-select">
                   <li></li>
@@ -52,7 +60,7 @@ const GridList: FC<IGridListProps> = ({ callTourModal, tourModalOpen, topFilter,
               </a>
             </li>
             {grid4Img && (
-              <li onClick={() => dispatch({ type: "gridSize", payload: 4 })}>
+              <li onClick={() => dispatch({ type: 'gridSize', payload: 4 })}>
                 <a href="#" className="product-4-layout-view">
                   <ul className="filter-select">
                     <li></li>

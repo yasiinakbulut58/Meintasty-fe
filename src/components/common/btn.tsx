@@ -4,7 +4,11 @@ interface IButtonProps {
 }
 
 const Button: React.FC<IButtonProps> = ({ btnClass, name }) => {
-  return <button className={`btn ${btnClass} color1`} type="button">{name}</button>;
+  return (
+    <button className={`btn ${btnClass} color1`} type="button">
+      {name}
+    </button>
+  );
 };
 
 export default Button;

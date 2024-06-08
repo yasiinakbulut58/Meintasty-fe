@@ -17,7 +17,7 @@ interface IMasonryProps {
 }
 
 interface ICreativeProps {
-  value: IBaseProps[]|any;
+  value: IBaseProps[] | any;
   grid?: IGridFilterProps | undefined;
 }
 
@@ -34,7 +34,7 @@ interface IBlogsSidebarProps {
 }
 
 interface IBlogContentProps {
-  sectionClass?:boolean
+  sectionClass?: boolean;
   value: IBlogProps[];
   side: string;
   size?: number;
