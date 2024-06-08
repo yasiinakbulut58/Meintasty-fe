@@ -13,9 +13,9 @@ const Logo: React.FC<ILogoProps> = ({ logo }) => {
           <Link href={`/${i18LangStatus}`}>
             <Image
               src="/assets/images/icon/footer-logo.png"
-              alt=""
+              alt="logo-clasic"
               className="img-fluid"
-              width={140}
+              width={100}
               height={140}
             />
           </Link>
