@@ -16,7 +16,7 @@ interface IBreadcrumbProps {
 const Breadcrumb: FC<IBreadcrumbProps> = ({
   title,
   subTitle,
-  bannerImg,
+  bannerImg = '/assets/images/restaurant/background/1.jpg',
   mainTitle,
   animation,
   class1,

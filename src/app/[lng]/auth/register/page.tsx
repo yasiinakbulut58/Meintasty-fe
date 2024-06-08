@@ -8,11 +8,7 @@ import LoginPage from '@/components/pages/other-pages/login/page';
 const Register: FC = () => {
   return (
     <>
-      <Breadcrumb
-        title={'home'}
-        subTitle={'sign up'}
-        bannerImg={'/assets/images/restaurant/background/1.jpg'}
-      />
+      <Breadcrumb title={'home'} subTitle={'sign up'} />
       <LoginPage title="sign up" />
     </>
   );

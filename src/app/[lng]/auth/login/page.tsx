@@ -6,11 +6,7 @@ import LoginPage from '@/components/pages/other-pages/login/page';
 const Login: FC = () => {
   return (
     <>
-      <Breadcrumb
-        title={'home'}
-        subTitle={'login'}
-        bannerImg={'/assets/images/restaurant/background/1.jpg'}
-      />
+      <Breadcrumb title={'home'} subTitle={'login'} />
       <LoginPage title="login" />
     </>
   );
