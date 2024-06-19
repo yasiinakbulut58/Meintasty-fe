@@ -7,6 +7,7 @@ import { getServerSession } from 'next-auth/next';
 import { options } from '../api/auth/[...nextauth]/options';
 import { Providers } from '@/redux-toolkit/provider';
 import CustomLayout from '@/layouts/layout';
+import { PropsWithChildren } from 'react';
 
 export const metadata = {
   title: 'Meintasty',
@@ -20,9 +21,8 @@ const RootLayout = async ({
   children,
   params: { lng },
 }: {
-  children: React.ReactNode;
   params: { lng: string };
-}) => {
+} & PropsWithChildren) => {
   const session = await getServerSession(options);
 
   return (
