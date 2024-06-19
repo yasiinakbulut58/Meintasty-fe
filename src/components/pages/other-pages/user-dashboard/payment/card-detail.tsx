@@ -1,7 +1,7 @@
-"use client";
-import Img from "@/utils/BackgroundImageRatio";
-import { FC, useState } from "react";
-import EditCardModal from "./edit-card";
+'use client';
+import Img from '@/utils/BackgroundImageRatio';
+import { FC, useState } from 'react';
+import EditCardModal from './edit-card';
 
 const CardDetail: FC<ICardDetailProps> = ({ card }) => {
   const [modal, setModal] = useState(false);
@@ -25,7 +25,7 @@ const CardDetail: FC<ICardDetailProps> = ({ card }) => {
               <div className="date">
                 <h3>{card.validThru}</h3>
               </div>
-              {card.type === "master" && (
+              {card.type === 'master' && (
                 <div className="primary">
                   <span className="badge bg-pill badge-light">primary</span>
                 </div>
@@ -36,12 +36,17 @@ const CardDetail: FC<ICardDetailProps> = ({ card }) => {
                 <h5>{card.name}</h5>
               </div>
               <div className="card-img">
-                <Img src={card.imgSrc} className="img-fluid " alt="" />
+                <Img src={card.imgSrc} className="img-fluid" alt="" />
               </div>
             </div>
           </div>
           <div className="edit-card">
-            <a data-bs-toggle="modal" data-bs-target="#edit-card" href="#" onClick={() => setModal(true)}>
+            <a
+              data-bs-toggle="modal"
+              data-bs-target="#edit-card"
+              href="#"
+              onClick={() => setModal(true)}
+            >
               <i className="far fa-edit"></i> edit
             </a>
             <a href="#">
@@ -50,7 +55,12 @@ const CardDetail: FC<ICardDetailProps> = ({ card }) => {
           </div>
         </div>
         <div className="edit-card-mobile">
-          <a data-bs-toggle="modal" data-bs-target="#edit-card" href="#" onClick={handleCardClick}>
+          <a
+            data-bs-toggle="modal"
+            data-bs-target="#edit-card"
+            href="#"
+            onClick={handleCardClick}
+          >
             <i className="far fa-edit"></i> edit
           </a>
           <a href="#">

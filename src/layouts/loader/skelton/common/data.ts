@@ -1,25 +1,25 @@
 export const menuItems = [
-  { title: "Home", link: "#" },
-  { title: "Hotel", link: "#" },
-  { title: "Tour", link: "#" },
-  { title: "Flight", link: "#" },
-  { title: "Cab", link: "#" },
-  { title: "Restaurant", link: "#" },
-  { title: "Pages", link: "#" },
+  { title: 'Home', link: '#' },
+  { title: 'Hotel', link: '#' },
+  { title: 'Tour', link: '#' },
+  { title: 'Flight', link: '#' },
+  { title: 'Cab', link: '#' },
+  { title: 'Restaurant', link: '#' },
+  { title: 'Pages', link: '#' },
 ];
 
 export const settingsOptions = [
-  { value: "USD", label: "USD" },
-  { value: "EUR", label: "EUR" },
-  { value: "INR", label: "INR" },
-  { value: "AUD", label: "AUD" },
+  { value: 'USD', label: 'USD' },
+  { value: 'EUR', label: 'EUR' },
+  { value: 'INR', label: 'INR' },
+  { value: 'AUD', label: 'AUD' },
 ];
 
 export const languageOptions = [
-  { value: "en", label: "ENG" },
-  { value: "fr", label: "FRE" },
-  { value: "es", label: "SPA" },
-  { value: "ar", label: "ARB" },
+  { value: 'en', label: 'ENG' },
+  { value: 'fr', label: 'FRE' },
+  { value: 'es', label: 'SPA' },
+  { value: 'ar', label: 'ARB' },
 ];
 
 interface ISpecialBox {
@@ -30,23 +30,23 @@ interface ISpecialBox {
 
 export const skeletonData: ISpecialBox[] = [
   {
-    title: "",
-    price: "",
+    title: '',
+    price: '',
     rating: 0,
   },
   {
-    title: "",
-    price: "",
+    title: '',
+    price: '',
     rating: 0,
   },
   {
-    title: "",
-    price: "",
+    title: '',
+    price: '',
     rating: 0,
   },
   {
-    title: "",
-    price: "",
+    title: '',
+    price: '',
     rating: 0,
   },
 ];

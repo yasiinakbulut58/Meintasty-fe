@@ -1,7 +1,7 @@
-"use client"
-import { FC } from "react";
-import { Button, Modal, ModalBody, ModalFooter, ModalHeader } from "reactstrap";
-import EditProfileForm from "./EditProfileForm";
+'use client';
+import { FC } from 'react';
+import { Button, Modal, ModalBody, ModalFooter, ModalHeader } from 'reactstrap';
+import EditProfileForm from './EditProfileForm';
 
 const EditProfile: FC<EditProfileInterFace> = ({ open, toggle }) => {
   return (
@@ -13,17 +13,13 @@ const EditProfile: FC<EditProfileInterFace> = ({ open, toggle }) => {
         <EditProfileForm />
       </ModalBody>
       <div className="modal-footer">
-        <button
-          type="button"
-          className="btn btn-secondary"
-          onClick={toggle}
-        >
+        <button type="button" className="btn btn-secondary" onClick={toggle}>
           Close
         </button>
         <button type="button" className="btn btn-solid">
           Save changes
         </button>
-      </div>{" "}
+      </div>{' '}
     </Modal>
   );
 };

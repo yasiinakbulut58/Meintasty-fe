@@ -1,19 +1,18 @@
 export const categoryData = [
   {
     id: 1,
-    type: "all",
+    type: 'all',
   },
   {
     id: 2,
-    type: "popular",
+    type: 'popular',
   },
   {
     id: 3,
-    type: "latest",
+    type: 'latest',
   },
   {
     id: 4,
-    type: "trend",
+    type: 'trend',
   },
 ];
-

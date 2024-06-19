@@ -11,7 +11,8 @@ interface ISubMenu {
 }
 
 interface IMeghaMenuProps {
-  isOpen: any; setIsOpen: any
+  isOpen: any;
+  setIsOpen: any;
   item: {
     title?: string;
     children?: ISubMenu[];
@@ -19,12 +20,13 @@ interface IMeghaMenuProps {
 }
 
 interface IDropdownMenuProps {
-  isOpen: any; setIsOpen: any
+  isOpen: any;
+  setIsOpen: any;
   level: number;
   item: {
     type?: string;
     path?: string;
-    title?: "home" |"title" |string;
+    title?: 'home' | 'title' | string;
     // title?:
     // "home"
     // | "hotel"

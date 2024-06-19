@@ -1,10 +1,15 @@
-import { FC } from "react";
+import { FC } from 'react';
 
 interface SearchField {
   label: string;
 }
 
-const searchFields: SearchField[] = [{ label: "" }, { label: "" }, { label: "" }, { label: "" }];
+const searchFields: SearchField[] = [
+  { label: '' },
+  { label: '' },
+  { label: '' },
+  { label: '' },
+];
 
 const SkeletonSearch: FC = () => {
   const renderSearchFields = () => {
@@ -34,7 +39,9 @@ const SkeletonSearch: FC = () => {
         <a href="#" className="section-title collapse-block-title">
           <h5></h5>
         </a>
-        <div className="collection-collapse-block-content ">{renderSearchFields()}</div>
+        <div className="collection-collapse-block-content">
+          {renderSearchFields()}
+        </div>
       </div>
     </div>
   );

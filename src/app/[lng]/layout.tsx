@@ -1,4 +1,3 @@
-import { Providers } from '@/redux-toolkit/provider';
 import '@/public/assets/scss/globals.scss';
 import 'react-toastify/dist/ReactToastify.css';
 import { ToastContainer } from 'react-toastify';
@@ -6,6 +5,8 @@ import { languages } from '../i18n/settings';
 import SProvider from '../../components/providers/SProvider';
 import { getServerSession } from 'next-auth/next';
 import { options } from '../api/auth/[...nextauth]/options';
+import { Providers } from '@/redux-toolkit/provider';
+import CustomLayout from '@/layouts/layout';
 
 export const metadata = {
   title: 'Meintasty',
@@ -61,9 +62,15 @@ const RootLayout = async ({
         />
       </head>
       <body>
-        <SProvider session={session}>
-          <Providers>
-            <>{children}</>
+        <Providers>
+          <SProvider session={session}>
+            <CustomLayout
+              title="overlay-black"
+              loader="food"
+              userBgClass="user user-light"
+            >
+              {children}
+            </CustomLayout>
             <ToastContainer
               position="bottom-right"
               autoClose={500}
@@ -76,8 +83,8 @@ const RootLayout = async ({
               pauseOnHover
               theme="colored"
             />
-          </Providers>
-        </SProvider>
+          </SProvider>
+        </Providers>
       </body>
     </html>
   );

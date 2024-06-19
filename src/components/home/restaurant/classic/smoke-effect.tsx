@@ -1,6 +1,6 @@
-"use client";
-import { FC, useEffect, useRef } from "react";
-import { CSSProperties } from "react"; // Import CSSProperties type
+'use client';
+import { FC, useEffect, useRef } from 'react';
+import { CSSProperties } from 'react'; // Import CSSProperties type
 
 const SmokeEffect: FC = () => {
   const canvasRef = useRef<HTMLCanvasElement | null>(null);
@@ -10,7 +10,7 @@ const SmokeEffect: FC = () => {
     const canvas = canvasRef.current;
     if (!canvas) return;
 
-    const ctx = canvas.getContext("2d");
+    const ctx = canvas.getContext('2d');
     if (!ctx) return;
 
     canvas.width = window.innerWidth;
@@ -39,7 +39,7 @@ const SmokeEffect: FC = () => {
 
         ctx.beginPath();
         ctx.arc(particle.x, particle.y, particle.size, 0, Math.PI * 2);
-        ctx.fillStyle = "rgba(255, 255, 255, 0.5)";
+        ctx.fillStyle = 'rgba(255, 255, 255, 0.5)';
         ctx.fill();
       });
 
@@ -55,10 +55,10 @@ const SmokeEffect: FC = () => {
 
   return (
     <div className="vapour">
-      <span style={{ "--i" : 1 } as CSSProperties}></span>
-      <span style={{ "--i" : 3 } as CSSProperties}></span>
-      <span style={{ "--i" : 16 } as CSSProperties}></span>
-      <canvas ref={canvasRef} style={{ display: "none" }} />
+      <span style={{ '--i': 1 } as CSSProperties}></span>
+      <span style={{ '--i': 3 } as CSSProperties}></span>
+      <span style={{ '--i': 16 } as CSSProperties}></span>
+      <canvas ref={canvasRef} style={{ display: 'none' }} />
     </div>
   );
 };

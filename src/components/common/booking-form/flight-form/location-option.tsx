@@ -1,11 +1,22 @@
-import { OneWay, RoundTrip } from "@/constant/constant";
-import { FC } from "react";
+import { OneWay, RoundTrip } from '@/constant/constant';
+import { FC } from 'react';
 
-const LocationOption: FC<LocationOptionProps> = ({ isRoundTrip, onOptionChange }) => {
+const LocationOption: FC<LocationOptionProps> = ({
+  isRoundTrip,
+  onOptionChange,
+}) => {
   return (
     <div className="location-option d-flex">
       <div className="form-check form-check-inline">
-        <input className="form-check-input" type="radio" name="exampleRadios" id="exampleRadios1" value="option1" checked={isRoundTrip} onChange={() => onOptionChange(true)} />
+        <input
+          className="form-check-input"
+          type="radio"
+          name="exampleRadios"
+          id="exampleRadios1"
+          value="option1"
+          checked={isRoundTrip}
+          onChange={() => onOptionChange(true)}
+        />
         <label className="text-dark form-check-label" htmlFor="exampleRadios1">
           {RoundTrip}
         </label>

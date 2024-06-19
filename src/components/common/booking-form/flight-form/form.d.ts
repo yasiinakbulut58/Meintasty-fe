@@ -5,7 +5,10 @@ interface LocationOptionProps {
 
 interface IQuantityInputProps<T extends number | number[]> {
   quantities?: T;
-  handleQuantityChange?: (index: number, value: T extends number[] ? number : T) => void;
+  handleQuantityChange?: (
+    index: number,
+    value: T extends number[] ? number : T,
+  ) => void;
   index?: number;
   setOpen?: Function;
   open?: boolean;

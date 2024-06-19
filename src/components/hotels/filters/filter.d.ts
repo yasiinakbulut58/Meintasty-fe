@@ -28,11 +28,17 @@ interface IPrice {
 }
 
 interface IFiltersProps {
-  value: IHotelProps[] | ITravelProps[] | IFlightProps[] | ICabProps[] | IRestaurantProps[] | undefined;
+  value:
+    | IHotelProps[]
+    | ITravelProps[]
+    | IFlightProps[]
+    | ICabProps[]
+    | IRestaurantProps[]
+    | undefined;
   latestFilter?: boolean;
   filterStyle?: string;
   popular?: boolean;
   type: string | undefined;
-  showFilter?:boolean
-  setShowFilter?:(val:boolean)=>void
+  showFilter?: boolean;
+  setShowFilter?: (val: boolean) => void;
 }

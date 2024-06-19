@@ -1,7 +1,7 @@
-"use client";
-import { Adult } from "@/constant/constant";
+'use client';
+import { Adult } from '@/constant/constant';
 
-import QuantityInput from "./qty-inputs";
+import QuantityInput from './qty-inputs';
 
 const QtyBox: React.FC = () => {
   return (

@@ -1,13 +1,17 @@
-import Rating from "@/components/common/rating";
-import Img from "@/utils/BackgroundImageRatio";
-import HotelBannerDetail from "../hotel-detail-banner/page";
+import Rating from '@/components/common/rating';
+import Img from '@/utils/BackgroundImageRatio';
+import HotelBannerDetail from '../hotel-detail-banner/page';
 
 const HomeBanner = () => {
   return (
     <section className="hotel-single-section pt-0">
-      <Img src="/assets/images/single-hotel/bg-2.jpg" className="bg-img bg-bottom img-fluid" alt="" />
+      <Img
+        src="/assets/images/single-hotel/bg-2.jpg"
+        className="bg-img img-fluid bg-bottom"
+        alt=""
+      />
       <div className="hotel-title-section">
-        <div className="container ">
+        <div className="container">
           <div className="row">
             <div className="col-12">
               <HotelBannerDetail />

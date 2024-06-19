@@ -1,11 +1,11 @@
-"use client"
-import React, { FC } from "react";
-import { Modal, ModalBody, ModalHeader } from "reactstrap";
+'use client';
+import React, { FC } from 'react';
+import { Modal, ModalBody, ModalHeader } from 'reactstrap';
 
 const PasswordModalShow: FC<MultipleModalInterFace> = ({ open, toggle }) => {
   return (
-    <Modal centered isOpen={open} toggle={() => toggle("password")}>
-      <ModalHeader toggle={() => toggle("password")}>
+    <Modal centered isOpen={open} toggle={() => toggle('password')}>
+      <ModalHeader toggle={() => toggle('password')}>
         <h5 className="modal-title">change password</h5>
       </ModalHeader>
       <ModalBody>
@@ -27,9 +27,17 @@ const PasswordModalShow: FC<MultipleModalInterFace> = ({ open, toggle }) => {
         </form>
       </ModalBody>
       <div className="modal-footer">
-        <button type="button" className="btn btn-secondary" onClick={() => toggle("password")}>Close</button>
-        <button type="button" className="btn btn-solid">Save changes</button>
-      </div>{" "}
+        <button
+          type="button"
+          className="btn btn-secondary"
+          onClick={() => toggle('password')}
+        >
+          Close
+        </button>
+        <button type="button" className="btn btn-solid">
+          Save changes
+        </button>
+      </div>{' '}
     </Modal>
   );
 };

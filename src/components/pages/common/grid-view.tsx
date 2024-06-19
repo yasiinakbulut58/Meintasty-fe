@@ -1,10 +1,10 @@
-import CategoryPage from "@/components/common/filters/category";
-import { FC, useCallback, useState, useEffect } from "react";
-import { useDispatch, useSelector } from "react-redux";
-import GridLayoutPage from "./grid-layout";
-import CreativePage from "../portfolio/creative-3/page";
-import { RootState } from "@/redux-toolkit/store";
-import MasonaryLayout from "./MasonaryLayout";
+import CategoryPage from '@/components/common/filters/category';
+import { FC, useCallback, useState, useEffect } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
+import GridLayoutPage from './grid-layout';
+import CreativePage from '../portfolio/creative-3/page';
+import { RootState } from '@/redux-toolkit/store';
+import MasonaryLayout from './MasonaryLayout';
 
 interface IBaseProps {
   // Define common properties here
@@ -18,7 +18,13 @@ interface IGridViewProps {
   view?: string;
 }
 
-const GridView: FC<IGridViewProps> = ({value,size,gridType,type,view}) => {
+const GridView: FC<IGridViewProps> = ({
+  value,
+  size,
+  gridType,
+  type,
+  view,
+}) => {
   const dispatch = useDispatch();
   const grid = useSelector((state: RootState) => state.gridReducer);
   const [filteredMenu, setFilteredMenu] = useState<IBaseProps[] | undefined>();
@@ -26,29 +32,39 @@ const GridView: FC<IGridViewProps> = ({value,size,gridType,type,view}) => {
     (data: IBaseProps[]) => {
       setFilteredMenu(data);
     },
-    [value]
+    [value],
   );
 
   useEffect(() => {
     setFilteredMenu(value);
-    dispatch({ type: "gridSize", payload: size });
-    dispatch({ type: "gridStyle", payload: gridType });
+    dispatch({ type: 'gridSize', payload: size });
+    dispatch({ type: 'gridStyle', payload: gridType });
   }, [value]);
 
   return (
-    <section className="portfolio-section bg-white small-section ratio2_3">
+    <section className="portfolio-section small-section ratio2_3 bg-white">
       <div className="container">
         <div className="filter-button-group">
           <CategoryPage value={value} getCategories={getCategories} />
         </div>
-        
-        <div className="row content grid zoom-gallery">
-          {view == "creative" ? (
+
+        <div className="row content zoom-gallery grid">
+          {view == 'creative' ? (
             <CreativePage value={filteredMenu} grid={grid} />
-          ) : view == "masonry" ? (
-            <MasonaryLayout grid={grid} value={filteredMenu} type={type} view={view}/>
+          ) : view == 'masonry' ? (
+            <MasonaryLayout
+              grid={grid}
+              value={filteredMenu}
+              type={type}
+              view={view}
+            />
           ) : (
-            <GridLayoutPage grid={grid} value={filteredMenu} type={type} view={view}/>
+            <GridLayoutPage
+              grid={grid}
+              value={filteredMenu}
+              type={type}
+              view={view}
+            />
           )}
         </div>
       </div>

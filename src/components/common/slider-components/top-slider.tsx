@@ -1,19 +1,21 @@
-"use client";
-import { FC } from "react";
-import Rating from "@/components/common/rating";
-import { slide4 } from "@/components/common/slider-options";
-import { New } from "@/constant/constant";
-import { RootState } from "@/redux-toolkit/store";
-import Img from "@/utils/BackgroundImageRatio";
-import { useSelector } from "react-redux";
-import Slider from "react-slick";
+'use client';
+import { FC } from 'react';
+import Rating from '@/components/common/rating';
+import { slide4 } from '@/components/common/slider-options';
+import { New } from '@/constant/constant';
+import { RootState } from '@/redux-toolkit/store';
+import Img from '@/utils/BackgroundImageRatio';
+import { useSelector } from 'react-redux';
+import Slider from 'react-slick';
 
 const TopSlider: FC<ITopSliderProps> = ({ sliderData, titleClass }) => {
-  const { symbol, currencyValue } = useSelector((state: RootState) => state.currency);
+  const { symbol, currencyValue } = useSelector(
+    (state: RootState) => state.currency,
+  );
   return (
     <section className={titleClass}>
       <Slider {...slide4} className="category-4 no-arrow">
-        {sliderData.map((data: ITopCategoryProps,index) => (
+        {sliderData.map((data: ITopCategoryProps, index) => (
           <div key={index}>
             <div className="top_box">
               <div className="img-part">
@@ -26,7 +28,7 @@ const TopSlider: FC<ITopSliderProps> = ({ sliderData, titleClass }) => {
                   <h5>
                     {data.title} <i className="fas fa-heart"></i>
                   </h5>
-                  <Rating    />
+                  <Rating />
                   <p>{data.desc}</p>
                   <h6>
                     <del>

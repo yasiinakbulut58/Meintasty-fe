@@ -1,4 +1,4 @@
-import { createReducer } from "@reduxjs/toolkit";
+import { createReducer } from '@reduxjs/toolkit';
 
 interface ICabReducerProps {
   [key: string]: any;
@@ -6,7 +6,11 @@ interface ICabReducerProps {
   capacityStatus: string[];
   cabOptionStatus: string[];
 }
-var initialState: ICabReducerProps = { cabTypeStatus: [], capacityStatus: [], cabOptionStatus: [] };
+var initialState: ICabReducerProps = {
+  cabTypeStatus: [],
+  capacityStatus: [],
+  cabOptionStatus: [],
+};
 
 export const cabFilterReducer = createReducer(initialState, {
   cabTypeStatus: (state, action) => {

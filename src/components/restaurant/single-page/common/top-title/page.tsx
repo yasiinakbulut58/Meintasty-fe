@@ -1,6 +1,6 @@
-import { FC } from "react";
+import { FC } from 'react';
 
-const TopTitleBar:FC = () => {
+const TopTitleBar: FC = () => {
   return (
     <div className="top-title-bar">
       <div className="container">

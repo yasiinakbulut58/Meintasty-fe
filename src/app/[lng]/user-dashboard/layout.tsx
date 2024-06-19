@@ -1,5 +1,4 @@
 import '@/public/assets/scss/globals.scss';
-import CustomLayout from '@/layouts/layout';
 import RequireAuth from '@/components/providers/RequireAuth';
 
 export const metadata = {
@@ -8,15 +7,7 @@ export const metadata = {
 };
 
 const RootLayout = ({ children }: { children: React.ReactNode }) => {
-  return (
-    <CustomLayout
-      title="overlay-black"
-      loader="food"
-      userBgClass="user user-light"
-    >
-      <RequireAuth>{children}</RequireAuth>
-    </CustomLayout>
-  );
+  return <RequireAuth>{children}</RequireAuth>;
 };
 
 export default RootLayout;

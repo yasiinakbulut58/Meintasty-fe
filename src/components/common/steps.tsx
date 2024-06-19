@@ -1,4 +1,4 @@
-import Img from "@/utils/BackgroundImageRatio";
+import Img from '@/utils/BackgroundImageRatio';
 
 interface IStepsProps {
   stepsData: {
@@ -13,11 +13,11 @@ const Steps: React.FC<IStepsProps> = ({ stepsData, titleClass }) => {
   return (
     <div className={`step-bg ${titleClass && titleClass}`}>
       <div className="row">
-        {stepsData.map((data: IBookingData,index) => (
+        {stepsData.map((data: IBookingData, index) => (
           <div className="col-md-3" key={index}>
             <div className="step-box">
-              <div className="tourImg bg-size ">
-                <Img src={data.img} className=" filter-none" alt="" />
+              <div className="tourImg bg-size">
+                <Img src={data.img} className="filter-none" alt="" />
                 <h4>{data.title}</h4>
               </div>
             </div>

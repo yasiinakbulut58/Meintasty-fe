@@ -1,12 +1,12 @@
-import { FC } from "react";
+import { FC } from 'react';
 
 interface IAboutProps {
-  aboutData: IStartProps[];
+  aboutData: any[];
 }
 const AboutCommon: FC<IAboutProps> = ({ aboutData }) => {
   return (
     <>
-      {aboutData.map((data: IStartProps,index) => (
+      {aboutData.map((data: any, index) => (
         <div className="col-xl-3 col-6" key={index}>
           <div className="highlight-box wow fadeInUp">
             <div>{data.svg}</div>

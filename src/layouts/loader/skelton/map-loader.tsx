@@ -1,10 +1,10 @@
-"use client";
+'use client';
 
-import { useEffect, useState } from "react";
-import SkeletonHeader from "./common/header";
-import SkeletonSearch from "./common/search-panel";
-import SkeletonFilter from "./common/filter-panel";
-import SkeletonMap from "./common/map";
+import { useEffect, useState } from 'react';
+import SkeletonHeader from './common/header';
+import SkeletonSearch from './common/search-panel';
+import SkeletonFilter from './common/filter-panel';
+import SkeletonMap from './common/map';
 
 const MapLoader: React.FC<ILoaderProps> = ({ loaderTimeout, side }) => {
   const loadingTime = loaderTimeout;
@@ -20,7 +20,7 @@ const MapLoader: React.FC<ILoaderProps> = ({ loaderTimeout, side }) => {
     };
   }, [show]);
   return (
-    <div className={`skeleton_loader ${show ? "" : "loaderhide"}`}>
+    <div className={`skeleton_loader ${show ? '' : 'loaderhide'}`}>
       <SkeletonHeader />
       <div className="breadcrumb-section dark-bg"></div>
       <SkeletonSearch />

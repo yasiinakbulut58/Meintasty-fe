@@ -1,4 +1,4 @@
-import { FC } from "react";
+import { FC } from 'react';
 
 interface ITitleProps {
   title: string;
@@ -8,7 +8,13 @@ interface ITitleProps {
   h2Class?: string;
 }
 
-const TitleComponent: FC<ITitleProps> = ({ title, subTitle, titleClass, span, h2Class }) => {
+const TitleComponent: FC<ITitleProps> = ({
+  title,
+  subTitle,
+  titleClass,
+  span,
+  h2Class,
+}) => {
   return (
     <div className={titleClass}>
       <span className="title-label">{title}</span>

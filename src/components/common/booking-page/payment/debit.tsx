@@ -1,11 +1,15 @@
-import SuccessBtn from "@/components/hotels/booking/checkout/payment-section/success-btn";
-import Img from "@/utils/BackgroundImageRatio";
-import { FC } from "react";
+import SuccessBtn from '@/components/hotels/booking/checkout/payment-section/success-btn';
+import Img from '@/utils/BackgroundImageRatio';
+import { FC } from 'react';
 
-const DebitCard:FC = () => {
+const DebitCard: FC = () => {
   return (
     <div className="card-body" id="example-collapse-text">
-      <form onSubmit={(event: React.FormEvent<HTMLFormElement>)=>event.preventDefault()}>
+      <form
+        onSubmit={(event: React.FormEvent<HTMLFormElement>) =>
+          event.preventDefault()
+        }
+      >
         <div className="form-group">
           <label htmlFor="name">name on card</label>
           <input type="text" className="form-control" id="name" />
@@ -13,7 +17,11 @@ const DebitCard:FC = () => {
         <div className="form-group">
           <label htmlFor="number">card number</label>
           <input type="text" className="form-control" id="number" />
-          <Img src="/assets/images/creditcards.png" alt="" className="img-fluid" />
+          <Img
+            src="/assets/images/creditcards.png"
+            alt=""
+            className="img-fluid"
+          />
         </div>
         <div className="row">
           <div className="form-group col-md-4">
@@ -43,7 +51,12 @@ const DebitCard:FC = () => {
           </div>
           <div className="form-group col-md-4">
             <label htmlFor="cvv">cvv</label>
-            <input type="password" maxLength={4} className="form-control" id="cvv" />
+            <input
+              type="password"
+              maxLength={4}
+              className="form-control"
+              id="cvv"
+            />
             <Img src="/assets/images/cvv.png" className="img-fluid" alt="" />
           </div>
         </div>

@@ -1,11 +1,11 @@
-"use client";
-import React from "react";
-import ContactUs from "./contact-us";
-import About from "./about";
-import Location from "./location";
-import Links from "./links";
-import Updates from "./updates";
-import TopPlace from "./top-place";
+'use client';
+import React from 'react';
+import ContactUs from './contact-us';
+import About from './about';
+import Location from './location';
+import Links from './links';
+import Updates from './updates';
+import TopPlace from './top-place';
 
 const FooterContent: React.FC<IFooterComponentProps> = ({ place }) => {
   return (

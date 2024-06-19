@@ -1,4 +1,4 @@
-import { FC } from "react";
+import { FC } from 'react';
 
 interface ITitleThreeProps {
   title?: string;
@@ -10,7 +10,15 @@ interface ITitleThreeProps {
   h2Class?: string;
 }
 
-const TitleThree: FC<ITitleThreeProps> = ({ title, subTitle, desc, classTitle, span, pClass, h2Class }) => {
+const TitleThree: FC<ITitleThreeProps> = ({
+  title,
+  subTitle,
+  desc,
+  classTitle,
+  span,
+  pClass,
+  h2Class,
+}) => {
   return (
     <div className={classTitle}>
       {title && <span className="title-label">{title}</span>}

@@ -1,7 +1,7 @@
-import React, { FC, useState } from "react";
+import React, { FC, useState } from 'react';
 
 const NavSection: FC<NavSectionProps> = ({ links }) => {
-  const [searchValue, setSearchValue] = useState("");
+  const [searchValue, setSearchValue] = useState('');
 
   const handleSearchChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     setSearchValue(e.target.value);
@@ -15,7 +15,7 @@ const NavSection: FC<NavSectionProps> = ({ links }) => {
             {link.label}
           </a>
           <nav className="nav nav-pills flex-column">
-            {link.sublinks.map((sublink,index) => (
+            {link.sublinks.map((sublink, index) => (
               <a className="nav-link ms-3" href={sublink.href} key={index}>
                 {sublink.label}
               </a>
@@ -34,13 +34,20 @@ const NavSection: FC<NavSectionProps> = ({ links }) => {
     }
   };
 
-  const filteredLinks = links.filter((link) => link.label.toLowerCase().includes(searchValue.toLowerCase()));
+  const filteredLinks = links.filter((link) =>
+    link.label.toLowerCase().includes(searchValue.toLowerCase()),
+  );
 
   return (
     <nav id="order-menu" className="order-menu">
       <div className="search-bar">
         <div className="search">
-          <input type="text" placeholder="Search Dishes.." value={searchValue} onChange={handleSearchChange} />
+          <input
+            type="text"
+            placeholder="Search Dishes.."
+            value={searchValue}
+            onChange={handleSearchChange}
+          />
           <i className="fas fa-search"></i>
         </div>
       </div>

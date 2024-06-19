@@ -1,7 +1,7 @@
-import { useEffect, useState } from "react";
-import { useSelector, useDispatch } from "react-redux";
-import { RootState } from "@/redux-toolkit/store";
-import { usePathname, useRouter, useSearchParams } from "next/navigation";
+import { useEffect, useState } from 'react';
+import { useSelector, useDispatch } from 'react-redux';
+import { RootState } from '@/redux-toolkit/store';
+import { usePathname, useRouter, useSearchParams } from 'next/navigation';
 
 interface IFilterProductsProps {
   value: IBaseProps[];
@@ -9,8 +9,12 @@ interface IFilterProductsProps {
 
 const useFilterTour = ({ value }: IFilterProductsProps) => {
   const [showProduct, setShowProduct] = useState<IBaseProps[]>(value);
-  const { rateStatus, priceStatus } = useSelector((state: RootState) => state.hotelFilterReducer);
-  const { flightStatus, travelStatus, tripDurationStatus } = useSelector((state: RootState) => state.tourFilterReducer);
+  const { rateStatus, priceStatus } = useSelector(
+    (state: RootState) => state.hotelFilterReducer,
+  );
+  const { flightStatus, travelStatus, tripDurationStatus } = useSelector(
+    (state: RootState) => state.tourFilterReducer,
+  );
 
   const dispatch = useDispatch();
   const router = useRouter();
@@ -19,44 +23,76 @@ const useFilterTour = ({ value }: IFilterProductsProps) => {
 
   useEffect(() => {
     const filteredProducts = value?.filter((product: IBaseProps) => {
-      const filteredRate = rateStatus.length === 0 ||  product.rate === undefined || rateStatus.includes(product.rate);
+      const filteredRate =
+        rateStatus.length === 0 ||
+        product.rate === undefined ||
+        rateStatus.includes(product.rate);
       const filteredPrice =
-        product.price !== undefined && product.price >= priceStatus.min && product.price <= priceStatus.max;
+        product.price !== undefined &&
+        product.price >= priceStatus.min &&
+        product.price <= priceStatus.max;
       //tour
-      const filterFlight = flightStatus.length === 0 || product.flights !== undefined || flightStatus.includes(product.flights) || flightStatus.includes("all");
-      const filterTravel = travelStatus.length === 0 || travelStatus.includes(product.travel) || travelStatus.includes("all");
-      const filterTrip = tripDurationStatus.length === 0 || tripDurationStatus.includes(product.trip) || tripDurationStatus.includes("all");
-      return filteredRate && filteredPrice && filterFlight && filterTravel && filterTrip;
+      const filterFlight =
+        flightStatus.length === 0 ||
+        product.flights !== undefined ||
+        flightStatus.includes(product.flights) ||
+        flightStatus.includes('all');
+      const filterTravel =
+        travelStatus.length === 0 ||
+        travelStatus.includes(product.travel) ||
+        travelStatus.includes('all');
+      const filterTrip =
+        tripDurationStatus.length === 0 ||
+        tripDurationStatus.includes(product.trip) ||
+        tripDurationStatus.includes('all');
+      return (
+        filteredRate &&
+        filteredPrice &&
+        filterFlight &&
+        filterTravel &&
+        filterTrip
+      );
     });
     setShowProduct(filteredProducts);
 
     const params = new URLSearchParams(searchParams);
 
-    ["rate", "price", "trip", "flights", "travel"].forEach((name) => params.delete(name));
+    ['rate', 'price', 'trip', 'flights', 'travel'].forEach((name) =>
+      params.delete(name),
+    );
 
     rateStatus.forEach((rate: string) => {
-      params.append("rate", rate);
+      params.append('rate', rate);
     });
 
     if (!isNaN(priceStatus.min) && !isNaN(priceStatus.max)) {
-      params.set("min", `${priceStatus.min}`);
-      params.set("max", `${priceStatus.max}`);
+      params.set('min', `${priceStatus.min}`);
+      params.set('max', `${priceStatus.max}`);
     }
 
     flightStatus.forEach((flights: string) => {
-      params.append("flights", flights);
+      params.append('flights', flights);
     });
 
     travelStatus.forEach((travel: string) => {
-      params.append("travel", travel);
+      params.append('travel', travel);
     });
 
     tripDurationStatus.forEach((trip: string) => {
-      params.append("trip", trip);
+      params.append('trip', trip);
     });
 
-    router.push(pathname + "?" + params.toString());
-  }, [rateStatus, priceStatus, value, router, tripDurationStatus, travelStatus, flightStatus, pathname]);
+    router.push(pathname + '?' + params.toString());
+  }, [
+    rateStatus,
+    priceStatus,
+    value,
+    router,
+    tripDurationStatus,
+    travelStatus,
+    flightStatus,
+    pathname,
+  ]);
 
   // useEffect(() => {
   //   const params = [

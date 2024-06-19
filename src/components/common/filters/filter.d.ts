@@ -6,6 +6,6 @@ type SliderData = {
 };
 
 interface IPriceRangeFilterProps {
-  min: number ;
-  max: number ;
+  min: number;
+  max: number;
 }

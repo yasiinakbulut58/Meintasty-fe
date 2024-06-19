@@ -1,4 +1,4 @@
-import { createReducer } from "@reduxjs/toolkit";
+import { createReducer } from '@reduxjs/toolkit';
 
 interface IFlightReducerProps {
   [key: string]: any;
@@ -7,7 +7,13 @@ interface IFlightReducerProps {
   arriveStatus: string[];
   airlineStatus: string[];
 }
-var initialState: IFlightReducerProps = { stopStatus: [], departureStatus: [], arriveStatus: [], airlineStatus: [], flightFilterTagStatus: [] };
+var initialState: IFlightReducerProps = {
+  stopStatus: [],
+  departureStatus: [],
+  arriveStatus: [],
+  airlineStatus: [],
+  flightFilterTagStatus: [],
+};
 
 export const flightFilterReducer = createReducer(initialState, {
   stopStatus: (state, action) => {

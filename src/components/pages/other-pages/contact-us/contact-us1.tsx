@@ -1,7 +1,7 @@
-import ContactForm from "@/components/common/booking-form/form5";
-import { FC } from "react";
-import { GetInTouch } from "@/constant/constant";
-import AddressContent from "./common/address";
+import ContactForm from '@/components/common/booking-form/form5';
+import { FC } from 'react';
+import { GetInTouch } from '@/constant/constant';
+import AddressContent from './common/address';
 
 const ContactContent: FC = () => {
   return (

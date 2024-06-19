@@ -1,19 +1,19 @@
 export const districtData = [
   {
     id: 1,
-    type: "all",
+    type: 'all',
   },
   {
     id: 2,
-    type: "la defance",
+    type: 'la defance',
   },
   {
     id: 3,
-    type: "paris center",
+    type: 'paris center',
   },
   {
     id: 4,
-    type: "latin",
+    type: 'latin',
   },
 ];
 
@@ -43,149 +43,149 @@ export const priceData = [
 export const priceData1 = [
   {
     id: 1,
-    type: "$450 - $550",
+    type: '$450 - $550',
   },
   {
     id: 2,
-    type: "$550 - $1100",
+    type: '$550 - $1100',
   },
   {
     id: 3,
-    type: "$1100 - $2050",
+    type: '$1100 - $2050',
   },
   {
     id: 4,
-    type: "$2050 - $3000",
+    type: '$2050 - $3000',
   },
 ];
 
 export const facility = [
   {
     id: 1,
-    type: "restaurant",
+    type: 'restaurant',
   },
   {
     id: 2,
-    type: "wifi",
+    type: 'wifi',
   },
   {
     id: 3,
-    type: "spa & salon",
+    type: 'spa & salon',
   },
   {
     id: 4,
-    type: "pet allowed",
+    type: 'pet allowed',
   },
   {
     id: 5,
-    type: "parking",
+    type: 'parking',
   },
   {
     id: 6,
-    type: "swimming pool",
+    type: 'swimming pool',
   },
   {
     id: 7,
-    type: "fitness center",
+    type: 'fitness center',
   },
 ];
 
 export const star_category = [
   {
     id: 1,
-    rang: "(4045)",
-    rate: "5",
+    rang: '(4045)',
+    rate: '5',
   },
   {
     id: 2,
-    rang: "(2012)",
-    rate: "4",
+    rang: '(2012)',
+    rate: '4',
   },
   {
     id: 3,
-    rang: "(25)",
-    rate: "3",
+    rang: '(25)',
+    rate: '3',
   },
   {
     id: 4,
-    rang: "(15)",
-    rate: "2",
-  }
+    rang: '(15)',
+    rate: '2',
+  },
 ];
 
 export const hostLang = [
   {
     id: 1,
-    type: "english",
+    type: 'english',
   },
   {
     id: 2,
-    type: "sign language",
+    type: 'sign language',
   },
   {
     id: 3,
-    type: "Italianno",
+    type: 'Italianno',
   },
   {
     id: 4,
-    type: "Suomi",
+    type: 'Suomi',
   },
   {
     id: 5,
-    type: "Espanol",
+    type: 'Espanol',
   },
   {
     id: 6,
-    type: "French",
+    type: 'French',
   },
   {
     id: 7,
-    type: "Arabic",
+    type: 'Arabic',
   },
 ];
 
 export const HotelDetailFilter = [
   {
     id: 1,
-    name: "the venetian",
+    name: 'the venetian',
     price: 1245,
-    img: "/assets/images/hotel/gallery/1.jpg",
+    img: '/assets/images/hotel/gallery/1.jpg',
   },
   {
     id: 2,
-    name: "park royal",
+    name: 'park royal',
     price: 1245,
-    img: "/assets/images/hotel/video-image.jpg",
+    img: '/assets/images/hotel/video-image.jpg',
   },
   {
     id: 3,
-    name: "grand park",
+    name: 'grand park',
     price: 1245,
-    img: "/assets/images/hotel/room/3.jpg",
+    img: '/assets/images/hotel/room/3.jpg',
   },
   {
     id: 4,
-    name: "courtyard",
+    name: 'courtyard',
     price: 1245,
-    img: "/assets/images/hotel/gallery/3.jpg",
+    img: '/assets/images/hotel/gallery/3.jpg',
   },
 ];
 
 export const popularFilter = [
   {
     id: 1,
-    type: "pay @ hotel",
+    type: 'pay @ hotel',
   },
   {
     id: 2,
-    type: "free breakfast",
+    type: 'free breakfast',
   },
   {
     id: 3,
-    type: "emi option",
+    type: 'emi option',
   },
   {
     id: 4,
-    type: "bar",
+    type: 'bar',
   },
 ];

@@ -1,4 +1,4 @@
-import { UsefulLinks } from "@/constant/constant";
+import { UsefulLinks } from '@/constant/constant';
 import Link from 'next/link';
 
 const Links: React.FC = () => {
@@ -27,7 +27,9 @@ const Links: React.FC = () => {
                 <Link href="/tour/booking/booking-page">booking deal</Link>
               </li>
               <li>
-                <Link href="/pages/other-pages/contact-us-1">emergency call</Link>
+                <Link href="/pages/other-pages/contact-us-1">
+                  emergency call
+                </Link>
               </li>
               <li>
                 <Link href="/pages/element-pages/app">mobile app</Link>

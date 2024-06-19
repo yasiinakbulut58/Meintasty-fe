@@ -3,13 +3,12 @@ import { FC } from 'react';
 import Breadcrumb from '@/components/common/breadcrumb/page';
 import OurTeamContent from '@/components/pages/other-pages/about-us/our-team';
 import AboutUsContent from '@/components/pages/other-pages/about-us/page';
-import CustomLayout from '@/layouts/layout';
 import FactsContent from '@/components/pages/other-pages/about-us/fact';
 import Blog from '@/components/pages/other-pages/about-us/blog';
 
-const AboutUs1: FC = () => {
+const AboutUs: FC = () => {
   return (
-    <CustomLayout title="inner-page" userBgClass="user user-light">
+    <>
       <Breadcrumb
         title={'home'}
         subTitle={'about us'}
@@ -19,8 +18,8 @@ const AboutUs1: FC = () => {
       <OurTeamContent />
       <FactsContent />
       <Blog />
-    </CustomLayout>
+    </>
   );
 };
 
-export default AboutUs1;
+export default AboutUs;

@@ -1,17 +1,28 @@
-"use client"
-import { AddNewCard } from "@/constant/constant";
-import { FC } from "react";
-import { Modal, ModalBody, ModalFooter, ModalHeader } from "reactstrap";
-import FooterModal from "../common/footer-modal";
+'use client';
+import { AddNewCard } from '@/constant/constant';
+import { FC } from 'react';
+import { Modal, ModalBody, ModalFooter, ModalHeader } from 'reactstrap';
+import FooterModal from '../common/footer-modal';
 
 const CardModal: FC<ICardModalProps> = ({ modal, setModal }) => {
   return (
-    <Modal className="video-modal" centered size="lg" isOpen={modal} toggle={() => setModal(false)} modalTransition={{ timeout: 100 }}>
-      <ModalHeader toggle={()=>setModal(!modal)}>
+    <Modal
+      className="video-modal"
+      centered
+      size="lg"
+      isOpen={modal}
+      toggle={() => setModal(false)}
+      modalTransition={{ timeout: 100 }}
+    >
+      <ModalHeader toggle={() => setModal(!modal)}>
         <h5 className="modal-title">{AddNewCard}</h5>
       </ModalHeader>
       <ModalBody>
-        <form onSubmit={(event: React.FormEvent<HTMLFormElement>)=>event.preventDefault()}>
+        <form
+          onSubmit={(event: React.FormEvent<HTMLFormElement>) =>
+            event.preventDefault()
+          }
+        >
           <div className="form-group">
             <label htmlFor="a-month">card type</label>
             <select id="a-month" className="form-control">
@@ -36,7 +47,12 @@ const CardModal: FC<ICardModalProps> = ({ modal, setModal }) => {
             </div>
             <div className="form-group col-md-4">
               <label htmlFor="a-c">cvv</label>
-              <input type="password" maxLength={3} className="form-control" id="a-c" />
+              <input
+                type="password"
+                maxLength={3}
+                className="form-control"
+                id="a-c"
+              />
             </div>
           </div>
         </form>

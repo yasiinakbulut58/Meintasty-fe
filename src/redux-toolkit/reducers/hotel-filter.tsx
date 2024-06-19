@@ -1,4 +1,4 @@
-import { createReducer } from "@reduxjs/toolkit";
+import { createReducer } from '@reduxjs/toolkit';
 
 interface IHotelProps {
   [key: string]: any;
@@ -9,7 +9,14 @@ interface IHotelProps {
   priceStatus: { min: number; max: number };
   filterTagStatus: string[];
 }
-var initialState: IHotelProps = { districtStatus: [], facilityStatus: [], hostLangStatus: [], rateStatus: [], priceStatus: { min: 10, max: 10000 }, filterTagStatus: [] };
+var initialState: IHotelProps = {
+  districtStatus: [],
+  facilityStatus: [],
+  hostLangStatus: [],
+  rateStatus: [],
+  priceStatus: { min: 10, max: 10000 },
+  filterTagStatus: [],
+};
 
 export const hotelFilterReducer = createReducer(initialState, {
   districtStatus: (state, action) => {
@@ -29,7 +36,10 @@ export const hotelFilterReducer = createReducer(initialState, {
   },
 
   priceStatus: (state, action) => {
-    state.priceStatus = { min: action.payload[0] || action.payload.min, max: action.payload[1] || action.payload.max };
+    state.priceStatus = {
+      min: action.payload[0] || action.payload.min,
+      max: action.payload[1] || action.payload.max,
+    };
   },
 
   filterTagStatus: (state, action) => {

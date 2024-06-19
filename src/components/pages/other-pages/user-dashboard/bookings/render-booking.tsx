@@ -1,6 +1,14 @@
-import { FC } from "react";
+import { FC } from 'react';
 
-const RenderBooking: FC<IBookingProps> = ({ id, date, destination, amount, orderDate, status, icon }) => {
+const RenderBooking: FC<IBookingProps> = ({
+  id,
+  date,
+  destination,
+  amount,
+  orderDate,
+  status,
+  icon,
+}) => {
   return (
     <div className="dashboard-detail" key={id}>
       <div className="booking-box">
@@ -29,14 +37,19 @@ const RenderBooking: FC<IBookingProps> = ({ id, date, destination, amount, order
           </div>
         </div>
         <div className="detail-last">
-          {status === "upcoming" ? (
+          {status === 'upcoming' ? (
             <>
               <a href="#">
-                <i className="fas fa-window-close" data-bs-toggle="tooltip" data-placement="top" title="cancle booking"></i>
+                <i
+                  className="fas fa-window-close"
+                  data-bs-toggle="tooltip"
+                  data-placement="top"
+                  title="cancle booking"
+                ></i>
               </a>
               <span className="badge bg-info">upcoming</span>
             </>
-          ) : status === "past" ? (
+          ) : status === 'past' ? (
             <span className="badge bg-success">past</span>
           ) : (
             <span className="badge bg-secondary">{status}</span>

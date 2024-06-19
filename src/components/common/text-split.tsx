@@ -1,4 +1,4 @@
-import React, { FC } from "react";
+import React, { FC } from 'react';
 
 interface ITextSplitProps {
   text: string;
@@ -7,7 +7,7 @@ interface ITextSplitProps {
 const TextSplit: FC<ITextSplitProps> = ({ text }) => {
   return (
     <div>
-      {text.split("").map((char, index) => (
+      {text.split('').map((char, index) => (
         <span key={index}>{char}</span>
       ))}
     </div>

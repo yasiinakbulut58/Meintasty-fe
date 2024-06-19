@@ -1,19 +1,21 @@
-import { FC } from "react";
-import { BuyNow, Discount, Lorem, Offer } from "@/constant/constant";
-import { RootState } from "@/redux-toolkit/store";
-import { useSelector } from "react-redux";
-import TextSplit from "../text-split";
-import Link from "next/link";
+import { FC } from 'react';
+import { BuyNow, Discount, Lorem, Offer } from '@/constant/constant';
+import { RootState } from '@/redux-toolkit/store';
+import { useSelector } from 'react-redux';
+import TextSplit from '../text-split';
+import Link from 'next/link';
 
 interface IBannerContentProps {
   type?: string;
 }
 const BannerContent: FC<IBannerContentProps> = ({ type }) => {
-  const { symbol, currencyValue } = useSelector((state: RootState) => state.currency);
+  const { symbol, currencyValue } = useSelector(
+    (state: RootState) => state.currency,
+  );
   return (
     <div className="banner-content">
       <div>
-        {type === "tour" ? (
+        {type === 'tour' ? (
           <>
             <div className="offer-text">
               <span className="offer">{Offer}</span>
@@ -34,18 +36,25 @@ const BannerContent: FC<IBannerContentProps> = ({ type }) => {
         </h2>
         <p>{Lorem}</p>
         <h2 className="price">
-          {type === "tour" && (
+          {type === 'tour' && (
             <del>
               {symbol}
               {(currencyValue * 600).toFixed(0)}
             </del>
-          )} {symbol}{(currencyValue * 420).toFixed(0)}
+          )}{' '}
+          {symbol}
+          {(currencyValue * 420).toFixed(0)}
         </h2>
         <div className="bottom-section">
-          <Link href="/tour/booking/booking-page" className="btn btn-rounded btn-sm color1">
+          <Link
+            href="/tour/booking/booking-page"
+            className="btn btn-rounded btn-sm color1"
+          >
             {BuyNow}
           </Link>
-          <div className="info-btn"><h6>7 days &nbsp; | &nbsp; 8 nights</h6></div>
+          <div className="info-btn">
+            <h6>7 days &nbsp; | &nbsp; 8 nights</h6>
+          </div>
         </div>
       </div>
     </div>

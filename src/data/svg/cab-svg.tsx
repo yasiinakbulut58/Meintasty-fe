@@ -1,8 +1,18 @@
-import { FC } from "react";
+import { FC } from 'react';
 
 export const CabSvg1: FC = () => {
   return (
-    <svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlnsXlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 372.064 372.064" style={{ background: "new 0 0 372.064 372.064" }} xmlSpace="preserve">
+    <svg
+      version="1.1"
+      id="Capa_1"
+      xmlns="http://www.w3.org/2000/svg"
+      xmlnsXlink="http://www.w3.org/1999/xlink"
+      x="0px"
+      y="0px"
+      viewBox="0 0 372.064 372.064"
+      style={{ background: 'new 0 0 372.064 372.064' }}
+      xmlSpace="preserve"
+    >
       <g>
         <g>
           <path
@@ -105,7 +115,16 @@ export const CabSvg1: FC = () => {
 
 export const CabSvg2: FC = () => {
   return (
-    <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlnsXlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 491.1 491.1" style={{ background: "new 0 0 491.1 491.1" }} xmlSpace="preserve">
+    <svg
+      version="1.1"
+      xmlns="http://www.w3.org/2000/svg"
+      xmlnsXlink="http://www.w3.org/1999/xlink"
+      x="0px"
+      y="0px"
+      viewBox="0 0 491.1 491.1"
+      style={{ background: 'new 0 0 491.1 491.1' }}
+      xmlSpace="preserve"
+    >
       <path
         transform="translate(0 -540.36)"
         d="M401.5,863.31c-12,0-23.4,4.7-32,13.2c-8.6,8.6-13.4,19.8-13.4,31.8s4.7,23.2,13.4,31.8
@@ -144,7 +163,16 @@ export const CabSvg2: FC = () => {
 
 export const CabSvg3: FC = () => {
   return (
-    <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlnsXlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 512 512" style={{ background: "new 0 0 512 512" }} xmlSpace="preserve">
+    <svg
+      version="1.1"
+      xmlns="http://www.w3.org/2000/svg"
+      xmlnsXlink="http://www.w3.org/1999/xlink"
+      x="0px"
+      y="0px"
+      viewBox="0 0 512 512"
+      style={{ background: 'new 0 0 512 512' }}
+      xmlSpace="preserve"
+    >
       <g>
         <g>
           <path d="M326,256c-5.52,0-10,4.48-10,10c0,5.52,4.48,10,10,10c5.52,0,10-4.48,10-10C336,260.48,331.52,256,326,256z" />
@@ -221,7 +249,13 @@ export const CarSvg: FC = () => {
 
 export const BookingSvg: FC = () => {
   return (
-    <svg enableBackground="new 0 0 511.801 511.801" height="512" viewBox="0 0 511.801 511.801" width="512" xmlns="http://www.w3.org/2000/svg">
+    <svg
+      enableBackground="new 0 0 511.801 511.801"
+      height="512"
+      viewBox="0 0 511.801 511.801"
+      width="512"
+      xmlns="http://www.w3.org/2000/svg"
+    >
       <path d="m184.671 393.943h142.459c6.13 0 11.584-3.896 13.572-9.694l10.462-30.515c1.499-4.374.791-9.231-1.897-12.993-2.687-3.762-7.052-6.008-11.675-6.008h-163.383c-4.623 0-8.988 2.246-11.675 6.008-2.688 3.762-3.396 8.619-1.897 12.993l10.462 30.515c1.987 5.798 7.442 9.694 13.572 9.694zm152.034-44.229-10.028 29.247h-141.553l-10.028-29.247z" />
       <path d="m56.162 304.431c0 21.565 17.544 39.109 39.11 39.109s39.11-17.544 39.11-39.109-17.544-39.11-39.11-39.11-39.11 17.544-39.11 39.11zm63.238 0c0 13.304-10.824 24.128-24.128 24.128s-24.128-10.824-24.128-24.128c0-13.305 10.824-24.128 24.128-24.128s24.128 10.823 24.128 24.128z" />
       <path d="m455.639 304.431c0-21.565-17.544-39.11-39.11-39.11s-39.11 17.544-39.11 39.11c0 21.565 17.544 39.109 39.11 39.109s39.11-17.544 39.11-39.109zm-63.238 0c0-13.305 10.824-24.128 24.128-24.128s24.128 10.823 24.128 24.128c0 13.304-10.824 24.128-24.128 24.128s-24.128-10.824-24.128-24.128z" />

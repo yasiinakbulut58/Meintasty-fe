@@ -13,10 +13,7 @@ const CopyRightFooter: FC = () => {
           </div>
           <div className="col-xl-6 col-md-6 col-sm-12">
             <div className="copy-right">
-              <p>
-                copyright 2023 meintasty by <i className="fas fa-heart"></i>{' '}
-                pixelstrap
-              </p>
+              <p>copyright 2023 meintasty</p>
             </div>
           </div>
         </div>

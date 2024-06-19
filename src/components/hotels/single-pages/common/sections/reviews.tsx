@@ -1,7 +1,7 @@
-import Rating from "@/components/common/rating";
-import { Review } from "@/constant/constant";
-import { reviewData } from "@/data/hotels/single-page";
-import { FC } from "react";
+import Rating from '@/components/common/rating';
+import { Review } from '@/constant/constant';
+import { reviewData } from '@/data/hotels/single-page';
+import { FC } from 'react';
 
 const Reviews: FC<IRoomProps> = ({ tab }) => {
   return (
@@ -9,7 +9,7 @@ const Reviews: FC<IRoomProps> = ({ tab }) => {
       <h4 className="content-title">review</h4>
       {tab && <h4 className="content-title">{Review}</h4>}
       <div className="menu-part page-section review">
-        {reviewData.map((data: IReviewProps,index) => (
+        {reviewData.map((data: IReviewProps, index) => (
           <div className="review-box" key={index}>
             <Rating rang={data.range} />
             <h6>{data.title}</h6>

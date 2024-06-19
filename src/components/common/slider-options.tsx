@@ -13,22 +13,24 @@ export const tourSlider = {
   appendDots: (dots: any) => (
     <div
       style={{
-        borderRadius: "10px",
-        padding: "10px",
-      }}>
-      <ul style={{ margin: "0px" }}> {dots} </ul>
+        borderRadius: '10px',
+        padding: '10px',
+      }}
+    >
+      <ul style={{ margin: '0px' }}> {dots} </ul>
     </div>
   ),
   customPaging: (i: any) => (
     <div
       style={{
-        border: "1px blue solid",
-        color: "white",
-        fontWeight: "900",
-        fontSize: "calc(18px + (35 - 18) * ((100vw - 320px) / (1920 - 320)))",
+        border: '1px blue solid',
+        color: 'white',
+        fontWeight: '900',
+        fontSize: 'calc(18px + (35 - 18) * ((100vw - 320px) / (1920 - 320)))',
         lineHeight: 1,
         opacity: 0.5,
-      }}>
+      }}
+    >
       0{i + 1}
     </div>
   ),
@@ -45,22 +47,29 @@ export const fullSlider = {
       style={{
         textTransform: 'capitalize',
         fontSize: '16px',
-        fontWeight: "500",
-        color: "white",
-        width: "auto",
-      }}>
-      <ul style={{ margin: "0px" }}> {dots} </ul>
+        fontWeight: '500',
+        color: 'white',
+        width: 'auto',
+      }}
+    >
+      <ul style={{ margin: '0px' }}> {dots} </ul>
     </div>
   ),
   customPaging: (i: any) => {
-    const titles = ["Highlight", "Itinerary", "Review", "Policy", "Accommodations"];
+    const titles = [
+      'Highlight',
+      'Itinerary',
+      'Review',
+      'Policy',
+      'Accommodations',
+    ];
     const title = titles[i];
 
     return (
       <div
         style={{
           padding: '10px 30px',
-          color: 'white'
+          color: 'white',
         }}
       >
         {title}
@@ -105,21 +114,21 @@ export const slide3 = {
   autoplaySpeed: 5000,
   // centerMode: false,
   responsive: [
-      {
-          breakpoint: 1200,
-          settings: {
-              slidesToShow: 2,
-              slidesToScroll: 1
-          }
+    {
+      breakpoint: 1200,
+      settings: {
+        slidesToShow: 2,
+        slidesToScroll: 1,
       },
-      {
-          breakpoint: 768,
-          settings: {
-              slidesToShow: 1,
-              slidesToScroll: 1
-          }
-      }
-  ]
+    },
+    {
+      breakpoint: 768,
+      settings: {
+        slidesToShow: 1,
+        slidesToScroll: 1,
+      },
+    },
+  ],
 };
 
 export const slide4 = {
@@ -254,7 +263,6 @@ export const sliderNav = {
   // centerMode: true,
 };
 
-
 // export const sliderNav = {
 //   slidesToShow: 4,
 //   slidesToScroll: 1,
@@ -307,7 +315,7 @@ export const slide7 = {
 
 export const centerSlider = {
   centerMode: true,
-  centerPadding: "0",
+  centerPadding: '0',
   slidesToShow: 3,
   arrows: false,
   responsive: [
@@ -324,7 +332,7 @@ export const centerSlider = {
       settings: {
         arrows: false,
         centerMode: true,
-        centerPadding: "40px",
+        centerPadding: '40px',
         slidesToShow: 1,
       },
     },
@@ -333,7 +341,7 @@ export const centerSlider = {
       settings: {
         arrows: false,
         centerMode: true,
-        centerPadding: "30px",
+        centerPadding: '30px',
         slidesToShow: 1,
       },
     },

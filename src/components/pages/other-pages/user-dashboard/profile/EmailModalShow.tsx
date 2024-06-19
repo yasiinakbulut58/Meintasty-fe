@@ -1,11 +1,11 @@
-"use client"
-import React, { FC } from "react";
-import { Modal, ModalBody, ModalHeader } from "reactstrap";
+'use client';
+import React, { FC } from 'react';
+import { Modal, ModalBody, ModalHeader } from 'reactstrap';
 
 const EmailModalShow: FC<MultipleModalInterFace> = ({ open, toggle }) => {
   return (
-    <Modal centered isOpen={open} toggle={() => toggle("email address")}>
-      <ModalHeader toggle={() => toggle("email address")}>
+    <Modal centered isOpen={open} toggle={() => toggle('email address')}>
+      <ModalHeader toggle={() => toggle('email address')}>
         <h5 className="modal-title">change email address</h5>
       </ModalHeader>
       <ModalBody>
@@ -27,9 +27,17 @@ const EmailModalShow: FC<MultipleModalInterFace> = ({ open, toggle }) => {
         </form>
       </ModalBody>
       <div className="modal-footer">
-        <button type="button" className="btn btn-secondary" onClick={() => toggle("email address")}>Close</button>
-        <button type="button" className="btn btn-solid">Save changes</button>
-      </div>{" "}
+        <button
+          type="button"
+          className="btn btn-secondary"
+          onClick={() => toggle('email address')}
+        >
+          Close
+        </button>
+        <button type="button" className="btn btn-solid">
+          Save changes
+        </button>
+      </div>{' '}
     </Modal>
   );
 };

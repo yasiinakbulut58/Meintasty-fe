@@ -1,19 +1,19 @@
-"use client";
-import { useState, FC } from "react";
-import { addressesData } from "@/data/restaurant/booking";
-import CartModal from "./cart-modal";
-import { AddNewAddress, DeliveryAddress } from "@/constant/constant";
+'use client';
+import { useState, FC } from 'react';
+import { addressesData } from '@/data/restaurant/booking';
+import CartModal from './cart-modal';
+import { AddNewAddress, DeliveryAddress } from '@/constant/constant';
 
 const CheckoutProcess: FC = () => {
   const [modal, setModal] = useState(false);
-  const [title, setTitle] = useState("");
+  const [title, setTitle] = useState('');
   const handleEditAddress = (action: string) => {
-    if (action === "add") {
+    if (action === 'add') {
       setModal(true);
-      setTitle("Add New Address");
+      setTitle('Add New Address');
     } else {
       setModal(true);
-      setTitle("Edit New Address");
+      setTitle('Edit New Address');
     }
   };
 
@@ -23,12 +23,18 @@ const CheckoutProcess: FC = () => {
         <h4 className="title">{DeliveryAddress}:</h4>
         <div className="sub-title">
           <h5>saved address</h5>
-          <a href="#" data-bs-toggle="modal" data-bs-target="#add-address" className="add-new" onClick={() => handleEditAddress("add")}>
+          <a
+            href="#"
+            data-bs-toggle="modal"
+            data-bs-target="#add-address"
+            className="add-new"
+            onClick={() => handleEditAddress('add')}
+          >
             + {AddNewAddress}
           </a>
         </div>
         <div className="row address-sec">
-          {addressesData.map((address,index) => (
+          {addressesData.map((address, index) => (
             <div className="select-box col-xl-4 col-md-6" key={index}>
               <div className="address-box">
                 <div className="top">
@@ -49,7 +55,10 @@ const CheckoutProcess: FC = () => {
                   </div>
                 </div>
                 <div className="bottom">
-                  <button className="bottom_btn" onClick={() => handleEditAddress("edit")}>
+                  <button
+                    className="bottom_btn"
+                    onClick={() => handleEditAddress('edit')}
+                  >
                     edit
                   </button>
                   <button className="bottom_btn">remove</button>

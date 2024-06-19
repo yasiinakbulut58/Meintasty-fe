@@ -4,7 +4,6 @@ interface IModalProps {
   children?: ReactNode;
   value?: Hotel[];
   type?: string;
-  
 }
 
 interface IHotelFilterProps {

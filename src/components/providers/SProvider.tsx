@@ -1,13 +1,13 @@
 'use client';
 
 import { SessionProvider } from 'next-auth/react';
+import { PropsWithChildren } from 'react';
 
 export default function SProvider({
   children,
   session,
 }: {
-  children: React.ReactNode;
   session: any;
-}): React.ReactNode {
+} & PropsWithChildren) {
   return <SessionProvider session={session}>{children}</SessionProvider>;
 }

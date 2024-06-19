@@ -1,6 +1,6 @@
-"use client";
-import DatePickers from "react-multi-date-picker";
-import TimePicker from "react-multi-date-picker/plugins/time_picker";
+'use client';
+import DatePickers from 'react-multi-date-picker';
+import TimePicker from 'react-multi-date-picker/plugins/time_picker';
 
 const DateTimePickerComp: React.FC = () => {
   return (
@@ -9,7 +9,7 @@ const DateTimePickerComp: React.FC = () => {
         inputClass="form-control"
         placeholder="Select Date & Time"
         format="Date:YYYY/MM/DD, Time:HH:mm:ss"
-        formattingIgnoreList={["Date", "Time"]}
+        formattingIgnoreList={['Date', 'Time']}
         plugins={[<TimePicker position="top" />]}
       />
     </>

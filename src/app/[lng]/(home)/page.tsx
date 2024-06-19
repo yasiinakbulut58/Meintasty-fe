@@ -1,7 +1,6 @@
 // import "@/public/assets/scss/color1.scss";
 import HomeBanner from '@/components/home/restaurant/classic/home-banner';
 import TopCategory from '@/components/home/restaurant/classic/top-category';
-import CustomLayout from '@/layouts/layout';
 import MenuSection from '@/components/home/restaurant/classic/menu-section';
 
 async function getData() {
@@ -19,15 +18,11 @@ const Home = async () => {
   const data = await getData();
 
   return (
-    <CustomLayout
-      title="overlay-black"
-      loader="food"
-      userBgClass="user user-light"
-    >
+    <>
       <HomeBanner />
       <TopCategory />
       <MenuSection lunchMenus={data.lunchMenus} />
-    </CustomLayout>
+    </>
   );
 };
 

@@ -4,7 +4,6 @@ import Img from '@/utils/BackgroundImageRatio';
 import { bookingData, hotelData, paymentData } from '@/data/hotels/booking';
 import Link from 'next/link';
 
-
 const Summary: FC = () => {
   return (
     <div className="col-lg-5 booking-order">
@@ -76,7 +75,12 @@ const Summary: FC = () => {
               <tbody>
                 <tr>
                   <td>payable amount</td>
-                  <td className="amount">${paymentData.basePrice + paymentData.promoDiscount + paymentData.taxServiceFees}</td>
+                  <td className="amount">
+                    $
+                    {paymentData.basePrice +
+                      paymentData.promoDiscount +
+                      paymentData.taxServiceFees}
+                  </td>
                 </tr>
               </tbody>
             </table>

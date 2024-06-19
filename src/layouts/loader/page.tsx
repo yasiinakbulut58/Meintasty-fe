@@ -1,7 +1,6 @@
-"use client";
-import Image from "next/image";
-import { useEffect, useState } from "react";
-
+'use client';
+import Image from 'next/image';
+import { useEffect, useState } from 'react';
 
 const Loader: React.FC<ILoaderProps> = ({ loaderTimeout }) => {
   const loadingTime = loaderTimeout;
@@ -17,8 +16,13 @@ const Loader: React.FC<ILoaderProps> = ({ loaderTimeout }) => {
     };
   }, [show]);
   return (
-    <div className={`loader-wrapper img-gif ${show ? "" : "loaderhide"}`}>
-      <Image src={'/assets/images/loader.gif'} alt="Animated GIF" width={300} height={200} />
+    <div className={`loader-wrapper img-gif ${show ? '' : 'loaderhide'}`}>
+      <Image
+        src={'/assets/images/loader.gif'}
+        alt="Animated GIF"
+        width={300}
+        height={200}
+      />
     </div>
   );
 };

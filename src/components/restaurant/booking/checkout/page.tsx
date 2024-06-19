@@ -1,9 +1,9 @@
-import { cartItemsData } from "@/data/restaurant/single-page";
-import CartItem from "../../single-page/common/cart-item/page";
-import ReviewSection from "@/components/common/booking-page/payment/review";
-import CheckoutProcess from "./checkout-process";
-import { FC } from "react";
-import NewsLatterContent from "@/components/common/news-latter/page";
+import { cartItemsData } from '@/data/restaurant/single-page';
+import CartItem from '../../single-page/common/cart-item/page';
+import ReviewSection from '@/components/common/booking-page/payment/review';
+import CheckoutProcess from './checkout-process';
+import { FC } from 'react';
+import NewsLatterContent from '@/components/common/news-latter/page';
 
 const CheckoutPage: FC = () => {
   return (
@@ -26,7 +26,7 @@ const CheckoutPage: FC = () => {
           <div className="col-xl-3 col-lg-4 checkout-cart">
             <div className="sticky-cls-top">
               <CartItem items={cartItemsData} />
-              <NewsLatterContent titleClass={"single-sidebar p-0"} />
+              <NewsLatterContent titleClass={'single-sidebar p-0'} />
             </div>
           </div>
         </div>

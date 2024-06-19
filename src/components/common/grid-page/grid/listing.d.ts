@@ -1,5 +1,5 @@
 interface IGridViewProps {
-  latestFilter?:boolean
+  latestFilter?: boolean;
   size?: number;
   gridType?: string;
   side?: string;

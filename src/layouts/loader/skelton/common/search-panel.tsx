@@ -1,10 +1,15 @@
-import { FC } from "react";
+import { FC } from 'react';
 
 interface SearchField {
   label: string;
 }
 
-const searchFields: SearchField[] = [{ label: "" }, { label: "" }, { label: "" }, { label: "" }];
+const searchFields: SearchField[] = [
+  { label: '' },
+  { label: '' },
+  { label: '' },
+  { label: '' },
+];
 
 const SkeletonSearch: FC = () => {
   const renderSearchFields = () => {
@@ -17,7 +22,7 @@ const SkeletonSearch: FC = () => {
   };
 
   return (
-    <section className="bg-white pt-0 search-panel">
+    <section className="search-panel bg-white pt-0">
       <div className="container">
         <div className="row">
           <div className="col-12">

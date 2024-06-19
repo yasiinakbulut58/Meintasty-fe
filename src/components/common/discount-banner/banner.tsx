@@ -1,6 +1,6 @@
-import { FC } from "react";
-import Image from "next/image";
-import BannerContent from "./banner-content";
+import { FC } from 'react';
+import Image from 'next/image';
+import BannerContent from './banner-content';
 
 const Banners: FC = () => {
   return (
@@ -8,11 +8,26 @@ const Banners: FC = () => {
       <div className="row">
         <div className="col-lg-4">
           <div className="place-image">
-            <Image src="/assets/images/flights/place.png" alt="" className="img-fluid wow zoomIn" width={691} height={533} />
+            <Image
+              src="/assets/images/flights/place.png"
+              alt=""
+              className="img-fluid wow zoomIn"
+              width={691}
+              height={533}
+            />
             <div className="animation-place">
               {[1, 2, 3, 4].map((index) => (
-                <div key={index} className={index % 2 === 0 ? "cloud-r" : "cloud-l"}>
-                  <Image src={`/assets/images/flights/banner/${index}.png`} alt="" className="img-fluid wow zoomIn" height={60} width={85} />
+                <div
+                  key={index}
+                  className={index % 2 === 0 ? 'cloud-r' : 'cloud-l'}
+                >
+                  <Image
+                    src={`/assets/images/flights/banner/${index}.png`}
+                    alt=""
+                    className="img-fluid wow zoomIn"
+                    height={60}
+                    width={85}
+                  />
                 </div>
               ))}
             </div>

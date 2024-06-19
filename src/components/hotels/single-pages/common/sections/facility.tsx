@@ -1,7 +1,7 @@
-import { FacilityAtSeaView } from "@/constant/constant";
-import { facilityData } from "@/data/hotels/single-page";
-import Img from "@/utils/BackgroundImageRatio";
-import { FC } from "react";
+import { FacilityAtSeaView } from '@/constant/constant';
+import { facilityData } from '@/data/hotels/single-page';
+import Img from '@/utils/BackgroundImageRatio';
+import { FC } from 'react';
 
 const Facilities: FC<IRoomProps> = ({ tab }) => {
   return (
@@ -10,10 +10,10 @@ const Facilities: FC<IRoomProps> = ({ tab }) => {
       {tab && <h4 className="content-title">{FacilityAtSeaView}</h4>}
       <div className="menu-part page-section facility">
         <div className="row">
-          {facilityData.map((data: IFacilityDataProps,index) => (
+          {facilityData.map((data: IFacilityDataProps, index) => (
             <div className="col-xl-3 col-6" key={index}>
               <h6>
-                <Img src={data.img} className="img-fluid " alt="" /> {data.title}
+                <Img src={data.img} className="img-fluid" alt="" /> {data.title}
               </h6>
               <ul>
                 {data.children.map((item, i) => (

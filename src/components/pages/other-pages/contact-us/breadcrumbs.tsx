@@ -1,5 +1,5 @@
-import GoogleMapComponent from "@/components/common/map/google-map";
-import { FC } from "react";
+import GoogleMapComponent from '@/components/common/map/google-map';
+import { FC } from 'react';
 
 const BreadcrumbsContent: FC = () => {
   return (

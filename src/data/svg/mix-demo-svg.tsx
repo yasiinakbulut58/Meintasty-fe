@@ -1,6 +1,11 @@
 export const HotelSvg = () => {
   return (
-    <svg id="Capa_1" enableBackground="new 0 0 512 512" viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg">
+    <svg
+      id="Capa_1"
+      enableBackground="new 0 0 512 512"
+      viewBox="0 0 512 512"
+      xmlns="http://www.w3.org/2000/svg"
+    >
       <g>
         <path d="m406.312 482v-384.132h-39.99v-64.972h-95.322v-32.896h-30v32.896h-95.322v64.972h-39.99v384.132h-54.4v30h409.424v-30zm-230.634-419.104h160.644v34.972h-160.644zm140.634 419.104h-45.312v-109.629h45.312zm-75.312 0h-45.312v-109.629h45.312zm105.312 0v-139.629h-180.624v139.629h-30v-354.132h240.624v354.132z" />
         <path d="m165.688 158.205h30v30h-30z" />
@@ -19,7 +24,17 @@ export const HotelSvg = () => {
 
 export const HolidaySvg = () => {
   return (
-    <svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlnsXlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 469.17 469.17" style={{ background: "new 0 0 469.17 469.17" }} xmlSpace="preserve">
+    <svg
+      version="1.1"
+      id="Capa_1"
+      xmlns="http://www.w3.org/2000/svg"
+      xmlnsXlink="http://www.w3.org/1999/xlink"
+      x="0px"
+      y="0px"
+      viewBox="0 0 469.17 469.17"
+      style={{ background: 'new 0 0 469.17 469.17' }}
+      xmlSpace="preserve"
+    >
       <g>
         <g>
           <path
@@ -46,12 +61,24 @@ export const HolidaySvg = () => {
       </g>
       <g>
         <g>
-          <rect x="333.559" y="268.423" transform="matrix(0.2589 -0.9659 0.9659 0.2589 -7.9406 542.4973)" width="32" height="16" />
+          <rect
+            x="333.559"
+            y="268.423"
+            transform="matrix(0.2589 -0.9659 0.9659 0.2589 -7.9406 542.4973)"
+            width="32"
+            height="16"
+          />
         </g>
       </g>
       <g>
         <g>
-          <rect x="266.652" y="368.841" transform="matrix(0.2588 -0.9659 0.9659 0.2588 -124.8553 590.9692)" width="111.997" height="16" />
+          <rect
+            x="266.652"
+            y="368.841"
+            transform="matrix(0.2588 -0.9659 0.9659 0.2588 -124.8553 590.9692)"
+            width="111.997"
+            height="16"
+          />
         </g>
       </g>
       <g>
@@ -73,17 +100,35 @@ export const HolidaySvg = () => {
       </g>
       <g>
         <g>
-          <rect x="339.372" y="218.479" transform="matrix(0.2558 -0.9667 0.9667 0.2558 39.6998 504.257)" width="16" height="15.728" />
+          <rect
+            x="339.372"
+            y="218.479"
+            transform="matrix(0.2558 -0.9667 0.9667 0.2558 39.6998 504.257)"
+            width="16"
+            height="15.728"
+          />
         </g>
       </g>
       <g>
         <g>
-          <rect x="369.74" y="226.546" transform="matrix(0.2558 -0.9667 0.9667 0.2558 54.5006 539.6177)" width="15.999" height="15.728" />
+          <rect
+            x="369.74"
+            y="226.546"
+            transform="matrix(0.2558 -0.9667 0.9667 0.2558 54.5006 539.6177)"
+            width="15.999"
+            height="15.728"
+          />
         </g>
       </g>
       <g>
         <g>
-          <rect x="309.006" y="210.437" transform="matrix(0.2558 -0.9667 0.9667 0.2558 24.8764 468.9158)" width="15.999" height="15.728" />
+          <rect
+            x="309.006"
+            y="210.437"
+            transform="matrix(0.2558 -0.9667 0.9667 0.2558 24.8764 468.9158)"
+            width="15.999"
+            height="15.728"
+          />
         </g>
       </g>
     </svg>
@@ -92,7 +137,12 @@ export const HolidaySvg = () => {
 
 export const FlightSvg = () => {
   return (
-    <svg id="Capa_1" enableBackground="new 0 0 512.396 512.396" viewBox="0 0 512.396 512.396" xmlns="http://www.w3.org/2000/svg">
+    <svg
+      id="Capa_1"
+      enableBackground="new 0 0 512.396 512.396"
+      viewBox="0 0 512.396 512.396"
+      xmlns="http://www.w3.org/2000/svg"
+    >
       <g>
         <path d="m422.098 0h-254.175c-9.813 0-17.5 8.126-17.5 18.5v43.922c0 4.143 3.358 7.5 7.5 7.5s7.5-3.357 7.5-7.5v-43.922c0-1.614.655-3.5 2.5-3.5h254.175c1.378 0 2.5 1.121 2.5 2.5v175.362h-62.625v-63.69c0-9.649-7.851-17.5-17.5-17.5h-179.05v-11.945c0-4.143-3.358-7.5-7.5-7.5s-7.5 3.357-7.5 7.5v11.945h-60.125c-9.649 0-17.5 7.851-17.5 17.5v365.725c0 9.649 7.851 17.5 17.5 17.5h27.226c4.142 0 7.5-3.357 7.5-7.5s-3.358-7.5-7.5-7.5h-27.226c-1.378 0-2.5-1.121-2.5-2.5v-365.725c0-1.379 1.122-2.5 2.5-2.5h254.175c1.378 0 2.5 1.121 2.5 2.5v178.725c0 4.143 3.358 7.5 7.5 7.5s7.5-3.357 7.5-7.5v-100.035h62.625v175.362c0 1.379-1.122 2.5-2.5 2.5h-60.125v-40.654c0-4.143-3.358-7.5-7.5-7.5s-7.5 3.357-7.5 7.5v149.826c0 1.379-1.122 2.5-2.5 2.5h-190.293c-4.142 0-7.5 3.357-7.5 7.5s3.358 7.5 7.5 7.5h190.293c9.649 0 17.5-7.851 17.5-17.5v-94.172h60.125c9.649 0 17.5-7.851 17.5-17.5v-365.724c0-9.649-7.85-17.5-17.5-17.5z" />
         <path d="m217.385 173.305c-54.237 0-98.362 44.125-98.362 98.361 0 54.237 44.125 98.362 98.362 98.362s98.362-44.125 98.362-98.362c0-54.236-44.125-98.361-98.362-98.361zm83.008 90.861h-26.614c-1.727-34.326-15.147-56.92-28.095-70.908 29.826 10.798 51.773 38.154 54.709 70.908zm-90.508-69.627v69.627h-33.34c2.184-38.692 20.952-59.812 33.34-69.627zm0 84.627v69.63c-12.382-9.809-31.156-30.93-33.34-69.63zm15 69.811v-69.811h33.857c-2.206 39.087-21.349 60.14-33.857 69.811zm0-84.811v-69.812c12.508 9.669 31.651 30.719 33.857 69.812zm-35.258-71.091c-12.901 14.005-26.385 36.683-28.117 71.091h-27.132c2.954-32.95 25.151-60.429 55.249-71.091zm-55.249 86.091h27.132c1.732 34.409 15.216 57.087 28.117 71.092-30.098-10.662-52.295-38.141-55.249-71.092zm111.301 70.911c12.949-13.989 26.372-36.585 28.1-70.911h26.614c-2.936 32.756-24.886 60.114-54.714 70.911z" />
@@ -105,7 +155,17 @@ export const FlightSvg = () => {
 
 export const CabSvg = () => {
   return (
-    <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlnsXlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 512 512" style={{ background: "new 0 0 512 512" }} xmlSpace="preserve">
+    <svg
+      version="1.1"
+      id="Layer_1"
+      xmlns="http://www.w3.org/2000/svg"
+      xmlnsXlink="http://www.w3.org/1999/xlink"
+      x="0px"
+      y="0px"
+      viewBox="0 0 512 512"
+      style={{ background: 'new 0 0 512 512' }}
+      xmlSpace="preserve"
+    >
       <g>
         <g>
           <path
@@ -192,7 +252,17 @@ export const CabSvg = () => {
 
 export const FoodSvg = () => {
   return (
-    <svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlnsXlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 480 480" style={{ background: "new 0 0 480 480" }} xmlSpace="preserve">
+    <svg
+      version="1.1"
+      id="Capa_1"
+      xmlns="http://www.w3.org/2000/svg"
+      xmlnsXlink="http://www.w3.org/1999/xlink"
+      x="0px"
+      y="0px"
+      viewBox="0 0 480 480"
+      style={{ background: 'new 0 0 480 480' }}
+      xmlSpace="preserve"
+    >
       <g>
         <g>
           <path

@@ -1,8 +1,12 @@
-import React from "react";
+import React from 'react';
 
 const EditProfileForm = () => {
   return (
-    <form onSubmit={(event: React.FormEvent<HTMLFormElement>)=>event.preventDefault()}> 
+    <form
+      onSubmit={(event: React.FormEvent<HTMLFormElement>) =>
+        event.preventDefault()
+      }
+    >
       <div className="row">
         <div className="form-group col-md-6">
           <label htmlFor="first">first name</label>

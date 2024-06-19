@@ -1,12 +1,13 @@
+'use client';
 import { FC } from 'react';
-import Button from '@/components/common/btn';
-import { BookTable } from '@/constant/constant';
 import BackgroundDiv from '@/utils/HOC/background-div';
-import Img from '@/utils/BackgroundImageRatio';
 import SmokeEffect from './smoke-effect';
 import Link from 'next/link';
+import AutocompleteDropdown from './autocomplete';
+import { useBaseTranslation } from '@/lib/hooks';
 
 const HomeBanner: FC = () => {
+  const { t } = useBaseTranslation();
   return (
     <section className="home_section restaurant-home-section p-0">
       <BackgroundDiv
@@ -28,27 +29,26 @@ const HomeBanner: FC = () => {
             <div className="col-md-6">
               <div className="home-content food_content">
                 <div className="shadow-none">
-                  <h4>2024 Special</h4>
-                  <h1>bite me !</h1>
+                  <h4>{t('Home.bannerTitle')}</h4>
+                  <h1>{t('Home.bannerDesc')}</h1>
                   <div className="book-table section-b-space single-table p-0">
                     <div className="table-form">
                       <form>
                         <div className="row w-100">
                           <div className="form-group col-md-6">
-                            <select className="form-control">
-                              <option value="" disabled>
-                                Room Type
-                              </option>
-                              <option value="saab">Deluxe Room</option>
-                              <option value="audi">Suite</option>
-                              <option value="opel">Royal room</option>
-                            </select>
+                            <AutocompleteDropdown
+                              options={[
+                                'Apple',
+                                'Banana',
+                                'Cherry',
+                                'Date',
+                                'Elderberry',
+                              ]}
+                            />
                           </div>
                           <div className="form-group col-md-6">
                             <select className="form-control">
-                              <option value="" disabled>
-                                Room Type
-                              </option>
+                              <option value="">Select...</option>
                               <option value="saab">Deluxe Room</option>
                               <option value="audi">Suite</option>
                               <option value="opel">Royal room</option>
@@ -59,7 +59,7 @@ const HomeBanner: FC = () => {
                               href="/restaurants"
                               className="btn btn-rounded color1 w-100 m-0"
                             >
-                              search
+                              {t('search')}
                             </Link>
                           </div>
                         </div>

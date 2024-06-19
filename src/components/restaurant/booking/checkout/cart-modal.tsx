@@ -1,27 +1,51 @@
-"use client"
-import { Close, UpdateAddress } from "@/constant/constant";
-import { FC } from "react";
-import { Modal, ModalBody, ModalFooter, ModalHeader } from "reactstrap";
+'use client';
+import { Close, UpdateAddress } from '@/constant/constant';
+import { FC } from 'react';
+import { Modal, ModalBody, ModalFooter, ModalHeader } from 'reactstrap';
 
 const CartModal: FC<IModalProps> = ({ modal, setMapModal, type }) => {
   return (
-    <Modal className="video-modal" size="md" isOpen={modal} toggle={setMapModal} modalTransition={{ timeout: 100 }}>
-      <ModalHeader toggle={()=>setMapModal(false)}>
+    <Modal
+      className="video-modal"
+      size="md"
+      isOpen={modal}
+      toggle={setMapModal}
+      modalTransition={{ timeout: 100 }}
+    >
+      <ModalHeader toggle={() => setMapModal(false)}>
         <h5 className="modal-title">{type}</h5>
       </ModalHeader>
       <ModalBody>
-        <form onSubmit={(event: React.FormEvent<HTMLFormElement>)=>event.preventDefault()}>
+        <form
+          onSubmit={(event: React.FormEvent<HTMLFormElement>) =>
+            event.preventDefault()
+          }
+        >
           <div className="form-group">
             <label htmlFor="e-na">Name</label>
-            <input type="text" className="form-control" placeholder="Mark Jecno" id="e-na" />
+            <input
+              type="text"
+              className="form-control"
+              placeholder="Mark Jecno"
+              id="e-na"
+            />
           </div>
           <div className="form-group">
             <label htmlFor="e-n">Mobile No</label>
-            <input type="text" className="form-control" placeholder="+91 123 - 456 - 7890" id="e-n" />
+            <input
+              type="text"
+              className="form-control"
+              placeholder="+91 123 - 456 - 7890"
+              id="e-n"
+            />
           </div>
           <div className="form-group">
             <label>Address</label>
-            <input type="text" className="form-control" placeholder="549 Sulphur Springs Road" />
+            <input
+              type="text"
+              className="form-control"
+              placeholder="549 Sulphur Springs Road"
+            />
           </div>
           <div className="row">
             <div className="form-group col-md-5">
@@ -43,10 +67,19 @@ const CartModal: FC<IModalProps> = ({ modal, setMapModal, type }) => {
         </form>
       </ModalBody>
       <ModalFooter>
-        <button type="button" className="btn btn-secondary" data-bs-dismiss="modal" onClick={() => setMapModal(false)}>
+        <button
+          type="button"
+          className="btn btn-secondary"
+          data-bs-dismiss="modal"
+          onClick={() => setMapModal(false)}
+        >
           {Close}
         </button>
-        <button type="button" className="btn btn-solid" onClick={() => setMapModal(false)}>
+        <button
+          type="button"
+          className="btn btn-solid"
+          onClick={() => setMapModal(false)}
+        >
           {UpdateAddress}
         </button>
       </ModalFooter>

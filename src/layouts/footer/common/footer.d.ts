@@ -14,5 +14,5 @@ interface ITopPlaceProps {
 interface IFooterComponentProps {
   place?: boolean;
   copyright?: boolean;
-  footerClass?:string
+  footerClass?: string;
 }

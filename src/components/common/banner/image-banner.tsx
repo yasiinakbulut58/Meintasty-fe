@@ -1,5 +1,5 @@
-import Img from "@/utils/BackgroundImageRatio";
-import { FC } from "react";
+import Img from '@/utils/BackgroundImageRatio';
+import { FC } from 'react';
 
 interface IImgBannerProps {
   classSection: string;
@@ -8,7 +8,7 @@ interface IImgBannerProps {
 const Banner: FC<IImgBannerProps> = ({ classSection, img }) => {
   return (
     <section className={classSection}>
-      <Img src={img} className="bg-img img-fluid " alt="" />
+      <Img src={img} className="bg-img img-fluid" alt="" />
     </section>
   );
 };

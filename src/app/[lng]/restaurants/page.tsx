@@ -21,7 +21,7 @@ const Page = async () => {
     <>
       <HomeBanner />
       <GridView
-        size={2}
+        size={3}
         value={data}
         type={'restaurant'}
         gridType="grid-view"

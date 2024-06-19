@@ -1,7 +1,7 @@
-"use client";
-import { FC, useEffect, useState } from "react";
-import Rating from "../rating";
-import { Gallery, Item } from "react-photoswipe-gallery";
+'use client';
+import { FC, useEffect, useState } from 'react';
+import Rating from '../rating';
+import { Gallery, Item } from 'react-photoswipe-gallery';
 interface GalleryData {
   id: number;
   img: string;
@@ -19,15 +19,20 @@ const GalleryOne: FC<GalleryOneProps> = ({ galleryData }) => {
     setTimeout(() => setDisplay(true), 500);
   }, [galleryData]);
   if (!display) {
-    return <div style={{ height: "60vh" }}></div>;
+    return <div style={{ height: '60vh' }}></div>;
   }
   return (
     <>
       <Gallery>
-        {galleryData.map((data: GalleryData,key) => (
+        {galleryData.map((data: GalleryData, key) => (
           <Item original={data.img} width="1200" height="800" key={key}>
             {({ ref, open }) => (
-              <div className="gallery_box" key={data.id} ref={ref as React.MutableRefObject<HTMLImageElement>} onClick={open}>
+              <div
+                className="gallery_box"
+                key={data.id}
+                ref={ref as React.MutableRefObject<HTMLImageElement>}
+                onClick={open}
+              >
                 <div className="gallery-img">
                   <div className="overlay"></div>
                   <img src={data.img} alt="" className="img-fluid w-100" />

@@ -1,4 +1,4 @@
-import { socialIconData } from "@/data/hotels/single-page";
+import { socialIconData } from '@/data/hotels/single-page';
 import { FC } from 'react';
 
 const ContactInfo: FC = () => {
@@ -6,8 +6,9 @@ const ContactInfo: FC = () => {
     <div className="single-sidebar">
       <h6 className="contact-title">contact info</h6>
       <p className="address">
-        {" "}
-        <i className="fas fa-map-marker-alt"></i> Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+        {' '}
+        <i className="fas fa-map-marker-alt"></i> Lorem ipsum dolor sit amet,
+        consectetur adipisicing elit.
       </p>
       <p>
         <i className="fas fa-phone-alt"></i> 123 254 121

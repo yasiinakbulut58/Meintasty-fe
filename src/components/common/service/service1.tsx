@@ -1,10 +1,10 @@
-import Img from "@/utils/BackgroundImageRatio";
-import { FC } from "react";
+import Img from '@/utils/BackgroundImageRatio';
+import { FC } from 'react';
 
 const ServiceOne: FC<IServiceOneProps> = ({ serviceData }) => {
   return (
     <div className="service_section row">
-      {serviceData.map((service: IServiceClassicProps,index) => (
+      {serviceData.map((service: IServiceClassicProps, index) => (
         <div key={index} className="col-lg-4 col-6">
           <div className="service-wrap">
             <div>

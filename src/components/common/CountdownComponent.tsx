@@ -1,7 +1,12 @@
-import { useEffect, useState } from "react";
+import { useEffect, useState } from 'react';
 
-const useTimer = (countDate:any) => {
-  const [timer, setTimer] = useState<any>({ days: "", hours: "", minutes: "", seconds: "" });
+const useTimer = (countDate: any) => {
+  const [timer, setTimer] = useState<any>({
+    days: '',
+    hours: '',
+    minutes: '',
+    seconds: '',
+  });
   const [countDownDate, setCountDownDate] = useState(countDate);
   useEffect(() => {
     setTimeout(() => {
@@ -9,7 +14,8 @@ const useTimer = (countDate:any) => {
       var timeLeft = countDownDate - now;
       if (
         Math.floor((timeLeft % (1000 * 60)) / 1000) <= 0 &&
-        Math.floor((timeLeft % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60)) <= 0 &&
+        Math.floor((timeLeft % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60)) <=
+          0 &&
         Math.floor((timeLeft % (1000 * 60 * 60)) / (1000 * 60)) <= 0 &&
         Math.floor((timeLeft % (1000 * 60)) / 1000) <= 0
       ) {
@@ -19,7 +25,9 @@ const useTimer = (countDate:any) => {
       }
       setTimer({
         days: Math.floor(timeLeft / (1000 * 60 * 60 * 24)),
-        hours: Math.floor((timeLeft % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60)),
+        hours: Math.floor(
+          (timeLeft % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60),
+        ),
         minutes: Math.floor((timeLeft % (1000 * 60 * 60)) / (1000 * 60)),
         seconds: Math.floor((timeLeft % (1000 * 60)) / 1000),
       });

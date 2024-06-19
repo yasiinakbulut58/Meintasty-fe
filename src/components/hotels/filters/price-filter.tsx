@@ -1,7 +1,7 @@
-import { priceData1 } from "@/data/hotels/filter-data";
-import { RootState } from "@/redux-toolkit/store";
-import React, { useState, ChangeEvent, useEffect } from "react";
-import { useDispatch, useSelector } from "react-redux";
+import { priceData1 } from '@/data/hotels/filter-data';
+import { RootState } from '@/redux-toolkit/store';
+import React, { useState, ChangeEvent, useEffect } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
 
 interface PriceStatus {
   min: number;
@@ -12,24 +12,29 @@ interface PriceStatus {
 const PriceFilter: React.FC = () => {
   const [show, setShow] = useState(true);
   const dispatch = useDispatch();
-  const priceStatus = useSelector<RootState, PriceStatus>((state) => state.hotelFilterReducer.priceStatus);
+  const priceStatus = useSelector<RootState, PriceStatus>(
+    (state) => state.hotelFilterReducer.priceStatus,
+  );
 
   const handleCheckboxChange = (event: ChangeEvent<HTMLInputElement>) => {
     const value = event.target.value;
     const isChecked = event.target.checked;
-    const [min, max] = value.split("-").map(Number);
+    const [min, max] = value.split('-').map(Number);
 
     if (isChecked) {
-      dispatch({ type: "priceStatus", payload: { ...priceStatus, [value]: { min, max } } });
+      dispatch({
+        type: 'priceStatus',
+        payload: { ...priceStatus, [value]: { min, max } },
+      });
     } else {
       const updatedPriceStatus = { ...priceStatus };
       delete updatedPriceStatus[value];
-      dispatch({ type: "priceStatus", payload: updatedPriceStatus });
+      dispatch({ type: 'priceStatus', payload: updatedPriceStatus });
     }
   };
 
   useEffect(() => {
-    dispatch({ type: "priceStatus", payload: { min: 100, max: 10000 } });
+    dispatch({ type: 'priceStatus', payload: { min: 100, max: 10000 } });
   }, []);
 
   const isChecked = (type: string) => priceStatus[type] !== undefined;
@@ -41,12 +46,17 @@ const PriceFilter: React.FC = () => {
         setShow(!show);
       }}
     >
-      <div className={`collection-collapse-block ${show ? "open" : ""}`}>
+      <div className={`collection-collapse-block ${show ? 'open' : ''}`}>
         <h6 className="collapse-block-title">Price</h6>
-        <div className={`collection-collapse-block-content ${!show ? "d-none" : ""} `}>
+        <div
+          className={`collection-collapse-block-content ${!show ? 'd-none' : ''} `}
+        >
           <div className="collection-brand-filter">
-            {priceData1.map((data: IFacilityProps,index) => (
-              <div className="form-check collection-filter-checkbox" key={index}>
+            {priceData1.map((data: IFacilityProps, index) => (
+              <div
+                className="form-check collection-filter-checkbox"
+                key={index}
+              >
                 <input
                   type="checkbox"
                   className="form-check-input"

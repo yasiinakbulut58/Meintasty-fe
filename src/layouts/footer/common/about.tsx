@@ -1,4 +1,4 @@
-import { About } from "@/constant/constant";
+import { About } from '@/constant/constant';
 import Link from 'next/link';
 
 const AboutComponent: React.FC = () => {
@@ -24,7 +24,9 @@ const AboutComponent: React.FC = () => {
                 <Link href="/pages/other-pages/register">register</Link>
               </li>
               <li>
-                <Link href="/pages/other-pages/user-dashboard">terms & co.</Link>
+                <Link href="/pages/other-pages/user-dashboard">
+                  terms & co.
+                </Link>
               </li>
               <li>
                 <Link href="/pages/other-pages/user-dashboard">privacy</Link>

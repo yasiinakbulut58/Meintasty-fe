@@ -1,8 +1,8 @@
-import { FC } from "react";
+import { FC } from 'react';
 
 const Overview: FC = () => {
   return (
-    <div className="menu-part about tab-pane " id="overview">
+    <div className="menu-part about tab-pane" id="overview">
       <div className="container">
         <div className="row">
           <div className="col-sm-6">

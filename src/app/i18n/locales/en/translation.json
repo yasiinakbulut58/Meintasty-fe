@@ -6,5 +6,10 @@
   "flight": "flight",
   "cab": "Cab",
   "restaurant": "restaurant",
-  "pages": "pages"
+  "pages": "pages",
+  "search": "Search",
+  "Home": {
+    "bannerTitle": "2024 Special",
+    "bannerDesc": "bite me !"
+  }
 }

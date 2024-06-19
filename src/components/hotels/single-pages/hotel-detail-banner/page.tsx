@@ -1,8 +1,8 @@
-import Button from "@/components/common/btn";
-import Rating from "@/components/common/rating";
-import { SeaViewHotel } from "@/constant/constant";
-import { FC } from "react";
-import Link from "next/link";
+import Button from '@/components/common/btn';
+import Rating from '@/components/common/rating';
+import { SeaViewHotel } from '@/constant/constant';
+import { FC } from 'react';
+import Link from 'next/link';
 
 const HotelBannerDetail: FC = () => {
   return (
@@ -30,7 +30,12 @@ const HotelBannerDetail: FC = () => {
         <h2 className="price">
           $250 <span>/ per night</span>
         </h2>
-        <Link href="/hotel/booking/booking-page"><Button btnClass="btn btn-rounded btn-sm color1" name="book this now" /></Link>
+        <Link href="/hotel/booking/booking-page">
+          <Button
+            btnClass="btn btn-rounded btn-sm color1"
+            name="book this now"
+          />
+        </Link>
       </div>
     </div>
   );

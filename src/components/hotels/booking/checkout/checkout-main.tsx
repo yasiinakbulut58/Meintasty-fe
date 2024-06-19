@@ -1,8 +1,8 @@
-import RestaurantAnimation from "@/components/common/animation/restaurant-animation";
-import { PaymentOption } from "@/constant/constant";
-import { FC } from "react";
-import ReviewSection from "@/components/common/booking-page/payment/review";
-import Summary from "@/components/common/booking-page/booking-summary";
+import RestaurantAnimation from '@/components/common/animation/restaurant-animation';
+import { PaymentOption } from '@/constant/constant';
+import { FC } from 'react';
+import ReviewSection from '@/components/common/booking-page/payment/review';
+import Summary from '@/components/common/booking-page/booking-summary';
 
 const Checkout: FC = () => {
   return (

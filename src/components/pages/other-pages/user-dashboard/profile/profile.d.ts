@@ -1,4 +1,3 @@
-
 interface Detail {
   label: string;
   value: string;
@@ -12,10 +11,10 @@ interface Section {
 }
 
 interface EditProfileInterFace {
-  open: boolean
-  toggle: () => void
+  open: boolean;
+  toggle: () => void;
 }
 interface MultipleModalInterFace {
-  open: boolean,
-  toggle: (val:string) => void
+  open: boolean;
+  toggle: (val: string) => void;
 }

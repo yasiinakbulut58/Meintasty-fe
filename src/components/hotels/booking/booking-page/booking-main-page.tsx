@@ -1,7 +1,7 @@
-import RestaurantAnimation from "@/components/common/animation/restaurant-animation";
-import { FC } from "react";
-import TravelInfo from "./travel-info";
-import Summary from "@/components/common/booking-page/booking-summary";
+import RestaurantAnimation from '@/components/common/animation/restaurant-animation';
+import { FC } from 'react';
+import TravelInfo from './travel-info';
+import Summary from '@/components/common/booking-page/booking-summary';
 
 const Booking: FC = () => {
   return (

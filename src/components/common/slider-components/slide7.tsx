@@ -1,23 +1,31 @@
-"use client";
-import { FC } from "react";
-import Image from "next/image";
-import Slider from "react-slick";
-import { slide2 } from "../slider-options";
-import Rating from "../rating";
-import { useSelector } from "react-redux";
-import { RootState } from "@/redux-toolkit/store";
-import Link from "next/link";
+'use client';
+import { FC } from 'react';
+import Image from 'next/image';
+import Slider from 'react-slick';
+import { slide2 } from '../slider-options';
+import Rating from '../rating';
+import { useSelector } from 'react-redux';
+import { RootState } from '@/redux-toolkit/store';
+import Link from 'next/link';
 
 const SliderSeven: FC<ISlideSevenProps> = ({ slideData }) => {
-  const { symbol, currencyValue } = useSelector((state: RootState) => state.currency);
+  const { symbol, currencyValue } = useSelector(
+    (state: RootState) => state.currency,
+  );
   return (
     <Slider {...slide2} className="slide-2 arrow-classic">
-      {slideData.map((data: IPackageProps,index) => (
+      {slideData.map((data: IPackageProps, index) => (
         <div key={index}>
           <div className="category-wrap">
             <div className="category-img">
               <Link href="/home/tour/trending">
-                <Image src={data.img} alt="" className="img-fluid  " width={230} height={230} />
+                <Image
+                  src={data.img}
+                  alt=""
+                  className="img-fluid"
+                  width={230}
+                  height={230}
+                />
               </Link>
               <div className="side-effect"></div>
             </div>

@@ -1,6 +1,6 @@
-import NoSsr from "@/utils/HOC/NoSsr";
-import { Map, Marker } from "pigeon-maps";
-import React from "react";
+import NoSsr from '@/utils/HOC/NoSsr';
+import { Map, Marker } from 'pigeon-maps';
+import React from 'react';
 
 const PigeonMapComponent = () => {
   return (

@@ -1,7 +1,7 @@
-import { FC } from "react";
-import { New } from "@/constant/constant";
-import Img from "@/utils/BackgroundImageRatio";
-import AppBtn from "../button/app-button";
+import { FC } from 'react';
+import { New } from '@/constant/constant';
+import Img from '@/utils/BackgroundImageRatio';
+import AppBtn from '../button/app-button';
 
 interface IAppPageProps {
   badge?: boolean;
@@ -18,7 +18,7 @@ const AppPage: FC<IAppPageProps> = ({ badge, imgData, whiteClass }) => {
         <div className="app-content">
           <div>
             {badge && (
-              <div className={`label ${whiteClass && "label-white"}`}>
+              <div className={`label ${whiteClass && 'label-white'}`}>
                 <span>{New}</span>
               </div>
             )}
@@ -27,7 +27,11 @@ const AppPage: FC<IAppPageProps> = ({ badge, imgData, whiteClass }) => {
               The best Cab app
               <span>for your mobile app.</span>
             </h2>
-            <p>Quisque sollicitudin feugiat risus, eu posuere ex euismod eu. Phasellus hendrerit, massa efficitur dapibus pulvinar, sapien eros sodales ante, euismod aliquet nulla metus a mauris.</p>
+            <p>
+              Quisque sollicitudin feugiat risus, eu posuere ex euismod eu.
+              Phasellus hendrerit, massa efficitur dapibus pulvinar, sapien eros
+              sodales ante, euismod aliquet nulla metus a mauris.
+            </p>
             <h3>dowload app now...</h3>
             <AppBtn classWhite={whiteClass} />
           </div>
@@ -36,10 +40,10 @@ const AppPage: FC<IAppPageProps> = ({ badge, imgData, whiteClass }) => {
       <div className="col-lg-7">
         <div className="app-image">
           <div>
-            {imgData.map((data: { id: number; img: string },index) => (
+            {imgData.map((data: { id: number; img: string }, index) => (
               <div className="image" key={index}>
                 <div className="circle"></div>
-                <Img src={data.img} alt="" className="img-fluid " />
+                <Img src={data.img} alt="" className="img-fluid" />
               </div>
             ))}
           </div>

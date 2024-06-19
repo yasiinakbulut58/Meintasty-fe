@@ -1,9 +1,9 @@
-import { userSection } from "@/data/pages/all-page";
-import React, { FC, useState } from "react";
-import EditProfile from "./EditProfile";
-import EmailModalShow from "./EmailModalShow";
-import PhoneModalShow from "./PhoneModalShow";
-import PasswordModalShow from "./PasswordModalShow";
+import { userSection } from '@/data/pages/all-page';
+import React, { FC, useState } from 'react';
+import EditProfile from './EditProfile';
+import EmailModalShow from './EmailModalShow';
+import PhoneModalShow from './PhoneModalShow';
+import PasswordModalShow from './PasswordModalShow';
 
 const Profile: FC = () => {
   const [modalOpen, setModalOpen] = useState(false);
@@ -12,23 +12,23 @@ const Profile: FC = () => {
   const [passwordModal, setPasswordModal] = useState(false);
   const toggle = () => setModalOpen(!modalOpen);
   const multipleToggleHandle = (name: string) => {
-    name === "email address"
+    name === 'email address'
       ? setEmailModal(!emailModal)
-      : name == "phone no"
-      ? setPhoneModal(!phoneModal)
-      : setPasswordModal(!passwordModal);
+      : name == 'phone no'
+        ? setPhoneModal(!phoneModal)
+        : setPasswordModal(!passwordModal);
   };
   return (
     <>
-      {userSection.map((section: Section,index) => (
-        <div key={index} className="dashboard-box"   >
+      {userSection.map((section: Section, index) => (
+        <div key={index} className="dashboard-box">
           <div className="dashboard-title">
             <h4>{section.title}</h4>
-            {section.title === "Profile" && <span onClick={toggle}>edit</span>}
+            {section.title === 'Profile' && <span onClick={toggle}>edit</span>}
           </div>
           <div className="dashboard-detail">
             <ul>
-              {section.details.map((detail,i2) => (
+              {section.details.map((detail, i2) => (
                 <li key={i2}>
                   <div className="details">
                     <div className="left">

@@ -1,16 +1,16 @@
-"use client";
-import { FC } from "react";
-import Rating from "../rating";
-import Img from "@/utils/BackgroundImageRatio";
-import { reviews } from "@/data/home/hotel/hotel-data";
-import Slider from "react-slick";
-import { slide1 } from "../slider-options";
+'use client';
+import { FC } from 'react';
+import Rating from '../rating';
+import Img from '@/utils/BackgroundImageRatio';
+import { reviews } from '@/data/home/hotel/hotel-data';
+import Slider from 'react-slick';
+import { slide1 } from '../slider-options';
 
 const ReviewContent: FC = () => {
   return (
     <div className="slide-1">
       <Slider {...slide1}>
-        {reviews.map((review: IReviewCommonProps,index) => (
+        {reviews.map((review: IReviewCommonProps, index) => (
           <div key={index}>
             <div className="row">
               <div className="col-xl-8 offset-xl-2">

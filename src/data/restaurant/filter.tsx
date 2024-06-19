@@ -1,68 +1,68 @@
 export const popularData = [
   {
     id: 1,
-    type: "free delivery",
+    type: 'free delivery',
   },
   {
     id: 2,
-    type: "reached in 20 min",
+    type: 'reached in 20 min',
   },
   {
     id: 3,
-    type: "pure veg",
+    type: 'pure veg',
   },
   {
     id: 4,
-    type: "non veg",
+    type: 'non veg',
   },
 ];
 
 export const cuisinesData = [
   {
     id: 1,
-    type: "asin",
+    type: 'asin',
   },
   {
     id: 2,
-    type: "seafood",
+    type: 'seafood',
   },
   {
     id: 3,
-    type: "italian",
+    type: 'italian',
   },
   {
     id: 4,
-    type: "pizza",
+    type: 'pizza',
   },
   {
     id: 5,
-    type: "western",
+    type: 'western',
   },
   {
     id: 6,
-    type: "chinese",
+    type: 'chinese',
   },
   {
     id: 7,
-    type: "dessert",
+    type: 'dessert',
   },
 ];
 
 export const deliverData = [
   {
     id: 1,
-    type: "upto 20 minutes",
+    type: 'upto 20 minutes',
   },
   {
     id: 2,
-    type: "upto 30 minutes",
+    type: 'upto 30 minutes',
   },
   {
     id: 3,
-    type: "upto 45 minutes",
+    type: 'upto 45 minutes',
   },
   {
     id: 4,
-    type: "upto 60 minutes",
+    type: 'upto 60 minutes',
   },
 ];

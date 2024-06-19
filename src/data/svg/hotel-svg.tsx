@@ -1,9 +1,19 @@
-"use client";
-import { FC } from "react";
+'use client';
+import { FC } from 'react';
 
 export const Capa2: FC = () => {
   return (
-    <svg version="1.1" id="Capa_2" xmlns="http://www.w3.org/2000/svg" xmlnsXlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 480 480" style={{ background: "new 0 0 480 480" }} xmlSpace="preserve">
+    <svg
+      version="1.1"
+      id="Capa_2"
+      xmlns="http://www.w3.org/2000/svg"
+      xmlnsXlink="http://www.w3.org/1999/xlink"
+      x="0px"
+      y="0px"
+      viewBox="0 0 480 480"
+      style={{ background: 'new 0 0 480 480' }}
+      xmlSpace="preserve"
+    >
       <g>
         <g>
           <path
@@ -71,7 +81,13 @@ export const Capa2: FC = () => {
 
 export const HappyClient: FC = () => {
   return (
-    <svg version="1.1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 470 470" xmlnsXlink="http://www.w3.org/1999/xlink" enableBackground="new 0 0 470 470">
+    <svg
+      version="1.1"
+      xmlns="http://www.w3.org/2000/svg"
+      viewBox="0 0 470 470"
+      xmlnsXlink="http://www.w3.org/1999/xlink"
+      enableBackground="new 0 0 470 470"
+    >
       <g>
         <path d="M235,148.009c40.806,0,74.004-33.198,74.004-74.005C309.004,33.198,275.806,0,235,0s-74.004,33.198-74.004,74.004   C160.996,114.811,194.194,148.009,235,148.009z M235,15c32.535,0,59.004,26.469,59.004,59.004S267.535,133.009,235,133.009   s-59.004-26.47-59.004-59.005S202.465,15,235,15z"></path>
         <path d="m235,178.009c59.812,0 108.922,46.69 112.793,105.539h-173.333c-4.142,0-7.5,3.357-7.5,7.5s3.358,7.5 7.5,7.5h181.08c4.142,0 7.5-3.357 7.5-7.5 0-70.601-57.438-128.039-128.04-128.039s-128.04,57.438-128.04,128.039c0,4.143 3.358,7.5 7.5,7.5h30c4.142,0 7.5-3.357 7.5-7.5s-3.358-7.5-7.5-7.5h-22.254c3.872-58.849 52.983-105.539 112.794-105.539z"></path>
@@ -86,7 +102,17 @@ export const HappyClient: FC = () => {
 
 export const Location: FC = () => {
   return (
-    <svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlnsXlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 512 512" style={{ background: "new 0 0 512 512" }} xmlSpace="preserve">
+    <svg
+      version="1.1"
+      id="Capa_1"
+      xmlns="http://www.w3.org/2000/svg"
+      xmlnsXlink="http://www.w3.org/1999/xlink"
+      x="0px"
+      y="0px"
+      viewBox="0 0 512 512"
+      style={{ background: 'new 0 0 512 512' }}
+      xmlSpace="preserve"
+    >
       <g>
         <g>
           <polygon points="176.748,182.811 176.748,182.811 176.735,182.783 		" />
@@ -190,7 +216,16 @@ export const Location: FC = () => {
 
 export const Booking: FC = () => {
   return (
-    <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlnsXlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 512 512" style={{ background: "new 0 0 512 512" }} xmlSpace="preserve">
+    <svg
+      version="1.1"
+      xmlns="http://www.w3.org/2000/svg"
+      xmlnsXlink="http://www.w3.org/1999/xlink"
+      x="0px"
+      y="0px"
+      viewBox="0 0 512 512"
+      style={{ background: 'new 0 0 512 512' }}
+      xmlSpace="preserve"
+    >
       <g>
         <g>
           <polygon points="176.748,182.811 176.748,182.811 176.735,182.783 		"></polygon>
@@ -217,7 +252,8 @@ export const Booking: FC = () => {
             d="M357.053,208.842c-22.333,0-40.421,18.095-40.421,40.421s18.089,40.421,40.421,40.421
 			c22.326,0,40.421-18.095,40.421-40.421C397.474,226.937,379.379,208.842,357.053,208.842z M357.053,269.474
 			c-11.143,0-20.211-9.068-20.211-20.211s9.068-20.211,20.211-20.211c11.143,0,20.211,9.068,20.211,20.211
-			S368.196,269.474,357.053,269.474z"></path>
+			S368.196,269.474,357.053,269.474z"
+          ></path>
         </g>
       </g>
       <g>
@@ -272,7 +308,8 @@ export const Booking: FC = () => {
 				c4.851-2.115,9.371-4.951,13.063-9.047l13.191-14.848c6.164,7.398,11.136,13.036,13.925,16.141l15.037,16.761l15.037-16.768
 				c14.37-16.007,86.016-98.378,86.016-148.224c0-9.822-1.476-19.295-4.102-28.281c0.303-0.007,0.573-0.034,0.896-0.034
 				c2.5-0.007,5.557,0.35,8.341,0.984c2.776,0.62,5.308,1.57,6.67,2.345l21.498,11.944c0.242,4.325,0.384,8.664,0.384,13.036
-				C491.79,386.013,386.014,491.789,256,491.789z"></path>
+				C491.79,386.013,386.014,491.789,256,491.789z"
+            ></path>
             <polygon points="94.172,252.312 94.183,252.306 94.185,252.305 			"></polygon>
           </g>
         </g>
@@ -282,7 +319,8 @@ export const Booking: FC = () => {
           <path
             d="M89.256,47.151c-18.614,0-33.677,15.07-33.677,33.684c0,18.607,15.064,33.684,33.678,33.684s33.69-15.077,33.69-33.684
 			C122.948,62.228,107.87,47.151,89.256,47.151z M89.257,94.308c-7.431,0.007-13.467-6.043-13.467-13.473
-			c0-7.43,6.036-13.473,13.467-13.473c7.438,0,13.48,6.043,13.48,13.473C102.738,88.265,96.695,94.308,89.257,94.308z"></path>
+			c0-7.43,6.036-13.473,13.467-13.473c7.438,0,13.48,6.043,13.48,13.473C102.738,88.265,96.695,94.308,89.257,94.308z"
+          ></path>
         </g>
       </g>
     </svg>

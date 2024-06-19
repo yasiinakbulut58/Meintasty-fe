@@ -1,19 +1,21 @@
-import { FC } from "react";
-import Img from "@/utils/BackgroundImageRatio";
-import Rating from "@/components/common/rating";
-import { useSelector } from "react-redux";
-import { RootState } from "@/redux-toolkit/store";
+import { FC } from 'react';
+import Img from '@/utils/BackgroundImageRatio';
+import Rating from '@/components/common/rating';
+import { useSelector } from 'react-redux';
+import { RootState } from '@/redux-toolkit/store';
 import Link from 'next/link';
 
 const Slide8: FC<ISlider8Props> = ({ data }) => {
-  const { symbol, currencyValue } = useSelector((state: RootState) => state.currency);
+  const { symbol, currencyValue } = useSelector(
+    (state: RootState) => state.currency,
+  );
   return (
     <Link href="/home/tour/trending" key={data.id}>
       <div className="category-box">
         <div className="img-category">
           <div className="side-effect"></div>
           <div>
-            <Img src={data.img} alt="" className="img-fluid  bg-img" />
+            <Img src={data.img} alt="" className="img-fluid bg-img" />
           </div>
           <div className="top-bar">
             <span className="offer">{data.badge}</span>
@@ -21,7 +23,7 @@ const Slide8: FC<ISlider8Props> = ({ data }) => {
               <del>
                 {symbol}
                 {(currencyValue * data.price).toFixed(0)}
-              </del>{" "}
+              </del>{' '}
               {symbol}
               {(currencyValue * data.discount).toFixed(0)}
             </h5>

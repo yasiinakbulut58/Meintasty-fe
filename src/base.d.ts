@@ -1,4 +1,6 @@
-interface sliderImg { img: string }
+interface sliderImg {
+  img: string;
+}
 
 interface IBaseProps {
   filter(arg0: (product: IBaseProps) => boolean): unknown;
@@ -10,21 +12,21 @@ interface IBaseProps {
   district?: string;
   facility?: string;
   language?: string;
-  rate: string; 
+  rate: string;
   flights: string[];
-  travel: string; 
+  travel: string;
   trip: string;
   price?: number;
   iconImg?: [{ id: number; img: string; title: string }];
   title?: string;
   btn?: string;
-  deliverTime?:dtring |string
+  deliverTime?: dtring | string;
   offerBox?: string;
   hotelImg?: [{ id: number; img: string; title: string }];
   place?: string;
   type?: string;
   sliderImg?: sliderImg[];
-  multipleImg?: [{id:number, img: string }];
+  multipleImg?: [{ id: number; img: string }];
   desc?: string;
   video?: string;
   span?: string | undefined;

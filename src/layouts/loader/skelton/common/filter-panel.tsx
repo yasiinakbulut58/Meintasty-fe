@@ -1,4 +1,4 @@
-import { FC } from "react";
+import { FC } from 'react';
 
 const SkeletonFilter: FC = () => {
   const filterItems = (count: number) => {
@@ -10,8 +10,8 @@ const SkeletonFilter: FC = () => {
   };
 
   const gridViews = [
-    { layout: "product-2-layout-view", filters: 2 },
-    { layout: "product-3-layout-view", filters: 3 },
+    { layout: 'product-2-layout-view', filters: 2 },
+    { layout: 'product-3-layout-view', filters: 3 },
   ];
 
   return (

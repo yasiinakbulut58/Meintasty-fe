@@ -1,16 +1,21 @@
 // @ts-nocheck
-"use client";
-import { FC, useState } from "react";
-import DebitCard from "./debit";
-import NetBanking from "./net-banking";
-import MyWallet from "./my-wallet";
-import { Accordion, AccordionBody, AccordionHeader, AccordionItem } from "reactstrap";
+'use client';
+import { FC, useState } from 'react';
+import DebitCard from './debit';
+import NetBanking from './net-banking';
+import MyWallet from './my-wallet';
+import {
+  Accordion,
+  AccordionBody,
+  AccordionHeader,
+  AccordionItem,
+} from 'reactstrap';
 
 const ReviewSection: FC = () => {
-  const [open, setOpen] = useState("1");
+  const [open, setOpen] = useState('1');
 
   const toggle = (id: string) => {
-    open === id ? setOpen("") : setOpen(id);
+    open === id ? setOpen('') : setOpen(id);
   };
   return (
     <div className="flight_detail payment-gateway">

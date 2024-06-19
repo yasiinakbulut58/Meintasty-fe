@@ -1,7 +1,7 @@
-import React, { FC } from "react";
+import React, { FC } from 'react';
 
 interface IRateingProps {
-  rang?: string
+  rang?: string;
 }
 
 const Rating: FC<IRateingProps> = ({ rang }) => {

@@ -1,11 +1,13 @@
-"use client";
-import React, { FC, useState } from "react";
-import QuantityInput from "@/components/common/booking-form/flight-form/qty-inputs";
-import Button from "@/components/common/btn";
-import { CartItems, PlaceOrder } from "@/constant/constant";
+'use client';
+import React, { FC, useState } from 'react';
+import QuantityInput from '@/components/common/booking-form/flight-form/qty-inputs';
+import Button from '@/components/common/btn';
+import { CartItems, PlaceOrder } from '@/constant/constant';
 
-const CartItem: FC<CartItemProps> = ({ items,showMenu,setShowMenu }) => {
-  const [quantities, setQuantities] = useState<number[]>(items.map((item) => item.quantity));
+const CartItem: FC<CartItemProps> = ({ items, showMenu, setShowMenu }) => {
+  const [quantities, setQuantities] = useState<number[]>(
+    items.map((item) => item.quantity),
+  );
   const calculateTotalPrice = () => {
     let total = 0;
     items.forEach((item) => {
@@ -20,13 +22,24 @@ const CartItem: FC<CartItemProps> = ({ items,showMenu,setShowMenu }) => {
   };
 
   return (
-    <div className="single-sidebar order-cart-right" style={{right:showMenu?"0px":""}}>
-      <div onClick={()=> setShowMenu&&setShowMenu(!showMenu)} className="back-btn">back</div>
+    <div
+      className="single-sidebar order-cart-right"
+      style={{ right: showMenu ? '0px' : '' }}
+    >
+      <div
+        onClick={() => setShowMenu && setShowMenu(!showMenu)}
+        className="back-btn"
+      >
+        back
+      </div>
       <div className="order-cart">
         <h4 className="title">{CartItems}:</h4>
         <div className="cart-items">
           {items.map((item, index) => (
-            <div className={`items ${index % 2 === 0 ? "veg" : "non-veg"}`} key={index}>
+            <div
+              className={`items ${index % 2 === 0 ? 'veg' : 'non-veg'}`}
+              key={index}
+            >
               <h6>{item.name}</h6>
               <h5>${item.price.toFixed(2)}</h5>
               <div className="qty-box cart_qty">

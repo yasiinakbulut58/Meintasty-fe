@@ -2,7 +2,10 @@
   {
     "id": 1,
     "img": "/assets/images/restaurant/dishes/7.jpg",
-    "sliderImg": [{ "img": "/assets/images/restaurant/dishes/7.jpg" }, { "img": "/assets/images/restaurant/dishes/8.jpg" }],
+    "sliderImg": [
+      { "img": "/assets/images/restaurant/dishes/7.jpg" },
+      { "img": "/assets/images/restaurant/dishes/8.jpg" }
+    ],
     "item": "italian restro",
     "place": "fast food, cafe, italian",
     "time": "11.30am - 11.30pm",
@@ -18,7 +21,10 @@
   {
     "id": 2,
     "img": "/assets/images/restaurant/dishes/8.jpg",
-    "sliderImg": [{ "img": "/assets/images/restaurant/dishes/8.jpg" }, { "img": "/assets/images/restaurant/dishes/9.jpg" }],
+    "sliderImg": [
+      { "img": "/assets/images/restaurant/dishes/8.jpg" },
+      { "img": "/assets/images/restaurant/dishes/9.jpg" }
+    ],
     "item": "italian restro",
     "place": "fast food, cafe, italian",
     "time": "11.30am - 11.30pm",
@@ -33,7 +39,10 @@
   {
     "id": 3,
     "img": "/assets/images/restaurant/dishes/9.jpg",
-    "sliderImg": [{ "img": "/assets/images/restaurant/dishes/9.jpg" }, { "img": "/assets/images/restaurant/dishes/8.jpg" }],
+    "sliderImg": [
+      { "img": "/assets/images/restaurant/dishes/9.jpg" },
+      { "img": "/assets/images/restaurant/dishes/8.jpg" }
+    ],
     "item": "italian restro",
     "place": "fast food, cafe, italian",
     "time": "11.30am - 11.30pm",
@@ -48,7 +57,10 @@
   {
     "id": 4,
     "img": "/assets/images/restaurant/dishes/10.jpg",
-    "sliderImg": [{ "img": "/assets/images/restaurant/dishes/10.jpg" }, { "img": "/assets/images/restaurant/dishes/8.jpg" }],
+    "sliderImg": [
+      { "img": "/assets/images/restaurant/dishes/10.jpg" },
+      { "img": "/assets/images/restaurant/dishes/8.jpg" }
+    ],
     "item": "italian restro",
     "place": "fast food, cafe, italian",
     "time": "11.30am - 11.30pm",
@@ -63,7 +75,10 @@
   {
     "id": 5,
     "img": "/assets/images/restaurant/dishes/11.jpg",
-    "sliderImg": [{ "img": "/assets/images/restaurant/dishes/11.jpg" }, { "img": "/assets/images/restaurant/dishes/8.jpg" }],
+    "sliderImg": [
+      { "img": "/assets/images/restaurant/dishes/11.jpg" },
+      { "img": "/assets/images/restaurant/dishes/8.jpg" }
+    ],
     "item": "italian restro",
     "place": "fast food, cafe, italian",
     "time": "11.30am - 11.30pm",
@@ -79,7 +94,10 @@
   {
     "id": 6,
     "img": "/assets/images/restaurant/dishes/12.jpg",
-    "sliderImg": [{ "img": "/assets/images/restaurant/dishes/12.jpg" }, { "img": "/assets/images/restaurant/dishes/8.jpg" }],
+    "sliderImg": [
+      { "img": "/assets/images/restaurant/dishes/12.jpg" },
+      { "img": "/assets/images/restaurant/dishes/8.jpg" }
+    ],
     "item": "italian restro",
     "place": "fast food, cafe, italian",
     "time": "11.30am - 11.30pm",
@@ -94,7 +112,10 @@
   {
     "id": 7,
     "img": "/assets/images/restaurant/dishes/13.jpg",
-    "sliderImg": [{ "img": "/assets/images/restaurant/dishes/13.jpg" }, { "img": "/assets/images/restaurant/dishes/8.jpg" }],
+    "sliderImg": [
+      { "img": "/assets/images/restaurant/dishes/13.jpg" },
+      { "img": "/assets/images/restaurant/dishes/8.jpg" }
+    ],
     "item": "italian restro",
     "place": "fast food, cafe, italian",
     "time": "11.30am - 11.30pm",
@@ -109,7 +130,10 @@
   {
     "id": 8,
     "img": "/assets/images/restaurant/dishes/14.jpg",
-    "sliderImg": [{ "img": "/assets/images/restaurant/dishes/14.jpg" }, { "img": "/assets/images/restaurant/dishes/8.jpg" }],
+    "sliderImg": [
+      { "img": "/assets/images/restaurant/dishes/14.jpg" },
+      { "img": "/assets/images/restaurant/dishes/8.jpg" }
+    ],
     "item": "italian restro",
     "place": "fast food, cafe, italian",
     "time": "11.30am - 11.30pm",

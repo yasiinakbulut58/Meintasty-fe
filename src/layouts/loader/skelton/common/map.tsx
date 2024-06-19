@@ -1,8 +1,8 @@
-import { FC } from "react";
-import { skeletonData } from "./data";
-import { RootState } from "@/redux-toolkit/store";
-import { useSelector } from "react-redux";
-import SkeletonList from "./list-view";
+import { FC } from 'react';
+import { skeletonData } from './data';
+import { RootState } from '@/redux-toolkit/store';
+import { useSelector } from 'react-redux';
+import SkeletonList from './list-view';
 
 const SkeletonMap: FC<ILoaderProps> = ({ side }) => {
   const { gridStyle } = useSelector((state: RootState) => state.gridReducer);
@@ -32,11 +32,19 @@ const SkeletonMap: FC<ILoaderProps> = ({ side }) => {
 
   return (
     <>
-      <div className={`map-section col-lg-6 ${side === "right" ? "order-1" : ""}`}>
+      <div
+        className={`map-section col-lg-6 ${side === 'right' ? 'order-1' : ''}`}
+      >
         <div className="map"></div>
       </div>
       <div className="col-lg-6 ratio3_2">
-        <div className="product-wrapper-grid special-section grid-box">{gridStyle === "list-view" ? <SkeletonList /> : <div className={"row  content grid"}>{renderSpecialBoxes()}</div>}</div>
+        <div className="product-wrapper-grid special-section grid-box">
+          {gridStyle === 'list-view' ? (
+            <SkeletonList />
+          ) : (
+            <div className={'row content grid'}>{renderSpecialBoxes()}</div>
+          )}
+        </div>
       </div>
     </>
   );

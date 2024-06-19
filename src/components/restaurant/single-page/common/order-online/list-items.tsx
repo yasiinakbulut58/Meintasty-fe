@@ -1,6 +1,6 @@
-import React, { FC } from "react";
-import CustomizedItemsModal from "./modal/customized-item";
-import QuantityPage from "./quantity";
+import React, { FC } from 'react';
+import CustomizedItemsModal from './modal/customized-item';
+import QuantityPage from './quantity';
 
 const ListOfItemsPage: FC<IListItemsProps> = ({ items, navId, title }) => {
   return (
@@ -12,7 +12,10 @@ const ListOfItemsPage: FC<IListItemsProps> = ({ items, navId, title }) => {
         </div>
         <div className="order-items">
           {items.map((item: IClassicMenuProps, index: number) => (
-            <div className={`items ${item.label !== "non-veg" ? "veg" : "non-veg"}`} key={index}>
+            <div
+              className={`items ${item.label !== 'non-veg' ? 'veg' : 'non-veg'}`}
+              key={index}
+            >
               <h6>{item.name}</h6>
               <p>{item.description}</p>
               <h5>${item.price.toFixed(2)}</h5>

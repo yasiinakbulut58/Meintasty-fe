@@ -40,8 +40,8 @@ interface NavSectionProps {
 
 interface CartItemProps {
   items: CartItemDetails[];
-  showMenu?:boolean
-  setShowMenu?:(val:boolean)=>void
+  showMenu?: boolean;
+  setShowMenu?: (val: boolean) => void;
 }
 
 interface CartItemDetails {
