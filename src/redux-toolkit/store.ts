@@ -10,7 +10,6 @@ import { setupListeners } from '@reduxjs/toolkit/dist/query';
 import currencyReducer from './reducers/currency';
 import hotelReducer from './hotel-api';
 import flightReducer from './flight-api';
-import cabReducer from './cab-api';
 import restaurantReducer from './restaurant-api';
 
 export const store = configureStore({
@@ -25,7 +24,6 @@ export const store = configureStore({
     language: langReducer,
     hotel: hotelReducer,
     flight: flightReducer,
-    cab: cabReducer,
     restaurant: restaurantReducer,
   },
   devTools: true,
