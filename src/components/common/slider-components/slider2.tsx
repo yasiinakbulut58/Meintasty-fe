@@ -10,7 +10,7 @@ import Link from 'next/link';
 const SliderTwo: FC<ISliderTwoProps> = ({ slideData, classBtn }) => {
   return (
     <Slider {...slide2} className="slide-2 no-arrow">
-      {slideData.map((data: IBlogVectorProps, index) => (
+      {slideData.map((data: any, index: number) => (
         <div key={index}>
           <div className="blog-box">
             <div className="img-part">

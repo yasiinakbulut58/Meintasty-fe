@@ -2,10 +2,9 @@
 import { CheckIn, CheckOut, Guests, Hotel, Search } from '@/constant/constant';
 import { FC, useState } from 'react';
 import DatePickerComponent from '../date-picker';
-import Button from '../btn';
 import Link from 'next/link';
 
-const SearchBox: FC<ISearchBoxProps> = ({ classRound }) => {
+const SearchBox: FC<any> = ({ classRound }) => {
   const [startDate, setStartDate] = useState(new Date());
   const [startDate1, setStartDate1] = useState(new Date());
   const [guestCount, setGuestCount] = useState(1);

@@ -23,7 +23,7 @@ const SliderCenter: FC<ISliderCenterProps> = ({
       {...centerSlider}
       className="cab-slider center-slider-cab arrow-classic topTour mt-0"
     >
-      {centerData.map((data: IExploreProps, index) => (
+      {centerData.map((data: any, index: number) => (
         <div key={index}>
           <div className={divClass}>
             {background ? (

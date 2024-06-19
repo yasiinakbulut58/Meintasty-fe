@@ -40,7 +40,7 @@ const SliderSix: FC<ISlideSixProps> = ({ slideData }) => {
   };
   return (
     <Slider {...slide3} className="slide-3 no-arrow">
-      {slideData?.map((data: IHolidayProps, index) => (
+      {slideData?.map((data: any, index: number) => (
         <div key={index}>
           <div className="menu-box">
             <div className="top-bar">
@@ -55,9 +55,9 @@ const SliderSix: FC<ISlideSixProps> = ({ slideData }) => {
               <div className="decorate">{data.place}</div>
             </div>
             <div className="bottom-bar">
-              {data.package.map((subData, i) => (
+              {data.package.map((subData: any, i: number) => (
                 <div className="menu-bar" key={i}>
-                  <Link href="/pages/other-pages/about-us-2">
+                  <Link href="/about-us-2">
                     <Image
                       src={subData.img}
                       className="img-fluid"
@@ -67,7 +67,7 @@ const SliderSix: FC<ISlideSixProps> = ({ slideData }) => {
                     />
                   </Link>
                   <div className="content">
-                    <Link href="/pages/other-pages/about-us-2">
+                    <Link href="/about-us-2">
                       <h5>{subData.title}</h5>
                     </Link>
                     <Rating rang="4.8" />

@@ -17,7 +17,7 @@ const SliderThree: FC<ISliderThree> = ({ slideData, playButton }) => {
   return (
     <>
       <Slider {...slide1}>
-        {slideData.map((banner: IRoomSuitsProps, index) => (
+        {slideData.map((banner: any, index: number) => (
           <div key={index}>
             <div className="row">
               <div className="col-lg-7 offset-lg-4 col-md-10 offset-md-1">
@@ -57,10 +57,7 @@ const SliderThree: FC<ISliderThree> = ({ slideData, playButton }) => {
                         </h6>
                       )}
                       <p>{banner.description}</p>
-                      <Link
-                        href="/pages/other-pages/contact-us-1"
-                        className="btn btn-solid"
-                      >
+                      <Link href="/contact-us-1" className="btn btn-solid">
                         {banner.btn}
                       </Link>
                     </div>

@@ -14,7 +14,7 @@ const SliderSeven: FC<ISlideSevenProps> = ({ slideData }) => {
   );
   return (
     <Slider {...slide2} className="slide-2 arrow-classic">
-      {slideData.map((data: IPackageProps, index) => (
+      {slideData.map((data: any, index: number) => (
         <div key={index}>
           <div className="category-wrap">
             <div className="category-img">

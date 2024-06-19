@@ -11,7 +11,7 @@ import Reviews from '../common/sections/reviews';
 import Policies from '../common/sections/policies';
 
 interface ITabDescriptionProps {
-  tabsData: ITabsDataProps[];
+  tabsData: any[];
   class1: string;
 }
 const TabDescription: FC<ITabDescriptionProps> = ({ tabsData, class1 }) => {

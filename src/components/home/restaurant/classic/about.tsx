@@ -42,7 +42,7 @@ const About: FC = () => {
                 <h2>meintasty restaurant</h2>
                 <p>{Lorem}..</p>
                 <div className="about_bottom">
-                  <Link href="/pages/other-pages/about-us-1">
+                  <Link href="/about-us">
                     <Button
                       btnClass="btn btn-rounded color1"
                       name="Read More"

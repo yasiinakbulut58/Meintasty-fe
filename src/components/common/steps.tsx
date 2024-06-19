@@ -13,7 +13,7 @@ const Steps: React.FC<IStepsProps> = ({ stepsData, titleClass }) => {
   return (
     <div className={`step-bg ${titleClass && titleClass}`}>
       <div className="row">
-        {stepsData.map((data: IBookingData, index) => (
+        {stepsData.map((data: any, index: number) => (
           <div className="col-md-3" key={index}>
             <div className="step-box">
               <div className="tourImg bg-size">

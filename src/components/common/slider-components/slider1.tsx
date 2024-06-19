@@ -17,7 +17,7 @@ const SliderOne: FC<ISliderOneProps> = ({
   return (
     <Fragment>
       <Slider {...slideCom} className={slideClass}>
-        {tourData.map((data: IExploreProps, index) => (
+        {tourData.map((data: any, index: number) => (
           <div key={index}>
             <div className={classTitle}>
               <div className="tourImg bg-size">

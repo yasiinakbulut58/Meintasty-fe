@@ -8,7 +8,7 @@ import Link from 'next/link';
 const TotalItemSlider: FC<ITotalSliderProps> = ({ slideData }) => {
   return (
     <Slider {...slide6} className="no-arrow">
-      {slideData.map((item: ITopCitiesProps, index) => (
+      {slideData.map((item: any, index: number) => (
         <div className="category-block" key={index}>
           <a href="#" tabIndex={0}>
             <div className="category-image">
@@ -16,7 +16,7 @@ const TotalItemSlider: FC<ITotalSliderProps> = ({ slideData }) => {
             </div>
           </a>
           <div className="category-details">
-            <Link href="/pages/other-pages/about-us-2" tabIndex={0}>
+            <Link href="/about-us-2" tabIndex={0}>
               <h3>{item.name}</h3>
             </Link>
             <h6>{item.title}</h6>

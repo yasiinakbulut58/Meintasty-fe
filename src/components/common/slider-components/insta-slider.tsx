@@ -9,7 +9,7 @@ const InstaSlider: FC<IInstaSliderProps> = ({ instagramData }) => {
   return (
     <div className="slide-6 no-arrow">
       <Slider {...slide6}>
-        {instagramData.map((image: IInstagramProps, index) => (
+        {instagramData.map((image: any, index: number) => (
           <div key={index}>
             <Link href="/pages/portfolio/grid-2">
               <div className="instagram-box">

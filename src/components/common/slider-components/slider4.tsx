@@ -6,7 +6,7 @@ import Rating from '../rating';
 const SliderFour: FC<ISliderFourProps> = ({ sliderData }) => {
   return (
     <Slider className="slide-1 arrow-classic" {...slide1}>
-      {sliderData.map((data: ITestimonialProps, index) => (
+      {sliderData.map((data: any, index: number) => (
         <div key={index}>
           <div className="testimonial">
             <div className="top-part">

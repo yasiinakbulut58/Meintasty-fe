@@ -8,7 +8,7 @@ import Link from 'next/link';
 const SliderFive: FC<ISliderFiveProps> = ({ slideData, round, iconColor }) => {
   return (
     <Slider {...slide3} className="no-arrow">
-      {slideData.map((data: IBlogProps, index) => (
+      {slideData.map((data: any, index: number) => (
         <div key={index}>
           <div className={`blog-wrap ${round && '- 0 rounded'}`}>
             <div className="blog-image">

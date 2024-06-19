@@ -2,7 +2,6 @@ import CategoryPage from '@/components/common/filters/category';
 import { FC, useCallback, useState, useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import GridLayoutPage from './grid-layout';
-import CreativePage from '../portfolio/creative-3/page';
 import { RootState } from '@/redux-toolkit/store';
 import MasonaryLayout from './MasonaryLayout';
 
@@ -49,9 +48,7 @@ const GridView: FC<IGridViewProps> = ({
         </div>
 
         <div className="row content zoom-gallery grid">
-          {view == 'creative' ? (
-            <CreativePage value={filteredMenu} grid={grid} />
-          ) : view == 'masonry' ? (
+          {view == 'masonry' ? (
             <MasonaryLayout
               grid={grid}
               value={filteredMenu}

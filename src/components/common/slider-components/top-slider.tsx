@@ -15,7 +15,7 @@ const TopSlider: FC<ITopSliderProps> = ({ sliderData, titleClass }) => {
   return (
     <section className={titleClass}>
       <Slider {...slide4} className="category-4 no-arrow">
-        {sliderData.map((data: ITopCategoryProps, index) => (
+        {sliderData.map((data: any, index: number) => (
           <div key={index}>
             <div className="top_box">
               <div className="img-part">
