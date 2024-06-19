@@ -1,41 +1,73 @@
 /* eslint-disable react/no-unescaped-entities */
 'use client';
-import { FC } from 'react';
 import Button from '../btn';
 import Link from 'next/link';
 import { signIn } from 'next-auth/react';
 import { useRouter } from 'next/navigation';
+import { useForm } from 'react-hook-form';
+import { zodResolver } from '@hookform/resolvers/zod';
+import * as z from 'zod';
+import { toast } from 'react-toastify';
 
-const LoginForm: FC = () => {
+// Zod ile form şeması tanımlama
+const schema = z.object({
+  email: z.string().min(1, 'Email is required'),
+  password: z
+    .string()
+    .min(6, 'Şifre en az 6 karakter olmalıdır')
+    .regex(/[A-Z]/, 'Şifre en az bir büyük harf içermelidir')
+    .regex(/[a-z]/, 'Şifre en az bir küçük harf içermelidir')
+    .regex(/[0-9]/, 'Şifre en az bir rakam içermelidir'),
+  rememberMe: z.boolean().optional(),
+});
+
+interface FormData {
+  email: string;
+  password: string;
+  rememberMe?: boolean;
+}
+
+const LoginForm = () => {
   const router = useRouter();
-  const handleSignIn = async () => {
-    let options = {
+  const {
+    register,
+    handleSubmit,
+    formState: { errors, isSubmitting },
+  } = useForm<FormData>({
+    resolver: zodResolver(schema),
+  });
+
+  const onSubmit = async (data: FormData) => {
+    const options = {
       redirect: false,
-      email: 'demo@example.com',
-      password: '123456',
-      callbackUrl: '/',
+      ...data,
     };
     const res = await signIn('credentials', options);
-    console.log(res);
     if (res?.ok && res.status === 200) {
       router.push('/');
+      return;
     }
+    toast.error(res?.error ?? 'Beklenmedik bir hata oluştu');
   };
   return (
     <form
-      onSubmit={(event: React.FormEvent<HTMLFormElement>) =>
-        event.preventDefault()
-      }
+      onSubmit={handleSubmit(onSubmit)}
+      className="needs-validation"
+      noValidate
     >
       <div className="form-group">
-        <label htmlFor="exampleInputEmail1">user name or Email address</label>
+        <label htmlFor="exampleInputEmail1">Email address</label>
         <input
           type="email"
-          className="form-control"
           id="exampleInputEmail1"
+          className={`form-control ${errors.email ? 'is-invalid' : ''}`}
+          {...register('email', { required: 'E-posta zorunlu' })}
           aria-describedby="emailHelp"
           placeholder="Enter email"
         />
+        {errors.email && (
+          <div className="invalid-feedback">{errors.email.message}</div>
+        )}
         <small id="emailHelp" className="form-text text-muted">
           We'll never share your email with anyone else.
         </small>
@@ -44,16 +76,23 @@ const LoginForm: FC = () => {
         <label htmlFor="exampleInputPassword1">Password</label>
         <input
           type="password"
-          className="form-control"
-          id="exampleInputPassword1"
           placeholder="Password"
+          className={`form-control ${errors.password ? 'is-invalid' : ''}`}
+          id="exampleInputPassword1"
+          {...register('password', {
+            required: 'Pasword is required',
+          })}
         />
+        {errors.password && (
+          <div className="invalid-feedback">{errors.password.message}</div>
+        )}
       </div>
       <div className="form-group form-check">
         <input
           type="checkbox"
           className="form-check-input"
           id="exampleCheck1"
+          {...register('rememberMe')}
         />
         <label className="form-check-label" htmlFor="exampleCheck1">
           remember me
@@ -61,11 +100,12 @@ const LoginForm: FC = () => {
       </div>
       <div className="button-bottom">
         <button
-          type="button"
-          className="w-100 btn btn-solid btn-outline color1"
-          onClick={handleSignIn}
+          className={`w-100 btn btn-solid btn-outline color1 ${isSubmitting ? 'pe-none opacity-50' : ''}`}
+          type="submit"
+          disabled={isSubmitting}
+          name="log-in"
         >
-          login
+          {isSubmitting ? 'Lütfen bekleyin...' : 'Giriş Yap'}
         </button>
         <div className="divider">
           <h6>or</h6>

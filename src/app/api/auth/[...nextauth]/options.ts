@@ -4,14 +4,7 @@ import GoogleProvider from 'next-auth/providers/google';
 import FacebookProvider from 'next-auth/providers/facebook';
 import CredentialsProvider from 'next-auth/providers/credentials';
 
-//import { MongoDBAdapter } from '@next-auth/mongodb-adapter';
-import bcrypt from 'bcrypt';
-
-/* import clientPromise from '../lib/mongodb';
-import User from '@/models/User';
-import db from '@/utils/db'; */
-
-/* db.connectDB(); */
+import { login } from '@/lib/data';
 
 export const options: NextAuthOptions = {
   // adapter: MongoDBAdapter(clientPromise),
@@ -35,93 +28,60 @@ export const options: NextAuthOptions = {
         email: {
           label: 'E-mail',
           type: 'text',
-          placeholder: 'Your Email',
         },
         password: {
           label: 'Password: ',
           type: 'password',
-          placeholder: 'Your password',
         },
+        remember: { name: 'Remember', type: 'checkbox' },
       },
       async authorize(credentials) {
-        const email = credentials?.email;
+        const email = credentials?.email as string;
         const password = credentials?.password as string;
-        // Check if the provided credentials match the demo user
-        if (email === 'demo@example.com' && password === '123456') {
-          const demoUser = {
-            id: '1',
-            role: 'user',
-            name: 'Demo User',
-            email: 'demo@example.com',
-            image: '/public/images/user.png',
-          };
-          return demoUser; // Return the demo user
-        }
+        // const rememberMe = credentials?.remember === 'true';
 
-        const user = {
-          password: '123456',
-          id: '1',
-          role: 'user',
-          name: 'Demo User',
-          email: 'demo@example.com',
-          image: '/public/images/user.png',
-        }; // await User.findOne({ email });
+        try {
+          const response = await login(email, password);
+          if (response.status === 200 && response.data.success) {
+            const me = response.data.value;
 
-        if (user) {
-          try {
-            await SignInUser({ password, user });
-            return user;
-          } catch (error) {
-            throw new Error('Email or password is wrong!');
+            return {
+              id: me.id,
+              email: me.email,
+              name: me.fullName,
+              token: me.token,
+            };
           }
-        } else {
-          throw new Error('This email does not exist.');
+          throw new Error(response.data.errorMessage);
+        } catch (error: any) {
+          throw Error(error);
         }
       },
     }),
   ],
   callbacks: {
-    async session({ session, token }: any) {
-      if (token) {
-        let user = { id: 1, role: 'user', _id: '2' }; //await User.findById(token.sub);
-
-        if (user && session.user) {
-          session.user.id = token.sub || user._id.toString();
-          session.user.role = user.role || 'user';
-        }
+    async session({ session, token }) {
+      if (session && token) {
+        session.user.id = token.sub ?? '';
+        session.user.token = token.token as string;
       }
 
       return session;
     },
+    async jwt({ token, user }) {
+      if (user) {
+        token.token = user.token;
+        token.sub = user.id;
+      }
+      return token;
+    },
   },
   session: {
     strategy: 'jwt',
+    maxAge: 3 * 60 * 60, // 3 hours
+  },
+  jwt: {
+    secret: process.env.JWT_SECRET,
   },
   secret: process.env.JWT_SECRET,
-};
-
-type UserObject = {
-  password?: string;
-};
-type SignInUserFunction = (params: {
-  password: string;
-  user: UserObject;
-}) => Promise<UserObject | null>;
-
-const SignInUser: SignInUserFunction = async ({
-  password,
-  user,
-}: {
-  password: string;
-  user: UserObject;
-}) => {
-  if (!user.password) {
-    throw new Error('Please enter your password.');
-  }
-
-  const testPassword = await bcrypt.compare(password, user.password);
-  if (!testPassword) {
-    throw new Error('Email or password is wrong!');
-  }
-  return user;
 };

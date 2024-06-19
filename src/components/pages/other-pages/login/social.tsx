@@ -1,5 +1,5 @@
-import Img from "@/utils/BackgroundImageRatio";
-import { FC } from "react";
+import Img from '@/utils/BackgroundImageRatio';
+import { FC } from 'react';
 
 const SocialContent: FC<ILoginPageProps> = ({ title }) => {
   return (
@@ -8,13 +8,25 @@ const SocialContent: FC<ILoginPageProps> = ({ title }) => {
       <div className="login-social row">
         <div className="col">
           <a className="boxes" href="https://www.facebook.com/" target="_blank">
-            <Img src="/assets/images/icon/social/facebook.png" className="img-fluid" alt="" />
+            <Img
+              src="/assets/images/icon/social/facebook.png"
+              className="img-fluid"
+              alt=""
+            />
             <h6>facebook</h6>
           </a>
         </div>
         <div className="col">
-          <a className="boxes" href="https://accounts.google.com/" target="_blank">
-            <Img src="/assets/images/icon/social/google.png" className="img-fluid" alt="" />
+          <a
+            className="boxes"
+            href="https://accounts.google.com/"
+            target="_blank"
+          >
+            <Img
+              src="/assets/images/icon/social/google.png"
+              className="img-fluid"
+              alt=""
+            />
             <h6>google</h6>
           </a>
         </div>

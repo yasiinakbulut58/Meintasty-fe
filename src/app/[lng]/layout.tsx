@@ -1,5 +1,7 @@
 import { Providers } from '@/redux-toolkit/provider';
 import '@/public/assets/scss/globals.scss';
+import 'react-toastify/dist/ReactToastify.css';
+import { ToastContainer } from 'react-toastify';
 import { languages } from '../i18n/settings';
 import SProvider from '../../components/providers/SProvider';
 import { getServerSession } from 'next-auth/next';
@@ -62,6 +64,18 @@ const RootLayout = async ({
         <SProvider session={session}>
           <Providers>
             <>{children}</>
+            <ToastContainer
+              position="bottom-right"
+              autoClose={500}
+              hideProgressBar={false}
+              newestOnTop={false}
+              closeOnClick
+              rtl={false}
+              pauseOnFocusLoss
+              draggable
+              pauseOnHover
+              theme="colored"
+            />
           </Providers>
         </SProvider>
       </body>

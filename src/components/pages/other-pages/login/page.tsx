@@ -1,7 +1,6 @@
 'use client';
 import Animation1 from '@/components/common/animation/animation-1';
 import Img from '@/utils/BackgroundImageRatio';
-import SocialContent from './social';
 import { FC } from 'react';
 import RegisterForm from '@/components/common/booking-form/form7';
 import LoginForm from '@/components/common/booking-form/form6';
@@ -22,7 +21,7 @@ const LoginPage: FC<ILoginPageProps> = ({ title }) => {
               <div className="title">
                 <h3>{title}</h3>
               </div>
-              <SocialContent title={title} />
+              {/* <SocialContent title={title} /> */}
               {title === 'sign up' ? <RegisterForm /> : <LoginForm />}
             </div>
           </div>
