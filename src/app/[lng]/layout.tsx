@@ -1,3 +1,4 @@
+/* eslint-disable @next/next/no-page-custom-font */
 import { ToastContainer } from 'react-toastify';
 import { languages } from '../i18n/settings';
 import SProvider from '../../components/providers/SProvider';

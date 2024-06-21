@@ -1,5 +1,5 @@
-import { FC, useEffect, useState } from 'react';
-import { languageOptions, menuItems, settingsOptions } from './data';
+import { FC } from 'react';
+import { languageOptions, menuItems } from './data';
 import Link from 'next/link';
 import { useSelector } from 'react-redux';
 import { RootState } from '@/redux-toolkit/store';
@@ -64,11 +64,6 @@ const SkeletonHeader: FC = () => {
               <ul className="header-right">
                 <li className="front-setting">
                   <select>
-                    {renderSelectOptions(settingsOptions, 'currency')}
-                  </select>
-                </li>
-                <li className="front-setting">
-                  <select>
                     {renderSelectOptions(languageOptions, 'lang')}
                   </select>
                 </li>
@@ -82,11 +77,6 @@ const SkeletonHeader: FC = () => {
                     <i className="fas fa-cog"></i>
                   </a>
                   <ul className="setting-open">
-                    <li className="front-setting">
-                      <select>
-                        {renderSelectOptions(settingsOptions, 'currency')}
-                      </select>
-                    </li>
                     <li className="front-setting">
                       <select>
                         {renderSelectOptions(languageOptions, 'lang')}

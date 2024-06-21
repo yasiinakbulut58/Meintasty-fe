@@ -4,8 +4,7 @@ export const RightNavMenuItem: IRightNavMenuItem[] = [
     option: [
       { id: 1, lang: 'en', language: 'ENG' },
       { id: 2, lang: 'fr', language: 'FRE' },
-      { id: 3, lang: 'es', language: 'SPA' },
-      { id: 4, lang: 'ar', language: 'ARB' },
+      { id: 3, lang: 'de', language: 'GER' },
     ],
   },
   { title: 'user' },
@@ -51,8 +50,7 @@ export const languageDropDownData = {
   option: [
     { id: 1, lang: 'en', language: 'ENG' },
     { id: 2, lang: 'fr', language: 'FRE' },
-    { id: 3, lang: 'es', language: 'SPA' },
-    { id: 4, lang: 'ar', language: 'ARB' },
+    { id: 3, lang: 'es', language: 'GER' },
   ],
 };
 

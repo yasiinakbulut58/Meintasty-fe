@@ -10,7 +10,7 @@ const DateTimePickerComp: React.FC = () => {
         placeholder="Select Date & Time"
         format="Date:YYYY/MM/DD, Time:HH:mm:ss"
         formattingIgnoreList={['Date', 'Time']}
-        plugins={[<TimePicker position="top" />]}
+        plugins={[<TimePicker key="time-picker" position="top" />]}
       />
     </>
   );

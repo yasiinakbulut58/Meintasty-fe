@@ -1,4 +1,3 @@
-/* eslint-disable react/no-unescaped-entities */
 'use client';
 import Button from '../../common/btn';
 import Link from 'next/link';

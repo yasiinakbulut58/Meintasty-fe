@@ -9,7 +9,9 @@ export const config = {
   matcher: [
     '/',
     '/auth/:path*',
-    ...languages.map((item) => `/${item}/auth/:path*`),
+    '/de/auth/:path*',
+    '/en/auth/:path*',
+    '/fr/auth/:path*',
     '/restaurants/:path*',
     '/user-dashboard/:path*',
     '/about-us/:path*',

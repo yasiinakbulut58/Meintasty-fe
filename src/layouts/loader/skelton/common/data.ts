@@ -8,18 +8,10 @@ export const menuItems = [
   { title: 'Pages', link: '#' },
 ];
 
-export const settingsOptions = [
-  { value: 'USD', label: 'USD' },
-  { value: 'EUR', label: 'EUR' },
-  { value: 'INR', label: 'INR' },
-  { value: 'AUD', label: 'AUD' },
-];
-
 export const languageOptions = [
   { value: 'en', label: 'ENG' },
   { value: 'fr', label: 'FRE' },
-  { value: 'es', label: 'SPA' },
-  { value: 'ar', label: 'ARB' },
+  { value: 'de', label: 'GER' },
 ];
 
 interface ISpecialBox {
