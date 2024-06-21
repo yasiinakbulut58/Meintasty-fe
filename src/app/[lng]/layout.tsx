@@ -1,5 +1,3 @@
-import '@/public/assets/scss/globals.scss';
-import 'react-toastify/dist/ReactToastify.css';
 import { ToastContainer } from 'react-toastify';
 import { languages } from '../i18n/settings';
 import SProvider from '../../components/providers/SProvider';

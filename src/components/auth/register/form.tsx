@@ -1,6 +1,6 @@
 'use client';
 import { EmailAddress, FullName, Password } from '@/constant/constant';
-import Button from '../btn';
+import Button from '../../common/btn';
 import Link from 'next/link';
 
 const RegisterForm = () => {

@@ -63,8 +63,9 @@ interface IImageProps {
   subTitle: string;
 }
 
-interface ILoginPageProps {
+interface IAuthPageProps {
   title: string;
+  type: 'login' | 'register';
 }
 
 interface ICardModalProps {

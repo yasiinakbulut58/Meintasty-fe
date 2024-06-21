@@ -1,8 +1,6 @@
-import { FC } from 'react';
 import SliderSix from '@/components/common/slider-components/slide6';
 import TitleComponent from '@/components/common/title/title';
 import { Menu } from '@/constant/constant';
-import { restaurantMenuData } from '@/data/home/restaurant/resatuarant-data';
 
 const MenuSection = ({
   lunchMenus,

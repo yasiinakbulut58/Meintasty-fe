@@ -19,7 +19,7 @@ interface CustomLayoutProps {
   footerClass?: string;
   loader?: string;
 }
-const LOADER_TIMEOUT = 1000;
+
 const CustomLayout: React.FC<CustomLayoutProps> = ({
   children,
   title,

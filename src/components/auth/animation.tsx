@@ -1,4 +1,4 @@
-const Animation1: React.FC = () => {
+const Animation: React.FC = () => {
   return (
     <>
       <div className="animation-section">
@@ -13,4 +13,4 @@ const Animation1: React.FC = () => {
     </>
   );
 };
-export default Animation1;
+export default Animation;

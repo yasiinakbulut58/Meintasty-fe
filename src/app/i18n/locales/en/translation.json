@@ -11,5 +11,10 @@
   "Home": {
     "bannerTitle": "2024 Special",
     "bannerDesc": "bite me !"
+  },
+  "Auth": {
+    "login": "Login",
+    "signUp": "Sign Up",
+    "createAccount": "Create Account"
   }
 }

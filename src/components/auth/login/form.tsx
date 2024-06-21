@@ -1,6 +1,6 @@
 /* eslint-disable react/no-unescaped-entities */
 'use client';
-import Button from '../btn';
+import Button from '../../common/btn';
 import Link from 'next/link';
 import { signIn } from 'next-auth/react';
 import { useRouter } from 'next/navigation';
@@ -8,16 +8,11 @@ import { useForm } from 'react-hook-form';
 import { zodResolver } from '@hookform/resolvers/zod';
 import * as z from 'zod';
 import { toast } from 'react-toastify';
+import { paths } from '@/constant/menu';
 
-// Zod ile form şeması tanımlama
 const schema = z.object({
-  email: z.string().min(1, 'Email is required'),
-  password: z
-    .string()
-    .min(6, 'Şifre en az 6 karakter olmalıdır')
-    .regex(/[A-Z]/, 'Şifre en az bir büyük harf içermelidir')
-    .regex(/[a-z]/, 'Şifre en az bir küçük harf içermelidir')
-    .regex(/[0-9]/, 'Şifre en az bir rakam içermelidir'),
+  email: z.string().email().min(1, 'Email is required'),
+  password: z.string().min(1, 'Pasword is required'),
   rememberMe: z.boolean().optional(),
 });
 
@@ -44,7 +39,7 @@ const LoginForm = () => {
     };
     const res = await signIn('credentials', options);
     if (res?.ok && res.status === 200) {
-      router.push('/');
+      router.push(paths.home);
       return;
     }
     toast.error(res?.error ?? 'Beklenmedik bir hata oluştu');
@@ -105,13 +100,20 @@ const LoginForm = () => {
           disabled={isSubmitting}
           name="log-in"
         >
-          {isSubmitting ? 'Lütfen bekleyin...' : 'Giriş Yap'}
+          {isSubmitting ? 'Please wait...' : 'Giriş Yap'}
         </button>
         <div className="divider">
           <h6>or</h6>
         </div>
-        <Link href="/auth/register">
-          <Button btnClass="w-100 btn btn-solid" name="create account" />
+        <Link
+          href="/auth/register"
+          aria-disabled={isSubmitting}
+          className={`${isSubmitting ? 'pe-none opacity-50' : ''}`}
+        >
+          <Button
+            btnClass={`w-100 btn btn-solid ${isSubmitting ? 'pe-none opacity-50' : ''}`}
+            name="create account"
+          />
         </Link>
       </div>
     </form>

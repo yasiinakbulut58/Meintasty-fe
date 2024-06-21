@@ -6,5 +6,10 @@
   "flight": "vuelo",
   "cab": "taxi",
   "restaurant": "restaurante",
-  "pages": "páginas"
+  "pages": "páginas",
+  "Auth": {
+    "login": "Anmelden",
+    "signUp": "Registrieren",
+    "createAccount": "Konto erstellen"
+  }
 }

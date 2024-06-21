@@ -6,5 +6,10 @@
   "flight": "vol",
   "cab": "taxi",
   "restaurant": "restaurant",
-  "pages": "pages"
+  "pages": "pages",
+  "Auth": {
+    "login": "Connexion",
+    "signUp": "S'inscrire",
+    "createAccount": "Créer un compte"
+  }
 }

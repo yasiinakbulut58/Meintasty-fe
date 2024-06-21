@@ -55,3 +55,7 @@ export const languageDropDownData = {
     { id: 4, lang: 'ar', language: 'ARB' },
   ],
 };
+
+export const paths = {
+  home: '/',
+};

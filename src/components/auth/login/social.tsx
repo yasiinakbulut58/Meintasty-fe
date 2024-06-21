@@ -1,7 +1,7 @@
 import Img from '@/utils/BackgroundImageRatio';
 import { FC } from 'react';
 
-const SocialContent: FC<ILoginPageProps> = ({ title }) => {
+const SocialContent: FC<IAuthPageProps> = ({ title }) => {
   return (
     <div className="login-with">
       <h6>{title} with</h6>
