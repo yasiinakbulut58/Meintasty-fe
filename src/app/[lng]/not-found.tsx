@@ -1,7 +1,7 @@
 import { FC } from 'react';
 // import "@/public/assets/scss/color1.scss";
 import CustomLayout from '@/layouts/layout';
-import Error404Content from '@/components/pages/other-pages/404/page';
+import Error404Content from '@/components/others/404/page';
 
 const Error404 = () => {
   return (

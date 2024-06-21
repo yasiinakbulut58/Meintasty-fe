@@ -57,7 +57,7 @@ const SliderSix: FC<ISlideSixProps> = ({ slideData }) => {
             <div className="bottom-bar">
               {data.package.map((subData: any, i: number) => (
                 <div className="menu-bar" key={i}>
-                  <Link href="/about-us-2">
+                  <Link href="/about-us">
                     <Image
                       src={subData.img}
                       className="img-fluid"
@@ -67,7 +67,7 @@ const SliderSix: FC<ISlideSixProps> = ({ slideData }) => {
                     />
                   </Link>
                   <div className="content">
-                    <Link href="/about-us-2">
+                    <Link href="/about-us">
                       <h5>{subData.title}</h5>
                     </Link>
                     <Rating rang="4.8" />

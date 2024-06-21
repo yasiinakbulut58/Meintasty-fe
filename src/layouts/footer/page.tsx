@@ -1,16 +1,16 @@
 import { FC } from 'react';
-import FooterComponent from './footer';
-import FooterTwo from './footer2';
+import FooterContent from './common/footer-content';
+import CopyRightFooter from './common/copyright-footer';
 
 interface IFooterMainProps {
-  footerType?: string;
   footerPlaceCom?: boolean;
 }
-const FooterMain: FC<IFooterMainProps> = ({ footerType, footerPlaceCom }) => {
-  return footerType !== 'footer2' ? (
-    <FooterComponent place={footerPlaceCom} />
-  ) : (
-    <FooterTwo place={footerPlaceCom} />
+const FooterMain: FC<IFooterMainProps> = ({ footerPlaceCom }) => {
+  return (
+    <footer>
+      <FooterContent place={footerPlaceCom} />
+      <CopyRightFooter />
+    </footer>
   );
 };
 

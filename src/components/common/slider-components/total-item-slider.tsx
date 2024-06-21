@@ -16,7 +16,7 @@ const TotalItemSlider: FC<ITotalSliderProps> = ({ slideData }) => {
             </div>
           </a>
           <div className="category-details">
-            <Link href="/about-us-2" tabIndex={0}>
+            <Link href="/about-us" tabIndex={0}>
               <h3>{item.name}</h3>
             </Link>
             <h6>{item.title}</h6>

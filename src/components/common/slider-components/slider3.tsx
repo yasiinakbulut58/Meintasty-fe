@@ -57,7 +57,7 @@ const SliderThree: FC<ISliderThree> = ({ slideData, playButton }) => {
                         </h6>
                       )}
                       <p>{banner.description}</p>
-                      <Link href="/contact-us-1" className="btn btn-solid">
+                      <Link href="/contact-us" className="btn btn-solid">
                         {banner.btn}
                       </Link>
                     </div>

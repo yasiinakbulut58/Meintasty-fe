@@ -2,7 +2,7 @@
 import Img from '@/utils/BackgroundImageRatio';
 import { FC } from 'react';
 import RegisterForm from '@/components/auth/register/form';
-import LoginForm from '@/components/auth/login/Form';
+import LoginForm from '@/components/auth/login/form';
 import Animation from './animation';
 
 const AuthPage: FC<IAuthPageProps> = ({ title, type }) => {

@@ -1,18 +1,13 @@
 'use client';
 import { FC } from 'react';
-// import "@/public/assets/scss/color1.scss";
 import Breadcrumb from '@/components/common/breadcrumb/page';
-import ContactContent2 from '@/components/pages/other-pages/contact-us/contact-us-2';
+import ContactContent from '@/components/others/contact-us/contact-us-2';
 
 const Contact2: FC = () => {
   return (
     <>
-      <Breadcrumb
-        title={'home'}
-        subTitle={'about us'}
-        bannerImg={'/assets/images/inner-bg.jpg'}
-      />
-      <ContactContent2 />
+      <Breadcrumb title={'home'} subTitle={'about us'} />
+      <ContactContent />
     </>
   );
 };

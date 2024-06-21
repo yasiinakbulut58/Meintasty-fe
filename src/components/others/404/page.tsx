@@ -1,3 +1,4 @@
+/* eslint-disable react/no-unescaped-entities */
 import { FC } from 'react';
 import Img from '@/utils/BackgroundImageRatio';
 import Link from 'next/link';

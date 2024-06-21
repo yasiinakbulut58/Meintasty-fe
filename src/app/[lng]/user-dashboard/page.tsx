@@ -1,7 +1,7 @@
 import { FC } from 'react';
 // import "@/public/assets/scss/color1.scss";
 import Breadcrumb from '@/components/common/breadcrumb/page';
-import BodyContent from '@/components/pages/other-pages/user-dashboard/page';
+import BodyContent from '@/components/user-dashboard/page';
 
 const Page: FC = () => {
   return (

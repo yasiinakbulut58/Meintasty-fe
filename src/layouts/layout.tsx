@@ -13,7 +13,6 @@ interface CustomLayoutProps {
   logo?: string;
   footerPlace?: boolean;
   userBgClass?: string;
-  footer?: string;
   coupon?: boolean;
   hideFooter?: boolean;
   footerClass?: string;
@@ -26,7 +25,6 @@ const CustomLayout: React.FC<CustomLayoutProps> = ({
   logo,
   footerPlace,
   userBgClass,
-  footer,
   coupon,
   hideFooter,
 }) => {
@@ -50,9 +48,7 @@ const CustomLayout: React.FC<CustomLayoutProps> = ({
         </div>
       </header>
       {children}
-      {!hideFooter && (
-        <FooterMain footerType={footer} footerPlaceCom={footerPlace} />
-      )}
+      {!hideFooter && <FooterMain footerPlaceCom={footerPlace} />}
       <TapToTop />
     </>
   );

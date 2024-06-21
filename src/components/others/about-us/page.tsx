@@ -61,7 +61,7 @@ const AboutUsContent: FC<IAboutUsContentProps> = ({ side }) => {
                     view more
                   </Link>
                   <Link
-                    href="/contact-us-1"
+                    href="/contact-us"
                     className="btn btn-lower black-btn btn-curve"
                   >
                     contact us

@@ -27,7 +27,7 @@ const Links: React.FC = () => {
                 <Link href="/tour/booking/booking-page">booking deal</Link>
               </li>
               <li>
-                <Link href="/contact-us-1">emergency call</Link>
+                <Link href="/contact-us">emergency call</Link>
               </li>
               <li>
                 <Link href="/pages/element-pages/app">mobile app</Link>
