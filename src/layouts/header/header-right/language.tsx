@@ -1,5 +1,6 @@
 'use client';
 import { useTranslation } from '@/app/i18n/client';
+import { fallbackLng } from '@/app/i18n/settings';
 import { setLanguage } from '@/redux-toolkit/reducers/language';
 import { RootState } from '@/redux-toolkit/store';
 import { usePathname, useRouter } from 'next/navigation';
@@ -18,7 +19,12 @@ const Language: React.FC<ILanguageProps> = ({ value }) => {
     dispatch(setLanguage(lng));
     const languageCodeRegex = /^\/[a-z]{2}(\/|$)/;
     const updatedPath = pathname.replace(languageCodeRegex, `/${lng}$1`);
-    router.push(updatedPath);
+    const newPath =
+      lng !== fallbackLng && updatedPath.includes(lng)
+        ? updatedPath
+        : `/${lng}${updatedPath}`;
+
+    router.push(newPath);
   };
 
   useEffect(() => {

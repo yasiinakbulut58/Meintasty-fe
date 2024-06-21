@@ -1,89 +1,22 @@
-import { NextResponse, NextRequest } from 'next/server';
-import acceptLanguage from 'accept-language';
-import { fallbackLng, languages } from './app/i18n/settings';
+import { NextRequest, NextResponse } from 'next/server';
+import { i18nRouter } from 'next-i18n-router';
+import i18nConfig from '../i18nConfig';
 import { sessionCookie } from './utils/cookie';
+import { paths } from './constant/menu';
 
-// acceptLanguage.languages(languages);
-
-export const config = {
-  matcher: [
-    '/',
-    '/auth/:path*',
-    '/de/auth/:path*',
-    '/en/auth/:path*',
-    '/fr/auth/:path*',
-    '/restaurants/:path*',
-    '/user-dashboard/:path*',
-    '/about-us/:path*',
-    '/contact-us/:path*',
-    '/faq/:path*',
-    '/booking/:path*',
-  ],
-};
-const cookieName = 'i18next';
-
-const PUBLIC_FILE = /\.(.*)$/;
-
-export function middleware(req: NextRequest) {
-  let lng: any;
-  // debugger;
-
-  if (req.cookies.has(cookieName)) {
-    const cookieValue = req.cookies.get(cookieName)?.value;
-    if (cookieValue) {
-      lng = acceptLanguage.get(cookieValue);
-    }
-  }
-
-  if (!lng) {
-    lng = acceptLanguage.get(req.headers.get('Accept-Language'));
-  }
-
-  if (!lng) {
-    lng = fallbackLng;
-  }
-
-  if (
-    req.nextUrl.pathname.startsWith('/_next') ||
-    req.nextUrl.pathname.includes('/api/') ||
-    PUBLIC_FILE.test(req.nextUrl.pathname)
-  ) {
-    return;
-  }
-
-  if (req.nextUrl.pathname.includes('/auth')) {
-    const nextSessionCookie = req.cookies.get(sessionCookie)?.value;
+export function middleware(request: NextRequest) {
+  if (request.nextUrl.pathname.includes('/auth')) {
+    const nextSessionCookie = request.cookies.get(sessionCookie)?.value;
 
     if (nextSessionCookie) {
-      const response = NextResponse.redirect(new URL('/', req.url));
+      const response = NextResponse.redirect(new URL(paths.home, request.url));
       return response;
     }
   }
-
-  if (req.nextUrl.locale === 'default') {
-    return NextResponse.redirect(
-      new URL(`/en${req.nextUrl.pathname}`, req.url),
-    );
-  }
-
-  // Redirect if lng in path is not supported
-  if (
-    !languages.some((loc) => req.nextUrl.pathname.startsWith(`/${loc}`)) &&
-    !req.nextUrl.pathname.startsWith('/_next')
-  ) {
-    const redirectUrl = new URL(`/${lng}${req.nextUrl.pathname}`, req.url);
-    return NextResponse.redirect(redirectUrl);
-  }
-
-  if (req.headers.has('referer')) {
-    const refererUrl = new URL(req.headers.get('referer')!);
-    const lngInReferer = languages.find((l) =>
-      refererUrl.pathname.startsWith(`/${l}`),
-    );
-    const response = NextResponse.next();
-    if (lngInReferer) response.cookies.set(cookieName, lngInReferer);
-    return response;
-  }
-
-  return NextResponse.next();
+  return i18nRouter(request, i18nConfig);
 }
+
+// only applies this middleware to files in the app directory
+export const config = {
+  matcher: '/((?!api|static|.*\\..*|_next).*)',
+};
