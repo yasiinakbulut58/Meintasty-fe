@@ -9,13 +9,11 @@ import FormOne from '@/components/common/booking-form/form1';
 import CategoryPage from '@/components/common/filters/category';
 import { RootState } from '@/redux-toolkit/store';
 import { IGridReducerProps } from '../grid-page.d';
-import Image from 'next/image';
 
 const GridView: FC<IGridViewProps> = ({
   gridSelect,
   topFilter,
   size,
-  gridOption,
   trip,
   gridType,
   side,
@@ -26,7 +24,6 @@ const GridView: FC<IGridViewProps> = ({
   children,
   type,
   view,
-  latestFilter,
 }) => {
   const dispatch = useDispatch();
   const [tourModalOpen, setTourModalOpen] = useState(false);
@@ -57,42 +54,38 @@ const GridView: FC<IGridViewProps> = ({
     <section className="xs-section bg-inner">
       <div className="container">
         <div className="row">
-          {gridOption ? (
-            <div className="col-12">
-              <div className="filter-panel">
-                <div className="left-filter">
-                  <div className="respon-filter-btn">
-                    <h6 onClick={() => setShowDropDown(!showDropDown)}>
-                      filter <i className="fas fa-sort-down"></i>
-                    </h6>
-                    <span className="according-menu"></span>
-                  </div>
-                  <div
-                    className={`filters respon-filter-content filter-button-group ${showDropDown ? 'show' : ''} `}
-                  >
-                    <CategoryPage value={value} getCategories={getCategories} />
-                  </div>
+          <div className="col-12">
+            <div className="filter-panel">
+              <div className="left-filter">
+                <div className="respon-filter-btn">
+                  <h6 onClick={() => setShowDropDown(!showDropDown)}>
+                    filter <i className="fas fa-sort-down"></i>
+                  </h6>
+                  <span className="according-menu"></span>
                 </div>
-                <GridList
-                  callTourModal={callTourModal}
-                  gridSelect={gridSelect}
-                  tourModalOpen={tourModalOpen}
-                  view={view}
-                  grid={grid as unknown as IGridReducerProps}
-                  gridStyle={gridType}
-                  topFilter={topFilter}
-                  value={value}
-                  side={side}
-                  grid4Img={grid4Img}
-                  mapModal={mapModal}
-                  setMapModal={setMapModal}
-                  type={type}
-                />
+                <div
+                  className={`filters respon-filter-content filter-button-group ${showDropDown ? 'show' : ''} `}
+                >
+                  <CategoryPage value={value} getCategories={getCategories} />
+                </div>
               </div>
+              <GridList
+                callTourModal={callTourModal}
+                gridSelect={gridSelect}
+                tourModalOpen={tourModalOpen}
+                view={view}
+                grid={grid as unknown as IGridReducerProps}
+                gridStyle={gridType}
+                topFilter={topFilter}
+                value={value}
+                side={side}
+                grid4Img={grid4Img}
+                mapModal={mapModal}
+                setMapModal={setMapModal}
+                type={type}
+              />
             </div>
-          ) : (
-            ''
-          )}
+          </div>
           <div
             className={`col-xl-12 onclick-map ${tourModalOpen ? 'show' : ''}`}
           >
@@ -116,20 +109,18 @@ const GridView: FC<IGridViewProps> = ({
           <div
             className={`${topFilter ? 'col-lg-12' : side === 'no' ? 'col-lg-12' : 'col-lg-9'} ratio3_2`}
           >
-            {!latestFilter && (
-              <a
-                href="#javascript"
-                className="mobile-filter border-top-0"
-                onClick={() => setShowSidebar(!showSidebar)}
-              >
-                <h5>latest filter</h5>
-                <img
-                  src="/assets/images/icon/adjust.png"
-                  className="img-fluid blur-up lazyloaded"
-                  alt=""
-                />
-              </a>
-            )}
+            <a
+              href="#javascript"
+              className="mobile-filter border-top-0"
+              onClick={() => setShowSidebar(!showSidebar)}
+            >
+              <h5>latest filter</h5>
+              <img
+                src="/assets/images/icon/adjust.png"
+                className="img-fluid blur-up lazyloaded"
+                alt=""
+              />
+            </a>
             <FilterTags />
             <GridLayout
               grid={grid}

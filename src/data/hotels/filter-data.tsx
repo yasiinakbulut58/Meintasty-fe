@@ -144,33 +144,6 @@ export const hostLang = [
   },
 ];
 
-export const HotelDetailFilter = [
-  {
-    id: 1,
-    name: 'the venetian',
-    price: 1245,
-    img: '/assets/images/hotel/gallery/1.jpg',
-  },
-  {
-    id: 2,
-    name: 'park royal',
-    price: 1245,
-    img: '/assets/images/hotel/video-image.jpg',
-  },
-  {
-    id: 3,
-    name: 'grand park',
-    price: 1245,
-    img: '/assets/images/hotel/room/3.jpg',
-  },
-  {
-    id: 4,
-    name: 'courtyard',
-    price: 1245,
-    img: '/assets/images/hotel/gallery/3.jpg',
-  },
-];
-
 export const popularFilter = [
   {
     id: 1,

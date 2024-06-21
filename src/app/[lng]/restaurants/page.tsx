@@ -1,6 +1,4 @@
-// import "@/public/assets/scss/color1.scss";
-import CustomLayout from '@/layouts/layout';
-import HomeBanner from '@/components/common/banner/restaurant-banner';
+import HomeBanner from '@/components/restaurant/listing/restaurant-banner';
 import GridView from '@/components/common/grid-page/grid/grid-view';
 
 async function getData() {
@@ -25,7 +23,6 @@ const Page = async () => {
         value={data}
         type={'restaurant'}
         gridType="grid-view"
-        gridOption={true}
       />
     </>
   );

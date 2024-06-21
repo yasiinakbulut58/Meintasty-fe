@@ -5,7 +5,6 @@ import HelpInfo from '../help-info';
 import PriceRange from './price-range';
 import { LatestFilter } from '@/constant/constant';
 import { useDispatch } from 'react-redux';
-import HotelFilter from './hotel-filter';
 import PopularFoodFilter from '@/components/restaurant/filters/popular-filter';
 import { useSearchParams } from 'next/navigation';
 import { renderFiltersByType } from '@/utils/HOC/renderFiltersByType';
@@ -81,7 +80,6 @@ const Filters: FC<IFiltersProps> = ({
               <div className="filter-block">
                 <PriceRange min={minPrice?.price} max={maxPrice?.price} />
               </div>
-              <HotelFilter />
             </div>
           </div>
         ) : (

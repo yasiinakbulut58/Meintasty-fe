@@ -15,7 +15,6 @@ interface IGridViewProps {
   view?: string;
   trip?: string;
   round?: string;
-  gridOption?: boolean;
   gridSelect?: boolean;
 }
 

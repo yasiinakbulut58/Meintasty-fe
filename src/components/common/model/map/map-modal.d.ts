@@ -5,10 +5,3 @@ interface IModalProps {
   value?: Hotel[];
   type?: string;
 }
-
-interface IHotelFilterProps {
-  id: number;
-  name: string;
-  price: number;
-  img: string;
-}

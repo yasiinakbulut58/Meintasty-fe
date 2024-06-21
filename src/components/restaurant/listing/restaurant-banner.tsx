@@ -16,11 +16,11 @@ const HomeBanner: FC = () => {
           <div className="row">
             <div className="col-lg-8 offset-lg-2">
               <div className="book-table section-b-space single-table p-0">
-                <h3>The food you love, delivered with care</h3>
+                <h3>The restaurants you love, delivered with care</h3>
                 <div className="table-form">
                   <form>
                     <div className="row w-100">
-                      <div className="form-group col-md-4">
+                      <div className="form-group col-md-5">
                         <input
                           type="text"
                           placeholder="enter your location"
@@ -34,12 +34,12 @@ const HomeBanner: FC = () => {
                           className="form-control"
                         />
                       </div>
-                      <div className="search col-md-3">
+                      <div className="search col-md-2">
                         <Link
                           href="/restaurant/listing/grid-view/grid-2"
                           className="btn btn-rounded color1"
                         >
-                          find food
+                          search
                         </Link>
                       </div>
                     </div>
