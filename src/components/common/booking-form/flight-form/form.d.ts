@@ -19,6 +19,18 @@ interface ISelectCityProps {
   value: string;
 }
 
+interface ILocationProps {
+  label: string;
+  value: number | string;
+}
+interface ISelectLocationProps {
+  title?: string;
+  placeholder?: string;
+  data: ILocationProps[];
+  defaultValue?: string;
+  onChanged?: (item: ILocationProps | null) => void;
+}
+
 interface ICityProps {
   id: number;
   place: string;

@@ -1,10 +1,11 @@
 'use client';
-import { FC } from 'react';
+import { FC, useState } from 'react';
 import BackgroundDiv from '@/utils/HOC/background-div';
 import SmokeEffect from './smoke-effect';
 import Link from 'next/link';
-import AutocompleteDropdown from './autocomplete';
 import { useBaseTranslation } from '@/lib/hooks';
+import { cityData } from '@/data/home/flight/flight-data';
+import SelectLocation from '../common/select-location';
 
 const HomeBanner: FC = () => {
   const { t } = useBaseTranslation();
@@ -35,29 +36,20 @@ const HomeBanner: FC = () => {
                     <div className="table-form">
                       <form>
                         <div className="row w-100">
-                          <div className="form-group col-md-6">
-                            <AutocompleteDropdown
-                              options={[
-                                'Apple',
-                                'Banana',
-                                'Cherry',
-                                'Date',
-                                'Elderberry',
-                              ]}
+                          <div className="form-group col-md-9">
+                            <SelectLocation
+                              title="Cantons"
+                              placeholder="Enter your full address"
+                              data={cityData?.map((item) => ({
+                                label: item.place,
+                                value: item.id,
+                              }))}
                             />
                           </div>
-                          <div className="form-group col-md-6">
-                            <select className="form-control">
-                              <option value="">Select...</option>
-                              <option value="saab">Deluxe Room</option>
-                              <option value="audi">Suite</option>
-                              <option value="opel">Royal room</option>
-                            </select>
-                          </div>
-                          <div className="col-md-12 mt-2">
+                          <div className="col-md-3">
                             <Link
                               href="/restaurants"
-                              className="btn btn-rounded color1 w-100 m-0"
+                              className="btn btn-rounded color1 m-0"
                             >
                               {t('search')}
                             </Link>

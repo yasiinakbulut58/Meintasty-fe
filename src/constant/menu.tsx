@@ -56,4 +56,5 @@ export const languageDropDownData = {
 
 export const paths = {
   home: '/',
+  restaurants: '/restaurants',
 };

@@ -1844,6 +1844,7 @@ header {
     font-size: 14px;
     color: rgba(black, 0.6);
     margin-bottom: 0;
+    text-align: left;
     text-transform: capitalize;
   }
   ul {
@@ -1855,6 +1856,13 @@ header {
       position: relative;
       margin-bottom: 10px;
       padding: 0 10px;
+      .item {
+        font-size: calc(14px + (16 - 14) * ((100vw - 320px) / (1920 - 320)));
+        color: black;
+        margin-bottom: 0;
+        text-align: left;
+        text-transform: capitalize;
+      }
       h5 {
         font-size: calc(14px + (16 - 14) * ((100vw - 320px) / (1920 - 320)));
         color: black;
