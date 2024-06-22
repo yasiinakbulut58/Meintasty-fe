@@ -9,17 +9,10 @@ const RangeInputFields: FC<IPriceRangeFilterProps> = ({ min, max }) => {
   const { symbol, currencyValue } = useSelector(
     (state: RootState) => state.currency,
   );
-  const { priceStatus } = useSelector(
-    (state: RootState) => state.hotelFilterReducer,
-  );
+
   const [values, setValues] = useState<number[]>([]);
   const dispatch = useDispatch();
   const rtl = false;
-
-  useEffect(() => {
-    const newLocal = Object.values(priceStatus);
-    setValues(newLocal);
-  }, [priceStatus, max, min]);
 
   const STEP = 1;
   const priceHandle = (value: number[]) => {

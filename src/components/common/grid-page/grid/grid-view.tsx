@@ -3,9 +3,7 @@ import { FC, useCallback, useEffect, useState } from 'react';
 import GridList from '@/components/common/grid-page/grid-list';
 import GridLayout from '@/components/common/grid-page/grid-layout';
 import Filters from '../../../hotels/filters/page';
-import FilterTags from '../../../hotels/filters/filter-tags';
 import { useDispatch, useSelector } from 'react-redux';
-import FormOne from '@/components/common/booking-form/form1';
 import CategoryPage from '@/components/common/filters/category';
 import { RootState } from '@/redux-toolkit/store';
 import { IGridReducerProps } from '../grid-page.d';
@@ -26,7 +24,6 @@ const GridView: FC<IGridViewProps> = ({
   view,
 }) => {
   const dispatch = useDispatch();
-  const [tourModalOpen, setTourModalOpen] = useState(false);
   const grid = useSelector((state: RootState) => state.gridReducer);
   const [showSidebar, setShowSidebar] = useState(false);
   const [filteredMenu, setFilteredMenu] = useState<IHotelProps[] | undefined>(
@@ -35,10 +32,6 @@ const GridView: FC<IGridViewProps> = ({
 
   const getCategories = useCallback((data: []) => {
     setFilteredMenu(data);
-  }, []);
-
-  const callTourModal = useCallback((tour: boolean) => {
-    setTourModalOpen(tour);
   }, []);
 
   useEffect(() => {
@@ -70,9 +63,7 @@ const GridView: FC<IGridViewProps> = ({
                 </div>
               </div>
               <GridList
-                callTourModal={callTourModal}
                 gridSelect={gridSelect}
-                tourModalOpen={tourModalOpen}
                 view={view}
                 grid={grid as unknown as IGridReducerProps}
                 gridStyle={gridType}
@@ -86,15 +77,7 @@ const GridView: FC<IGridViewProps> = ({
               />
             </div>
           </div>
-          <div
-            className={`col-xl-12 onclick-map ${tourModalOpen ? 'show' : ''}`}
-          >
-            <div className="book-table single-table bg-inner">
-              <div className="table-form classic-form">
-                <FormOne />
-              </div>
-            </div>
-          </div>
+
           {children}
           {!topFilter && side !== 'no' && (
             <div className={`col-lg-3 ${side === 'right' ? 'order-1' : ''}`}>
@@ -121,7 +104,6 @@ const GridView: FC<IGridViewProps> = ({
                 alt=""
               />
             </a>
-            <FilterTags />
             <GridLayout
               grid={grid}
               value={filteredMenu}

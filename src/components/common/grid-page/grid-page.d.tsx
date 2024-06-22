@@ -29,8 +29,6 @@ export interface IGridListProps {
   setMapModal?: Function | any;
   type?: string;
   view?: string;
-  callTourModal?: (isOpen: boolean) => void;
-  tourModalOpen?: boolean;
   gridSelect?: boolean;
 }
 

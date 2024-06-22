@@ -5,11 +5,13 @@ interface IRestaurantReducerProps {
   popularStatus: string[];
   cuisinesStatus: string[];
   deliverTimeStatus: string[];
+  rateStatus: string[];
 }
 var initialState: IRestaurantReducerProps = {
   popularStatus: [],
   cuisinesStatus: [],
   deliverTimeStatus: [],
+  rateStatus: [],
 };
 
 export const restaurantFilerReducer = createReducer(initialState, {
@@ -19,6 +21,9 @@ export const restaurantFilerReducer = createReducer(initialState, {
 
   cuisinesStatus: (state, action) => {
     state.cuisinesStatus = action.payload;
+  },
+  rateStatus: (state, action) => {
+    state.rateStatus = action.payload;
   },
 
   deliverTimeStatus: (state, action) => {

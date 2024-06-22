@@ -8,7 +8,7 @@ const StarCategoryFilter: React.FC = () => {
   const [show, setShow] = useState(true);
   const dispatch = useDispatch();
   const rateStatus = useSelector(
-    (state: RootState) => state.hotelFilterReducer.rateStatus,
+    (state: RootState) => state.restaurantFilerReducer.rateStatus,
   );
 
   const handleCheckboxChange = (event: ChangeEvent<HTMLInputElement>) => {

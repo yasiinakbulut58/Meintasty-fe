@@ -86,45 +86,6 @@ export const filterMenuData = [
   },
 ];
 
-export const categoryData = [
-  {
-    id: 1,
-    img: '/assets/images/restaurant/dishes/1.jpg',
-    price: 22,
-    disc: 20,
-    title: 'bread with chicken',
-    timer: '30 minutes',
-    desc: 'Lorem ipsum dolor sit amet, consectetur elit.',
-  },
-  {
-    id: 2,
-    img: '/assets/images/restaurant/dishes/2.jpg',
-    price: 22,
-    disc: 20,
-    title: 'bread with chicken',
-    timer: '30 minutes',
-    desc: 'Lorem ipsum dolor sit amet, consectetur elit.',
-  },
-  {
-    id: 3,
-    img: '/assets/images/restaurant/dishes/3.jpg',
-    price: 22,
-    disc: 20,
-    title: 'paneer vegetable',
-    timer: '30 minutes',
-    desc: 'Lorem ipsum dolor sit amet, consectetur elit.',
-  },
-  {
-    id: 4,
-    img: '/assets/images/restaurant/dishes/2.jpg',
-    price: 22,
-    disc: 20,
-    title: 'lasagna noodles',
-    timer: '30 minutes',
-    desc: 'Lorem ipsum dolor sit amet, consectetur elit.',
-  },
-];
-
 export const restaurantMenuData = [
   {
     id: 1,

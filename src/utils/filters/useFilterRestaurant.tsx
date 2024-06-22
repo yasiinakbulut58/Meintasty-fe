@@ -9,8 +9,8 @@ interface IFilterProductsProps {
 
 const useFilterRestaurant = ({ value }: IFilterProductsProps) => {
   const [showProducts, setShowProducts] = useState<IBaseProps[]>(value);
-  const { priceStatus, rateStatus } = useSelector(
-    (state: RootState) => state.hotelFilterReducer,
+  const { rateStatus } = useSelector(
+    (state: RootState) => state.restaurantFilerReducer,
   );
   const { deliverTimeStatus, cuisinesStatus, popularStatus } = useSelector(
     (state: RootState) => state.restaurantFilerReducer,
@@ -22,10 +22,6 @@ const useFilterRestaurant = ({ value }: IFilterProductsProps) => {
 
   useEffect(() => {
     const filteredProducts = value?.filter((product: IBaseProps) => {
-      const filteredPrice =
-        product.price !== undefined &&
-        product.price >= priceStatus.min &&
-        product.price <= priceStatus.max;
       const filteredDelivery =
         deliverTimeStatus.length === 0 ||
         product.deliverTime === undefined ||
@@ -45,17 +41,12 @@ const useFilterRestaurant = ({ value }: IFilterProductsProps) => {
         rateStatus.includes(product.rate);
 
       return (
-        filteredPrice &&
-        filteredRate &&
-        filteredCuisines &&
-        filteredDelivery &&
-        filteredPopular
+        filteredRate && filteredCuisines && filteredDelivery && filteredPopular
       );
     });
 
     setShowProducts(filteredProducts);
   }, [
-    priceStatus,
     rateStatus,
     popularStatus,
     deliverTimeStatus,
@@ -80,17 +71,12 @@ const useFilterRestaurant = ({ value }: IFilterProductsProps) => {
       params.append('cuisines', cuisine);
     });
 
-    if (!isNaN(priceStatus.min) && !isNaN(priceStatus.max)) {
-      params.set('price', `${priceStatus.min}:${priceStatus.max}`);
-    }
-
     rateStatus.forEach((rate: string) => {
       params.append('rate', rate);
     });
 
     router.push(pathname + '?' + params.toString());
   }, [
-    priceStatus,
     rateStatus,
     popularStatus,
     deliverTimeStatus,

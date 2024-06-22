@@ -13,7 +13,7 @@ const PriceFilter: React.FC = () => {
   const [show, setShow] = useState(true);
   const dispatch = useDispatch();
   const priceStatus = useSelector<RootState, PriceStatus>(
-    (state) => state.hotelFilterReducer.priceStatus,
+    (state) => state.restaurantFilerReducer.priceStatus,
   );
 
   const handleCheckboxChange = (event: ChangeEvent<HTMLInputElement>) => {

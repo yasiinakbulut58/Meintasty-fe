@@ -4,8 +4,6 @@ import { IGridListProps } from './grid-page.d';
 import LatestFilters from '@/components/hotels/filters/latest-filter';
 
 const GridList: FC<IGridListProps> = ({
-  callTourModal,
-  tourModalOpen,
   topFilter,
   value,
   mapModal,
