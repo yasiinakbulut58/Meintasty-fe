@@ -1,3 +1,0 @@
-interface IServiceOneProps {
-  serviceData: IServiceClassicProps[];
-}

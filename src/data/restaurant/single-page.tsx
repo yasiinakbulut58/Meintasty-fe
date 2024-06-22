@@ -12,14 +12,6 @@ export const tabsTitleData = [
     title: 'gallery',
   },
   {
-    id: '4',
-    title: 'location',
-  },
-  {
-    id: '5',
-    title: 'book a table',
-  },
-  {
     id: '6',
     title: 'reviews',
   },

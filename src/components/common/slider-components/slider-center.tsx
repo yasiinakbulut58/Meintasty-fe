@@ -2,7 +2,6 @@
 import { FC } from 'react';
 import Slider from 'react-slick';
 import { centerSlider } from '../slider-options';
-import BackgroundDiv from '@/utils/HOC/background-div';
 import TooltipIcons from '../tooltips-icons';
 import { RootState } from '@/redux-toolkit/store';
 import { useSelector } from 'react-redux';

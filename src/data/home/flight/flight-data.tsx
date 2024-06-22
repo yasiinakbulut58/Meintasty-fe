@@ -45,44 +45,6 @@ export const cityData = [
   },
 ];
 
-export const destinationData = [
-  {
-    id: 1,
-    img: '/assets/images/flights/destination/1.jpg',
-    country: 'france country',
-    place: 'paris',
-    from: 851,
-  },
-  {
-    id: 2,
-    img: '/assets/images/flights/destination/2.jpg',
-    country: 'united kingdom',
-    place: 'london',
-    from: 369,
-  },
-  {
-    id: 3,
-    img: '/assets/images/flights/destination/3.jpg',
-    country: 'switzerland',
-    place: 'zurich',
-    from: 256,
-  },
-  {
-    id: 4,
-    img: '/assets/images/flights/destination/2.jpg',
-    country: 'united kingdom',
-    place: 'london',
-    from: 581,
-  },
-  {
-    id: 5,
-    img: '/assets/images/flights/destination/3.jpg',
-    country: 'switzerland',
-    place: 'zurich',
-    from: 256,
-  },
-];
-
 export const airDetailData = [
   {
     id: 1,
@@ -167,111 +129,6 @@ export const ticketData = [
       { city: 'atlanta', price: 800 },
       { city: 'miami', price: 800 },
       { city: 'ottawa', price: 600 },
-    ],
-  },
-];
-
-export const topDestinationData = [
-  {
-    img: '/assets/images/flights/logo.png',
-    name: 'japan',
-    childern: [
-      {
-        country: 'australia',
-        price: 451,
-        airline: '35',
-      },
-      {
-        country: 'bahrain',
-        price: 610,
-        airline: '18 ',
-      },
-      {
-        country: 'china',
-        price: 621,
-        airline: '21',
-      },
-      {
-        country: 'egypt',
-        price: 480,
-        airline: '06',
-      },
-      {
-        country: 'india',
-        price: 320,
-        airline: '31',
-      },
-      {
-        country: 'australia',
-        price: 451,
-        airline: '35',
-      },
-    ],
-  },
-  {
-    img: '/assets/images/flights/logo2.png',
-    name: 'emirates',
-    childern: [
-      {
-        country: 'brazil',
-        price: 451,
-        airline: '35',
-      },
-      {
-        country: 'denmark',
-        price: 610,
-        airline: '18 ',
-      },
-      {
-        country: 'greece',
-        price: 621,
-        airline: '21',
-      },
-      {
-        country: 'iran',
-        price: 480,
-        airline: '06',
-      },
-      {
-        country: 'japan',
-        price: 320,
-        airline: '31',
-      },
-      {
-        country: 'australia',
-        price: 451,
-        airline: '35',
-      },
-      {
-        country: 'brazil',
-        price: 451,
-        airline: '35',
-      },
-      {
-        country: 'denmark',
-        price: 610,
-        airline: '18 ',
-      },
-      {
-        country: 'greece',
-        price: 621,
-        airline: '21',
-      },
-      {
-        country: 'iran',
-        price: 480,
-        airline: '06',
-      },
-      {
-        country: 'japan',
-        price: 320,
-        airline: '31',
-      },
-      {
-        country: 'australia',
-        price: 451,
-        airline: '35',
-      },
     ],
   },
 ];
@@ -574,38 +431,5 @@ export const airlineDetail = [
     img: '/assets/images/tour/slider/9.jpg',
     label: 'certified',
     class: 'label-offer',
-  },
-];
-
-export const airlineDestinationData = [
-  {
-    id: 1,
-    place: 'paris',
-    place1: 'dubai',
-  },
-  {
-    id: 1,
-    place: 'dubai',
-    place1: 'sydney',
-  },
-  {
-    id: 3,
-    place: 'bali',
-    place1: 'dubai',
-  },
-  {
-    id: 4,
-    place: 'newyork',
-    place1: 'paris',
-  },
-  {
-    id: 5,
-    place: 'paris',
-    place1: 'dubai',
-  },
-  {
-    id: 6,
-    place: 'paris',
-    place1: 'dubai',
   },
 ];
