@@ -24,11 +24,13 @@ interface ILocationProps {
   value: number | string;
 }
 interface ISelectLocationProps {
+  name?: string;
   title?: string;
   placeholder?: string;
   data: ILocationProps[];
   defaultValue?: string;
   onChanged?: (item: ILocationProps | null) => void;
+  className?: string;
 }
 
 interface ICityProps {

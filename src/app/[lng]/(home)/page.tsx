@@ -2,26 +2,29 @@
 import HomeBanner from '@/components/home/home-banner';
 import TopCategory from '@/components/home/top-category';
 import MenuSection from '@/components/home/menu-section';
+import { getCantonsAndCities } from '@/lib/data';
 
-async function getData() {
-  // Verileri bir API veya başka bir kaynaktan çekin
-  const response = await fetch('http://localhost:3000/api/what-hot-today').then(
-    (res) => res.json(),
-  );
+async function getHomeDetails() {
+  const response1 = await fetch(
+    'http://localhost:3000/api/what-hot-today',
+  ).then((res) => res.json());
+
+  const response = await getCantonsAndCities();
 
   return {
-    lunchMenus: response as ISlideSixProps['slideData'],
+    cantonAndCities: response.data?.value || null,
+    lunchMenus: response1 as ISlideSixProps['slideData'],
   };
 }
 
 const Home = async () => {
-  const data = await getData();
+  const { cantonAndCities, lunchMenus } = await getHomeDetails();
 
   return (
     <>
-      <HomeBanner />
+      <HomeBanner cantonAndCities={cantonAndCities} />
       <TopCategory />
-      <MenuSection lunchMenus={data.lunchMenus} />
+      <MenuSection lunchMenus={lunchMenus} />
     </>
   );
 };

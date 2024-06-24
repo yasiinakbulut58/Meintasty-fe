@@ -1,20 +1,22 @@
 'use client';
-import useOutsideDropdown from '@/utils/useOutsideDropdown';
-import Image from 'next/image';
-import { FC, useMemo, useState } from 'react';
+import { createRef, FC, useMemo, useState } from 'react';
+import {
+  ILocationDropdownRefProps,
+  LocationDropdown,
+} from './location-dropdown';
 
 const SelectLocation: FC<ISelectLocationProps> = ({
   defaultValue,
   data,
   title,
   placeholder,
+  name,
+  className,
   onChanged,
 }) => {
-  const { ref, isComponentVisible, setIsComponentVisible } =
-    useOutsideDropdown(false);
+  const rootRef = createRef<ILocationDropdownRefProps>(); // like this
 
   const [text, setText] = useState(defaultValue);
-  const [selected, setSelected] = useState(false);
 
   const filteredOptions = useMemo(() => {
     const lowerQuery = text?.toLowerCase();
@@ -27,54 +29,27 @@ const SelectLocation: FC<ISelectLocationProps> = ({
     <>
       <input
         type="text"
-        className="form-control open-select"
+        className={`form-control open-select ${className ?? ''}`}
         autoComplete="off"
+        name={name}
         placeholder={placeholder}
         value={text}
         onChange={(e) => {
           onChanged?.(null);
-          setSelected(false);
           setText(e.target.value);
         }}
-        onClick={() => setIsComponentVisible(!isComponentVisible)}
-        onBlur={() => {
-          if (!selected) {
-            setText('');
-          }
+        onClick={() => rootRef?.current?.setIsComponentVisible(true)}
+      />
+      <LocationDropdown
+        ref={rootRef}
+        options={filteredOptions}
+        title={title}
+        onSelected={(selected) => {
+          setText(selected?.label);
+          onChanged?.(selected);
+          rootRef?.current?.setIsComponentVisible(false);
         }}
       />
-      <Image
-        src="/assets/images/icon/from.png"
-        className="img-fluid"
-        width={20}
-        height={20}
-        alt="icon"
-      />
-      <div
-        ref={ref}
-        className={`rounded-5 selector-box p-2 ${isComponentVisible ? 'show' : ''}`}
-      >
-        {title && <h6 className="title">{title}</h6>}
-        <ul>
-          {filteredOptions?.map((data) => (
-            <li key={data.label} className="text-start">
-              <a
-                role="button"
-                className="item"
-                tabIndex={0}
-                onClick={() => {
-                  setSelected(true);
-                  setText(data.label);
-                  onChanged?.(data);
-                  setIsComponentVisible(false);
-                }}
-              >
-                {data.label}
-              </a>
-            </li>
-          ))}
-        </ul>
-      </div>
     </>
   );
 };

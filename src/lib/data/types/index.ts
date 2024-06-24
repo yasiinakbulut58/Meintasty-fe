@@ -15,3 +15,15 @@ export interface AuthenticateRequest {
   email?: string;
   password?: string;
 }
+
+export interface CantonModel {
+  id: number;
+  cantonName: string;
+  cities: CityModel[];
+}
+
+export interface CityModel {
+  id: number;
+  cityName: string;
+  cityCode: number;
+}
