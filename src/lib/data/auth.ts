@@ -1,4 +1,4 @@
-import { AuthModel, BaseResponse } from './types';
+import { AuthModel, BaseResponse, RegisterRequestModel } from './types';
 import { baseApi } from '../http-common';
 
 export function login(email: string, password: string) {
@@ -8,11 +8,15 @@ export function login(email: string, password: string) {
   });
 }
 
-export function createUser({ email, name, surname, password }: any) {
-  return baseApi.post<BaseResponse<any>>('/users', {
+export function createUser({
+  email,
+  fullName,
+  password,
+}: RegisterRequestModel) {
+  return baseApi.post<BaseResponse<any>>('/Register/signup', {
     email,
-    name,
-    surname,
+    fullName,
     password,
+    rePassword: password,
   });
 }

@@ -41,7 +41,7 @@ const LoginForm = () => {
       router.push(paths.home);
       return;
     }
-    toast.error(res?.error ?? 'Beklenmedik bir hata oluştu');
+    toast.error(res?.error ?? 'An unexpected error occurred');
   };
   return (
     <form

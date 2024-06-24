@@ -27,3 +27,9 @@ export interface CityModel {
   cityName: string;
   cityCode: number;
 }
+
+export interface RegisterRequestModel {
+  fullName: string;
+  email: string;
+  password: string;
+}
