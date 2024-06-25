@@ -10,7 +10,11 @@ import Review from '../common/review';
 import Gallery from '../common/gallery';
 import { bannerImageData } from '@/data/restaurant/single-page';
 
-const TabDescription: FC<ITabDescriptionProps> = ({ tabsData, class1 }) => {
+const TabDescription: FC<ITabDescriptionProps> = ({
+  tabsData,
+  data,
+  class1,
+}) => {
   const [activeTab, setActiveTab] = useState('1');
   const callback = useCallback(
     (tab: string) => {
@@ -36,7 +40,7 @@ const TabDescription: FC<ITabDescriptionProps> = ({ tabsData, class1 }) => {
             <OrderOnline />
           </TabPane>
           <TabPane tabId="2">
-            <Overview />
+            <Overview data={data} />
           </TabPane>
           <TabPane tabId="3">
             <Gallery galleryData={bannerImageData} />

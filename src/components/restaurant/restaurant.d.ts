@@ -53,9 +53,11 @@ interface CartItemDetails {
 interface ISinglePageProps {
   cartItem?: string;
   side: string;
+  data?: RestaurantDetailModel;
 }
 
 interface ITabDescriptionProps {
   tabsData: ITabsDataProps[];
   class1: string;
+  data?: RestaurantDetailModel;
 }

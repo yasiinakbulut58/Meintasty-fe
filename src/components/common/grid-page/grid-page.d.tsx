@@ -22,7 +22,7 @@ export interface IGridListProps {
   grid: IGridReducerProps;
   gridStyle: string | undefined;
   topFilter: boolean | undefined;
-  value: IHotelProps[] | IRestaurantProps[] | undefined;
+  value: IRestaurantProps[] | undefined;
   mapModal?: boolean;
   grid4Img?: boolean;
   side?: string;

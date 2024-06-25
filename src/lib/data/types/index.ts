@@ -33,3 +33,38 @@ export interface RegisterRequestModel {
   email: string;
   password: string;
 }
+
+export interface RestaurantModel {
+  id: number;
+  restaurantName: string;
+  email: string;
+  phoneNumber: string;
+  taxNumber: string | null;
+  workDayFrom: string;
+  workDayTo: string;
+  workHourFrom: string;
+  workHourTo: string;
+}
+
+export interface RestaurantDetailModel {
+  restaurantName: string;
+  email: string;
+  phoneNumber: string;
+  taxNumber: string;
+  workDayFrom: string;
+  workDayTo: string;
+  workHourFrom: string;
+  workHourTo: string;
+  addressList: IAddress[];
+  menuList: [];
+  orderList: [];
+}
+
+interface IAddress {
+  restaurantId: number;
+  addressId: number;
+  addressName: string;
+  addressText: string;
+  street: string;
+  cityCode: number;
+}

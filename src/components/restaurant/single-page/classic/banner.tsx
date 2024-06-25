@@ -1,7 +1,11 @@
+import { RestaurantDetailModel } from '@/lib/data';
 import Img from '@/utils/BackgroundImageRatio';
 import { FC } from 'react';
 
-const Banner: FC = () => {
+type Props = {
+  data: RestaurantDetailModel;
+};
+const Banner = ({ data }: Props) => {
   return (
     <section className="breadcrumb-section order-food-section pt-0">
       <Img
@@ -16,7 +20,7 @@ const Banner: FC = () => {
             className="img-fluid"
             alt=""
           />
-          <h3>italian restro</h3>
+          <h3>{data.restaurantName}</h3>
           <h6>Fast Food, Cafe, Italian</h6>
           <ul>
             <li>4.5 Rating</li>

@@ -10,9 +10,11 @@ import SpecialImage from '../common/special-image/page';
 import CartEmpty from '../common/cart-empty/page';
 import NewsLatterContent from '@/components/common/news-latter/page';
 
-const MainSinglePage: FC<ISinglePageProps> = ({ side, cartItem }) => {
+const MainSinglePage: FC<ISinglePageProps> = ({ side, data, cartItem }) => {
   const dispatch = useDispatch<AppDispatch>();
-  const { data } = useSelector((state: RootState) => state.restaurant);
+  const { data: restaurant } = useSelector(
+    (state: RootState) => state.restaurant,
+  );
   const [showMenu, setShowMenu] = useState(false);
   useEffect(() => {
     dispatch(getRestaurant());
@@ -41,9 +43,13 @@ const MainSinglePage: FC<ISinglePageProps> = ({ side, cartItem }) => {
             </div>
             <div className="col-xl-9 col-lg-8">
               <div className="description-section tab-section">
-                <TabDescription tabsData={tabsTitleData} class1="menu-top" />
+                <TabDescription
+                  tabsData={tabsTitleData}
+                  class1="menu-top"
+                  data={data}
+                />
               </div>
-              <SpecialImage data={data} />
+              <SpecialImage data={restaurant} />
             </div>
           </div>
         </div>

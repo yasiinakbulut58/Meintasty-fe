@@ -2,7 +2,7 @@ import { categoryData } from '@/data/inner-page/page-data';
 import { FC, useState } from 'react';
 
 interface ICategoryPageProps {
-  value: IHotelProps[] | IRestaurantProps[] | undefined;
+  value: IRestaurantProps[] | undefined;
   getCategories: Function;
 }
 const CategoryPage: FC<ICategoryPageProps> = ({ value, getCategories }) => {
@@ -12,8 +12,8 @@ const CategoryPage: FC<ICategoryPageProps> = ({ value, getCategories }) => {
     if (type === 'all') {
       getCategories(value);
     } else {
-      const filtered: IHotelProps[] = (value as IHotelProps[]).filter(
-        (item: IHotelProps) => item.category === type,
+      const filtered: IRestaurantProps[] = (value as IRestaurantProps[]).filter(
+        (item: IRestaurantProps) => item.category === type,
       );
       getCategories(filtered);
     }

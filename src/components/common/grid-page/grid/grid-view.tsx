@@ -26,9 +26,9 @@ const GridView: FC<IGridViewProps> = ({
   const dispatch = useDispatch();
   const grid = useSelector((state: RootState) => state.gridReducer);
   const [showSidebar, setShowSidebar] = useState(false);
-  const [filteredMenu, setFilteredMenu] = useState<IHotelProps[] | undefined>(
-    value,
-  );
+  const [filteredMenu, setFilteredMenu] = useState<
+    IRestaurantProps[] | undefined
+  >(value);
 
   const getCategories = useCallback((data: []) => {
     setFilteredMenu(data);

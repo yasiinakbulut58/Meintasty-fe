@@ -1,13 +1,16 @@
+import { RestaurantDetailModel } from '@/lib/data';
 import { FC } from 'react';
-
-const Overview: FC = () => {
+type Props = {
+  data: RestaurantDetailModel;
+};
+const Overview = ({ data }: Props) => {
   return (
     <div className="menu-part about tab-pane" id="overview">
       <div className="container">
         <div className="row">
           <div className="col-sm-6">
             <div className="about-sec">
-              <h6>Phone number: 09876543210</h6>
+              <h6>Phone number: {data.phoneNumber}</h6>
             </div>
             <div className="about-sec">
               <h6>cuisine</h6>
@@ -20,15 +23,19 @@ const Overview: FC = () => {
             <div className="about-sec">
               <h6>opening hours</h6>
               <ul>
-                <li>Monday to Friday: 11.00 a.m. to 11.00 p.m.</li>
+                <li>
+                  {data.workDayFrom} to {data.workDayTo}: {data.workHourFrom}{' '}
+                  a.m. to {data.workHourTo} p.m.
+                </li>
                 <li>Saturday & Sunday: 10.00 a.m. to 12.00 p.m.</li>
               </ul>
             </div>
             <div className="about-sec">
               <h6>address</h6>
               <ul>
-                <li>9716 Riverside Dr, Mays Landing, NJ 08330</li>
-                <li>24 Lafayette Drive, Ladson, SC 29456</li>
+                {data?.addressList?.map((item) => (
+                  <li key={item.addressId}>{item.addressText}</li>
+                ))}
               </ul>
             </div>
           </div>
