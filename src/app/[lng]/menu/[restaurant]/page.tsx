@@ -1,7 +1,6 @@
 import Banner from '@/components/restaurant/single-page/classic/banner';
 import MainSinglePage from '@/components/restaurant/single-page/classic/single-page';
 import { getRestaurantDetailById } from '@/lib/data/delivery';
-import { NextPage } from 'next';
 
 async function getPageDetails({ restaurant }: PageParams) {
   const response = await getRestaurantDetailById(+restaurant);
@@ -16,7 +15,7 @@ interface PageParams {
   restaurant: string;
 }
 
-const Page: NextPage<{ params: PageParams }> = async ({ params }) => {
+const Page = async ({ params }: { params: PageParams }) => {
   const { restaurant } = params;
   const { data } = await getPageDetails({ restaurant });
 

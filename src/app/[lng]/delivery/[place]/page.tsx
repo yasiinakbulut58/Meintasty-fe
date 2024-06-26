@@ -1,6 +1,5 @@
 import HomeBanner from '@/components/restaurant/listing/restaurant-banner';
 import GridView from '@/components/common/grid-page/grid/grid-view';
-import { NextPage } from 'next';
 import { getRestaurantsByCityId } from '@/lib/data/delivery';
 
 function getRandomNumber(min: number, max: number): number {
@@ -39,7 +38,7 @@ interface PageParams {
   place: string;
 }
 
-const Page: NextPage<{ params: PageParams }> = async ({ params }) => {
+const Page = async ({ params }: { params: PageParams }) => {
   const { place } = params;
 
   const { data } = await getPageDetails({ place });
