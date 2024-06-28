@@ -9,7 +9,7 @@ app.prepare().then(() => {
   createServer((req, res) => {
     // Custom routing if necessary
     handle(req, res);
-  }).listen(process.env.PORT || 3000, err => {
+  }).listen(process.env.PORT || 3000, (err) => {
     if (err) throw err;
     console.log(`> Ready on http://localhost:${process.env.PORT || 3000}`);
   });

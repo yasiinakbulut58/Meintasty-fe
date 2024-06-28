@@ -1,5 +1,4 @@
-import '@/public/assets/scss/globals.scss';
-import 'react-toastify/dist/ReactToastify.css';
+import '@/styles/index.scss';
 
 import { PropsWithChildren } from 'react';
 
