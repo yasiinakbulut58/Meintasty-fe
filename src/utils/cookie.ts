@@ -3,3 +3,5 @@ export const sessionCookie = process.env.NEXT_PUBLIC_API_URL?.startsWith(
 )
   ? '__Secure-next-auth.session-token'
   : 'next-auth.session-token';
+
+export const activeAddress = 'active_address';

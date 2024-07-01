@@ -31,7 +31,7 @@ const HomeBanner = ({
             </div>
             <div className="col-md-6">
               <div className="home-content food_content">
-                <div className="shadow-none">
+                <div className="w-100 shadow-none">
                   <h4>{t('Home.bannerTitle')}</h4>
                   <h1>{t('Home.bannerDesc')}</h1>
                   <BannerSearch cantonAndCities={cantonAndCities} />

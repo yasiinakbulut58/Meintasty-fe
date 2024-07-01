@@ -2,7 +2,6 @@
 import { ReactNode } from 'react';
 import HeaderRight from './header/header-right/page';
 import Logo from './header/logo/page';
-import Sidebar from './header/menus/page';
 import CoupenCode from './header/header-right/coupen-code';
 import FooterMain from './footer/page';
 import TapToTop from './tab-to-top/page';
@@ -34,9 +33,11 @@ const CustomLayout: React.FC<CustomLayoutProps> = ({
         <div className="container">
           <div className="row">
             <div className="col">
-              <div className="menu">
+              <div
+                className="menu justify-content-between"
+                style={{ height: 60 }}
+              >
                 <Logo logo={logo} />
-                <Sidebar />
                 {coupon ? (
                   <CoupenCode />
                 ) : (

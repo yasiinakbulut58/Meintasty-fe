@@ -1,6 +1,12 @@
 import HomeBanner from '@/components/restaurant/listing/restaurant-banner';
 import GridView from '@/components/common/grid-page/grid/grid-view';
 import { getRestaurantsByCityId } from '@/lib/data/delivery';
+import { cookies } from 'next/headers';
+import { activeAddress } from '@/utils/cookie';
+import { redirect } from 'next/navigation';
+import { paths } from '@/constant/menu';
+import { generateUrlPath } from '@/utils/generateUrlPath';
+import { IActiveLocation } from '@/lib/data';
 
 function getRandomNumber(min: number, max: number): number {
   const randomNumber = Math.random() * (max - min) + min;
@@ -39,9 +45,22 @@ interface PageParams {
 }
 
 const Page = async ({ params }: { params: PageParams }) => {
-  const { place } = params;
+  const cookieStore = cookies();
+  const activeLocation = cookieStore.get(activeAddress)?.value;
 
-  const { data } = await getPageDetails({ place });
+  if (!activeLocation) redirect(paths.home);
+  const cookieLocation = JSON.parse(activeLocation) as IActiveLocation;
+  if (
+    params.place !==
+    generateUrlPath(
+      `${cookieLocation.canton.cantonName} ${cookieLocation.city.cityName}`,
+    )
+  )
+    redirect(paths.home);
+
+  const { data } = await getPageDetails({
+    place: cookieLocation.city.id.toString(),
+  });
 
   return (
     <>

@@ -28,6 +28,11 @@ export interface CityModel {
   cityCode: number;
 }
 
+export interface IActiveLocation {
+  canton: CantonModel;
+  city: CityModel;
+}
+
 export interface RegisterRequestModel {
   fullName: string;
   email: string;

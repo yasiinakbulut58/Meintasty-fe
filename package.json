@@ -29,6 +29,7 @@
     "axios": "^1.4.0",
     "bcrypt": "^5.1.1",
     "bootstrap": "^5.2.3",
+    "cookies-next": "^4.2.1",
     "i18next": "^23.2.11",
     "i18next-browser-languagedetector": "^7.1.0",
     "i18next-resources-for-ts": "^1.2.1",

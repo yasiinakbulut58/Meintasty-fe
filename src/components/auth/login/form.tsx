@@ -8,6 +8,7 @@ import { zodResolver } from '@hookform/resolvers/zod';
 import * as z from 'zod';
 import { toast } from 'react-toastify';
 import { paths } from '@/constant/menu';
+import { useBaseTranslation } from '@/lib/hooks';
 
 const schema = z.object({
   email: z.string().email().min(1, 'Email is required'),
@@ -22,6 +23,7 @@ interface FormData {
 }
 
 const LoginForm = () => {
+  const { t } = useBaseTranslation();
   const router = useRouter();
   const {
     register,
@@ -50,31 +52,35 @@ const LoginForm = () => {
       noValidate
     >
       <div className="form-group">
-        <label htmlFor="exampleInputEmail1">Email address</label>
+        <label htmlFor="exampleInputEmail1">
+          {t('Auth.SignUp.emailAddress')}
+        </label>
         <input
           type="email"
           id="exampleInputEmail1"
           className={`form-control ${errors.email ? 'is-invalid' : ''}`}
-          {...register('email', { required: 'E-posta zorunlu' })}
+          {...register('email', { required: t('Auth.SignUp.emailIsRequired') })}
           aria-describedby="emailHelp"
-          placeholder="Enter email"
+          placeholder={t('Auth.SignUp.enterEmail')}
         />
         {errors.email && (
           <div className="invalid-feedback">{errors.email.message}</div>
         )}
         <small id="emailHelp" className="form-text text-muted">
-          We'll never share your email with anyone else.
+          {t('Auth.SignUp.wellNeverShareYourEmailWithAnyoneElse')}{' '}
         </small>
       </div>
       <div className="form-group">
-        <label htmlFor="exampleInputPassword1">Password</label>
+        <label htmlFor="exampleInputPassword1">
+          {t('Auth.SignUp.password')}
+        </label>
         <input
           type="password"
-          placeholder="Password"
+          placeholder={t('Auth.SignUp.password')}
           className={`form-control ${errors.password ? 'is-invalid' : ''}`}
           id="exampleInputPassword1"
           {...register('password', {
-            required: 'Pasword is required',
+            required: t('Auth.SignUp.passwordIsRequired'),
           })}
         />
         {errors.password && (
@@ -89,7 +95,7 @@ const LoginForm = () => {
           {...register('rememberMe')}
         />
         <label className="form-check-label" htmlFor="exampleCheck1">
-          remember me
+          {t('Auth.SignUp.rememberMe')}
         </label>
       </div>
       <div className="button-bottom">
@@ -99,10 +105,10 @@ const LoginForm = () => {
           disabled={isSubmitting}
           name="log-in"
         >
-          {isSubmitting ? 'Please wait...' : 'Giriş Yap'}
+          {isSubmitting ? t('Auth.SignUp.pleaseWait') : t('Auth.login')}
         </button>
         <div className="divider">
-          <h6>or</h6>
+          <h6>{t('Auth.SignUp.or')}</h6>
         </div>
         <Link
           href="/auth/register"
@@ -111,7 +117,7 @@ const LoginForm = () => {
         >
           <Button
             btnClass={`w-100 btn btn-solid ${isSubmitting ? 'pe-none opacity-50' : ''}`}
-            name="create account"
+            name={t('Auth.SignUp.createAccount')}
           />
         </Link>
       </div>

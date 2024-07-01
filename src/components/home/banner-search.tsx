@@ -1,11 +1,14 @@
 'use client';
 import { useBaseTranslation } from '@/lib/hooks';
-import { CantonModel } from '@/lib/data';
+import { CantonModel, IActiveLocation } from '@/lib/data';
 import { useForm } from 'react-hook-form';
 import { zodResolver } from '@hookform/resolvers/zod';
 import * as z from 'zod';
 import { useMemo, useState } from 'react';
 import { useRouter } from 'next/navigation';
+import { getCookie, setCookie } from 'cookies-next';
+import { activeAddress } from '@/utils/cookie';
+import { generateUrlPath } from '@/utils/generateUrlPath';
 
 const schema = z.object({
   cantonId: z.string().min(1, 'Please select canton'),
@@ -19,7 +22,15 @@ const BannerSearch = ({
 }: {
   cantonAndCities: CantonModel[] | null;
 }) => {
-  const [selectedCantonId, setSelectedCantonId] = useState('');
+  const activeLocation = getCookie(activeAddress);
+
+  const cookieLocation = activeLocation
+    ? (JSON.parse(activeLocation) as IActiveLocation)
+    : null;
+
+  const [selectedCantonId, setSelectedCantonId] = useState(
+    cookieLocation?.canton?.id ?? '',
+  );
   const { push } = useRouter();
   const { t } = useBaseTranslation();
   const {
@@ -29,10 +40,31 @@ const BannerSearch = ({
     formState: { errors, isSubmitting },
   } = useForm<FormData>({
     resolver: zodResolver(schema),
+    defaultValues: {
+      cantonId: cookieLocation?.canton.id.toString() ?? '',
+      cityId: cookieLocation?.city.id.toString() ?? '',
+    },
   });
 
   const onSubmit = (data: FormData) => {
-    push(`/delivery/${data.cityId}`);
+    const selectedCanton = cantonAndCities?.find(
+      (item) => item.id === Number(selectedCantonId),
+    );
+    const selectedCity = selectedCanton?.cities?.find(
+      (item) => item.id === Number(data.cityId),
+    );
+
+    if (!selectedCanton && !selectedCity) return;
+
+    setCookie(
+      activeAddress,
+      { canton: selectedCanton, city: selectedCity },
+      { maxAge: 60 * 6 * 24 },
+    );
+
+    push(
+      `/delivery/${generateUrlPath(`${selectedCanton?.cantonName} ${selectedCity?.cityName}`)}`,
+    );
   };
 
   const filteredOptions = useMemo(
@@ -57,17 +89,15 @@ const BannerSearch = ({
           <div className="row w-100">
             <div className="col-md-6">
               <select
-                className={`form-control border p-3 ${errors.cantonId ? 'is-invalid' : ''}`}
+                style={{ height: 42 }}
+                className={`form-control border p-0 px-3 ${errors.cantonId ? 'is-invalid' : ''}`}
                 defaultValue=""
                 {...register('cantonId', {
                   deps: ['cityId', 'cantonId'],
                 })}
                 onChange={(e) => {
                   setSelectedCantonId(e.target.value);
-
-                  setValue('cityId', '', {
-                    shouldValidate: true,
-                  });
+                  setValue('cityId', '');
                 }}
               >
                 <option value="" disabled>
@@ -88,7 +118,8 @@ const BannerSearch = ({
                 {...register('cityId', {
                   deps: ['cityId', 'cantonId'],
                 })}
-                className={`form-control border p-3 ${errors.cityId ? 'is-invalid' : ''}`}
+                style={{ height: 42 }}
+                className={`form-control border p-0 px-3 ${errors.cityId ? 'is-invalid' : ''}`}
                 defaultValue=""
               >
                 <option value="" disabled>
@@ -108,6 +139,7 @@ const BannerSearch = ({
             <div className="col-md-12 mt-2">
               <button
                 type="submit"
+                style={{ height: 42 }}
                 className={`w-100 btn btn-rounded color1 m-0 ${isSubmitting ? 'pe-none opacity-50' : ''}`}
                 disabled={isSubmitting}
               >

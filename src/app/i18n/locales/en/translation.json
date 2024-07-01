@@ -15,6 +15,18 @@
   "Auth": {
     "login": "Login",
     "signUp": "Sign Up",
-    "createAccount": "Create Account"
+    "createAccount": "Create Account",
+    "SignUp": {
+      "emailAddress": "Email address",
+      "enterEmail": "Enter email",
+      "wellNeverShareYourEmailWithAnyoneElse": "We'll never share your email with anyone else.",
+      "password": "Password",
+      "rememberMe": "remember me",
+      "pleaseWait": "Please wait...",
+      "or": "or",
+      "createAccount": "create account",
+      "emailIsRequired": "Email is required",
+      "passwordIsRequired": "Pasword is required"
+    }
   }
 }
