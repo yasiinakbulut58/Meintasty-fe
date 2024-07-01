@@ -29,9 +29,9 @@ const AboutComponent: React.FC = () => {
               <li>
                 <Link href="/user-dashboard">privacy</Link>
               </li>
-              <li>
+              {/* <li>
                 <Link href="https://support.pixelstrap.com/">support</Link>
-              </li>
+              </li> */}
             </ul>
           </div>
         </div>

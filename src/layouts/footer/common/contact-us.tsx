@@ -34,8 +34,8 @@ const ContactUsComponent: React.FC = () => {
             <li>
               <i className="fas fa-phone-alt"></i> 518 - 457 - 5181
             </li>
-            <li>
-              <i className="fas fa-envelope"></i> contact@gmail.com
+            <li className="text-lowercase">
+              <i className="fas fa-envelope"></i> contact@meintasty.com
             </li>
           </ul>
         </div>
