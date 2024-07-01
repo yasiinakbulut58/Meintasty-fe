@@ -13,7 +13,7 @@ const GridLayout: FC<IGridLayoutProps> = ({
   view,
   trip,
 }) => {
-  const cardToShow = 6;
+  const cardToShow = 8;
   const dispatch = useDispatch();
 
   const showProduct = useFilterRestaurant({ value });

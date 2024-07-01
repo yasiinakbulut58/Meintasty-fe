@@ -9,7 +9,7 @@ interface IGridReducerProps {
 }
 
 var initialState: IGridReducerProps = {
-  gridSize: 2,
+  gridSize: 3,
   gridStyle: '',
   toPage: 1,
   totalPages: 1,

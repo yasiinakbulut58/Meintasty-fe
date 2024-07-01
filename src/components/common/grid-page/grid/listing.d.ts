@@ -5,9 +5,6 @@ interface IGridViewProps {
   side?: string;
   value?: IRestaurantProps[];
   schedule?: boolean;
-  mapModal?: boolean;
-  grid4Img?: boolean;
-  setMapModal?: Function;
   children?: ReactNode;
   type?: string;
   filter?: boolean;

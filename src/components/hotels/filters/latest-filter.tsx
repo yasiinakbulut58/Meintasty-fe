@@ -8,7 +8,7 @@ import PopularFoodFilter from '@/components/restaurant/filters/popular-filter';
 import CuisinesFilter from '@/components/restaurant/filters/cuisines-filter';
 import DeliveryFilter from '@/components/restaurant/filters/deliver-filter';
 
-const LatestFilters: FC<IFiltersProps> = ({ filterStyle, type, value }) => {
+const LatestFilters: FC<IFiltersProps> = ({ filterStyle, value }) => {
   const [show, setShow] = useState(true);
 
   const applyFunc = () => {

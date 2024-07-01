@@ -23,10 +23,7 @@ export interface IGridListProps {
   gridStyle: string | undefined;
   topFilter: boolean | undefined;
   value: IRestaurantProps[] | undefined;
-  mapModal?: boolean;
-  grid4Img?: boolean;
   side?: string;
-  setMapModal?: Function | any;
   type?: string;
   view?: string;
   gridSelect?: boolean;

@@ -16,9 +16,6 @@ const GridView: FC<IGridViewProps> = ({
   gridType,
   side,
   value,
-  mapModal,
-  grid4Img,
-  setMapModal,
   children,
   type,
   view,
@@ -70,9 +67,6 @@ const GridView: FC<IGridViewProps> = ({
                 topFilter={topFilter}
                 value={value}
                 side={side}
-                grid4Img={grid4Img}
-                mapModal={mapModal}
-                setMapModal={setMapModal}
                 type={type}
               />
             </div>
