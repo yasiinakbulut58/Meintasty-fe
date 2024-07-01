@@ -1,15 +1,32 @@
 {
-  "home": "hogar",
-  "hotel": "hotel",
-  "tour": "tour",
-  "title": "الفندق",
-  "flight": "vuelo",
-  "cab": "taxi",
-  "restaurant": "restaurante",
-  "pages": "páginas",
+  "home": "Startseite",
+  "title": "Test",
+  "hotel": "Hotel",
+  "tour": "Tour",
+  "flight": "Flug",
+  "cab": "Taxi",
+  "restaurant": "Restaurant",
+  "pages": "Seiten",
+  "search": "Suche",
+  "Home": {
+    "bannerTitle": "Sonderaktion 2024",
+    "bannerDesc": "beiß mich!"
+  },
   "Auth": {
     "login": "Anmelden",
     "signUp": "Registrieren",
-    "createAccount": "Konto erstellen"
+    "createAccount": "Konto erstellen",
+    "SignUp": {
+      "emailAddress": "E-Mail-Adresse",
+      "enterEmail": "E-Mail eingeben",
+      "wellNeverShareYourEmailWithAnyoneElse": "Wir werden Ihre E-Mail niemals mit jemand anderem teilen.",
+      "password": "Passwort",
+      "rememberMe": "erinnere dich an mich",
+      "pleaseWait": "Bitte warten...",
+      "or": "oder",
+      "createAccount": "Konto erstellen",
+      "emailIsRequired": "E-Mail ist erforderlich",
+      "passwordIsRequired": "Passwort ist erforderlich"
+    }
   }
 }

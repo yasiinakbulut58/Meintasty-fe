@@ -1,15 +1,32 @@
 {
-  "home": "maison",
+  "home": "accueil",
+  "title": "test",
   "hotel": "hôtel",
-  "title": "الفندق",
-  "tour": "visite",
+  "tour": "tour",
   "flight": "vol",
-  "cab": "taxi",
+  "cab": "Taxi",
   "restaurant": "restaurant",
   "pages": "pages",
+  "search": "Rechercher",
+  "Home": {
+    "bannerTitle": "Spécial 2024",
+    "bannerDesc": "mords-moi !"
+  },
   "Auth": {
     "login": "Connexion",
     "signUp": "S'inscrire",
-    "createAccount": "Créer un compte"
+    "createAccount": "Créer un compte",
+    "SignUp": {
+      "emailAddress": "Adresse e-mail",
+      "enterEmail": "Entrer l'email",
+      "wellNeverShareYourEmailWithAnyoneElse": "Nous ne partagerons jamais votre email avec quelqu'un d'autre.",
+      "password": "Mot de passe",
+      "rememberMe": "se souvenir de moi",
+      "pleaseWait": "S'il vous plaît, attendez...",
+      "or": "ou",
+      "createAccount": "créer un compte",
+      "emailIsRequired": "Email est requis",
+      "passwordIsRequired": "Le mot de passe est requis"
+    }
   }
 }
