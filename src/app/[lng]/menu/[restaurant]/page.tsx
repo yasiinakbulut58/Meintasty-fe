@@ -22,7 +22,7 @@ const Page = async ({ params }: { params: PageParams }) => {
   return (
     <>
       <Banner data={data} />
-      <MainSinglePage side={'right'} data={data} />
+      <MainSinglePage side={'right'} data={data} cartItem="empty" />
     </>
   );
 };
