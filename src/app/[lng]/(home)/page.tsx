@@ -1,9 +1,9 @@
-// import "@/public/assets/scss/color1.scss";
 import HomeBanner from '@/components/home/home-banner';
 import TopCategory from '@/components/home/top-category';
 import MenuSection from '@/components/home/menu-section';
 import { getCantonsAndCities } from '@/lib/data';
 import data from '../../api/what-hot-today/db.json';
+import React from 'react';
 
 async function getHomeDetails() {
   const response1 = data;

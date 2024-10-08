@@ -1,5 +1,4 @@
 import { FC } from 'react';
-// import "@/public/assets/scss/color1.scss";
 import Breadcrumb from '@/components/common/breadcrumb/page';
 import OurTeamContent from '@/components/others/about-us/our-team';
 import AboutUsContent from '@/components/others/about-us/page';

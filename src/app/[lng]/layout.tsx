@@ -9,6 +9,7 @@ import { options } from '../api/auth/[...nextauth]/options';
 import { Providers } from '@/redux-toolkit/provider';
 import CustomLayout from '@/layouts/layout';
 import { PropsWithChildren } from 'react';
+import { LangProvider } from '@/components/providers/LangProvider';
 
 export const metadata = {
   title: 'Meintasty',
@@ -82,27 +83,29 @@ const RootLayout = async ({
       </head>
       <body>
         <Providers>
-          <SProvider session={session}>
-            <CustomLayout
-              title="overlay-black"
-              loader="food"
-              userBgClass="user user-light"
-            >
-              {children}
-            </CustomLayout>
-            <ToastContainer
-              position="bottom-right"
-              autoClose={500}
-              hideProgressBar={false}
-              newestOnTop={false}
-              closeOnClick
-              rtl={false}
-              pauseOnFocusLoss
-              draggable
-              pauseOnHover
-              theme="colored"
-            />
-          </SProvider>
+          <LangProvider initialLang={lng}>
+            <SProvider session={session}>
+              <CustomLayout
+                title="overlay-black"
+                loader="food"
+                userBgClass="user user-light"
+              >
+                {children}
+              </CustomLayout>
+              <ToastContainer
+                position="bottom-right"
+                autoClose={500}
+                hideProgressBar={false}
+                newestOnTop={false}
+                closeOnClick
+                rtl={false}
+                pauseOnFocusLoss
+                draggable
+                pauseOnHover
+                theme="colored"
+              />
+            </SProvider>
+          </LangProvider>
         </Providers>
       </body>
     </html>

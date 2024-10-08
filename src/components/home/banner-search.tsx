@@ -1,4 +1,5 @@
 'use client';
+
 import { useBaseTranslation } from '@/lib/hooks';
 import { CantonModel, IActiveLocation } from '@/lib/data';
 import { useForm } from 'react-hook-form';

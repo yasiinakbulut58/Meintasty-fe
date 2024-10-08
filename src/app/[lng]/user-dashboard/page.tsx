@@ -1,5 +1,4 @@
-import { FC } from 'react';
-// import "@/public/assets/scss/color1.scss";
+import React, { FC } from 'react';
 import Breadcrumb from '@/components/common/breadcrumb/page';
 import BodyContent from '@/components/user-dashboard/page';
 

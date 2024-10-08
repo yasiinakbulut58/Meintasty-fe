@@ -1,6 +1,7 @@
 import Breadcrumb from '@/components/common/breadcrumb/page';
 import AuthPage from '@/components/auth/page';
 import { useTranslation } from '@/app/i18n';
+import React from 'react';
 
 const Login = async ({ params: { lng } }: { params: { lng: string } }) => {
   const { t } = await useTranslation(lng);
