@@ -42,8 +42,8 @@ const BannerSearch = ({
   } = useForm<FormData>({
     resolver: zodResolver(schema),
     defaultValues: {
-      cantonId: cookieLocation?.canton.id.toString() ?? '',
-      cityId: cookieLocation?.city.id.toString() ?? '',
+      cantonId: cookieLocation?.canton?.id?.toString() ?? '',
+      cityId: cookieLocation?.city?.id?.toString() ?? '',
     },
   });
 
@@ -74,7 +74,7 @@ const BannerSearch = ({
         ?.find((item) => item.id === Number(selectedCantonId))
         ?.cities?.map((item) => ({
           label: item.cityName,
-          value: item.cityCode.toString(),
+          value: item.id.toString(),
         })) || [],
     [cantonAndCities, selectedCantonId],
   );
