@@ -3,7 +3,9 @@ import BackgroundDiv from '@/utils/HOC/background-div';
 import SmokeEffect from './smoke-effect';
 import { useBaseTranslation } from '@/lib/hooks';
 import { CantonModel } from '@/lib/data';
-import BannerSearch from './banner-search';
+import dynamic from 'next/dynamic';
+
+const BannerSearch = dynamic(() => import('./banner-search'), { ssr: false });
 
 const HomeBanner = ({
   cantonAndCities,
