@@ -1,16 +1,11 @@
+'use client';
+
 import { userTabs } from '@/data/pages/all-page';
 import UserDetail from './user-detail';
-import { FC } from 'react';
+import { usePathname } from 'next/navigation';
 
-interface IDashboardSidebarProps {
-  handleTabClick: Function;
-  activeTab: string;
-}
-
-const DashboardSidebar: FC<IDashboardSidebarProps> = ({
-  handleTabClick,
-  activeTab,
-}) => {
+const DashboardSidebar = () => {
+  const pathname = usePathname();
   return (
     <div className="col-lg-3">
       <div className="pro_sticky_info" data-sticky_column>
@@ -21,9 +16,8 @@ const DashboardSidebar: FC<IDashboardSidebarProps> = ({
               {userTabs.map((tab, index) => (
                 <li className="nav-item" key={index}>
                   <a
-                    href="#javascript"
-                    className={`nav-link ${activeTab === tab.id ? 'active' : ''}`}
-                    onClick={() => handleTabClick(tab.id)}
+                    href={`/user/${tab.id}`}
+                    className={`nav-link ${pathname.includes(tab.id) ? 'active' : ''}`}
                   >
                     {tab.label}
                   </a>

@@ -1,3 +1,4 @@
+import React from 'react';
 import HomeBanner from '@/components/restaurant/listing/restaurant-banner';
 import GridView from '@/components/common/grid-page/grid/grid-view';
 import { getRestaurantsByCityId } from '@/lib/data/delivery';

@@ -1,3 +1,5 @@
+'use client';
+
 import { bookingsData } from '@/data/pages/all-page';
 import React, { FC } from 'react';
 import RenderBooking from './render-booking';

@@ -1,10 +1,9 @@
-import HomeBanner from '@/components/home/home-banner';
-import MenuSection from '@/components/home/menu-section';
-import { getCantonsAndCities } from '@/lib/data';
 import React from 'react';
+import HomeBanner from '@/components/home/home-banner';
+import { getCantonsAndCities } from '@/lib/data';
 import { Metadata } from 'next';
-import data from '../../api/what-hot-today/db.json';
 import TopMenu from '@/components/home/top-menu';
+import StepsRestaurant from '@/components/home/steps-restaurant';
 
 export async function generateMetadata(): Promise<Metadata> {
   const [pageDetails] = [
@@ -24,24 +23,21 @@ export async function generateMetadata(): Promise<Metadata> {
 }
 
 async function getHomeDetails() {
-  const response1 = data;
-
   const response = await getCantonsAndCities();
 
   return {
     cantonAndCities: response.data?.value || null,
-    lunchMenus: response1 as ISlideSixProps['slideData'],
   };
 }
 
 const Home = async () => {
-  const { cantonAndCities, lunchMenus } = await getHomeDetails();
+  const { cantonAndCities } = await getHomeDetails();
 
   return (
     <>
       <HomeBanner cantonAndCities={cantonAndCities} />
       <TopMenu />
-      <MenuSection lunchMenus={lunchMenus} />
+      <StepsRestaurant />
     </>
   );
 };

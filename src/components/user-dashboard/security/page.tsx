@@ -1,3 +1,4 @@
+'use client';
 import { FC } from 'react';
 import Button from '@/components/common/btn';
 import DashboardTitle from '../common/dashboard-title';

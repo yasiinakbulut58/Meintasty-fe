@@ -1,5 +1,5 @@
-import Img from '@/utils/BackgroundImageRatio';
-import { FC, useState } from 'react';
+'use client';
+import React, { FC, useState } from 'react';
 import CardModal from './add-card';
 import { cardsData } from '@/data/pages/all-page';
 import { AddNewCard, CardsPayment } from '@/constant/constant';

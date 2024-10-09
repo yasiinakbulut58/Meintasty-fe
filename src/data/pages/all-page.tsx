@@ -101,12 +101,10 @@ export const tabs = [
 ];
 
 export const userTabs = [
-  { id: 'dashboard', label: 'dashboard' },
-  { id: 'profile', label: 'profile' },
-  { id: 'bookings', label: 'bookings' },
-  { id: 'cards', label: 'cards & payment' },
-  { id: 'bookmark', label: 'bookmark' },
-  { id: 'security', label: 'security' },
+  { id: '/profile', label: 'profile' },
+  { id: '/bookings', label: 'bookings' },
+  { id: '/cards', label: 'cards & payment' },
+  { id: '/security', label: 'security' },
 ];
 
 export const counters = [

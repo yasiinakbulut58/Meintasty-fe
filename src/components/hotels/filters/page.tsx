@@ -1,5 +1,5 @@
 'use client';
-import { FC, useState } from 'react';
+import React, { FC, useState } from 'react';
 import Img from '@/utils/BackgroundImageRatio';
 import HelpInfo from '../help-info';
 import { LatestFilter } from '@/constant/constant';

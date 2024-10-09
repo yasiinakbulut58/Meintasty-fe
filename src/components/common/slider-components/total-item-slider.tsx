@@ -7,7 +7,7 @@ import Link from 'next/link';
 
 const TotalItemSlider: FC<ITotalSliderProps> = ({ slideData }) => {
   return (
-    <Slider {...slide6} className="no-arrow">
+    <Slider {...slide6}>
       {slideData.map((item: any, index: number) => (
         <div className="category-block" key={index}>
           <a href="#" tabIndex={0}>

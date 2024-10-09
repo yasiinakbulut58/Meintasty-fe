@@ -1,3 +1,5 @@
+'use client';
+
 import { userSection } from '@/data/pages/all-page';
 import React, { FC, useState } from 'react';
 import EditProfile from './EditProfile';
