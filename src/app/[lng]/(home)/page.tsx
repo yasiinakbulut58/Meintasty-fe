@@ -1,10 +1,10 @@
 import HomeBanner from '@/components/home/home-banner';
-import TopCategory from '@/components/home/top-category';
 import MenuSection from '@/components/home/menu-section';
 import { getCantonsAndCities } from '@/lib/data';
 import React from 'react';
 import { Metadata } from 'next';
 import data from '../../api/what-hot-today/db.json';
+import TopMenu from '@/components/home/top-menu';
 
 export async function generateMetadata(): Promise<Metadata> {
   const [pageDetails] = [
@@ -40,7 +40,7 @@ const Home = async () => {
   return (
     <>
       <HomeBanner cantonAndCities={cantonAndCities} />
-      <TopCategory />
+      <TopMenu />
       <MenuSection lunchMenus={lunchMenus} />
     </>
   );

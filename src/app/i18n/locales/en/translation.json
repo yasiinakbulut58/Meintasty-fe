@@ -8,6 +8,13 @@
   "restaurant": "restaurant",
   "pages": "pages",
   "search": "Search",
+  "Common": {
+    "pleaseWait": "Please wait...",
+    "or": "or"
+  },
+  "Error": {
+    "errorOccurred": "An unexpected error occurred"
+  },
   "Home": {
     "bannerTitle": "2024 Special",
     "bannerDesc": "bite me !",
@@ -26,11 +33,12 @@
       "wellNeverShareYourEmailWithAnyoneElse": "We'll never share your email with anyone else.",
       "password": "Password",
       "rememberMe": "remember me",
-      "pleaseWait": "Please wait...",
-      "or": "or",
       "createAccount": "create account",
       "emailIsRequired": "Email is required",
-      "passwordIsRequired": "Pasword is required"
+      "passwordIsRequired": "Pasword is required",
+      "fullName": "Full Name",
+      "enterName": "Enter your name",
+      "passwordPlaceholder": "Password (at least 6 characters)"
     }
   }
 }

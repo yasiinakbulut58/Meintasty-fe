@@ -12,6 +12,7 @@ import { signIn } from 'next-auth/react';
 import { createUser } from './action';
 import { paths } from '@/constant/menu';
 import { useRouter } from 'next/navigation';
+import { useBaseTranslation } from '@/lib/hooks';
 
 // Define form schema using Zod
 const schema = z.object({
@@ -37,6 +38,7 @@ interface FormData {
 
 const RegisterForm = () => {
   const router = useRouter();
+  const { t } = useBaseTranslation();
   const {
     register,
     handleSubmit,
@@ -51,6 +53,7 @@ const RegisterForm = () => {
       const options = {
         redirect: false,
         ...data,
+        rePassword: data.password,
       };
       const res = await signIn('credentials', options);
       if (res?.ok && res.status === 200) {
@@ -58,7 +61,7 @@ const RegisterForm = () => {
         return;
       }
     }
-    toast.error(response?.message ?? 'An unexpected error occurred');
+    toast.error(response?.message ?? t('Error.errorOccurred'));
   };
 
   return (
@@ -68,7 +71,7 @@ const RegisterForm = () => {
         <input
           type="text"
           id="name"
-          placeholder="Enter your name"
+          placeholder={t('Auth.SignUp.enterName')}
           className={`form-control ${errors.fullName ? 'is-invalid' : ''}`}
           {...register('fullName')}
         />
@@ -81,7 +84,7 @@ const RegisterForm = () => {
         <input
           type="email"
           id="exampleInputEmail1"
-          placeholder="Enter email address"
+          placeholder={t('Auth.SignUp.enterEmail')}
           className={`form-control ${errors.email ? 'is-invalid' : ''}`}
           {...register('email')}
         />
@@ -94,7 +97,7 @@ const RegisterForm = () => {
         <input
           type="password"
           id="exampleInputPassword1"
-          placeholder="Password (at least 6 characters)"
+          placeholder={t('Auth.SignUp.passwordPlaceholder')}
           className={`form-control ${errors.password ? 'is-invalid' : ''}`}
           {...register('password')}
         />
@@ -108,14 +111,19 @@ const RegisterForm = () => {
           type="submit"
           disabled={isSubmitting}
         >
-          {isSubmitting ? 'Please wait...' : 'Create Account'}
+          {isSubmitting
+            ? t('Common.pleaseWait')
+            : t('Auth.SignUp.createAccount')}
         </button>
 
         <div className="divider">
-          <h6>or</h6>
+          <h6>{t('Common.or')}</h6>
         </div>
         <Link href="/auth/login">
-          <Button btnClass="w-100 btn btn-solid btn-outline" name="login" />
+          <Button
+            btnClass="w-100 btn btn-solid btn-outline"
+            name={t('Auth.login')}
+          />
         </Link>
       </div>
     </form>

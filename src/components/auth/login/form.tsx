@@ -105,7 +105,7 @@ const LoginForm = () => {
           disabled={isSubmitting}
           name="log-in"
         >
-          {isSubmitting ? t('Auth.SignUp.pleaseWait') : t('Auth.login')}
+          {isSubmitting ? t('Common.pleaseWait') : t('Auth.login')}
         </button>
         <div className="divider">
           <h6>{t('Auth.SignUp.or')}</h6>

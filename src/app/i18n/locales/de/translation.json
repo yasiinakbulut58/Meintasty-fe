@@ -8,6 +8,13 @@
   "restaurant": "Restaurant",
   "pages": "Seiten",
   "search": "Suchen",
+  "Common": {
+    "pleaseWait": "Bitte warten...",
+    "or": "oder"
+  },
+  "Error": {
+    "errorOccurred": "Ein unerwarteter Fehler ist aufgetreten"
+  },
   "Home": {
     "bannerTitle": "Sonderaktion 2024",
     "bannerDesc": "beiß mich!",
@@ -26,11 +33,13 @@
       "wellNeverShareYourEmailWithAnyoneElse": "Wir werden Ihre E-Mail niemals mit jemand anderem teilen.",
       "password": "Passwort",
       "rememberMe": "erinnere dich an mich",
-      "pleaseWait": "Bitte warten...",
-      "or": "oder",
       "createAccount": "Konto erstellen",
       "emailIsRequired": "E-Mail ist erforderlich",
-      "passwordIsRequired": "Passwort ist erforderlich"
+      "passwordIsRequired": "Passwort ist erforderlich",
+      "fullName": "Vollständiger Name",
+      "enterName": "Geben Sie Ihren Namen ein",
+      "passwordPlaceholder": "Passwort (mindestens 6 Zeichen)",
+      "login": "Anmelden"
     }
   }
 }

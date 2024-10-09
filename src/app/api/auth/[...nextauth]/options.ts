@@ -42,6 +42,7 @@ export const options: NextAuthOptions = {
 
         try {
           const response = await login(email, password);
+          console.log(response);
           if (response.status === 200 && response.data.success) {
             const me = response.data.value;
 
