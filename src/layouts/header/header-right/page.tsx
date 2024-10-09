@@ -7,16 +7,12 @@ import Link from 'next/link';
 import Language from './language';
 import { IHeaderRightProps } from './header-right';
 import { signOut, useSession } from 'next-auth/react';
+import { useBaseTranslation } from '@/lib/hooks';
 
 const HeaderRight: React.FC<IHeaderRightProps> = ({ userBgClass }) => {
+  const { t } = useBaseTranslation();
   const [settingIcon, setSettingIcon] = useState(false);
   const { data: session } = useSession();
-
-  const [isOpenAccount, setIsOpen] = useState(false);
-
-  const toggle = () => {
-    setIsOpen((prev) => !prev);
-  };
 
   const isUser = !!session?.user;
   return (
@@ -25,12 +21,12 @@ const HeaderRight: React.FC<IHeaderRightProps> = ({ userBgClass }) => {
         <>
           <li className={`${userBgClass && userBgClass}`}>
             <Link href="/auth/login" className="fw-bolder text-white">
-              Sign In
+              {t('Auth.login')}
             </Link>
           </li>
           <li className={`${userBgClass && userBgClass}`}>
             <Link href="/auth/register" className="fw-bolder text-white">
-              Sign Up
+              {t('Auth.signUp')}
             </Link>
           </li>
         </>

@@ -7,7 +7,7 @@ const Logo: React.FC<ILogoProps> = ({ logo }) => {
       <Link href={`/`}>
         <Image
           src={'/assets/images/icon/footer-logo.png'}
-          alt="logo-clasic"
+          alt="Meintasty Logo"
           className={`img-fluid ${logo !== 'dark' ? 'ed' : ''}`}
           width={100}
           height={140}

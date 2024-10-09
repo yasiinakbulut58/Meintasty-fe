@@ -1,4 +1,4 @@
-import { FC, useEffect } from 'react';
+import React, { FC, useEffect } from 'react';
 import { useDispatch } from 'react-redux';
 import ListPage from '../elements/product-box/list-product-box';
 import Pagination from './pagination/page-layout';

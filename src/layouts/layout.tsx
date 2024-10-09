@@ -1,5 +1,5 @@
 'use client';
-import { ReactNode } from 'react';
+import React, { ReactNode } from 'react';
 import HeaderRight from './header/header-right/page';
 import Logo from './header/logo/page';
 import CoupenCode from './header/header-right/coupen-code';

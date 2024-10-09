@@ -7,10 +7,14 @@
   "cab": "Taxi",
   "restaurant": "restaurant",
   "pages": "pages",
-  "search": "Rechercher",
+  "search": "Chercher",
   "Home": {
     "bannerTitle": "Spécial 2024",
-    "bannerDesc": "bite me !"
+    "bannerDesc": "bite me !",
+    "selectCanton": "Veuillez sélectionner un canton",
+    "selectCity": "Veuillez sélectionner une ville",
+    "selectCantonOption": "Sélectionner un canton",
+    "selectCityOption": "Sélectionner une ville"
   },
   "Auth": {
     "login": "Connexion",

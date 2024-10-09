@@ -7,10 +7,14 @@
   "cab": "Taxi",
   "restaurant": "Restaurant",
   "pages": "Seiten",
-  "search": "Suche",
+  "search": "Suchen",
   "Home": {
     "bannerTitle": "Sonderaktion 2024",
-    "bannerDesc": "beiß mich!"
+    "bannerDesc": "beiß mich!",
+    "selectCanton": "Bitte wählen Sie einen Kanton",
+    "selectCity": "Bitte wählen Sie eine Stadt",
+    "selectCantonOption": "Kanton auswählen",
+    "selectCityOption": "Stadt auswählen"
   },
   "Auth": {
     "login": "Anmelden",

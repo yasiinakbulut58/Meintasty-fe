@@ -10,7 +10,11 @@
   "search": "Search",
   "Home": {
     "bannerTitle": "2024 Special",
-    "bannerDesc": "bite me !"
+    "bannerDesc": "bite me !",
+    "selectCanton": "Please select canton",
+    "selectCity": "Please select city",
+    "selectCantonOption": "Select Canton",
+    "selectCityOption": "Select City"
   },
   "Auth": {
     "login": "Login",

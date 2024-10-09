@@ -102,7 +102,7 @@ const BannerSearch = ({
                 }}
               >
                 <option value="" disabled>
-                  Select Canton
+                  {t('Home.selectCantonOption')}
                 </option>
                 {cantonAndCities?.map((item) => (
                   <option key={item.cantonName} value={item.id.toString()}>
@@ -111,7 +111,7 @@ const BannerSearch = ({
                 ))}
               </select>
               {errors.cantonId && (
-                <div className="invalid-feedback">Please select canton</div>
+                <div className="invalid-feedback">{t('Home.selectCanton')}</div>
               )}
             </div>
             <div className="col-md-6">
@@ -124,7 +124,7 @@ const BannerSearch = ({
                 defaultValue=""
               >
                 <option value="" disabled>
-                  Select City
+                  {t('Home.selectCityOption')}
                 </option>
                 {filteredOptions?.map((item) => (
                   <option key={item.label} value={item.value}>
@@ -134,7 +134,7 @@ const BannerSearch = ({
               </select>
 
               {errors.cityId && (
-                <div className="invalid-feedback">Please select a city</div>
+                <div className="invalid-feedback">{t('Home.selectCity')}</div>
               )}
             </div>
             <div className="col-md-12 mt-2">

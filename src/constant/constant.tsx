@@ -94,7 +94,6 @@ export const Breakfast = 'breakfast';
 export const Menu = 'menu';
 export const Table = 'table';
 export const FindFood = 'find food';
-export const PopularRestaurantConst = 'popular restaurant';
 export const ThebestFoodapp = 'The best Food app';
 export const AllPizza = 'all pizza';
 export const TastyBurger = 'tasty burger';
