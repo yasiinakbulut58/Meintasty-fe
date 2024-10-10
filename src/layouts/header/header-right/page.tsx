@@ -40,7 +40,7 @@ const HeaderRight: React.FC<IHeaderRightProps> = ({ userBgClass }) => {
           {value.title === 'user' && isUser && (
             <>
               <li className={`${userBgClass && userBgClass}`}>
-                <Link href="/user-dashboard">
+                <Link href="/user/profile">
                   <i className="fas fa-user"></i>
                 </Link>
               </li>
