@@ -6,7 +6,7 @@ export interface BaseResponse<T> {
 }
 
 export interface AuthModel {
-  id: string;
+  userId: string;
   fullName: string;
   email: string;
   token: string;
@@ -72,4 +72,9 @@ interface IAddress {
   addressText: string;
   street: string;
   cityCode: number;
+}
+
+export interface ICategory {
+  id: number;
+  categoryName: string;
 }

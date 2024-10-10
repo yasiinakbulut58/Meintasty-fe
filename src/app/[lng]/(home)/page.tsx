@@ -1,6 +1,6 @@
 import React from 'react';
 import HomeBanner from '@/components/home/home-banner';
-import { getCantonsAndCities } from '@/lib/data';
+import { getCantonsAndCities, getCategories } from '@/lib/data';
 import { Metadata } from 'next';
 import TopMenu from '@/components/home/top-menu';
 import StepsRestaurant from '@/components/home/steps-restaurant';
@@ -23,20 +23,33 @@ export async function generateMetadata(): Promise<Metadata> {
 }
 
 async function getHomeDetails() {
-  const response = await getCantonsAndCities();
+  const [locationResult, categoriesResult] = await Promise.allSettled([
+    getCantonsAndCities(),
+    getCategories(),
+  ]);
+
+  // Hataları güvenli bir şekilde yönetiyoruz
+  const cantonAndCities =
+    locationResult.status === 'fulfilled'
+      ? locationResult.value.data?.value
+      : null;
+  const categories =
+    categoriesResult.status === 'fulfilled'
+      ? categoriesResult.value.data?.value
+      : null;
 
   return {
-    cantonAndCities: response.data?.value || null,
+    cantonAndCities,
+    categories,
   };
 }
 
 const Home = async () => {
-  const { cantonAndCities } = await getHomeDetails();
-
+  const { cantonAndCities, categories } = await getHomeDetails();
   return (
     <>
       <HomeBanner cantonAndCities={cantonAndCities} />
-      <TopMenu />
+      <TopMenu categories={categories} />
       <StepsRestaurant />
     </>
   );

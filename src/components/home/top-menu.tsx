@@ -1,14 +1,20 @@
-import { FC } from 'react';
 import TotalItemSlider from '@/components/common/slider-components/total-item-slider';
-import { topMenuData } from '@/data/home/restaurant/resatuarant-data';
+import { ICategory } from '@/lib/data';
 
-const TopMenu: FC = () => {
+const TopMenu = ({ categories }: { categories: ICategory[] | null }) => {
+  const slideData =
+    categories?.map((item) => ({
+      id: item.id,
+      name: item.categoryName,
+      img: '/assets/images/restaurant/dishes/14.jpg',
+      title: `${item.id} restaurant`,
+    })) ?? [];
   return (
     <div className="container">
       <section className="category-part radius-category small-section ratio_square pb-0">
         <div className="row">
           <div className="col">
-            <TotalItemSlider slideData={topMenuData} />
+            <TotalItemSlider slideData={slideData} />
           </div>
         </div>
       </section>

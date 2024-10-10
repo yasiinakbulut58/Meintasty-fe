@@ -227,57 +227,6 @@ export const instagram = [
   },
 ];
 
-export const topMenuData = [
-  {
-    id: 1,
-    img: '/assets/images/restaurant/dishes/15.jpg',
-    name: 'mexican',
-    title: '23 restaurant',
-  },
-  {
-    id: 2,
-    img: '/assets/images/restaurant/dishes/2.jpg',
-    name: 'italian',
-    title: '20 restaurant',
-  },
-  {
-    id: 3,
-    img: '/assets/images/restaurant/dishes/11.jpg',
-    name: 'bakery',
-    title: '15 restaurant',
-  },
-  {
-    id: 4,
-    img: '/assets/images/restaurant/dishes/10.jpg',
-    name: 'deserts',
-    title: '23 restaurant',
-  },
-  {
-    id: 5,
-    img: '/assets/images/restaurant/dishes/14.jpg',
-    name: 'non veg',
-    title: '23 restaurant',
-  },
-  {
-    id: 6,
-    img: '/assets/images/restaurant/dishes/7.jpg',
-    name: 'chinese',
-    title: '23 restaurant',
-  },
-  {
-    id: 7,
-    img: '/assets/images/restaurant/dishes/8.jpg',
-    name: 'healthy',
-    title: '23 restaurant',
-  },
-  {
-    id: 8,
-    img: '/assets/images/restaurant/dishes/9.jpg',
-    name: 'burger',
-    title: '23 restaurant',
-  },
-];
-
 export const imageData = [
   {
     id: 1,

@@ -1,4 +1,4 @@
-import { BaseResponse, CantonModel } from './types';
+import { BaseResponse, CantonModel, ICategory } from './types';
 import { baseApi } from '../http-common';
 
 export function getCantonsAndCities() {
@@ -6,4 +6,8 @@ export function getCantonsAndCities() {
     '/Canton/getCantonsAndCities',
     {},
   );
+}
+
+export function getCategories() {
+  return baseApi.post<BaseResponse<ICategory[]>>('/Category/getCategories', {});
 }

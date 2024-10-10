@@ -42,12 +42,11 @@ export const options: NextAuthOptions = {
 
         try {
           const response = await login(email, password);
-          console.log(response);
           if (response.status === 200 && response.data.success) {
             const me = response.data.value;
 
             return {
-              id: me.id,
+              id: me.userId,
               email: me.email,
               name: me.fullName,
               token: me.token,
