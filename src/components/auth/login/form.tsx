@@ -2,7 +2,7 @@
 import Button from '../../common/btn';
 import Link from 'next/link';
 import { signIn } from 'next-auth/react';
-import { useRouter } from 'next/navigation';
+import { useRouter, useSearchParams } from 'next/navigation';
 import { useForm } from 'react-hook-form';
 import { zodResolver } from '@hookform/resolvers/zod';
 import * as z from 'zod';
@@ -25,6 +25,7 @@ interface FormData {
 const LoginForm = () => {
   const { t } = useBaseTranslation();
   const router = useRouter();
+  const params = useSearchParams();
   const {
     register,
     handleSubmit,
@@ -40,7 +41,10 @@ const LoginForm = () => {
     };
     const res = await signIn('credentials', options);
     if (res?.ok && res.status === 200) {
-      router.push(paths.home);
+      const redirectUrl = params.get('redirectUrl');
+      router.push(
+        redirectUrl && redirectUrl.startsWith('/') ? redirectUrl : paths.home,
+      );
       return;
     }
     toast.error(res?.error ?? 'An unexpected error occurred');
