@@ -16,8 +16,8 @@ const DashboardSidebar = () => {
               {userTabs.map((tab, index) => (
                 <li className="nav-item" key={index}>
                   <a
-                    href={`/user/${tab.id}`}
-                    className={`nav-link ${pathname.includes(tab.id) ? 'active' : ''}`}
+                    href={`/user${tab.path}`}
+                    className={`nav-link ${pathname.includes(tab.path) ? 'active' : ''}`}
                   >
                     {tab.label}
                   </a>
