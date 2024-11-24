@@ -10,7 +10,9 @@
   "search": "Chercher",
   "Common": {
     "pleaseWait": "S'il vous plaît, attendez...",
-    "or": "ou"
+    "or": "ou",
+    "edit": "modifier",
+    "user": "utilisateur"
   },
   "Error": {
     "errorOccurred": "Une erreur inattendue s'est produite"
@@ -41,5 +43,15 @@
       "passwordPlaceholder": "Mot de passe (au moins 6 caractères)",
       "login": "Connexion"
     }
+  },
+  "Profile": {
+    "title": "Profil",
+    "loginDetails": "Détails de connexion",
+    "name": "Nom",
+    "birthday": "Anniversaire",
+    "gender": "Genre",
+    "emailAddress": "Adresse électronique",
+    "phoneNo": "Numéro de téléphone",
+    "password": "Mot de passe"
   }
 }

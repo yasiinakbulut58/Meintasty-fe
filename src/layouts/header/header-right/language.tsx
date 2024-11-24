@@ -1,11 +1,10 @@
 'use client';
 import { useTranslation } from '@/app/i18n/client';
-import { fallbackLng, languages } from '@/app/i18n/settings';
+import { fallbackLng } from '@/app/i18n/settings';
 import { useLang } from '@/components/providers/LangProvider';
 import { setLanguage } from '@/redux-toolkit/reducers/language';
 import { RootState } from '@/redux-toolkit/store';
 import { usePathname, useRouter } from 'next/navigation';
-import { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 
 const Language: React.FC<ILanguageProps> = ({ value }) => {

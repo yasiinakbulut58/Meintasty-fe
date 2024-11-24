@@ -10,7 +10,9 @@
   "search": "Search",
   "Common": {
     "pleaseWait": "Please wait...",
-    "or": "or"
+    "or": "or",
+    "edit": "edit",
+    "user": "user"
   },
   "Error": {
     "errorOccurred": "An unexpected error occurred"
@@ -40,5 +42,15 @@
       "enterName": "Enter your name",
       "passwordPlaceholder": "Password (at least 6 characters)"
     }
+  },
+  "Profile": {
+    "title": "Profile",
+    "loginDetails": "Login Details",
+    "name": "Name",
+    "birthday": "Birthday",
+    "gender": "Gender",
+    "emailAddress": "Email Address",
+    "phoneNo": "Phone No",
+    "password": "Password"
   }
 }

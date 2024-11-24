@@ -59,30 +59,6 @@ const EditProfileForm = () => {
             </span>
           </div>
         </div>
-        <div className="form-group col-12">
-          <label htmlFor="inputAddress">Address</label>
-          <input
-            type="text"
-            className="form-control"
-            id="inputAddress"
-            placeholder="1234 Main St"
-          />
-        </div>
-        <div className="form-group col-md-5">
-          <label htmlFor="inputCity">City</label>
-          <input type="text" className="form-control" id="inputCity" />
-        </div>
-        <div className="form-group col-md-4">
-          <label htmlFor="inputState">State</label>
-          <select id="inputState" className="form-control">
-            <option selected>Choose...</option>
-            <option>...</option>
-          </select>
-        </div>
-        <div className="form-group col-md-3">
-          <label htmlFor="inputZip">Zip</label>
-          <input type="text" className="form-control" id="inputZip" />
-        </div>
       </div>
     </form>
   );

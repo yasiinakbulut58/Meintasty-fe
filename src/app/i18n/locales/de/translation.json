@@ -10,7 +10,9 @@
   "search": "Suchen",
   "Common": {
     "pleaseWait": "Bitte warten...",
-    "or": "oder"
+    "or": "oder",
+    "edit": "bearbeiten",
+    "user": "benutzer"
   },
   "Error": {
     "errorOccurred": "Ein unerwarteter Fehler ist aufgetreten"
@@ -41,5 +43,15 @@
       "passwordPlaceholder": "Passwort (mindestens 6 Zeichen)",
       "login": "Anmelden"
     }
+  },
+  "Profile": {
+    "title": "Profil",
+    "loginDetails": "Anmeldedaten",
+    "name": "Name",
+    "birthday": "Geburtstag",
+    "gender": "Geschlecht",
+    "emailAddress": "E-Mail-Adresse",
+    "phoneNo": "Telefonnummer",
+    "password": "Passwort"
   }
 }

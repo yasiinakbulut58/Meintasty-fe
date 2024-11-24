@@ -2,6 +2,7 @@
 import React, { ReactNode } from 'react';
 import Breadcrumb from '@/components/common/breadcrumb/page';
 import DashboardSidebar from '@/components/user-dashboard/sidebar/dashboard-sidebar';
+import { useBaseTranslation } from '@/lib/hooks';
 
 interface ProfileLayoutProps {
   children: ReactNode;
@@ -12,9 +13,10 @@ const ProfileLayout: React.FC<ProfileLayoutProps> = ({
   children,
   subTitle,
 }) => {
+  const { t } = useBaseTranslation();
   return (
     <>
-      <Breadcrumb title={'user'} subTitle={subTitle} />
+      <Breadcrumb title={t('Common.user')} subTitle={subTitle} />
       <section
         className="small-section dashboard-section bg-inner"
         data-sticky_parent

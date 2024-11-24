@@ -78,3 +78,15 @@ export interface ICategory {
   id: number;
   categoryName: string;
 }
+
+export interface IUser {
+  id: number;
+  fullName: string;
+  email: string;
+  phoneNumber: string;
+  gender: string;
+  birthDate: string;
+  profilePicture: string;
+  isEmailVerified: boolean;
+  isPhoneVerified: boolean;
+}

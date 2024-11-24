@@ -1,11 +1,18 @@
 'use client';
 
-import { userTabs } from '@/data/pages/all-page';
 import UserDetail from './user-detail';
 import { usePathname } from 'next/navigation';
+import { useBaseTranslation } from '@/lib/hooks';
 
 const DashboardSidebar = () => {
   const pathname = usePathname();
+  const { t } = useBaseTranslation();
+  const userTabs = [
+    { path: '/profile', label: t('Profile.title') },
+    { path: '/bookings', label: 'bookings' },
+    { path: '/cards', label: 'cards & payment' },
+    { path: '/security', label: 'security' },
+  ];
   return (
     <div className="col-lg-3">
       <div className="pro_sticky_info" data-sticky_column>
