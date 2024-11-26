@@ -46,7 +46,7 @@ const DeliveryFilter: React.FC = () => {
           className={`collection-collapse-block-content ${!show ? 'd-none' : ''}`}
         >
           <div className="collection-brand-filter">
-            {deliverData.map((data: IFacilityProps, index) => {
+            {deliverData.map((data, index) => {
               return (
                 <div
                   className="form-check collection-filter-checkbox"

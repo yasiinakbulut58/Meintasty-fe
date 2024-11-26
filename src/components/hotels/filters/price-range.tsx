@@ -1,6 +1,7 @@
 'use client';
 import { FC, useState } from 'react';
 import RangeInputFields from '@/components/common/filters/input-range';
+import { IPrice } from './filter';
 
 const PriceRange: FC<IPrice> = ({ min, max }) => {
   const [show, setShow] = useState(false);
