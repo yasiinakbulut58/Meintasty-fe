@@ -1,11 +1,19 @@
 'use client';
 import { FC } from 'react';
 import Img from '@/utils/BackgroundImageRatio';
-import Link from 'next/link';
 import { useBaseTranslation } from '@/lib/hooks';
+import { CantonModel } from '@/lib/data';
+import dynamic from 'next/dynamic';
 
-const HomeBanner: FC = () => {
+const SearchForm = dynamic(() => import('./location-search-form'), {
+  ssr: false,
+});
+
+const HomeBanner: FC<{ cantonAndCities: CantonModel[] | null }> = ({
+  cantonAndCities,
+}) => {
   const { t } = useBaseTranslation();
+
   return (
     <section className="order-food-section pt-0">
       <Img
@@ -20,32 +28,7 @@ const HomeBanner: FC = () => {
               <div className="book-table section-b-space single-table p-0">
                 <h3>{t('Restaurants.bannerTitle')}</h3>
                 <div className="table-form">
-                  <form>
-                    <div className="row w-100">
-                      <div className="form-group col-md-5">
-                        <input
-                          type="text"
-                          placeholder="enter your location"
-                          className="form-control"
-                        />
-                      </div>
-                      <div className="form-group col-md-5">
-                        <input
-                          type="text"
-                          placeholder="what are you craving?"
-                          className="form-control"
-                        />
-                      </div>
-                      <div className="search col-md-2">
-                        <Link
-                          href="/restaurant/listing/grid-view/grid-2"
-                          className="btn btn-rounded color1"
-                        >
-                          search
-                        </Link>
-                      </div>
-                    </div>
-                  </form>
+                  <SearchForm cantonAndCities={cantonAndCities} />
                 </div>
               </div>
             </div>

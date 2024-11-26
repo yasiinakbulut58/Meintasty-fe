@@ -134,6 +134,7 @@ const Page = async ({ params, searchParams }: Props) => {
     prevPage,
     totalCount,
     categories,
+    cantonAndCities,
   } = await getPageDetails({
     place: cookieLocation.city.id.toString(),
     page: searchParams?.page,
@@ -142,7 +143,7 @@ const Page = async ({ params, searchParams }: Props) => {
 
   return (
     <>
-      <HomeBanner />
+      <HomeBanner cantonAndCities={cantonAndCities} />
       <GridView
         size={3}
         value={data}

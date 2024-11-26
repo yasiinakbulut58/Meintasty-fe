@@ -1,8 +1,6 @@
 'use client';
 import React, { FC, useState } from 'react';
 import Img from '@/utils/BackgroundImageRatio';
-import HelpInfo from '../help-info';
-import { LatestFilter } from '@/constant/constant';
 /* import MemoizedStarCategoryFilter from '@/components/hotels/filters/star-category';
  */ import MemorizedCategoryFilter from '@/components/restaurant/filters/category-filter';
 /* import MemoizedDeliveryFilter from '@/components/restaurant/filters/deliver-filter';*/
@@ -50,7 +48,6 @@ const Filters: FC<IFiltersProps> = ({
           <MemoizedDeliveryFilter /> */}
         </div>
       </div>
-      {!popular && <HelpInfo />}
     </div>
   );
 };
