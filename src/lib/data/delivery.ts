@@ -1,10 +1,16 @@
-import { BaseResponse, RestaurantDetailModel, RestaurantModel } from './types';
+import {
+  BaseResponse,
+  RestaurantDetailModel,
+  RestaurantModel,
+  RestaurantRequestModel,
+  RestaurantResponseModel,
+} from './types';
 import { baseApi } from '../http-common';
 
-export function getRestaurantsByCityId(cityCode: number) {
-  return baseApi.post<BaseResponse<RestaurantModel[]>>(
+export function getRestaurantsByCityId(request: RestaurantRequestModel) {
+  return baseApi.post<BaseResponse<RestaurantResponseModel>>(
     '/Restaurant/getRestaurantsByCityId',
-    { cityCode },
+    request,
   );
 }
 

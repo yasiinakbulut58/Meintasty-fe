@@ -1,3 +1,5 @@
+import { IPagination } from '@/lib/data';
+
 export interface ITablistProps {
   callbackFun: Function;
 }
@@ -5,9 +7,6 @@ export interface ITablistProps {
 export interface IGridReducerProps {
   gridSize: number;
   gridStyle: string;
-  toPage: number;
-  totalPages: string;
-  productCount: string;
 }
 
 export interface IGridLayoutProps {
@@ -16,6 +15,7 @@ export interface IGridLayoutProps {
   type?: string;
   view?: string;
   trip?: string;
+  pagination?: IPagination;
 }
 
 export interface IGridListProps {
@@ -27,8 +27,4 @@ export interface IGridListProps {
   type?: string;
   view?: string;
   gridSelect?: boolean;
-}
-
-export interface IPaginationProps {
-  totalPages1: number;
 }

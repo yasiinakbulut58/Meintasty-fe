@@ -1,3 +1,5 @@
+import { IPagination } from '@/lib/data';
+
 interface IGridViewProps {
   latestFilter?: boolean;
   size?: number;
@@ -13,4 +15,5 @@ interface IGridViewProps {
   trip?: string;
   round?: string;
   gridSelect?: boolean;
+  pagination?: IPagination;
 }

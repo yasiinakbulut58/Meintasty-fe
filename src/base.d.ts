@@ -5,6 +5,7 @@ interface sliderImg {
 interface IBaseProps {
   filter(arg0: (product: IBaseProps) => boolean): unknown;
   id?: number;
+  url?: string;
   img?: string;
   offer?: boolean;
   label?: string;

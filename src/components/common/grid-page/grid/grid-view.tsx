@@ -1,12 +1,13 @@
 'use client';
-import { FC, useCallback, useEffect, useState } from 'react';
+import { FC, useEffect, useState } from 'react';
 import GridList from '@/components/common/grid-page/grid-list';
 import GridLayout from '@/components/common/grid-page/grid-layout';
 import Filters from '../../../hotels/filters/page';
 import { useDispatch, useSelector } from 'react-redux';
-import CategoryPage from '@/components/common/filters/category';
+/* import CategoryPage from '@/components/common/filters/category'; */
 import { RootState } from '@/redux-toolkit/store';
 import { IGridReducerProps } from '../grid-page.d';
+import { IGridViewProps } from './listing';
 
 const GridView: FC<IGridViewProps> = ({
   gridSelect,
@@ -19,34 +20,24 @@ const GridView: FC<IGridViewProps> = ({
   children,
   type,
   view,
+  pagination,
 }) => {
   const dispatch = useDispatch();
   const grid = useSelector((state: RootState) => state.gridReducer);
   const [showSidebar, setShowSidebar] = useState(false);
-  const [filteredMenu, setFilteredMenu] = useState<
-    IRestaurantProps[] | undefined
-  >(value);
-
-  const getCategories = useCallback((data: []) => {
-    setFilteredMenu(data);
-  }, []);
-
-  useEffect(() => {
-    setFilteredMenu(value);
-  }, [value]);
 
   useEffect(() => {
     dispatch({ type: 'gridSize', payload: size });
     dispatch({ type: 'gridStyle', payload: gridType });
   }, []);
-  const [showDropDown, setShowDropDown] = useState(false);
+  /* const [showDropDown, setShowDropDown] = useState(false); */
   return (
     <section className="xs-section bg-inner">
       <div className="container">
         <div className="row">
           <div className="col-12">
             <div className="filter-panel">
-              <div className="left-filter">
+              {/*  <div className="left-filter">
                 <div className="respon-filter-btn">
                   <h6 onClick={() => setShowDropDown(!showDropDown)}>
                     filter <i className="fas fa-sort-down"></i>
@@ -58,7 +49,7 @@ const GridView: FC<IGridViewProps> = ({
                 >
                   <CategoryPage value={value} getCategories={getCategories} />
                 </div>
-              </div>
+              </div> */}
               <GridList
                 gridSelect={gridSelect}
                 view={view}
@@ -100,10 +91,11 @@ const GridView: FC<IGridViewProps> = ({
             </a>
             <GridLayout
               grid={grid}
-              value={filteredMenu}
+              value={value}
               type={type}
               view={view}
               trip={trip}
+              pagination={pagination}
             />
           </div>
         </div>

@@ -17,7 +17,7 @@ const RestaurantProducts: FC<RestaurantProductsProps> = ({ data, view }) => {
         {view === 'slider' ? (
           <ImageSlider images={data?.sliderImg} />
         ) : (
-          <Link href="/hotel/single-page/image-box">
+          <Link href={`/menu/${data.url}`}>
             <Img
               src={data?.img}
               className="img-fluid blur-up lazyload bg-img"
@@ -27,7 +27,7 @@ const RestaurantProducts: FC<RestaurantProductsProps> = ({ data, view }) => {
         )}
       </div>
       <div className="special-content restaurant-detail">
-        <Link href={`/menu/${data.id}`}>
+        <Link href={`/menu/${data.url}`}>
           <h5>
             {data?.item}
             <span

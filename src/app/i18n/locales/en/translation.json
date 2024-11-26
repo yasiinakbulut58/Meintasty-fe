@@ -52,5 +52,8 @@
     "emailAddress": "Email Address",
     "phoneNo": "Phone No",
     "password": "Password"
+  },
+  "Restaurants": {
+    "bannerTitle": "The restaurants you love, delivered with care"
   }
 }

@@ -2,8 +2,10 @@
 import { FC } from 'react';
 import Img from '@/utils/BackgroundImageRatio';
 import Link from 'next/link';
+import { useBaseTranslation } from '@/lib/hooks';
 
 const HomeBanner: FC = () => {
+  const { t } = useBaseTranslation();
   return (
     <section className="order-food-section pt-0">
       <Img
@@ -16,7 +18,7 @@ const HomeBanner: FC = () => {
           <div className="row">
             <div className="col-lg-8 offset-lg-2">
               <div className="book-table section-b-space single-table p-0">
-                <h3>The restaurants you love, delivered with care</h3>
+                <h3>{t('Restaurants.bannerTitle')}</h3>
                 <div className="table-form">
                   <form>
                     <div className="row w-100">

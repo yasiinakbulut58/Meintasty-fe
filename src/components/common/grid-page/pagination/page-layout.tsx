@@ -1,19 +1,26 @@
-/**
- * It takes in the current page number, the total number of pages, and the function to set the current
- * page number, and returns a list of page numbers to display in the pagination
- * @returns A pagination component that is being used to navigate through the pages of the application.
- */
-import { RootState } from '@/redux-toolkit/store';
+'use client';
+
 import usePagination from '@/utils/UsePagination';
 import { FC } from 'react';
-import { useDispatch, useSelector } from 'react-redux';
-import { IPaginationProps } from '../grid-page.d';
+import { IPagination } from '@/lib/data';
+import { usePathname, useRouter, useSearchParams } from 'next/navigation';
 
-const Pagination: FC<IPaginationProps> = ({ totalPages1 }) => {
-  const dispatch = useDispatch();
-  const { toPage } = useSelector((state: RootState) => state.gridReducer);
-
+const Pagination: FC<IPagination> = ({
+  totalPages: totalPages1,
+  currentPage: toPage,
+}) => {
   const pages = usePagination({ toPage: toPage, totalPages: totalPages1 });
+
+  const searchParams = useSearchParams();
+  const pathname = usePathname();
+  const { replace } = useRouter();
+
+  const handleOnClick = (page: number) => {
+    const params = new URLSearchParams(searchParams);
+    params.set('page', page.toString());
+
+    replace(`${pathname}?${params.toString()}`);
+  };
 
   if (1 !== totalPages1 && totalPages1 !== 0) {
     return (
@@ -23,7 +30,7 @@ const Pagination: FC<IPaginationProps> = ({ totalPages1 }) => {
             <div
               className="page-link"
               aria-label="Previous"
-              onClick={() => dispatch({ type: 'toPage', payload: 1 })}
+              onClick={() => handleOnClick(1)}
             >
               <span aria-hidden="true">«</span>
               <span className="sr-only">Previous</span>
@@ -34,10 +41,7 @@ const Pagination: FC<IPaginationProps> = ({ totalPages1 }) => {
               className="page-link"
               aria-label="Previous"
               onClick={() => {
-                dispatch({
-                  type: 'toPage',
-                  payload: toPage > 1 ? toPage - 1 : toPage,
-                });
+                handleOnClick(toPage > 1 ? toPage - 1 : toPage);
               }}
             >
               <span aria-hidden="true">{'<'}</span>
@@ -49,7 +53,7 @@ const Pagination: FC<IPaginationProps> = ({ totalPages1 }) => {
               className={`page-item ${data === toPage ? 'active' : ''}`}
               key={i}
               onClick={() => {
-                dispatch({ type: 'toPage', payload: data });
+                handleOnClick(data);
               }}
             >
               <div className="page-link">{data}</div>
@@ -61,10 +65,7 @@ const Pagination: FC<IPaginationProps> = ({ totalPages1 }) => {
               className="page-link"
               aria-label="Next"
               onClick={() => {
-                dispatch({
-                  type: 'toPage',
-                  payload: toPage < totalPages1 ? toPage + 1 : toPage,
-                });
+                handleOnClick(toPage < totalPages1 ? toPage + 1 : toPage);
               }}
             >
               <span aria-hidden="true">{'>'}</span>
@@ -75,7 +76,7 @@ const Pagination: FC<IPaginationProps> = ({ totalPages1 }) => {
             <div
               className="page-link"
               aria-label="Next"
-              onClick={() => dispatch({ type: 'toPage', payload: totalPages1 })}
+              onClick={() => handleOnClick(totalPages1)}
             >
               <span aria-hidden="true">»</span>
               <span className="sr-only">Next</span>

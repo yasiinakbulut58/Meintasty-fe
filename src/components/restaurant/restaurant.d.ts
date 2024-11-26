@@ -1,5 +1,6 @@
 interface IRestaurantProps {
   id?: number;
+  url?: string;
   img?: string;
   item?: string;
   place?: string;

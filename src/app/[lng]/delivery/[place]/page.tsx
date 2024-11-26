@@ -14,13 +14,26 @@ function getRandomNumber(min: number, max: number): number {
   return Math.round(randomNumber * 10) / 10;
 }
 
-async function getPageDetails({ place }: PageParams) {
-  const response = await getRestaurantsByCityId(+place);
+async function getPageDetails({
+  place,
+  page = '1',
+}: PageParams & { page: Props['searchParams']['page'] }) {
+  const response = await getRestaurantsByCityId({
+    cityCode: +place,
+    categoryIdList: [],
+    pageNumber: Number(page ?? 1),
+  });
 
   return {
+    totalPages: response.data?.value?.totalPages ?? 0,
+    currentPage: response.data?.value?.currentPage ?? 1,
+    nextPage: response.data?.value?.nextPage,
+    prevPage: response.data?.value?.prevPage,
+    totalCount: response.data?.value?.totalCount ?? 0,
     data:
-      response.data?.value?.map((item, index) => ({
+      response.data?.value?.restaurants?.map((item, index) => ({
         id: item.id,
+        url: item.url,
         img: '/assets/images/restaurant/dishes/7.jpg',
         sliderImg: [
           { img: '/assets/images/restaurant/dishes/7.jpg' },
@@ -41,11 +54,17 @@ async function getPageDetails({ place }: PageParams) {
   };
 }
 
+type Props = {
+  params: PageParams;
+  searchParams: {
+    page?: string;
+  };
+};
 interface PageParams {
   place: string;
 }
 
-const Page = async ({ params }: { params: PageParams }) => {
+const Page = async ({ params, searchParams }: Props) => {
   const cookieStore = cookies();
   const activeLocation = cookieStore.get(activeAddress)?.value;
 
@@ -59,9 +78,11 @@ const Page = async ({ params }: { params: PageParams }) => {
   )
     redirect(paths.home);
 
-  const { data } = await getPageDetails({
-    place: cookieLocation.city.id.toString(),
-  });
+  const { data, totalPages, currentPage, nextPage, prevPage, totalCount } =
+    await getPageDetails({
+      place: cookieLocation.city.id.toString(),
+      page: searchParams?.page,
+    });
 
   return (
     <>
@@ -69,6 +90,13 @@ const Page = async ({ params }: { params: PageParams }) => {
       <GridView
         size={3}
         value={data}
+        pagination={{
+          currentPage,
+          nextPage,
+          prevPage,
+          totalCount,
+          totalPages,
+        }}
         type={'restaurant'}
         gridType="grid-view"
       />

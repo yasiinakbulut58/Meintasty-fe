@@ -23,14 +23,14 @@ const ListPage: FC<IListProductBoxProps> = ({ data, view, type }) => {
             view={view}
           />
         ) : (
-          <Link href={`/menu/${data.id}`}>
+          <Link href={`/menu/${data.url}`}>
             <Img src={data.img} className="img-fluid" alt="" />
           </Link>
         )}
       </div>
       <div className="list-content">
         <div>
-          <Link href={`/menu/${data.id}`}>
+          <Link href={`/menu/${data.url}`}>
             <h5>{data.title}</h5>
           </Link>
           <p>{data.place ? data.place : data.span}</p>

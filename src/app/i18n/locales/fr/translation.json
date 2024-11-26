@@ -53,5 +53,8 @@
     "emailAddress": "Adresse électronique",
     "phoneNo": "Numéro de téléphone",
     "password": "Mot de passe"
+  },
+  "Restaurants": {
+    "bannerTitle": "Les restaurants que vous aimez, livrés avec soin"
   }
 }

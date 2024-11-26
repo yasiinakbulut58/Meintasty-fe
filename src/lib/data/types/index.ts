@@ -39,6 +39,22 @@ export interface RegisterRequestModel {
   password: string;
 }
 
+export interface RestaurantRequestModel {
+  cityCode: number;
+  categoryIdList: Array<number>;
+  pageNumber: number;
+}
+
+export interface IPagination {
+  totalCount: number;
+  totalPages: number;
+  currentPage: number;
+  nextPage: number | null;
+  prevPage: number | null;
+}
+export interface RestaurantResponseModel extends IPagination {
+  restaurants: RestaurantModel[];
+}
 export interface RestaurantModel {
   id: number;
   restaurantName: string;
@@ -49,6 +65,8 @@ export interface RestaurantModel {
   workDayTo: string;
   workHourFrom: string;
   workHourTo: string;
+  url: string;
+  totalCount: number;
 }
 
 export interface RestaurantDetailModel {
