@@ -24,10 +24,10 @@ const Filters: FC<IFiltersProps> = ({
       >
         {t('Common.back')}
       </div>
-      <div className="search-bar">
+      {/* <div className="search-bar">
         <input type="text" placeholder="Search here.." />
         <i className="fas fa-search"></i>
-      </div>
+      </div> */}
       <div
         className={`middle-part collection-collapse-block ${show ? '' : 'open'}`}
       >

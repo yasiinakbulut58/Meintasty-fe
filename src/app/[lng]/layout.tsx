@@ -88,7 +88,7 @@ const RootLayout = async ({
               <CustomLayout
                 title="overlay-black"
                 loader="food"
-                userBgClass="user user-light"
+                userBgClass="user user-light bg-danger"
               >
                 {children}
               </CustomLayout>
