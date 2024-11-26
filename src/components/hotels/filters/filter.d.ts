@@ -1,3 +1,5 @@
+import { ICategory } from '@/lib/data';
+
 interface IFacilityProps {
   id: number;
   type: string;
@@ -35,4 +37,5 @@ interface IFiltersProps {
   type?: string | undefined;
   showFilter?: boolean;
   setShowFilter?: (val: boolean) => void;
+  categories?: ICategory[];
 }

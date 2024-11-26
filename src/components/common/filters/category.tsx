@@ -1,3 +1,4 @@
+import { IFacilityProps } from '@/components/hotels/filters/filter';
 import { categoryData } from '@/data/inner-page/page-data';
 import { FC, useState } from 'react';
 

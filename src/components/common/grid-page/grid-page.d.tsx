@@ -17,14 +17,3 @@ export interface IGridLayoutProps {
   trip?: string;
   pagination?: IPagination;
 }
-
-export interface IGridListProps {
-  grid: IGridReducerProps;
-  gridStyle: string | undefined;
-  topFilter: boolean | undefined;
-  value: IRestaurantProps[] | undefined;
-  side?: string;
-  type?: string;
-  view?: string;
-  gridSelect?: boolean;
-}

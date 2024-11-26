@@ -1,4 +1,4 @@
-import { IPagination } from '@/lib/data';
+import { ICategory, IPagination } from '@/lib/data';
 
 interface IGridViewProps {
   latestFilter?: boolean;
@@ -16,4 +16,5 @@ interface IGridViewProps {
   round?: string;
   gridSelect?: boolean;
   pagination?: IPagination;
+  categories?: ICategory[];
 }

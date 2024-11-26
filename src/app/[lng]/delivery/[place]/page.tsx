@@ -7,7 +7,29 @@ import { activeAddress } from '@/utils/cookie';
 import { redirect } from 'next/navigation';
 import { paths } from '@/constant/menu';
 import { generateUrlPath } from '@/utils/generateUrlPath';
-import { IActiveLocation } from '@/lib/data';
+import {
+  getCantonsAndCities,
+  getCategories,
+  IActiveLocation,
+} from '@/lib/data';
+import { Metadata } from 'next';
+
+export async function generateMetadata(): Promise<Metadata> {
+  const [pageDetails] = [
+    { title: 'Restaurants', description: 'Restaurants', keyWords: 'Food' },
+  ];
+
+  return {
+    title: `${pageDetails.title} - MeinTasty`,
+    description: `${pageDetails.description}`,
+    keywords: pageDetails.keyWords,
+    openGraph: {
+      title: `${pageDetails.title}`,
+      description: `${pageDetails.title}`,
+      // images: product.thumbnail ? [product.thumbnail] : [],
+    },
+  };
+}
 
 function getRandomNumber(min: number, max: number): number {
   const randomNumber = Math.random() * (max - min) + min;
@@ -17,21 +39,47 @@ function getRandomNumber(min: number, max: number): number {
 async function getPageDetails({
   place,
   page = '1',
-}: PageParams & { page: Props['searchParams']['page'] }) {
-  const response = await getRestaurantsByCityId({
-    cityCode: +place,
-    categoryIdList: [],
-    pageNumber: Number(page ?? 1),
-  });
+  categoryIds,
+}: {
+  place: string;
+  page?: string;
+  categoryIds?: string;
+}) {
+  const [locationResult, categoriesResult, restaurantResult] =
+    await Promise.allSettled([
+      getCantonsAndCities(),
+      getCategories(),
+      getRestaurantsByCityId({
+        cityCode: +place,
+        categoryIdList: categoryIds?.split(',').map(Number) ?? [],
+        pageNumber: Number(page ?? 1),
+      }),
+    ]);
+
+  const cantonAndCities =
+    locationResult.status === 'fulfilled'
+      ? locationResult.value.data?.value
+      : null;
+  const categories =
+    categoriesResult.status === 'fulfilled'
+      ? categoriesResult.value.data?.value
+      : undefined;
+
+  const restaurants =
+    restaurantResult.status === 'fulfilled'
+      ? restaurantResult.value.data?.value
+      : undefined;
 
   return {
-    totalPages: response.data?.value?.totalPages ?? 0,
-    currentPage: response.data?.value?.currentPage ?? 1,
-    nextPage: response.data?.value?.nextPage,
-    prevPage: response.data?.value?.prevPage,
-    totalCount: response.data?.value?.totalCount ?? 0,
+    cantonAndCities,
+    categories,
+    totalPages: restaurants?.totalPages ?? 0,
+    currentPage: restaurants?.currentPage ?? 1,
+    nextPage: restaurants?.nextPage ?? null,
+    prevPage: restaurants?.prevPage ?? null,
+    totalCount: restaurants?.totalCount ?? 0,
     data:
-      response.data?.value?.restaurants?.map((item, index) => ({
+      restaurants?.restaurants?.map((item, index) => ({
         id: item.id,
         url: item.url,
         img: '/assets/images/restaurant/dishes/7.jpg',
@@ -50,19 +98,19 @@ async function getPageDetails({
         cuisines: 'italian',
         price: 450,
         deliverTime: 'upto 45 minutes',
-      })) || null,
+      })) || undefined,
   };
 }
 
 type Props = {
-  params: PageParams;
+  params: {
+    place: string;
+  };
   searchParams: {
     page?: string;
+    categories?: string;
   };
 };
-interface PageParams {
-  place: string;
-}
 
 const Page = async ({ params, searchParams }: Props) => {
   const cookieStore = cookies();
@@ -78,11 +126,19 @@ const Page = async ({ params, searchParams }: Props) => {
   )
     redirect(paths.home);
 
-  const { data, totalPages, currentPage, nextPage, prevPage, totalCount } =
-    await getPageDetails({
-      place: cookieLocation.city.id.toString(),
-      page: searchParams?.page,
-    });
+  const {
+    data,
+    totalPages,
+    currentPage,
+    nextPage,
+    prevPage,
+    totalCount,
+    categories,
+  } = await getPageDetails({
+    place: cookieLocation.city.id.toString(),
+    page: searchParams?.page,
+    categoryIds: searchParams?.categories,
+  });
 
   return (
     <>
@@ -99,6 +155,7 @@ const Page = async ({ params, searchParams }: Props) => {
         }}
         type={'restaurant'}
         gridType="grid-view"
+        categories={categories}
       />
     </>
   );

@@ -3,6 +3,7 @@ import ListPage from '../elements/product-box/list-product-box';
 import Pagination from './pagination/page-layout';
 import RestaurantProducts from '../elements/product-box-6/restaurant-product';
 import { IGridLayoutProps } from './grid-page.d';
+import { useBaseTranslation } from '@/lib/hooks';
 
 const GridLayout: FC<IGridLayoutProps> = ({
   value,
@@ -11,8 +12,7 @@ const GridLayout: FC<IGridLayoutProps> = ({
   view,
   pagination,
 }) => {
-  /* const showProduct = useFilterRestaurant({ value }); */
-
+  const { t } = useBaseTranslation();
   return (
     <>
       <div
@@ -21,28 +21,32 @@ const GridLayout: FC<IGridLayoutProps> = ({
         <div
           className={`row content grid ${grid.gridStyle === 'list-view' ? 'list-view' : ''}`}
         >
-          {value?.map((dataItems: IBaseProps, i: number) => {
-            if (grid.gridStyle === 'list-view') {
-              return (
-                type === dataItems.type && (
-                  <ListPage data={dataItems} view={view} key={i} />
-                )
-              );
-            } else {
-              return (
-                <div
-                  className={`${grid.gridSize === 3 && 'col-xl-4'} ${grid.gridSize === 4 && 'col-xl-3 col-lg-4'} col-sm-6 popular grid-item wow fadeInUp`}
-                  key={i}
-                >
-                  <RestaurantProducts
-                    data={dataItems}
-                    view={view}
-                    key={dataItems.id}
-                  />
-                </div>
-              );
-            }
-          })}
+          {!value || value?.length === 0 ? (
+            <>{t('Restaurants.noRestaurantsFound')}</>
+          ) : (
+            value?.map((dataItems: IBaseProps, i: number) => {
+              if (grid.gridStyle === 'list-view') {
+                return (
+                  type === dataItems.type && (
+                    <ListPage data={dataItems} view={view} key={i} />
+                  )
+                );
+              } else {
+                return (
+                  <div
+                    className={`${grid.gridSize === 3 && 'col-xl-4'} ${grid.gridSize === 4 && 'col-xl-3 col-lg-4'} col-sm-6 popular grid-item wow fadeInUp`}
+                    key={i}
+                  >
+                    <RestaurantProducts
+                      data={dataItems}
+                      view={view}
+                      key={dataItems.id}
+                    />
+                  </div>
+                );
+              }
+            })
+          )}
         </div>
       </div>
 

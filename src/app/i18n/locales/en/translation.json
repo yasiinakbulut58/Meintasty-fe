@@ -12,7 +12,8 @@
     "pleaseWait": "Please wait...",
     "or": "or",
     "edit": "edit",
-    "user": "user"
+    "user": "user",
+    "back": "back"
   },
   "Error": {
     "errorOccurred": "An unexpected error occurred"
@@ -54,6 +55,11 @@
     "password": "Password"
   },
   "Restaurants": {
+    "Filter": {
+      "categories": "Categories",
+      "latestFilter": "Latest Filter"
+    },
+    "noRestaurantsFound": "No restaurants found",
     "bannerTitle": "The restaurants you love, delivered with care"
   }
 }

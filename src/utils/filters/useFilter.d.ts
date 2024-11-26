@@ -1,3 +1,0 @@
-interface IFilterProductsProps {
-  value: IBaseProps[];
-}

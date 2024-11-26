@@ -17,37 +17,6 @@ export const popularData = [
   },
 ];
 
-export const cuisinesData = [
-  {
-    id: 1,
-    type: 'asin',
-  },
-  {
-    id: 2,
-    type: 'seafood',
-  },
-  {
-    id: 3,
-    type: 'italian',
-  },
-  {
-    id: 4,
-    type: 'pizza',
-  },
-  {
-    id: 5,
-    type: 'western',
-  },
-  {
-    id: 6,
-    type: 'chinese',
-  },
-  {
-    id: 7,
-    type: 'dessert',
-  },
-];
-
 export const deliverData = [
   {
     id: 1,

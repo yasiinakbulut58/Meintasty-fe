@@ -1,16 +1,14 @@
 'use client';
 import { FC, useEffect, useState } from 'react';
-import GridList from '@/components/common/grid-page/grid-list';
 import GridLayout from '@/components/common/grid-page/grid-layout';
 import Filters from '../../../hotels/filters/page';
 import { useDispatch, useSelector } from 'react-redux';
 /* import CategoryPage from '@/components/common/filters/category'; */
 import { RootState } from '@/redux-toolkit/store';
-import { IGridReducerProps } from '../grid-page.d';
 import { IGridViewProps } from './listing';
+import { useBaseTranslation } from '@/lib/hooks';
 
 const GridView: FC<IGridViewProps> = ({
-  gridSelect,
   topFilter,
   size,
   trip,
@@ -21,7 +19,9 @@ const GridView: FC<IGridViewProps> = ({
   type,
   view,
   pagination,
+  categories,
 }) => {
+  const { t } = useBaseTranslation();
   const dispatch = useDispatch();
   const grid = useSelector((state: RootState) => state.gridReducer);
   const [showSidebar, setShowSidebar] = useState(false);
@@ -35,34 +35,6 @@ const GridView: FC<IGridViewProps> = ({
     <section className="xs-section bg-inner">
       <div className="container">
         <div className="row">
-          <div className="col-12">
-            <div className="filter-panel">
-              {/*  <div className="left-filter">
-                <div className="respon-filter-btn">
-                  <h6 onClick={() => setShowDropDown(!showDropDown)}>
-                    filter <i className="fas fa-sort-down"></i>
-                  </h6>
-                  <span className="according-menu"></span>
-                </div>
-                <div
-                  className={`filters respon-filter-content filter-button-group ${showDropDown ? 'show' : ''} `}
-                >
-                  <CategoryPage value={value} getCategories={getCategories} />
-                </div>
-              </div> */}
-              <GridList
-                gridSelect={gridSelect}
-                view={view}
-                grid={grid as unknown as IGridReducerProps}
-                gridStyle={gridType}
-                topFilter={topFilter}
-                value={value}
-                side={side}
-                type={type}
-              />
-            </div>
-          </div>
-
           {children}
           {!topFilter && side !== 'no' && (
             <div className={`col-lg-3 ${side === 'right' ? 'order-1' : ''}`}>
@@ -71,6 +43,7 @@ const GridView: FC<IGridViewProps> = ({
                 type={type}
                 setShowFilter={setShowSidebar}
                 showFilter={showSidebar}
+                categories={categories}
               />
             </div>
           )}
@@ -82,7 +55,7 @@ const GridView: FC<IGridViewProps> = ({
               className="mobile-filter border-top-0"
               onClick={() => setShowSidebar(!showSidebar)}
             >
-              <h5>latest filter</h5>
+              <h5>{t('Restaurants.Filter.latestFilter')}</h5>
               <img
                 src="/assets/images/icon/adjust.png"
                 className="img-fluid blur-up lazyloaded"

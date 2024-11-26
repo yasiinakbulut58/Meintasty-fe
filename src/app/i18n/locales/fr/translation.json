@@ -12,7 +12,8 @@
     "pleaseWait": "S'il vous plaît, attendez...",
     "or": "ou",
     "edit": "modifier",
-    "user": "utilisateur"
+    "user": "utilisateur",
+    "back": "retour"
   },
   "Error": {
     "errorOccurred": "Une erreur inattendue s'est produite"
@@ -55,6 +56,11 @@
     "password": "Mot de passe"
   },
   "Restaurants": {
+    "Filter": {
+      "categories": "Catégories",
+      "latestFilter": "Dernier filtre"
+    },
+    "noRestaurantsFound": "Aucun restaurant trouvé",
     "bannerTitle": "Les restaurants que vous aimez, livrés avec soin"
   }
 }
