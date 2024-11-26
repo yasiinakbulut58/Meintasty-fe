@@ -107,7 +107,6 @@ export const HostLanguage = 'Host Language';
 export const STEP = 10;
 export const MIN = 150;
 export const MAX = 950;
-export const PopularFilterConst = 'popular filter';
 export const LocationCons = 'location';
 export const FacilityAtSeaView = 'facility at sea view';
 export const PoliciesConst = 'policies';

@@ -143,22 +143,3 @@ export const hostLang = [
     type: 'Arabic',
   },
 ];
-
-export const popularFilter = [
-  {
-    id: 1,
-    type: 'pay @ hotel',
-  },
-  {
-    id: 2,
-    type: 'free breakfast',
-  },
-  {
-    id: 3,
-    type: 'emi option',
-  },
-  {
-    id: 4,
-    type: 'bar',
-  },
-];

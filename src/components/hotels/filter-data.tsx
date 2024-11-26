@@ -170,22 +170,3 @@ export const HotelDetailFilter = [
     img: '/assets/images/hotel/gallery/3.jpg',
   },
 ];
-
-export const popularFilter = [
-  {
-    id: 1,
-    type: 'pay @ hotel',
-  },
-  {
-    id: 2,
-    type: 'free breakfast',
-  },
-  {
-    id: 3,
-    type: 'emi option',
-  },
-  {
-    id: 4,
-    type: 'bar',
-  },
-];
