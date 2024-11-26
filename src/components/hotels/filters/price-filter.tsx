@@ -52,7 +52,7 @@ const PriceFilter: React.FC = () => {
           className={`collection-collapse-block-content ${!show ? 'd-none' : ''} `}
         >
           <div className="collection-brand-filter">
-            {priceData1.map((data: IFacilityProps, index) => (
+            {priceData1.map((data, index) => (
               <div
                 className="form-check collection-filter-checkbox"
                 key={index}
