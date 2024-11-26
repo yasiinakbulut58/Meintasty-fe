@@ -5,8 +5,7 @@ import HelpInfo from '../help-info';
 import { LatestFilter } from '@/constant/constant';
 /* import MemoizedStarCategoryFilter from '@/components/hotels/filters/star-category';
  */ import MemorizedCategoryFilter from '@/components/restaurant/filters/category-filter';
-/* import MemoizedDeliveryFilter from '@/components/restaurant/filters/deliver-filter';
-import MemoizedPopularFoodFilter from '@/components/restaurant/filters/popular-filter'; */
+/* import MemoizedDeliveryFilter from '@/components/restaurant/filters/deliver-filter';*/
 import { IFiltersProps } from './filter';
 import { useBaseTranslation } from '@/lib/hooks';
 
@@ -34,35 +33,22 @@ const Filters: FC<IFiltersProps> = ({
       <div
         className={`middle-part collection-collapse-block ${show ? '' : 'open'}`}
       >
-        {/* {popular || type === 'restaurant' ? (
-          <div className="middle-part collection-collapse-block open p-0">
-            <div className="collection-collapse-block-content">
-              <PopularFoodFilter />
-            </div>
-          </div>
-        ) : ( */}
-        <>
-          <div className="d-flex align-items-center justify-content-between">
-            <h5>{t('Restaurants.Filter.latestFilter')}</h5>
-            <Img
-              src="/assets/images/icon/adjust.png"
-              className="img-fluid"
-              alt=""
-              onClick={() => setShow(!show)}
-            />
-          </div>
-          <div
-            className={`collection-collapse-block-content ${show ? 'hide-content' : ''}`}
-          >
-            <>
-              {/* <MemoizedPopularFoodFilter /> */}
-              <MemorizedCategoryFilter categories={categories} />
-              {/*  <MemoizedStarCategoryFilter />
+        <div className="d-flex align-items-center justify-content-between">
+          <h5>{t('Restaurants.Filter.latestFilter')}</h5>
+          <Img
+            src="/assets/images/icon/adjust.png"
+            className="img-fluid"
+            alt=""
+            onClick={() => setShow(!show)}
+          />
+        </div>
+        <div
+          className={`collection-collapse-block-content ${show ? 'hide-content' : ''}`}
+        >
+          <MemorizedCategoryFilter categories={categories} />
+          {/*  <MemoizedStarCategoryFilter />
           <MemoizedDeliveryFilter /> */}
-            </>
-          </div>
-        </>
-        {/*  )} */}
+        </div>
       </div>
       {!popular && <HelpInfo />}
     </div>
