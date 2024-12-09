@@ -13,9 +13,9 @@ const schema = z.object({
   firstName: z.string().min(1, 'First name is required.'),
   lastName: z.string().min(1, 'Last name is required.'),
   gender: z.string().min(1, 'Gender is required.'),
-  birthday: z
-    .date()
-    .refine((val) => !isNaN(val.getTime()), 'Birthday is required.'),
+  birthday: z.union([z.date(), z.null()]).refine((value) => value !== null, {
+    message: 'Birthday is required.',
+  }),
 });
 
 interface FormData {
@@ -47,7 +47,7 @@ const EditProfileForm = ({ onToggle }: Props) => {
     // Handle form submission logic here
     toast.success('Profile updated successfully');
   };
-
+  console.log(errors);
   const handleDateChange = (date: Date | null) => {
     setStart(date);
     // Update form value when date is selected
@@ -99,15 +99,16 @@ const EditProfileForm = ({ onToggle }: Props) => {
             )}
           </div>
           <div className="form-group col-md-6">
-            <label>Birthday</label>
-            <div className="datepicker-wrapper">
+            <label htmlFor="birthday">Birthday</label>
+            <div className="datepicker-wrapper w-100">
               <DatePickerComponent
                 setStart={handleDateChange} // Pass date handler
                 className={`form-control ${errors.birthday ? 'is-invalid' : ''}`}
+                wrapperClassName="w-100"
                 start={start} // Default to current date if null
               />
               {errors.birthday && (
-                <div className="invalid-feedback">
+                <div className="invalid-feedback" style={{ display: 'block' }}>
                   {errors.birthday.message}
                 </div>
               )}

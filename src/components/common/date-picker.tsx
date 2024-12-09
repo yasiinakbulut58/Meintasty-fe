@@ -6,12 +6,14 @@ interface IDatePickerProps {
   setStart: Function;
   start: Date | null;
   className?: string;
+  wrapperClassName?: string;
 }
 
 const DatePickerComponent: FC<IDatePickerProps> = ({
   setStart,
   className,
   start,
+  wrapperClassName,
 }) => {
   return (
     <ReactDatePicker
@@ -20,6 +22,7 @@ const DatePickerComponent: FC<IDatePickerProps> = ({
       id="datepicker"
       className={`datepicker-main ${className ?? ''}`}
       isClearable
+      wrapperClassName={wrapperClassName}
     />
   );
 };
