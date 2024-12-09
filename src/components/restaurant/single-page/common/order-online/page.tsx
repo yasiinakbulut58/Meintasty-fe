@@ -1,5 +1,5 @@
 'use client';
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useRef } from 'react';
 import NavSection from './nav-section';
 import ListOfItemsPage from './list-items';
 import Bites from './bites';
@@ -25,19 +25,38 @@ type Props = {
 const OrderOnline = ({ data }: Props) => {
   const [scroll, setScroll] = useState(false);
   const [noScroll, setNoScroll] = useState(true);
+
+  const stickyDivRef = useRef<HTMLDivElement | null>(null);
+  const [divHeight, setDivHeight] = useState<number>(0);
+
+  // Get the height of the div on mount
   useEffect(() => {
-    window.addEventListener('scroll', () => {
+    if (stickyDivRef.current) {
+      setDivHeight(stickyDivRef.current.offsetHeight);
+    }
+  }, []); // Empty dependency array ensures it runs only once on mount
+
+  // Scroll event listener
+  useEffect(() => {
+    const handleScroll = () => {
       if (window.scrollY <= 757) {
         setNoScroll(true);
-      } else if (window.scrollY > 757 && window.scrollY <= 3600) {
+      } else if (window.scrollY > 757 && window.scrollY <= divHeight + 757) {
         setScroll(true);
         setNoScroll(false);
       } else {
         setScroll(false);
         setNoScroll(false);
       }
-    });
-  }, []);
+    };
+
+    window.addEventListener('scroll', handleScroll);
+
+    // Cleanup the event listener on component unmount
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+    };
+  }, [divHeight]);
 
   const orderLinks = Array.from(
     new Map(
@@ -81,7 +100,11 @@ const OrderOnline = ({ data }: Props) => {
               </div>
             </div>
             <div className="col-xl-9 col-lg-8 p-0">
-              <div className="pro_sticky_info" data-sticky_column>
+              <div
+                className="pro_sticky_info"
+                ref={stickyDivRef}
+                data-sticky_column
+              >
                 <div data-spy="scroll" data-bs-target="#order-menu">
                   <div className="order-menu-section">
                     {groupedCategories?.map((item) => (
