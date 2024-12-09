@@ -41,7 +41,8 @@ jobs:
             $sourcePath = "C:\actions-runner\_work\Meintasty-fe\Meintasty-fe"
             $destinationPath = "C:\inetpub\wwwroot"
 
-            robocopy $sourcePath $destinationPath /MIR /MT:16
+            # iisnode klasörünü hariç tutan Robocopy komutu
+            robocopy $sourcePath $destinationPath /MIR /MT:16 /XD "iisnode"
             Write-Output "Files copied from $sourcePath to $destinationPath using Robocopy"
 
             if ((Get-WebSiteState -Name "DefaultAppPool").Value -eq "Stopped") {

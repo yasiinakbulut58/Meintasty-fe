@@ -107,6 +107,7 @@ export interface IRestaurantMenu {
 export interface ICategory {
   id: number;
   categoryName: string;
+  restaurantCount: number;
 }
 
 export interface IUser {

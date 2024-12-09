@@ -1,13 +1,17 @@
+'use client';
+
 import TotalItemSlider from '@/components/common/slider-components/total-item-slider';
 import { ICategory } from '@/lib/data';
+import { useBaseTranslation } from '@/lib/hooks';
 
 const TopMenu = ({ categories }: { categories: ICategory[] | null }) => {
+  const { t } = useBaseTranslation();
   const slideData =
     categories?.map((item) => ({
       id: item.id,
       name: item.categoryName,
       img: '/assets/images/restaurant/dishes/14.jpg',
-      title: `${item.id} restaurant`,
+      title: `${item.restaurantCount} ${t('restaurant')}`,
     })) ?? [];
   return (
     <div className="container">

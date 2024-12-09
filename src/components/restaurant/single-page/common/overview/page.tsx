@@ -44,7 +44,7 @@ const Overview = ({ data }: Props) => {
               </ul>
             </div>
           </div>
-          <div className="col-sm-6">
+          {/* <div className="col-sm-6">
             <div className="about-sec mt-sm-0 mt-2">
               <h6>{t('RestaurantDetail.Overview.facility')}</h6>
               <ul>
@@ -57,7 +57,7 @@ const Overview = ({ data }: Props) => {
                 <li>game zone</li>
               </ul>
             </div>
-          </div>
+          </div> */}
         </div>
       </div>
     </div>

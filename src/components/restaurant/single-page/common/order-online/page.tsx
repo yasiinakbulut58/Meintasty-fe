@@ -81,7 +81,7 @@ const OrderOnline = ({ data }: Props) => {
         label: item.categoryName.toLowerCase(),
         description: item.menuContent,
         price: parseFloat(item.menuPrice.replace(',', '.')),
-        customized: true,
+        customized: false,
       });
       return acc;
     }, {}),
