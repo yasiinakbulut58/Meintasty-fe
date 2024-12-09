@@ -27,32 +27,32 @@ jobs:
       - name: Deploy
         run: |
           try {
-            if ((Get-WebSiteState -Name "meintasty.com").Value -eq "Started") {
-              Stop-WebSite -Name "meintasty.com"
-              Write-Output "Stopped Website meintasty.com"
+            if ((Get-WebSiteState -Name "Default Web Site").Value -eq "Started") {
+              Stop-WebSite -Name "Default Web Site"
+              Write-Output "Stopped Website Default Web Site"
             }
-            if ((Get-WebAppPoolState -Name "meintasty.com").Value -eq "Started") {
-              Stop-WebAppPool -Name "meintasty.com"
-              Write-Output "Stopped Application Pool meintasty.com"
+            if ((Get-WebAppPoolState -Name "Default Web Site").Value -eq "Started") {
+              Stop-WebAppPool -Name "Default Web Site"
+              Write-Output "Stopped Application Pool Default Web Site"
             }
-      
+
             Start-Sleep -s 5
-      
-            $sourcePath = "C:\action-runner\_work\meintasty\meintasty"
+
+            $sourcePath = "C:\actions-runner\_work\Meintasty-fe\Meintasty-fe"
             $destinationPath = "C:\inetpub\wwwroot"
-      
+
             robocopy $sourcePath $destinationPath /MIR /MT:16
             Write-Output "Files copied from $sourcePath to $destinationPath using Robocopy"
-      
-            if ((Get-WebSiteState -Name "meintasty.com").Value -eq "Stopped") {
-              Start-WebSite -Name "meintasty.com"
-              Write-Output "Started Website meintasty.com"
+
+            if ((Get-WebSiteState -Name "Default Web Site").Value -eq "Stopped") {
+              Start-WebSite -Name "Default Web Site"
+              Write-Output "Started Website Default Web Site"
             }
-            if ((Get-WebAppPoolState -Name "meintasty.com").Value -eq "Stopped") {
-              Start-WebAppPool -Name "meintasty.com"
-              Write-Output "Started Application Pool meintasty.com"
+            if ((Get-WebAppPoolState -Name "Default Web Site").Value -eq "Stopped") {
+              Start-WebAppPool -Name "Default Web Site"
+              Write-Output "Started Application Pool Default Web Site"
             }
-      
+
             if ($lastexitcode -lt 8) { $global:lastexitcode = 0 }
           } catch {
             Write-Error "An error occurred during deployment: $_"
