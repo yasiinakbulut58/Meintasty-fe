@@ -5,15 +5,20 @@ import 'react-datepicker/dist/react-datepicker.css';
 interface IDatePickerProps {
   setStart: Function;
   start: Date | null;
+  className?: string;
 }
 
-const DatePickerComponent: FC<IDatePickerProps> = ({ setStart, start }) => {
+const DatePickerComponent: FC<IDatePickerProps> = ({
+  setStart,
+  className,
+  start,
+}) => {
   return (
     <ReactDatePicker
       selected={start ?? undefined}
       onChange={(date: Date) => setStart(date)}
       id="datepicker"
-      className="datepicker-main form-control w-100"
+      className={`datepicker-main ${className ?? ''}`}
       isClearable
     />
   );

@@ -103,6 +103,7 @@ const EditProfileForm = ({ onToggle }: Props) => {
             <div className="datepicker-wrapper">
               <DatePickerComponent
                 setStart={handleDateChange} // Pass date handler
+                className={`form-control ${errors.birthday ? 'is-invalid' : ''}`}
                 start={start} // Default to current date if null
               />
               {errors.birthday && (
