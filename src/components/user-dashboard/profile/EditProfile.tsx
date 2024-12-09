@@ -1,7 +1,11 @@
 'use client';
 import { FC } from 'react';
-import { Button, Modal, ModalBody, ModalFooter, ModalHeader } from 'reactstrap';
-import EditProfileForm from './EditProfileForm';
+import { Modal, ModalHeader } from 'reactstrap';
+import dynamic from 'next/dynamic';
+
+const EditProfileForm = dynamic(() => import('./EditProfileForm'), {
+  ssr: false,
+});
 
 const EditProfile: FC<EditProfileInterFace> = ({ open, toggle }) => {
   return (
@@ -9,17 +13,7 @@ const EditProfile: FC<EditProfileInterFace> = ({ open, toggle }) => {
       <ModalHeader toggle={toggle}>
         <h5 className="modal-title">Edit Profile</h5>
       </ModalHeader>
-      <ModalBody>
-        <EditProfileForm />
-      </ModalBody>
-      <div className="modal-footer">
-        <button type="button" className="btn btn-secondary" onClick={toggle}>
-          Close
-        </button>
-        <button type="button" className="btn btn-solid">
-          Save changes
-        </button>
-      </div>{' '}
+      <EditProfileForm onToggle={toggle} />
     </Modal>
   );
 };

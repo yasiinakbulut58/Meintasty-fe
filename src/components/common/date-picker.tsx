@@ -4,17 +4,17 @@ import 'react-datepicker/dist/react-datepicker.css';
 
 interface IDatePickerProps {
   setStart: Function;
-  start: Date;
+  start: Date | null;
 }
 
 const DatePickerComponent: FC<IDatePickerProps> = ({ setStart, start }) => {
   return (
     <ReactDatePicker
-      selected={start}
+      selected={start ?? undefined}
       onChange={(date: Date) => setStart(date)}
       id="datepicker"
-      className="datepicker-main"
-      dateFormat="dd MMMM"
+      className="datepicker-main form-control w-100"
+      isClearable
     />
   );
 };

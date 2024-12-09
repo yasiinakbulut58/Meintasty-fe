@@ -19,3 +19,16 @@ export async function getUserDetail(userId: number) {
     return { isSuccess: false, message: err?.response?.data?.errorMessage };
   }
 }
+
+/* export async function createUser(data: RegisterRequestModel) {
+  try {
+    const response = await register(data);
+    if (response.data.success) {
+      return { isSuccess: true };
+    }
+    return { isSuccess: false, message: response.data.errorMessage };
+  } catch (error) {
+    const err = error as AxiosError<BaseResponse<any>>;
+    return { isSuccess: false, message: err?.response?.data?.errorMessage };
+  }
+} */

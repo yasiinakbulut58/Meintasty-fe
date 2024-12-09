@@ -16,6 +16,7 @@ const Page = async ({ params: { lng } }: { params: { lng: string } }) => {
 
   const session = await getServerSession(options);
   const response = await getUserDetail(Number(session?.user.id ?? -1));
+
   return (
     <ProfileLayout subTitle={t('Profile.title')}>
       <Profile user={response.value} />

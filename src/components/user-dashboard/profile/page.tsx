@@ -1,7 +1,6 @@
 'use client';
 
-import React, { useEffect, useState } from 'react';
-import { getUserDetail } from './action';
+import React from 'react';
 import { IUser } from '@/lib/data';
 import UserSection from './UserSection';
 import LoginDetailsSection from './LoginDetailsSection';
@@ -10,7 +9,7 @@ type Props = {
   user: IUser | undefined;
 };
 const Profile = ({ user }: Props) => {
-  const [userInfo, setUserInfo] = useState<IUser | undefined>(user);
+  /*  const [userInfo, setUserInfo] = useState<IUser | undefined>(user);
 
   useEffect(() => {
     const fetchUser = async () => {
@@ -18,11 +17,11 @@ const Profile = ({ user }: Props) => {
       console.log(response);
     };
     fetchUser();
-  }, []);
+  }, []); */
   return (
     <>
-      <UserSection user={userInfo} />
-      <LoginDetailsSection user={userInfo} />
+      <UserSection user={user} />
+      <LoginDetailsSection user={user} />
     </>
   );
 };
