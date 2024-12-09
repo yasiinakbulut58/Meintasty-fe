@@ -27,13 +27,13 @@ jobs:
       - name: Deploy
         run: |
           try {
-            if ((Get-WebSiteState -Name "Default Web Site").Value -eq "Started") {
-              Stop-WebSite -Name "Default Web Site"
-              Write-Output "Stopped Website Default Web Site"
+            if ((Get-WebSiteState -Name "DefaultAppPool").Value -eq "Started") {
+              Stop-WebSite -Name "DefaultAppPool"
+              Write-Output "Stopped Website DefaultAppPool"
             }
-            if ((Get-WebAppPoolState -Name "Default Web Site").Value -eq "Started") {
-              Stop-WebAppPool -Name "Default Web Site"
-              Write-Output "Stopped Application Pool Default Web Site"
+            if ((Get-WebAppPoolState -Name "DefaultAppPool").Value -eq "Started") {
+              Stop-WebAppPool -Name "DefaultAppPool"
+              Write-Output "Stopped Application Pool DefaultAppPool"
             }
 
             Start-Sleep -s 5
@@ -44,13 +44,13 @@ jobs:
             robocopy $sourcePath $destinationPath /MIR /MT:16
             Write-Output "Files copied from $sourcePath to $destinationPath using Robocopy"
 
-            if ((Get-WebSiteState -Name "Default Web Site").Value -eq "Stopped") {
-              Start-WebSite -Name "Default Web Site"
-              Write-Output "Started Website Default Web Site"
+            if ((Get-WebSiteState -Name "DefaultAppPool").Value -eq "Stopped") {
+              Start-WebSite -Name "DefaultAppPool"
+              Write-Output "Started Website DefaultAppPool"
             }
-            if ((Get-WebAppPoolState -Name "Default Web Site").Value -eq "Stopped") {
-              Start-WebAppPool -Name "Default Web Site"
-              Write-Output "Started Application Pool Default Web Site"
+            if ((Get-WebAppPoolState -Name "DefaultAppPool").Value -eq "Stopped") {
+              Start-WebAppPool -Name "DefaultAppPool"
+              Write-Output "Started Application Pool DefaultAppPool"
             }
 
             if ($lastexitcode -lt 8) { $global:lastexitcode = 0 }
