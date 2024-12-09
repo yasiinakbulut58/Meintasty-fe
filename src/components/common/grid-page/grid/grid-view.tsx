@@ -39,7 +39,6 @@ const GridView: FC<IGridViewProps> = ({
           {!topFilter && side !== 'no' && (
             <div className={`col-lg-3 ${side === 'right' ? 'order-1' : ''}`}>
               <Filters
-                value={value}
                 type={type}
                 setShowFilter={setShowSidebar}
                 showFilter={showSidebar}

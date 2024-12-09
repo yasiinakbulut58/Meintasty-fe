@@ -62,5 +62,22 @@
     },
     "noRestaurantsFound": "Keine Restaurants gefunden",
     "bannerTitle": "Die Restaurants, die Sie lieben, mit Sorgfalt geliefert"
+  },
+  "RestaurantDetail": {
+    "Tab": {
+      "overview": "Übersicht",
+      "orderOnline": "online bestellen"
+    },
+    "Overview": {
+      "phoneNumber": "Telefonnummer",
+      "cuisine": "Küche",
+      "openingHours": "Öffnungszeiten",
+      "address": "Adresse",
+      "facility": "Einrichtung"
+    },
+    "Order": {
+      "searchDishes": "Gerichte suchen",
+      "itemsCount": "{{count}} Artikel"
+    }
   }
 }

@@ -1,10 +1,32 @@
+import React from 'react';
 import Banner from '@/components/restaurant/single-page/classic/banner';
 import MainSinglePage from '@/components/restaurant/single-page/classic/single-page';
-import { getRestaurantDetailById } from '@/lib/data/delivery';
-import React from 'react';
+import { getRestaurantDetailByInfo } from '@/lib/data/delivery';
+import { Metadata } from 'next';
+
+export async function generateMetadata({
+  params,
+}: {
+  params: PageParams;
+}): Promise<Metadata> {
+  const [pageDetails] = [
+    { title: params.restaurant, description: 'Restaurant', keyWords: 'Food' },
+  ];
+
+  return {
+    title: `${pageDetails.title} - MeinTasty`,
+    description: `${pageDetails.description}`,
+    keywords: pageDetails.keyWords,
+    openGraph: {
+      title: `${pageDetails.title}`,
+      description: `${pageDetails.title}`,
+      // images: product.thumbnail ? [product.thumbnail] : [],
+    },
+  };
+}
 
 async function getPageDetails({ restaurant }: PageParams) {
-  const response = await getRestaurantDetailById(+restaurant);
+  const response = await getRestaurantDetailByInfo(restaurant);
 
   const item = response.data.value;
   return {

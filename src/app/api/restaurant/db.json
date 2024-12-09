@@ -6,7 +6,7 @@
       { "img": "/assets/images/restaurant/dishes/7.jpg" },
       { "img": "/assets/images/restaurant/dishes/8.jpg" }
     ],
-    "item": "italian restro",
+    "name": "italian restro",
     "place": "fast food, cafe, italian",
     "time": "11.30am - 11.30pm",
     "cost": "25 for two",
@@ -25,7 +25,7 @@
       { "img": "/assets/images/restaurant/dishes/8.jpg" },
       { "img": "/assets/images/restaurant/dishes/9.jpg" }
     ],
-    "item": "italian restro",
+    "name": "italian restro",
     "place": "fast food, cafe, italian",
     "time": "11.30am - 11.30pm",
     "cost": "25 for two",
@@ -43,7 +43,7 @@
       { "img": "/assets/images/restaurant/dishes/9.jpg" },
       { "img": "/assets/images/restaurant/dishes/8.jpg" }
     ],
-    "item": "italian restro",
+    "name": "italian restro",
     "place": "fast food, cafe, italian",
     "time": "11.30am - 11.30pm",
     "cost": "25 for two",
@@ -61,7 +61,7 @@
       { "img": "/assets/images/restaurant/dishes/10.jpg" },
       { "img": "/assets/images/restaurant/dishes/8.jpg" }
     ],
-    "item": "italian restro",
+    "name": "italian restro",
     "place": "fast food, cafe, italian",
     "time": "11.30am - 11.30pm",
     "cost": "25 for two",
@@ -79,7 +79,7 @@
       { "img": "/assets/images/restaurant/dishes/11.jpg" },
       { "img": "/assets/images/restaurant/dishes/8.jpg" }
     ],
-    "item": "italian restro",
+    "name": "italian restro",
     "place": "fast food, cafe, italian",
     "time": "11.30am - 11.30pm",
     "cost": "25 for two",
@@ -98,7 +98,7 @@
       { "img": "/assets/images/restaurant/dishes/12.jpg" },
       { "img": "/assets/images/restaurant/dishes/8.jpg" }
     ],
-    "item": "italian restro",
+    "name": "italian restro",
     "place": "fast food, cafe, italian",
     "time": "11.30am - 11.30pm",
     "cost": "25 for two",
@@ -116,7 +116,7 @@
       { "img": "/assets/images/restaurant/dishes/13.jpg" },
       { "img": "/assets/images/restaurant/dishes/8.jpg" }
     ],
-    "item": "italian restro",
+    "name": "italian restro",
     "place": "fast food, cafe, italian",
     "time": "11.30am - 11.30pm",
     "cost": "25 for two",
@@ -134,7 +134,7 @@
       { "img": "/assets/images/restaurant/dishes/14.jpg" },
       { "img": "/assets/images/restaurant/dishes/8.jpg" }
     ],
-    "item": "italian restro",
+    "name": "italian restro",
     "place": "fast food, cafe, italian",
     "time": "11.30am - 11.30pm",
     "deliverTime": "upto 20 minutes",

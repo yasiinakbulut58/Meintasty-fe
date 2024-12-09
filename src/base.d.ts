@@ -49,7 +49,7 @@ interface IBaseProps {
   luggage?: string;
   option?: string[];
   fare?: string;
-  item?: string;
+  name?: string;
   time?: string;
   cost?: string;
   cuisines?: string;

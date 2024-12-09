@@ -8,7 +8,6 @@ import { IFiltersProps } from './filter';
 import { useBaseTranslation } from '@/lib/hooks';
 
 const Filters: FC<IFiltersProps> = ({
-  popular,
   setShowFilter,
   showFilter,
   categories,

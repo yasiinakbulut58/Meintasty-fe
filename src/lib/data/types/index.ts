@@ -70,6 +70,7 @@ export interface RestaurantModel {
 }
 
 export interface RestaurantDetailModel {
+  restaurantId: number;
   restaurantName: string;
   email: string;
   phoneNumber: string;
@@ -79,8 +80,9 @@ export interface RestaurantDetailModel {
   workHourFrom: string;
   workHourTo: string;
   addressList: IAddress[];
-  menuList: [];
+  menuList: Array<IRestaurantMenu>;
   orderList: [];
+  url: string;
 }
 
 interface IAddress {
@@ -92,6 +94,16 @@ interface IAddress {
   cityCode: number;
 }
 
+export interface IRestaurantMenu {
+  id: number;
+  categoryId: number;
+  categoryName: string;
+  menuName: string;
+  menuContent: string;
+  menuPrice: string;
+  currency: string;
+  menuPic: string;
+}
 export interface ICategory {
   id: number;
   categoryName: string;

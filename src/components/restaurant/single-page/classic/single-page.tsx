@@ -4,13 +4,14 @@ import { AppDispatch, RootState } from '@/redux-toolkit/store';
 import { useDispatch, useSelector } from 'react-redux';
 import { getRestaurant } from '@/redux-toolkit/restaurant-api';
 import CartItem from '../common/cart-item/page';
-import { cartItemsData, tabsTitleData } from '@/data/restaurant/single-page';
+import { cartItemsData } from '@/data/restaurant/single-page';
 import TabDescription from './tab-description';
 import SpecialImage from '../common/special-image/page';
 import CartEmpty from '../common/cart-empty/page';
-import NewsLatterContent from '@/components/common/news-latter/page';
+import { useBaseTranslation } from '@/lib/hooks';
 
 const MainSinglePage: FC<ISinglePageProps> = ({ side, data, cartItem }) => {
+  const { t } = useBaseTranslation();
   const dispatch = useDispatch<AppDispatch>();
   const { data: restaurant } = useSelector(
     (state: RootState) => state.restaurant,
@@ -20,6 +21,24 @@ const MainSinglePage: FC<ISinglePageProps> = ({ side, data, cartItem }) => {
     dispatch(getRestaurant());
   }, [dispatch]);
 
+  const tabsTitleData = [
+    {
+      id: '1',
+      title: t('RestaurantDetail.Tab.orderOnline'),
+    },
+    {
+      id: '2',
+      title: t('RestaurantDetail.Tab.overview'),
+    },
+    /* {
+      id: '3',
+      title: 'gallery',
+    },
+    {
+      id: '6',
+      title: 'reviews',
+    }, */
+  ];
   return (
     <>
       <section className="single-section small-section bg-inner">
@@ -38,7 +57,6 @@ const MainSinglePage: FC<ISinglePageProps> = ({ side, data, cartItem }) => {
                 ) : (
                   <CartEmpty showMenu={showMenu} setShowMenu={setShowMenu} />
                 )}
-                <NewsLatterContent titleClass={''} />
               </div>
             </div>
             <div className="col-xl-9 col-lg-8">

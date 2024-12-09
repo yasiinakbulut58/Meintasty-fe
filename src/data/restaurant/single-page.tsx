@@ -1,22 +1,3 @@
-export const tabsTitleData = [
-  {
-    id: '1',
-    title: 'order online',
-  },
-  {
-    id: '2',
-    title: 'overview',
-  },
-  {
-    id: '3',
-    title: 'gallery',
-  },
-  {
-    id: '6',
-    title: 'reviews',
-  },
-];
-
 export const orderLinks = [
   {
     label: 'bestseller',

@@ -61,5 +61,22 @@
     },
     "noRestaurantsFound": "No restaurants found",
     "bannerTitle": "The restaurants you love, delivered with care"
+  },
+  "RestaurantDetail": {
+    "Tab": {
+      "overview": "overview",
+      "orderOnline": "order online"
+    },
+    "Overview": {
+      "phoneNumber": "Phone number",
+      "cuisine": "cuisine",
+      "openingHours": "opening hours",
+      "address": "address",
+      "facility": "facility"
+    },
+    "Order": {
+      "searchDishes": "Search Dishes",
+      "itemsCount": "{{count}} items"
+    }
   }
 }

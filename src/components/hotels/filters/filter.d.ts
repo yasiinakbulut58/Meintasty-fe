@@ -30,10 +30,8 @@ interface IPrice {
 }
 
 interface IFiltersProps {
-  value: IRestaurantProps[] | undefined;
   latestFilter?: boolean;
   filterStyle?: string;
-  popular?: boolean;
   type?: string | undefined;
   showFilter?: boolean;
   setShowFilter?: (val: boolean) => void;

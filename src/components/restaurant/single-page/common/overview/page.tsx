@@ -1,19 +1,25 @@
 import { RestaurantDetailModel } from '@/lib/data';
-import { FC } from 'react';
+import { useBaseTranslation } from '@/lib/hooks';
+
 type Props = {
   data: RestaurantDetailModel;
 };
+
 const Overview = ({ data }: Props) => {
+  const { t } = useBaseTranslation();
+
   return (
     <div className="menu-part about tab-pane" id="overview">
       <div className="container">
         <div className="row">
           <div className="col-sm-6">
             <div className="about-sec">
-              <h6>Phone number: {data.phoneNumber}</h6>
+              <h6>
+                {t('RestaurantDetail.Overview.phoneNumber')}: {data.phoneNumber}
+              </h6>
             </div>
             <div className="about-sec">
-              <h6>cuisine</h6>
+              <h6>{t('RestaurantDetail.Overview.cuisine')}</h6>
               <ul>
                 <li>Fast Food</li>
                 <li>cafe</li>
@@ -21,17 +27,16 @@ const Overview = ({ data }: Props) => {
               </ul>
             </div>
             <div className="about-sec">
-              <h6>opening hours</h6>
+              <h6>{t('RestaurantDetail.Overview.openingHours')}</h6>
               <ul>
                 <li>
-                  {data.workDayFrom} to {data.workDayTo}: {data.workHourFrom}{' '}
-                  a.m. to {data.workHourTo} p.m.
+                  {data.workDayFrom} - {data.workDayTo}: {data.workHourFrom} -{' '}
+                  {data.workHourTo}
                 </li>
-                <li>Saturday & Sunday: 10.00 a.m. to 12.00 p.m.</li>
               </ul>
             </div>
             <div className="about-sec">
-              <h6>address</h6>
+              <h6>{t('RestaurantDetail.Overview.address')}</h6>
               <ul>
                 {data?.addressList?.map((item) => (
                   <li key={item.addressId}>{item.addressText}</li>
@@ -41,7 +46,7 @@ const Overview = ({ data }: Props) => {
           </div>
           <div className="col-sm-6">
             <div className="about-sec mt-sm-0 mt-2">
-              <h6>facility</h6>
+              <h6>{t('RestaurantDetail.Overview.facility')}</h6>
               <ul>
                 <li>card accepted</li>
                 <li>parking availble</li>

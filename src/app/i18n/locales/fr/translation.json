@@ -62,5 +62,22 @@
     },
     "noRestaurantsFound": "Aucun restaurant trouvé",
     "bannerTitle": "Les restaurants que vous aimez, livrés avec soin"
+  },
+  "RestaurantDetail": {
+    "Tab": {
+      "overview": "aperçu",
+      "orderOnline": "commander en ligne"
+    },
+    "Overview": {
+      "phoneNumber": "Numéro de téléphone",
+      "cuisine": "cuisine",
+      "openingHours": "heures d'ouverture",
+      "address": "adresse",
+      "facility": "installation"
+    },
+    "Order": {
+      "searchDishes": "Rechercher des plats",
+      "itemsCount": "{{count}} articles"
+    }
   }
 }

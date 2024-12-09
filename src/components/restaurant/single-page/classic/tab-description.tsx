@@ -1,14 +1,14 @@
 'use client';
-import Tabs from '@/utils/HOC/tabs/page';
 
 import { FC, useCallback, useState } from 'react';
 import { TabContent, TabPane } from 'reactstrap';
+import Tabs from '@/utils/HOC/tabs/page';
 import OrderOnline from '../common/order-online/page';
 import Overview from '../common/overview/page';
 
-import Review from '../common/review';
+/* import Review from '../common/review';
 import Gallery from '../common/gallery';
-import { bannerImageData } from '@/data/restaurant/single-page';
+import { bannerImageData } from '@/data/restaurant/single-page'; */
 
 const TabDescription: FC<ITabDescriptionProps> = ({
   tabsData,
@@ -37,17 +37,17 @@ const TabDescription: FC<ITabDescriptionProps> = ({
           id="pills-tabContent"
         >
           <TabPane tabId="1">
-            <OrderOnline />
+            <OrderOnline data={data} />
           </TabPane>
           <TabPane tabId="2">
             <Overview data={data} />
           </TabPane>
-          <TabPane tabId="3">
+          {/* <TabPane tabId="3">
             <Gallery galleryData={bannerImageData} />
           </TabPane>
           <TabPane tabId="6">
             <Review />
-          </TabPane>
+          </TabPane> */}
         </TabContent>
       </div>
     </>

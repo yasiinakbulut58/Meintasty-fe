@@ -7,12 +7,22 @@ import Deserts from './desert';
 import {
   BestSellerItems,
   comboItem,
-  orderLinks,
   pizzaItem,
   sandwichItem,
 } from '@/data/restaurant/single-page';
+import { RestaurantDetailModel } from '@/lib/data';
 
-const OrderOnline = () => {
+interface GroupedCategory {
+  categoryId: number;
+  categoryName: string;
+  items: IClassicMenuProps[];
+}
+
+type Props = {
+  data: RestaurantDetailModel;
+};
+
+const OrderOnline = ({ data }: Props) => {
   const [scroll, setScroll] = useState(false);
   const [noScroll, setNoScroll] = useState(true);
   useEffect(() => {
@@ -28,6 +38,36 @@ const OrderOnline = () => {
       }
     });
   }, []);
+
+  const orderLinks = Array.from(
+    new Map(
+      data?.menuList.map((item) => [
+        item.categoryId,
+        { href: `#${item.categoryId}`, label: item.categoryName },
+      ]),
+    ).values(),
+  );
+
+  const groupedCategories = Object.values(
+    data?.menuList.reduce<Record<number, GroupedCategory>>((acc, item) => {
+      if (!acc[item.categoryId]) {
+        acc[item.categoryId] = {
+          categoryId: item.categoryId,
+          categoryName: item.categoryName,
+          items: [],
+        };
+      }
+      acc[item.categoryId].items.push({
+        name: item.menuName,
+        label: item.categoryName.toLowerCase(),
+        description: item.menuContent,
+        price: parseFloat(item.menuPrice.replace(',', '.')),
+        customized: true,
+      });
+      return acc;
+    }, {}),
+  );
+
   return (
     <div className="menu-part tab-pane p-0" id="order">
       <div className="">
@@ -44,7 +84,15 @@ const OrderOnline = () => {
               <div className="pro_sticky_info" data-sticky_column>
                 <div data-spy="scroll" data-bs-target="#order-menu">
                   <div className="order-menu-section">
-                    <ListOfItemsPage
+                    {groupedCategories?.map((item) => (
+                      <ListOfItemsPage
+                        key={item.categoryId}
+                        items={item.items}
+                        navId={item.categoryId?.toString()}
+                        title={item.categoryName}
+                      />
+                    ))}
+                    {/* <ListOfItemsPage
                       items={BestSellerItems}
                       navId="bestseller"
                       title="bestseller"
@@ -64,8 +112,8 @@ const OrderOnline = () => {
                       items={comboItem}
                       navId="combo"
                       title="combo"
-                    />
-                    <Deserts />
+                    /> */}
+                    {/* <Deserts /> */}
                   </div>
                 </div>
               </div>

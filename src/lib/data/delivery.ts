@@ -1,7 +1,6 @@
 import {
   BaseResponse,
   RestaurantDetailModel,
-  RestaurantModel,
   RestaurantRequestModel,
   RestaurantResponseModel,
 } from './types';
@@ -14,9 +13,9 @@ export function getRestaurantsByCityId(request: RestaurantRequestModel) {
   );
 }
 
-export function getRestaurantDetailById(restaurantId: number) {
+export function getRestaurantDetailByInfo(url: string) {
   return baseApi.post<BaseResponse<RestaurantDetailModel>>(
-    '/Restaurant/getRestaurantDetailById',
-    { restaurantId },
+    '/Restaurant/getRestaurantDetailByInfo',
+    { url },
   );
 }

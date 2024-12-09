@@ -2,7 +2,7 @@ interface IRestaurantProps {
   id?: number;
   url?: string;
   img?: string;
-  item?: string;
+  name?: string;
   place?: string;
   time?: string;
   cost?: string;

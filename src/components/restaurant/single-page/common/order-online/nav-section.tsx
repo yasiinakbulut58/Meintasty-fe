@@ -1,6 +1,8 @@
 import React, { FC, useState } from 'react';
+import { useBaseTranslation } from '@/lib/hooks';
 
 const NavSection: FC<NavSectionProps> = ({ links }) => {
+  const { t } = useBaseTranslation();
   const [searchValue, setSearchValue] = useState('');
 
   const handleSearchChange = (e: React.ChangeEvent<HTMLInputElement>) => {
@@ -44,7 +46,7 @@ const NavSection: FC<NavSectionProps> = ({ links }) => {
         <div className="search">
           <input
             type="text"
-            placeholder="Search Dishes.."
+            placeholder={t('RestaurantDetail.Order.searchDishes')}
             value={searchValue}
             onChange={handleSearchChange}
           />

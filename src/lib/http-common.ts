@@ -17,6 +17,11 @@ baseApi.defaults.headers.post['Content-Type'] = 'application/json';
 
 // Add a request interceptor
 baseApi.interceptors.request.use((config) => {
+  /* const state = store.getState();
+  const currentLanguage = state.language.i18LangStatus || 'fr';
+  console.log(currentLanguage);
+  // Dil bilgisini header'a ekle
+  config.headers['Accept-Language'] = currentLanguage; */
   return config;
 });
 

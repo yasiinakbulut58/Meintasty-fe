@@ -1,6 +1,5 @@
 import { RestaurantDetailModel } from '@/lib/data';
 import Img from '@/utils/BackgroundImageRatio';
-import { FC } from 'react';
 
 type Props = {
   data: RestaurantDetailModel;
@@ -21,11 +20,11 @@ const Banner = ({ data }: Props) => {
             alt=""
           />
           <h3>{data.restaurantName}</h3>
-          <h6>Fast Food, Cafe, Italian</h6>
+          <h6>Fast Food, Cafe, Italian(Buraya kategori gelebilir)</h6>
           <ul>
-            <li>4.5 Rating</li>
-            <li>30 mins</li>
-            <li>$25 for 2</li>
+            {/* <li>4.5 Rating</li> */}
+            {/* <li>30 mins(kaç dk içinde teslim edilir)</li> */}
+            <li>{`${data.workHourFrom?.trim()} - ${data.workHourTo?.trim()}(${data.workDayFrom} - ${data.workDayTo})`}</li>
           </ul>
         </div>
       </div>

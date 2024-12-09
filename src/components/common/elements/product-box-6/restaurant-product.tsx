@@ -29,21 +29,16 @@ const RestaurantProducts: FC<RestaurantProductsProps> = ({ data, view }) => {
       <div className="special-content restaurant-detail">
         <Link href={`/menu/${data.url}`}>
           <h5>
-            {data?.item}
-            <span
+            {data?.name}
+            {/* <span
               className={`${data?.popular !== 'non veg' ? 'positive' : 'negative'}`}
             >
               {data?.rate} <i className="fas fa-star"></i>
-            </span>
+            </span> */}
           </h5>
         </Link>
         <ul>
-          <li>{data?.place}</li>
-          <li>{data?.time}(Mon-Sun)</li>
-          <li>
-            cost {symbol}
-            {(currencyValue * (data?.price || 0)).toFixed(0)} for Two
-          </li>
+          <li>{data?.time}</li>
         </ul>
       </div>
       {data?.label && <div className="label-offer">{data?.label}</div>}

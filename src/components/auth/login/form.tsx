@@ -112,7 +112,7 @@ const LoginForm = () => {
           {isSubmitting ? t('Common.pleaseWait') : t('Auth.login')}
         </button>
         <div className="divider">
-          <h6>{t('Auth.SignUp.or')}</h6>
+          <h6>{t('Common.or')}</h6>
         </div>
         <Link
           href="/auth/register"
