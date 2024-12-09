@@ -1,0 +1,60 @@
+name: Deployment
+
+on:
+  push:
+    branches: ['main']
+  pull_request:
+    branches: ['main']
+
+jobs:
+  build-and-deploy:
+    runs-on: [self-hosted]
+
+    steps:
+      - uses: actions/checkout@v2
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v1
+        with:
+          node-version: 20
+          cache: npm
+
+      - name: Build
+        run: |
+          npm install
+          npm run build
+
+      - name: Deploy
+        run: |
+          try {
+            if ((Get-WebSiteState -Name "meintasty.com").Value -eq "Started") {
+              Stop-WebSite -Name "meintasty.com"
+              Write-Output "Stopped Website meintasty.com"
+            }
+            if ((Get-WebAppPoolState -Name "meintasty.com").Value -eq "Started") {
+              Stop-WebAppPool -Name "meintasty.com"
+              Write-Output "Stopped Application Pool meintasty.com"
+            }
+      
+            Start-Sleep -s 5
+      
+            $sourcePath = "C:\action-runner\_work\meintasty\meintasty"
+            $destinationPath = "C:\inetpub\wwwroot"
+      
+            robocopy $sourcePath $destinationPath /MIR /MT:16
+            Write-Output "Files copied from $sourcePath to $destinationPath using Robocopy"
+      
+            if ((Get-WebSiteState -Name "meintasty.com").Value -eq "Stopped") {
+              Start-WebSite -Name "meintasty.com"
+              Write-Output "Started Website meintasty.com"
+            }
+            if ((Get-WebAppPoolState -Name "meintasty.com").Value -eq "Stopped") {
+              Start-WebAppPool -Name "meintasty.com"
+              Write-Output "Started Application Pool meintasty.com"
+            }
+      
+            if ($lastexitcode -lt 8) { $global:lastexitcode = 0 }
+          } catch {
+            Write-Error "An error occurred during deployment: $_"
+            exit 1
+          }
