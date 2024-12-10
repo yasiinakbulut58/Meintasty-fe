@@ -1,11 +1,12 @@
-import { ContactUs } from '@/constant/constant';
 import Image from 'next/image';
+import { useBaseTranslation } from '@/lib/hooks';
 
 const ContactUsComponent: React.FC = () => {
+  const { t } = useBaseTranslation();
   return (
     <div className="col-xl-2 col-md-6 order-cls">
       <div className="footer-title mobile-title">
-        <h5>{ContactUs}</h5>
+        <h5>{t('Footer.contactUs')}</h5>
       </div>
       <div className="footer-content">
         <div className="contact-detail">
@@ -20,7 +21,7 @@ const ContactUsComponent: React.FC = () => {
               />
             </a>
           </div>
-          <p>Marketing</p>
+          <p>{t('Footer.marketing')}</p>
           <ul className="contact-list">
             <li>
               <i className="fas fa-phone-alt"></i> 076 - 323 - 3242

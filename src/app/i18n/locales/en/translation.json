@@ -85,5 +85,13 @@
       "searchDishes": "Search Dishes",
       "itemsCount": "{{count}} items"
     }
+  },
+  "Footer": {
+    "marketing": "Marketing",
+    "contactUs": "Contact Us",
+    "faq": "FAQ",
+    "about": "About",
+    "aboutUs": "About Us",
+    "ourLocation": "Our Location"
   }
 }

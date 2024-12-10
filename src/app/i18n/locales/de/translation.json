@@ -86,5 +86,13 @@
       "searchDishes": "Gerichte suchen",
       "itemsCount": "{{count}} Artikel"
     }
+  },
+  "Footer": {
+    "marketing": "Marketing",
+    "contactUs": "Kontaktieren Sie uns",
+    "faq": "FAQ",
+    "about": "Über uns",
+    "aboutUs": "Über uns",
+    "ourLocation": "Unser Standort"
   }
 }

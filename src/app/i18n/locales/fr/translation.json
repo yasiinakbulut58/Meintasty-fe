@@ -86,5 +86,13 @@
       "searchDishes": "Rechercher des plats",
       "itemsCount": "{{count}} articles"
     }
+  },
+  "Footer": {
+    "marketing": "Marketing",
+    "contactUs": "Nous contacter",
+    "faq": "FAQ",
+    "about": "À propos",
+    "aboutUs": "À propos de nous",
+    "ourLocation": "Notre emplacement"
   }
 }

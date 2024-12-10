@@ -1,10 +1,11 @@
-import { OurLocation } from '@/constant/constant';
+import { useBaseTranslation } from '@/lib/hooks';
 
 const Location: React.FC = () => {
+  const { t } = useBaseTranslation();
   return (
     <div className="col-xl-3 col-md-6">
       <div className="footer-title">
-        <h5>{OurLocation}</h5>
+        <h5>{t('Footer.ourLocation')}</h5>
       </div>
       <div className="footer-content">
         <div className="footer-map">
