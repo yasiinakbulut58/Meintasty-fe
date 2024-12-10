@@ -41,7 +41,7 @@ const OrderOnline = ({ data }: Props) => {
     const handleScroll = () => {
       if (window.scrollY <= 757) {
         setNoScroll(true);
-      } else if (window.scrollY > 757 && window.scrollY <= divHeight + 757) {
+      } else if (window.scrollY > 757 && window.scrollY <= divHeight) {
         setScroll(true);
         setNoScroll(false);
       } else {
