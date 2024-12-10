@@ -13,7 +13,10 @@
     "or": "oder",
     "edit": "bearbeiten",
     "user": "benutzer",
-    "back": "zurück"
+    "back": "zurück",
+    "choose": "Wählen...",
+    "close": "Schließen",
+    "saveChanges": "Änderungen speichern"
   },
   "Error": {
     "errorOccurred": "Ein unerwarteter Fehler ist aufgetreten"
@@ -53,7 +56,11 @@
     "gender": "Geschlecht",
     "emailAddress": "E-Mail-Adresse",
     "phoneNo": "Telefonnummer",
-    "password": "Passwort"
+    "password": "Passwort",
+    "editProfile": "Profil bearbeiten",
+    "fullName": "Vollständiger Name",
+    "female": "Weiblich",
+    "male": "Männlich"
   },
   "Restaurants": {
     "Filter": {

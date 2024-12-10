@@ -4,8 +4,8 @@ import { Modal, ModalBody, ModalHeader } from 'reactstrap';
 
 const PhoneModalShow: FC<MultipleModalInterFace> = ({ open, toggle }) => {
   return (
-    <Modal centered isOpen={open} toggle={() => toggle('phone no')}>
-      <ModalHeader toggle={() => toggle('phone no')}>
+    <Modal centered isOpen={open} toggle={() => toggle('#edit-phone')}>
+      <ModalHeader toggle={() => toggle('#edit-phone')}>
         <h5 className="modal-title">change phone no</h5>
       </ModalHeader>
       <ModalBody>
@@ -30,7 +30,7 @@ const PhoneModalShow: FC<MultipleModalInterFace> = ({ open, toggle }) => {
         <button
           type="button"
           className="btn btn-secondary"
-          onClick={() => toggle('phone no')}
+          onClick={() => toggle('#edit-phone')}
         >
           Close
         </button>

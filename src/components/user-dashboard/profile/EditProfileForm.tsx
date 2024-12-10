@@ -7,11 +7,11 @@ import { zodResolver } from '@hookform/resolvers/zod';
 import * as z from 'zod';
 import { toast } from 'react-toastify';
 import DatePickerComponent from '@/components/common/date-picker';
+import { useBaseTranslation } from '@/lib/hooks';
 
 // Define form schema using Zod
 const schema = z.object({
-  firstName: z.string().min(1, 'First name is required.'),
-  lastName: z.string().min(1, 'Last name is required.'),
+  fullname: z.string().min(1, 'Full name is required.'),
   gender: z.string().min(1, 'Gender is required.'),
   birthday: z.union([z.date(), z.null()]).refine((value) => value !== null, {
     message: 'Birthday is required.',
@@ -19,8 +19,7 @@ const schema = z.object({
 });
 
 interface FormData {
-  firstName: string;
-  lastName: string;
+  fullname: string;
   gender: string;
   birthday: Date | null;
 }
@@ -30,6 +29,7 @@ type Props = {
 };
 
 const EditProfileForm = ({ onToggle }: Props) => {
+  const { t } = useBaseTranslation();
   const [start, setStart] = useState<Date | null>(null); // state for birthday date (initially null)
   const {
     register,
@@ -57,54 +57,42 @@ const EditProfileForm = ({ onToggle }: Props) => {
     <form onSubmit={handleSubmit(onSubmit)} noValidate>
       <ModalBody>
         <div className="row">
-          <div className="form-group col-md-6">
-            <label htmlFor="first">First name</label>
+          <div className="form-group">
+            <label htmlFor="first">{t('Profile.fullName')}</label>
             <input
               type="text"
-              className={`form-control ${errors.firstName ? 'is-invalid' : ''}`}
+              className={`form-control ${errors.fullname ? 'is-invalid' : ''}`}
               id="first"
-              placeholder="First name"
-              {...register('firstName')}
+              placeholder={t('Profile.fullName')}
+              {...register('fullname')}
             />
-            {errors.firstName && (
-              <div className="invalid-feedback">{errors.firstName.message}</div>
+            {errors.fullname && (
+              <div className="invalid-feedback">{errors.fullname.message}</div>
             )}
           </div>
-          <div className="form-group col-md-6">
-            <label htmlFor="last">Last name</label>
-            <input
-              type="text"
-              className={`form-control ${errors.lastName ? 'is-invalid' : ''}`}
-              id="last"
-              placeholder="Last name"
-              {...register('lastName')}
-            />
-            {errors.lastName && (
-              <div className="invalid-feedback">{errors.lastName.message}</div>
-            )}
-          </div>
-          <div className="form-group col-md-6">
-            <label htmlFor="gender">Gender</label>
+          <div className="form-group">
+            <label htmlFor="gender">{t('Profile.gender')}</label>
             <select
               id="gender"
               className={`form-control ${errors.gender ? 'is-invalid' : ''}`}
               {...register('gender')}
             >
-              <option value="">Choose...</option>
-              <option value="female">Female</option>
-              <option value="male">Male</option>
+              <option value="">{t('Common.choose')}</option>
+              <option value="1">{t('Profile.female')}</option>
+              <option value="2">{t('Profile.male')}</option>
             </select>
             {errors.gender && (
               <div className="invalid-feedback">{errors.gender.message}</div>
             )}
           </div>
-          <div className="form-group col-md-6">
-            <label htmlFor="birthday">Birthday</label>
+          <div className="form-group">
+            <label htmlFor="birthday">{t('Profile.birthday')}</label>
             <div className="datepicker-wrapper w-100">
               <DatePickerComponent
                 setStart={handleDateChange} // Pass date handler
                 className={`form-control ${errors.birthday ? 'is-invalid' : ''}`}
                 wrapperClassName="w-100"
+                placeholderText={t('Profile.birthday')}
                 start={start} // Default to current date if null
               />
               {errors.birthday && (
@@ -118,14 +106,14 @@ const EditProfileForm = ({ onToggle }: Props) => {
       </ModalBody>
       <div className="modal-footer">
         <button type="button" className="btn btn-secondary" onClick={onToggle}>
-          Close
+          {t('Common.close')}
         </button>
         <button
           className={`btn btn-solid ${isSubmitting ? 'pe-none opacity-50' : ''}`}
           type="submit"
           disabled={isSubmitting}
         >
-          {isSubmitting ? 'Please wait...' : 'Save changes'}
+          {isSubmitting ? t('Common.pleaseWait') : t('Common.saveChanges')}
         </button>
       </div>{' '}
     </form>

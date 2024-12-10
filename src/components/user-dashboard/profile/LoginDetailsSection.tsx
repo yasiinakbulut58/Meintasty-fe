@@ -37,9 +37,9 @@ const LoginDetailsSection = ({ user }: Props) => {
   const [phoneModal, setPhoneModal] = useState(false);
   const [passwordModal, setPasswordModal] = useState(false);
   const multipleToggleHandle = (name: string) => {
-    name === 'email address'
+    name === '#edit-address'
       ? setEmailModal(!emailModal)
-      : name == 'phone no'
+      : name == '#edit-phone'
         ? setPhoneModal(!phoneModal)
         : setPasswordModal(!passwordModal);
   };
@@ -63,7 +63,9 @@ const LoginDetailsSection = ({ user }: Props) => {
                       <>
                         <h6>{detail.value}</h6>
                         <span
-                          onClick={() => multipleToggleHandle(detail.label)}
+                          onClick={() =>
+                            multipleToggleHandle(detail.modalTarget)
+                          }
                         >
                           {t('Common.edit')}
                         </span>

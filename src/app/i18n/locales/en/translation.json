@@ -13,7 +13,10 @@
     "or": "or",
     "edit": "edit",
     "user": "user",
-    "back": "back"
+    "back": "back",
+    "choose": "Choose...",
+    "close": "Close",
+    "saveChanges": "Save changes"
   },
   "Error": {
     "errorOccurred": "An unexpected error occurred"
@@ -52,7 +55,11 @@
     "gender": "Gender",
     "emailAddress": "Email Address",
     "phoneNo": "Phone No",
-    "password": "Password"
+    "password": "Password",
+    "editProfile": "Edit Profile",
+    "fullName": "Full Name",
+    "female": "Female",
+    "male": "Male"
   },
   "Restaurants": {
     "Filter": {

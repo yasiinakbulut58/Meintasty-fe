@@ -4,8 +4,8 @@ import { Modal, ModalBody, ModalHeader } from 'reactstrap';
 
 const EmailModalShow: FC<MultipleModalInterFace> = ({ open, toggle }) => {
   return (
-    <Modal centered isOpen={open} toggle={() => toggle('email address')}>
-      <ModalHeader toggle={() => toggle('email address')}>
+    <Modal centered isOpen={open} toggle={() => toggle('#edit-address')}>
+      <ModalHeader toggle={() => toggle('#edit-address')}>
         <h5 className="modal-title">change email address</h5>
       </ModalHeader>
       <ModalBody>
@@ -30,7 +30,7 @@ const EmailModalShow: FC<MultipleModalInterFace> = ({ open, toggle }) => {
         <button
           type="button"
           className="btn btn-secondary"
-          onClick={() => toggle('email address')}
+          onClick={() => toggle('#edit-address')}
         >
           Close
         </button>

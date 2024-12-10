@@ -4,8 +4,8 @@ import { Modal, ModalBody, ModalHeader } from 'reactstrap';
 
 const PasswordModalShow: FC<MultipleModalInterFace> = ({ open, toggle }) => {
   return (
-    <Modal centered isOpen={open} toggle={() => toggle('password')}>
-      <ModalHeader toggle={() => toggle('password')}>
+    <Modal centered isOpen={open} toggle={() => toggle('#edit-password')}>
+      <ModalHeader toggle={() => toggle('#edit-password')}>
         <h5 className="modal-title">change password</h5>
       </ModalHeader>
       <ModalBody>
@@ -30,7 +30,7 @@ const PasswordModalShow: FC<MultipleModalInterFace> = ({ open, toggle }) => {
         <button
           type="button"
           className="btn btn-secondary"
-          onClick={() => toggle('password')}
+          onClick={() => toggle('#edit-password')}
         >
           Close
         </button>
