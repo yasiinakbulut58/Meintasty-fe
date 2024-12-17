@@ -1,15 +1,15 @@
 'use server';
 
 import { options } from '@/app/api/auth/[...nextauth]/options';
-import { BaseResponse } from '@/lib/data';
-import { getUserDetail as getUser } from '@/lib/data/profile';
+import { BaseResponse, IUserRequest } from '@/lib/data';
+import { getUserDetail as getUser, updateUser } from '@/lib/data/profile';
 import { AxiosError } from 'axios';
 import { getServerSession } from 'next-auth';
 
-export async function getUserDetail(userId: number) {
+export async function getUserDetail() {
   const session = await getServerSession(options);
   try {
-    const response = await getUser(userId, session?.user.token ?? '');
+    const response = await getUser(session?.user.token ?? '');
     if (response.data.success) {
       return { isSuccess: true, value: response.data.value };
     }
@@ -20,9 +20,11 @@ export async function getUserDetail(userId: number) {
   }
 }
 
-/* export async function createUser(data: RegisterRequestModel) {
+export async function updateUserAction(data: Partial<IUserRequest>) {
+  const session = await getServerSession(options);
+
   try {
-    const response = await register(data);
+    const response = await updateUser(session?.user.token ?? '', data);
     if (response.data.success) {
       return { isSuccess: true };
     }
@@ -31,4 +33,4 @@ export async function getUserDetail(userId: number) {
     const err = error as AxiosError<BaseResponse<any>>;
     return { isSuccess: false, message: err?.response?.data?.errorMessage };
   }
-} */
+}

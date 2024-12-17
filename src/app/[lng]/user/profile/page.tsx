@@ -15,7 +15,7 @@ const Page = async ({ params: { lng } }: { params: { lng: string } }) => {
   const { t } = await useTranslation(lng);
 
   const session = await getServerSession(options);
-  const response = await getUserDetail(Number(session?.user.id ?? -1));
+  const response = await getUserDetail();
 
   return (
     <ProfileLayout subTitle={t('Profile.title')}>

@@ -121,3 +121,11 @@ export interface IUser {
   isEmailVerified: boolean;
   isPhoneVerified: boolean;
 }
+
+export interface IUserRequest {
+  fullName: string;
+  email: string;
+  phoneNumber: string;
+  gender: string;
+  birthDate: string;
+}

@@ -8,14 +8,14 @@ const EditProfileForm = dynamic(() => import('./EditProfileForm'), {
   ssr: false,
 });
 
-const EditProfile: FC<EditProfileInterFace> = ({ open, toggle }) => {
+const EditProfile: FC<EditProfileInterFace> = ({ open, toggle, user }) => {
   const { t } = useBaseTranslation();
   return (
     <Modal centered size="md" isOpen={open} toggle={toggle}>
       <ModalHeader toggle={toggle}>
         <h5 className="modal-title">{t('Profile.editProfile')}</h5>
       </ModalHeader>
-      <EditProfileForm onToggle={toggle} />
+      <EditProfileForm onToggle={toggle} user={user} />
     </Modal>
   );
 };

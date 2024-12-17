@@ -13,6 +13,7 @@ interface Section {
 interface EditProfileInterFace {
   open: boolean;
   toggle: () => void;
+  user: IUser;
 }
 interface MultipleModalInterFace {
   open: boolean;

@@ -8,10 +8,22 @@ import * as z from 'zod';
 import { toast } from 'react-toastify';
 import DatePickerComponent from '@/components/common/date-picker';
 import { useBaseTranslation } from '@/lib/hooks';
+import { IUser } from '@/lib/data';
+import { updateUserAction } from './action';
+import { useRouter } from 'next/navigation';
 
 // Define form schema using Zod
 const schema = z.object({
-  fullname: z.string().min(1, 'Full name is required.'),
+  fullname: z
+    .string()
+    .min(1, 'Full name is required.')
+    .regex(
+      /^[A-Za-zÀ-ÖØ-öø-ÿ]+(?: [A-Za-zÀ-ÖØ-öø-ÿ]+)+$/,
+      'Full name must include first name and last name, separated by a space.',
+    )
+    .refine((val) => val.split(' ').length >= 2, {
+      message: 'Full name must contain at least first and last name.',
+    }),
   gender: z.string().min(1, 'Gender is required.'),
   birthday: z.union([z.date(), z.null()]).refine((value) => value !== null, {
     message: 'Birthday is required.',
@@ -26,10 +38,12 @@ interface FormData {
 
 type Props = {
   onToggle: () => void;
+  user: IUser;
 };
 
-const EditProfileForm = ({ onToggle }: Props) => {
+const EditProfileForm = ({ onToggle, user }: Props) => {
   const { t } = useBaseTranslation();
+  const { refresh } = useRouter();
   const [start, setStart] = useState<Date | null>(null); // state for birthday date (initially null)
   const {
     register,
@@ -39,18 +53,26 @@ const EditProfileForm = ({ onToggle }: Props) => {
   } = useForm<FormData>({
     resolver: zodResolver(schema),
     defaultValues: {
-      birthday: start, // initialize the birthday field
+      fullname: user.fullName ?? '',
+      gender: user.gender ?? '',
+      birthday: user.birthDate ? new Date(user.birthDate) : start, // initialize the birthday field
     },
   });
 
-  const onSubmit = (data: FormData) => {
-    // Handle form submission logic here
-    toast.success('Profile updated successfully');
+  const onSubmit = async (data: FormData) => {
+    const response = await updateUserAction({
+      birthDate: data.birthday?.toLocaleDateString(),
+      gender: data.gender,
+      fullName: data.fullname,
+    });
+    if (response?.isSuccess) {
+      onToggle();
+      refresh();
+    }
   };
-  console.log(errors);
+
   const handleDateChange = (date: Date | null) => {
     setStart(date);
-    // Update form value when date is selected
     setValue('birthday', date ?? null);
   };
   return (
