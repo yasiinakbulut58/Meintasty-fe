@@ -101,5 +101,8 @@
     "about": "À propos",
     "aboutUs": "À propos de nous",
     "ourLocation": "Notre emplacement"
+  },
+  "Orders": {
+    "title": "Commandes"
   }
 }

@@ -5,7 +5,7 @@ import React, { FC } from 'react';
 import RenderBooking from './render-booking';
 import DashboardTitle from '../common/dashboard-title';
 
-const Bookings: FC = () => {
+export const Orders: FC = () => {
   return (
     <>
       <div className="dashboard-box">
@@ -29,5 +29,3 @@ const Bookings: FC = () => {
     </>
   );
 };
-
-export default Bookings;

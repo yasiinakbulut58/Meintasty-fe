@@ -100,5 +100,8 @@
     "about": "About",
     "aboutUs": "About Us",
     "ourLocation": "Our Location"
+  },
+  "Orders": {
+    "title": "Orders"
   }
 }

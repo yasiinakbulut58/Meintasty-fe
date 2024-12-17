@@ -9,7 +9,7 @@ const DashboardSidebar = () => {
   const { t } = useBaseTranslation();
   const userTabs = [
     { path: '/profile', label: t('Profile.title') },
-    { path: '/bookings', label: 'bookings' },
+    { path: '/orders', label: t('Orders.title') },
     { path: '/cards', label: 'cards & payment' },
     { path: '/security', label: 'security' },
   ];

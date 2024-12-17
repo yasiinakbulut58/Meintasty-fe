@@ -1,16 +1,16 @@
 import { FC } from 'react';
-import Bookings from '@/components/user-dashboard/bookings/bookings';
+import { Orders } from '@/components/user-dashboard/orders';
 import ProfileLayout from '@/layouts/profile-layout';
 
 export const metadata = {
-  title: 'Bookings - Meintasty',
+  title: 'Orders - Meintasty',
   description: 'meintasty.com',
 };
 
 const Page: FC = () => {
   return (
-    <ProfileLayout subTitle="bookings">
-      <Bookings />
+    <ProfileLayout subTitle="orders">
+      <Orders />
     </ProfileLayout>
   );
 };
