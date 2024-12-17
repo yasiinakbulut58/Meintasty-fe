@@ -49,7 +49,7 @@ const EditProfileForm = ({ onToggle, user }: Props) => {
     register,
     handleSubmit,
     formState: { errors, isSubmitting },
-    setValue, // Added to programmatically set form values
+    setValue,
   } = useForm<FormData>({
     resolver: zodResolver(schema),
     defaultValues: {

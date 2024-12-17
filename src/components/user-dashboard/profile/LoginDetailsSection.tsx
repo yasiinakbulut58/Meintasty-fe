@@ -80,8 +80,16 @@ const LoginDetailsSection = ({ user }: Props) => {
           </ul>
         </div>
       </div>
-      <EmailModalShow open={emailModal} toggle={multipleToggleHandle} />
-      <PhoneModalShow open={phoneModal} toggle={multipleToggleHandle} />
+      <EmailModalShow
+        open={emailModal}
+        toggle={multipleToggleHandle}
+        currentEmail={user?.email ?? ''}
+      />
+      <PhoneModalShow
+        open={phoneModal}
+        toggle={multipleToggleHandle}
+        currentPhone={user?.phoneNumber ?? ''}
+      />
       <PasswordModalShow open={passwordModal} toggle={multipleToggleHandle} />
     </>
   );

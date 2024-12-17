@@ -60,7 +60,14 @@
     "editProfile": "Profil bearbeiten",
     "fullName": "Vollständiger Name",
     "female": "Weiblich",
-    "male": "Männlich"
+    "male": "Männlich",
+    "changeEmail": "E-Mail-Adresse ändern",
+    "oldEmail": "Alte E-Mail",
+    "newEmail": "Neue E-Mail eingeben",
+    "changePhone": "Telefonnummer ändern",
+    "oldPhone": "Alte Telefonnummer",
+    "newPhone": "Neue Telefonnummer",
+    "enterNewPhone": "Neue Telefonnummer eingeben"
   },
   "Restaurants": {
     "Filter": {

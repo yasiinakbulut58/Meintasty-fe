@@ -59,7 +59,14 @@
     "editProfile": "Edit Profile",
     "fullName": "Full Name",
     "female": "Female",
-    "male": "Male"
+    "male": "Male",
+    "changeEmail": "Change Email Address",
+    "oldEmail": "Old Email",
+    "newEmail": "Enter New Email",
+    "changePhone": "Change Phone Number",
+    "oldPhone": "Old Phone Number",
+    "newPhone": "New Phone Number",
+    "enterNewPhone": "Enter New Phone Number"
   },
   "Restaurants": {
     "Filter": {
